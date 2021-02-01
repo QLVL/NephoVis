@@ -1,0 +1,4442 @@
+pmi10	raw_co10	pmi4	raw_co4	raw_freq	cw
+0.7759701	12	0.80650914	5.0	142029	!/punct
+0.4981906	315	0.5847127	138.0	4844510	"""/punct"
+-0.73890376	1			52896	&/name
+-0.26189733	83	-0.10663985	39.0	2720890	'/punct
+2.2577224	1			2605	'98/noun
+1.7231888	14	1.0955205	3.0	62265	's/adv
+-0.9888382	40	-0.89114344	18.0	2759129	(/punct
+-0.9794994	40	-0.8697389	18.0	2758869	)/punct
+-0.083975494	4	-0.6090155	1.0	117193	*/tag
+0.031951964	750	0.098288536	322.0	18092245	,/punct
+-1.0760547	1	-0.19627999	1.0	75440	--/punct
+-0.3618166	1			36107	-/name
+-0.24036354	33	0.0022670082	17.0	1059446	-/punct
+1.422094	1			6065	..../punct
+0.20346281	5	0.5996431	3.0	103573	.../punct
+1.5589738	1			5416	../punct
+0.2270196	1399	0.44024247	695.0	28225482	./punct
+-0.56368	1			45910	//punct
+10.546315	1	11.166794	1.0	1	1-Roda/name
+0.97970825	5	0.28448892	1.0	46650	1./num
+-0.8512451	2	-0.63969636	1.0	118827	1/num
+0.6194376	1			13558	10.000/num
+2.0370142	1			3270	105/num
+-0.37919742	1	0.5254692	1.0	36830	11/noun
+10.115532	1			1	12-10_thriller/noun
+2.7330031	1	3.6370807	1.0	1660	14-jarige/adj
+1.3249508	1			6653	14.30/noun
+4.746523	1			218	14/10/num
+0.012638344	1			24865	14/noun
+-0.97803587	1	-0.07032163	1.0	66844	15/num
+0.11987321	1	1.0263444	1.0	22300	150/num
+1.398816	1			6208	1500/num
+1.8062736	1			4170	18-jarige/adj
+3.0315151	1			1247	18.30/num
+2.0361927	2			6553	180/num
+4.9767966	1			172	1814/noun
+1.6373395	1			4856	1945/noun
+2.1726012	1			2850	1947/noun
+1.5282997	1	2.4387379	1.0	5419	1974/noun
+1.4720938	1			5791	1976/noun
+1.2143764	1			7416	1987/noun
+1.0260361	3	0.83914566	1.0	26842	1995/noun
+-0.37619495	1			36388	1997/noun
+-0.7189517	1			51305	1998/noun
+-0.8073614	1	0.10201661	1.0	56174	1999/noun
+0.49371013	3	1.4104207	3.0	45325	2./num
+-0.39539105	3	0.107573576	2.0	111933	2/num
+-0.91704375	1			62906	2000/noun
+-0.092060536	2	0.12129479	1.0	55236	2001/noun
+-0.041647777	1			26354	2004/noun
+8.506094	1			5	20th/UNKNOWN
+8.729238	1	9.646968	1.0	4	21.00-23.05u./noun
+1.6581631	1			4822	22-jarige/adj
+6.2506003	1	7.1465573	1.0	50	22.20-23.10u./noun
+2.0855293	1			3114	220/num
+8.506094	1			5	27,-/num
+9.645528	1	10.473647	1.0	2	3-BRUGGE/name
+0.56902534	3	0.3865319	1.0	42072	3./num
+-1.3473237	1	-0.43810245	1.0	96814	3/num
+-0.8317931	1			57761	30/num
+5.005655	1			169	3100/num
+1.1782084	1			7766	350/num
+7.1923704	1			19	36,35/num
+0.34315014	1			17865	36/num
+4.4511833	1			295	364/num
+0.67444104	1			12844	39/num
+1.8093314	1			4210	3de/num
+2.5796747	1			1904	4,2/num
+0.3041213	1			18612	4/name
+2.5880609	1			1886	40/name
+0.20619527	2	0.4204776	1.0	40859	40/num
+0.4643722	1			15791	400/num
+0.36370483	1			17422	46/num
+5.166772	1			144	4600/num
+-0.66522276	1			48857	50/num
+9.500346	1	10.340116	1.0	2	52Vandenbroucke/name
+0.90911424	1			10153	54/num
+0.34732014	1			17736	55/num
+10.115532	1			1	572.669/num
+10.115532	1			1	5756/name
+0.8630329	1			10607	58/num
+7.7221923	1	8.635367	1.0	11	6.42/num
+8.323772	1	9.241503	1.0	6	6.43/noun
+7.437941	1	8.35053	1.0	15	6.44/num
+8.729238	1	9.646968	1.0	4	6.46/name
+7.812947	1	8.730678	1.0	10	6.48/num
+8.169621	1			7	6.49/name
+8.729238	1			4	6.51/name
+9.01692	1			3	6.54/name
+0.24547707	1	1.1493847	1.0	19732	6/noun
+-0.9110239	1			62429	6/num
+0.39673823	2	0.6122952	1.0	33710	60/num
+1.0829436	1			8495	63/num
+0.1415067	1	1.0492208	1.0	21780	75/num
+2.729216	1			1648	7de/num
+-0.73728937	1			52574	8/num
+4.7922783	1	5.6951237	1.0	210	83ste/num
+0.6844108	1			12632	85/num
+4.2181034	1	5.110679	1.0	378	88-jarige/adj
+-0.17160103	73	-0.41979977	23.0	2182842	:/punct
+-0.31628424	21	-0.3667831	8.0	715025	;/punct
+-0.12184003	29	-0.09432077	12.0	826450	?/punct
+5.1843004	1			142	A.F./name
+4.0645022	1	4.968896	1.0	436	A.F.Th./name
+-0.38507774	1			37251	A/name
+1.5969397	1			6045	AFP/name
+10.115532	1			1	AGHA/noun
+5.0711393	1			158	AWS/name
+0.6630339	2			26544	Aalst/name
+1.9280866	2	2.127852	1.0	7504	Aalter/name
+2.8356614	1	3.7386305	1.0	1483	Aarlen/name
+4.729891	1			226	Aarschotsesteenweg/name
+8.349091	1			6	Abade/name
+7.5505824	1			13	Achahboun/name
+0.18669589	1			20848	Afrika/name
+10.115532	1	11.033262	1.0	1	Afwaswater/name
+9.422385	1	10.340116	1.0	2	Ahel/name
+2.6527283	2	3.5568962	2.0	3581	Aimé/name
+0.089556865	1			23148	Albert/name
+6.7551565	1			29	Aldeburgh/name
+3.2793264	1	4.1864524	1.0	956	Aldo/name
+5.975577	1			64	Alyson/name
+-0.6048668	1	0.3051637	1.0	45923	Amerika/name
+-0.80169153	1			56013	Amerikaan/noun
+-0.5991198	5	-0.20562847	3.0	231449	Amerikaans/adj
+8.036091	1	8.953821	1.0	8	Ampersand/name
+-1.0546476	2			146502	Amsterdam/name
+0.9766983	1	1.8812798	1.0	9563	Amsterdammer/noun
+-0.3883582	1			37583	Anderlecht/name
+3.1721683	1			1058	Andres/name
+0.7848673	2	0.9971416	1.0	23199	André/name
+1.6895772	1			4696	Anja/name
+2.257574	3	2.7596388	2.0	7914	Anna/name
+0.8686041	1			10590	Anne/name
+1.6581525	1	2.5645506	1.0	4814	Anthuenis/name
+3.2246177	1			1006	Antonia/name
+-0.64814734	2	-0.45380658	1.0	98965	Antwerpen/name
+-0.540555	1			43848	Antwerps/adj
+4.383324	1			312	Arles/name
+0.6257055	1			13580	Armstrong/name
+4.435018	1			296	Arthurs/name
+8.323772	1			6	Asenray/name
+3.0247886	1			1216	Atlantisch/adj
+0.6806929	1			12935	Australisch/adj
+0.3591764	1	1.2660171	1.0	17632	Australië/name
+1.6991982	1			4654	Axel/name
+2.9514692	1	3.8639123	1.0	1304	Aziaat/noun
+-0.010509	1			25527	B/name
+9.085913	1			3	BEVEREN/VRASENE/name
+3.8876128	1			572	BF/name
+2.7931535	1	3.7017112	1.0	1539	BOIC/name
+10.115532	1			1	BOOSMario/name
+9.422385	1			2	BTD_hal/noun
+2.6762078	1	3.5858755	1.0	1732	Back/name
+2.981917	1			1267	Bacon/name
+6.2717876	1			48	Balegemse/adj
+1.682003	1			4666	Band/name
+4.235418	1			367	Barbra/name
+7.22516	1			18	Barracuda/name
+5.9883976	1			62	Barricadenplein/name
+-0.67795473	1	0.22576934	1.0	50275	Bart/name
+2.1229591	1			3020	Basten/name
+2.8585644	1			1436	Beiers/adj
+1.9260098	1			3710	Beke/name
+2.7648873	1			1584	Belang/name
+7.4074817	1	8.3252125	1.0	15	Belg.2/name
+-0.8545478	2	-0.6410492	1.0	118651	België/name
+3.9835448	1			476	Bempt/name
+4.4047737	1	5.306822	1.0	311	Berchemse/adj
+5.888698	1			69	Berenice/name
+0.74797416	1	1.6519248	1.0	11991	Bergen/name
+1.5520564	1			5379	Bernhard/name
+4.9496036	1			180	Beuselinck/name
+3.383202	1	4.2920046	1.0	852	Beyers/name
+2.569376	1			1928	Bijenkorf/name
+5.5048766	1	6.411973	1.0	103	Bilzenaar/noun
+2.6628976	1			1757	Bird/name
+3.4330475	1			815	Björk/name
+3.7650826	1			580	Blaauw/name
+0.37154728	1			17399	Blair/name
+8.729238	1			4	Boaza/name
+0.5171609	1			15376	Bob/name
+5.9041452	1	6.800969	1.0	69	Bodde/name
+6.9168587	1			25	Boemel/name
+6.9585314	1			24	Boemel/noun
+1.755917	1	2.6654978	1.0	4332	Bommel/name
+2.4116669	1			2248	Bondt/name
+5.6252117	1	6.533453	1.0	91	Bookmaker/name
+1.2547135	1			7274	Boom/name
+2.1266837	1			3059	Boortmeerbeek/name
+1.7296213	1			4502	Bosnisch/adj
+4.061562	2	4.968896	2.0	870	Boss/name
+4.7094817	1			229	Boszhard/name
+5.347393	1			121	Braeckeleer/name
+0.9716252	1			9655	Braziliaans/adj
+0.57180625	1			14276	Brazilië/name
+2.426321	1			2232	Brinkman/name
+1.9786333	1			3482	Brouwers/name
+3.570829	1			712	Browaeys/name
+2.0431035	2	2.952464	2.0	6509	Brown/name
+1.8305987	1	2.7386818	1.0	4052	Bruce/name
+0.19906317	3	-0.00363525	1.0	63064	Brugge/name
+7.047479	2	7.9652095	2.0	43	Bruintjes/name
+8.516145	1			5	Bruniaux/name
+0.98820364	1	1.8947806	1.0	9414	Bruno/name
+-0.93408585	2	-0.745524	1.0	132165	Brussel/name
+3.008475	1			1243	Brussels_steen_weg/noun
+5.5910296	1			96	Buchwald/name
+9.422385	1	10.340116	1.0	2	Buchwald/noun
+3.3588903	1	4.2680793	1.0	874	Buckingham/name
+2.4806387	1	3.3865504	1.0	2113	Bundesliga/name
+2.683048	1	3.5895257	1.0	1791	Buren/name
+2.5564938	1	3.4621751	1.0	1953	Burg/name
+8.100629	1			8	Buskruit/name
+2.8371446	1			1488	Buyten/name
+9.422385	1	10.340116	1.0	2	CD&V_maand_blad/noun
+3.426617	1			817	CD&V_voorzitter/noun
+3.2849817	1			1010	CD/name
+10.115532	1	11.033262	1.0	1	Cabbeljauw/noun
+5.982768	1			64	Calpe/name
+8.729238	1			6	Camera_onderzoek/noun
+0.6308379	1	1.538467	1.0	13415	Canada/name
+1.7345594	1			4463	Cannes/name
+1.2665776	1	2.1482022	1.0	7456	Canvas/name
+3.8032527	1	4.7098	1.0	562	Carette/name
+1.5805185	1			5180	Carlo/name
+3.1720235	1			1053	Casa/name
+3.1249533	1			1115	Casper/name
+9.422385	1	10.340116	1.0	2	Catelonië/name
+10.27805	1	11.033262	1.0	1	Cathioor/name
+3.2894206	1	4.1953936	1.0	944	Cecilia/name
+2.8793006	1			1404	Celsius/noun
+0.62690854	1			13476	Centraal/name
+8.506094	1			5	Century/UNKNOWN
+6.7551565	1			29	Chaïb/name
+2.9943602	1			1262	China/det
+-0.07528638	1			27261	Chinees/adj
+1.2082422	3	1.7092754	2.0	22676	Chris/name
+3.2328637	2	3.4465857	1.0	1983	Christiaens/name
+2.3289595	1			2481	Christoph/name
+1.377109	1	2.2843626	1.0	6353	Claeys/name
+4.291599	1			342	Clash/name
+0.82045525	1			11684	Claus/name
+0.80756134	1	1.711146	1.0	11389	Clijsters/name
+3.2769659	1	4.1798315	1.0	961	Co./name
+3.6777003	1	4.5855603	1.0	634	Cobain/name
+2.4469476	1	3.3559778	1.0	2175	Coenen/name
+1.5184929	2	1.7326244	1.0	11078	Cohen/name
+5.231594	1			135	Combino/name
+5.661766	1			86	Comedytrain/name
+4.5123067	1			277	Commercial/name
+2.8630884	1			1435	Conference/name
+2.928177	1	3.8319051	1.0	1361	Continental/name
+1.4996071	1			5625	Coppens/name
+3.7405071	1	4.6487007	1.0	599	Cora/name
+2.2885103	1			3123	Coster/name
+6.189606	2			104	Crommen/name
+7.107377	1	8.012837	1.0	21	CropDesign/noun
+1.0470144	1			8860	Cuba/name
+3.1726508	1			1056	Cyriel/name
+0.24018154	1	1.1137539	1.0	21533	DE/name
+1.4658904	1			5825	Daems/name
+4.825751	1			200	Damstraat/noun
+10.115532	1			1	Dandapos;Allessandro/name
+6.3302064	1			45	Dangerfield/name
+1.3735405	1			6415	Daniël/name
+3.6001527	1	4.5073166	1.0	688	Dank/prep
+5.5009065	1			103	Danny/det
+2.4196374	1	3.3236177	1.0	2255	Dany/name
+4.152081	1			392	Daschle/name
+-0.59591365	1	0.31117144	1.0	45891	David/name
+-0.7835891	11	-2.2760687	1.0	609210	De/name
+2.9201572	2	3.8270242	2.0	2721	Deckers/name
+2.3654125	1	3.2723694	1.0	2375	Declercq/name
+0.98182964	1			9515	Deens/adj
+9.677277	1			2	Dekenskamp/noun
+2.6791503	1	3.587042	1.0	1729	Dekkers/name
+4.1024284	2			843	Delfzijl/name
+3.2201023	1			1302	Demey/name
+1.3463356	1			6691	Denderleeuw/name
+0.97456306	1			9591	Dennis/name
+2.4947534	1			2084	Denys/name
+1.520702	1	2.42941	1.0	5505	Derde/name
+10.115532	1			1	Derieck/name
+3.9488544	1			484	Dernière/name
+1.5628992	2	2.4676602	2.0	10738	Dick/name
+1.0966367	1			8422	Didier/name
+1.2054996	1			7853	Dieter/name
+5.434327	1	6.3293786	1.0	112	Dingetje/name
+4.5447097	1			267	Dirckx/name
+0.6728095	3	0.47830948	1.0	39050	Dirk/name
+3.2301245	1			1608	Dirven/name
+9.01692	1	9.93465	1.0	3	Doktersonderzoek/name
+6.115498	1	7.0259295	1.0	55	Dolores/noun
+1.2097689	1			7551	Dominique/name
+2.811117	1			1515	Dream/name
+5.226311	2	5.4432087	1.0	270	Drummond/name
+4.7094817	1			226	Du/noun
+1.5412781	1			5466	Dua/name
+2.9523983	1			1325	Duisburg/name
+-1.4115459	1	-0.507514	1.0	104339	Duits/adj
+-0.10713636	1			27916	Duitser/noun
+3.8019838	1			572	Duitsland/det
+-1.1063545	1			76234	Duitsland/name
+9.01692	1			3	Dussartlaan/noun
+2.365197	1			2382	Dynamo/name
+0.45468616	1	1.3606908	1.0	16058	E./name
+1.9837219	1			3457	E/name
+0.120746784	1	1.0229855	1.0	22423	EK/noun
+10.115532	1	11.033262	1.0	1	EPLF_strijder/noun
+3.998647	1			464	Eberharter/name
+0.15809137	1	1.0632384	1.0	21663	Eddy/name
+3.4459069	1			808	Edo/name
+2.940578	1			1325	Eijden/name
+0.5628651	1			14444	Eindhoven/name
+5.309464	1			123	Empire/noun
+-0.32096192	1			34599	Engeland/name
+1.1631142	1			7822	Engelsman/noun
+5.4096117	1	6.304769	1.0	114	Engquist/name
+10.115532	1			1	Essingen/name
+4.149385	1	5.041798	1.0	405	Etikhove/name
+5.215456	1			139	Eurolines/name
+-1.4997985	1			112784	Europa/name
+1.1567475	1			7882	Europeaan/noun
+-1.1893855	2			165681	Europees/adj
+3.0919957	1			1139	Everaert/name
+8.323772	1			6	Exerem/name
+-0.9088935	1			63479	FC/name
+2.0124764	1			3385	Faber/name
+3.919699	1	4.8269386	1.0	499	Falluja/name
+5.3828483	1			115	Faubourg/name
+6.4766307	1			39	Favere/name
+4.4534397	1			292	Fedja/name
+-0.10727988	1	0.79830176	1.0	28303	Feyenoord/name
+3.8917658	1			516	Fiction/name
+6.005478	1	6.914225	1.0	66	Fitness/noun
+6.4481316	1			41	Flandrica/name
+5.047257	1			162	Folklore/name
+3.137225	1			1101	Fortuyn/det
+1.8770742	2	2.088908	1.0	7758	Francis/name
+-0.66695666	1	0.2384841	1.0	49426	Frank/name
+-1.1160195	1			76868	Frankrijk/name
+1.4777418	1			5770	Franky/name
+-0.105481654	1	0.8012944	1.0	28106	Frans/name
+1.537733	1			5409	Franse/name
+0.44521934	1	1.3564246	1.0	16042	Franstalig/adj
+3.8566198	1	4.767486	1.0	528	Fruit/name
+6.0620093	1			58	G-B/name
+4.8018336	1			228	GEERT/name
+9.140972	1			3	GEHAD/name
+6.9800377	1	7.8977685	1.0	24	GERMONPREZ/name
+5.477411	1			107	GFT_container/noun
+7.476475	1			14	Gardener/noun
+4.994549	1			172	Garmisch-Partenkirchen/name
+7.9183073	1			9	Garros_finale/noun
+5.5209174	1			101	Gasse/name
+7.059175	1			22	Geelseweg/name
+-0.18684416	1	0.71643674	1.0	30731	Geert/name
+2.6963313	1			1721	Geesink/name
+7.6306252	1			12	Geinburgia/name
+5.1806984	1			142	Geke/name
+-0.111885846	3	-0.3161848	1.0	86057	Gent/name
+0.04444948	1			24287	Gents/adj
+7.458775	1	8.2764225	1.0	20	Gep/name
+1.6678389	3	1.4738157	1.0	14442	Gerard/name
+1.4396185	1	2.3492844	1.0	5987	Gerets/name
+2.7955015	1			1541	Germain/name
+2.4508333	1			2171	Gerry/name
+7.566087	1			13	Gevleugelde/name
+9.01692	1			3	Gogkin/name
+2.19396	1			2804	Gordon/name
+7.300123	1			17	Graffplein/name
+2.4642215	1			2124	Grande/name
+2.7611055	1	3.6702206	1.0	1586	Gray/name
+3.2860355	2	3.5010405	1.0	1886	Greene/name
+1.561255	1			5260	Griek/noun
+4.49495	1			279	Grimes/name
+2.1294692	1	3.0351791	1.0	3019	Groenendaal/name
+0.19875063	1			20921	Groningen/name
+2.289009	1			2648	Guardian/name
+7.052141	1			22	Guizhou/name
+9.422385	1			2	Guizhou/noun
+4.3978467	1			319	HECKE/name
+3.9213307	1	4.8231645	1.0	584	HHHHH/name
+0.76302814	1	1.6667734	1.0	11853	Haags/adj
+4.843302	1			198	Haddock/name
+3.1271188	1	4.0235147	1.0	1120	Hageland/name
+6.40685	1	7.31969	1.0	41	Hallucinant/noun
+7.518413	2			28	Hamamelis/noun
+1.9875369	1			3445	Hamilton/name
+4.3073893	2	4.5032964	1.0	696	Hamont-Achel/name
+7.812947	1			10	Hanestraat/noun
+9.01692	1	9.93465	1.0	3	Hans-Eduard/name
+0.20547475	2			41463	Hans/name
+3.1751642	1	4.082328	1.0	1051	Hard/name
+5.638195	1			88	Hardt/name
+5.617947	1			91	Harkema/name
+3.495592	1			765	Harrie/name
+3.8375735	1			548	Hasselaar/name
+0.12764348	1			22612	Hasselt/name
+2.9560456	1	3.8611257	1.0	1315	Heertje/name
+2.3215535	1			2472	Heidi/name
+2.6114984	1			1844	Heijden/name
+5.89676	1			68	Heikens/name
+1.8673168	1			3939	Helmut/name
+2.6094897	1	3.5162172	1.0	1858	Hema/name
+1.521674	1	2.4303963	1.0	5503	Hendrickx/name
+2.6269867	1			1818	Hendrikx/name
+3.8064322	1			560	Herbots/name
+0.9616243	1			9896	Herentals/name
+-0.036045413	1			26355	Herman/name
+3.9823508	1			469	Heure/name
+2.6158874	1			1831	High/name
+1.728083	1	2.6348248	1.0	4477	Hill/name
+4.9320645	1			181	Hille/name
+3.3770833	1	4.2843566	1.0	861	Hilversums/adj
+4.564318	1			264	Hirtum/name
+2.939698	1			1332	Hoeilaart/name
+1.019206	1			9059	Hollands/adj
+1.1869314	1	2.096126	1.0	7665	Hotel/name
+8.323772	1			6	Hoying/name
+3.767005	1	4.6784577	1.0	579	Huber/name
+0.21547526	1	1.1229483	1.0	20329	Huis/name
+2.3227909	1			2489	Huub/name
+3.0744703	1	3.9815152	1.0	1166	Huyghe/name
+4.422305	1			302	Huêt/name
+6.9271154	1			25	Häagen-Dazs/name
+0.24577956	1			19610	I/name
+3.2090776	1			1008	If/name
+5.930433	1			66	Il-sung/name
+4.8297935	1			202	Impuls/name
+5.368428	1			116	In/comp
+7.5505824	1			13	Infanteriedivisie/noun
+1.3010603	1	2.2012587	1.0	6995	Inge/name
+0.50366086	1			15333	International/name
+0.6824521	1			12778	Iran/name
+1.5113449	1			5559	Isabelle/name
+5.3529305	1	6.2636375	1.0	215	Iso/noun
+2.622159	2	3.5322149	2.0	3652	Israëli/noun
+4.7712855	1	5.6766763	1.0	216	It/det
+-0.49088234	1	0.41671178	1.0	41177	Italië/name
+1.1332283	1	2.0398662	1.0	8174	Ivan/name
+3.7122889	1			612	JFK/name
+3.7859893	1	4.6449113	1.0	906	JHW/name
+4.3495574	1			374	Jaegher/name
+5.4473867	1			108	Jaimie/name
+1.8135265	1			4129	Jakarta/name
+1.1815282	2			15435	James/name
+8.506094	1			5	Jamuna/noun
+-0.79722655	2	-0.5844531	1.0	112712	Jan/name
+0.94966346	2	1.1649683	1.0	19503	Janssens/name
+5.2506933	1			132	Janzen/name
+-0.12944382	1			28973	Japans/adj
+2.932724	1	3.8440948	1.0	1333	Java/name
+1.506027	3	1.3148704	1.0	16784	Jean/name
+10.115532	1			1	Jellie-wereldsnaam/noun
+3.578478	1			701	Jimenez/name
+0.63211566	1	1.5369165	1.0	13545	Jo/name
+2.0099528	1			3546	Job/name
+5.9334817	1			66	Jodi/name
+-0.038941942	2	0.17266859	1.0	52925	Johan/name
+1.3767724	1			6356	Johnson/name
+2.6585	1	3.5633945	1.0	1783	Jol/name
+3.5760906	1			743	Jongen/name
+2.8058846	1			1518	Jongh/name
+1.7521778	1			4394	Jordan/name
+4.4604144	1	5.3698683	1.0	290	Jorissen/name
+2.2489247	1			2676	Joyce/name
+1.1787604	1	2.0861068	1.0	7750	Jozef/name
+2.3843472	2	2.5983374	1.0	4650	Jules/name
+8.729238	1			4	Jury/noun
+5.8606286	1			71	K-19/noun
+2.8369374	1	3.6716487	1.0	1822	KLASSE/name
+3.5187273	1			1077	KORT/name
+8.729238	1			4	KTA_sporthal/noun
+9.422385	1			2	Kallmoes/name
+6.121929	1			56	Kangoeroe/name
+3.9049318	1			512	Kapitein/name
+0.056854237	1			23973	Karel/name
+4.2048707	1			380	Kars/name
+1.770706	1			4300	Katrien/name
+6.520963	1			37	Katse/adj
+3.1767142	1			1080	Keen/name
+2.7002363	1			1690	Kerkstraat/noun
+0.2945731	1			18828	Kevin/name
+0.13313384	1			22235	Kim/name
+6.41423	1			41	Kloeck/noun
+9.422385	1			2	Kloosterbosstraat/name
+6.7833276	1			28	Kloosterhaar/name
+1.8847682	1			3871	Koekelare/name
+0.06327961	1			23895	Koen/name
+-0.10280651	1			28080	Kok/name
+1.8205951	1	2.719012	1.0	4140	Kontich/name
+8.375066	1			6	Kookwinkel/name
+5.0776057	1			160	Koppenberg/name
+2.819322	1	3.730766	1.0	1496	Koreaan/noun
+-0.06250686	1	0.83162594	1.0	27300	Kortrijk/name
+1.7789857	1	2.6901548	1.0	4220	Koude/name
+3.8227599	1			554	Kraay/name
+1.518179	1			5620	Krajicek/name
+0.43497857	1	1.3407043	1.0	16411	Kris/name
+0.6631321	1			13016	Kristof/name
+0.9962849	2			19364	Kurt/name
+4.177666	2	4.391591	1.0	772	Kuypers/name
+5.330961	1			125	LANEAU/name
+7.158021	1			22	LEUK/name
+7.3182507	1	8.17823	1.0	21	LEVE/name
+4.792766	1			308	LVDF/name
+0.82415706	3			33166	La/name
+2.1257596	2	2.3331645	1.0	6149	Lance/name
+1.364564	1	2.2727897	1.0	6452	Landuyt/name
+5.6629305	1	6.573118	1.0	88	Langevoort/name
+2.1538305	1	3.0608397	1.0	2926	Lars/name
+1.7662486	1			4278	Leefmilieu/name
+6.440498	1			40	Leersnyder/name
+2.2126007	1			2749	Leger/name
+2.5339143	1			2002	Leipzig/name
+3.0538545	1	3.9646647	1.0	1181	Lelièvre/name
+7.9183073	1			9	Lemnos/name
+3.0138147	1	3.9150436	1.0	1292	Leontien/name
+1.0857726	1			8457	Les/name
+-0.48366204	1	0.40934703	1.0	41696	Leuven/name
+4.4886303	1	5.391799	1.0	284	Leuvensesteenweg/name
+2.4135406	1			2237	Li/name
+6.7294483	1	7.644644	1.0	30	Lick/name
+2.7840788	2	3.6857212	2.0	3137	Lierde/name
+1.4709046	1	2.3555036	1.0	6122	Lieven/name
+10.115532	1			1	Linkshandige/noun
+7.150259	1	8.062848	1.0	20	Lissy/name
+2.8957434	2			2789	Litouwen/name
+3.6484544	1			654	Lombeek/name
+2.9012482	1			1405	Lotti/name
+0.009085165	1	0.9152837	1.0	25140	Louis/name
+4.0453715	1			437	Lowie/name
+-0.4733793	1	0.43137592	1.0	40730	Luc/name
+1.895398	1			3795	Lucien/name
+5.4577694	1	6.3651175	1.0	107	Ludmilla/name
+2.4604018	1	3.366865	1.0	2148	Luik-Bastenaken-Luik/name
+0.63551563	1			13368	Luik/name
+10.115532	1			1	MIVB-afdelingschef/name
+5.1926355	1	6.10149	1.0	140	Maagdenburg/name
+7.1374545	1			20	Maalzaakstraat/noun
+1.1082568	1			8555	Maas/name
+2.536824	1			2022	Maasland/name
+3.1489418	1			1092	Maastrichts/adj
+4.1283264	1	5.0287585	1.0	410	Macy/name
+4.467791	1			288	Maluku/name
+-0.84018534	1			59465	Marc/name
+5.1183195	2			301	Marca/name
+0.3398266	1			18210	Marcel/name
+0.31253067	1			18497	Maria/name
+4.419614	1			303	Maria_Aalter/name
+1.5512547	1			5405	Marianne/name
+4.088821	1	4.9939013	1.0	425	Marie-Claire/name
+0.9250295	2			20158	Mark/name
+3.570829	1			704	Marlboro/name
+0.36916322	1	1.2773907	1.0	17397	Marokkaans/adj
+0.90681285	1			10194	Marokko/name
+0.7193429	1	1.6276946	1.0	12407	Martens/name
+5.9465437	1	6.8588753	1.0	65	Martha/det
+4.0893035	1			430	Meerhof/name
+1.0366223	1			9054	Menen/name
+1.0518429	1			8845	Merckx/name
+6.9006643	1	7.814387	1.0	25	Messel/name
+1.4085369	1			6122	Meyer/name
+-0.3564179	1	0.55001694	1.0	36300	Michael/name
+9.422385	1			2	Mikkola_piloot/noun
+1.468074	1	2.366766	1.0	5901	Miss/name
+6.015371	1			77	Monsaert/name
+2.4856534	1			2089	Monte/name
+3.1638076	1	4.070782	1.0	1066	Monumentenzorg/name
+4.2991652	1			342	Mora/name
+3.5348928	1			732	Moritz/name
+3.9406006	1			494	Mornar/noun
+4.1211963	1	5.0293756	1.0	407	Moro/name
+3.0616438	1			1178	Moskous/adj
+2.0407271	1			3328	Mr./name
+1.8343775	1			4025	Mulisch/name
+1.123702	1			8244	Museeuw/name
+3.0121276	1			1253	Musica/name
+6.440498	1	7.3443832	1.0	40	Méditerranée/noun
+1.3649518	1			6394	N./name
+4.504596	1			279	N60/noun
+6.0620093	1			58	NBA_kampioen/noun
+5.349945	1			120	Nachtwey/name
+3.9376915	1			493	Naert/name
+0.9416325	1			9849	Navo/name
+5.0759854	1	5.989837	1.0	155	Neder/adj
+4.747922	1			218	Nederhorst/name
+-1.8008926	2			306605	Nederland/name
+-0.24088144	2			64503	Nederlander/noun
+-0.45822412	6			241254	Nederlands/adj
+1.1590586	1	2.0681515	1.0	7861	Nederlandstalig/adj
+3.1127846	1			1116	Neeskens/name
+6.263259	3	7.178692	3.0	142	Negri/name
+3.1177075	1			1120	Nero/name
+0.07678313	3	-0.11477765	1.0	69871	New/name
+5.1274834	1			150	Nicolaes/name
+0.5486891	1			14667	Nieuwe/name
+3.6741867	1			637	Nieuwmarkt/name
+4.037947	2	4.2523465	1.0	894	Niko/name
+1.7978268	1	2.7082593	1.0	4155	No/name
+5.1886406	1	6.106009	1.0	139	Nono/name
+2.1527853	1	3.0623925	1.0	2917	Noor/noun
+1.7027775	1			4590	Noordzee/name
+2.128619	1			3004	Norbert/name
+4.958778	1			176	Nunez/name
+9.327075	1			3	OEFENWEDSTRIJDEN/name
+5.156892	1			146	OFI/name
+6.857435	1			26	Observatoire/name
+3.0460405	1			1217	Observer/name
+2.3058283	1			2532	Olympia/name
+1.4268843	1			6112	Online/name
+4.274454	1	5.185019	1.0	351	Oomen/name
+1.4615202	1	2.3718607	1.0	5798	Oorlog/name
+1.5320175	1			5420	Oosten/name
+-0.42261925	1			39207	Oostende/name
+6.679933	1			32	Ophof/name
+2.546533	1			1994	Opstelten/name
+0.25004745	1			19630	Oranje/name
+10.115532	1			1	Ordelijk-Vertrekprogramma/name
+0.860027	1			10710	Oscar/name
+10.115532	1			1	Osteaux/name
+4.8207207	1	5.729336	1.0	202	Ostrava/name
+9.422385	1	10.340116	1.0	2	Ostrovski's/name
+8.729238	1	9.646968	1.0	4	Ottelien/noun
+2.0067732	1			3458	Oud-Heverlee/name
+4.2243023	1			376	Overijssels/adj
+6.45197	1			39	Ozons/det
+6.022021	1			67	PAEMEN/name
+4.3369513	1	5.2266226	1.0	525	PDK/name
+2.1651528	1	3.0686288	1.0	2899	Palace/name
+3.173037	1	4.0826874	1.0	1047	Palacio/name
+0.12624519	1			22182	Palestijn/noun
+-0.27256766	1	0.6355704	1.0	33036	Palestijns/adj
+4.5447097	1	5.4436755	1.0	274	Palyama/name
+0.9028693	1	1.8094754	1.0	10215	Park/name
+3.6667216	1			641	Partido/name
+-0.5751235	1			45109	Patrick/name
+-0.94807136	1			65471	Paul/name
+5.3234673	1			123	Paulowna/name
+2.0862782	1			3155	Peru/name
+-1.1110259	1			77888	Peter/name
+0.45916688	1			15953	Philippe/name
+0.4513967	1	1.3583944	1.0	16088	Pierre/name
+0.0837721	1	0.9888343	1.0	23375	Pieter/name
+5.7360086	1	6.6403575	1.0	82	Piggy/name
+3.9097629	1			503	Piron/name
+4.009846	1			455	Pistols/name
+4.8484473	1			200	Plaatselijk/name
+4.281233	2	4.4953036	1.0	694	Plessers/name
+4.2859983	1			347	Poes/name
+7.952209	1	8.836038	1.0	9	Polyp/name
+3.5582566	1			714	Popular/name
+1.3032318	1			6986	Prijs/name
+3.9827847	1			471	Pulp/name
+2.9266284	1			1351	Quickenborne/name
+5.6652627	1	6.5573473	1.0	97	RONNY/name
+1.1037096	1			8480	Rabobank/name
+3.8352296	1			543	Raeymaekers/name
+3.7808323	1			577	Rail/name
+2.399539	1			2290	Ralph/name
+2.3002038	1	3.2053738	1.0	2545	Raoul/name
+9.422385	1	10.340116	1.0	2	Ravenous/adj
+10.115532	1			1	Reactine/name
+3.2465694	1			981	Renée/name
+5.7015224	1			85	Replay/name
+1.8399773	1			4001	Reve/name
+3.954008	1			496	Reynebeau/name
+0.72358066	2	0.9372762	1.0	24680	Richard/name
+7.0109453	1			23	Rijselpoort/name
+4.490973	1			283	Ritalin/name
+2.3304346	1			2442	Ritsma/name
+3.3010988	1	4.210929	1.0	925	Robson/name
+2.172335	1			2867	Roemeen/noun
+5.251079	1			132	Roeslan/name
+7.4448376	1	8.35053	1.0	15	Roessink/name
+3.2128394	1			1012	Rogier/name
+0.61367184	1			13676	Roland/name
+6.196533	1			51	Roland/noun
+2.1470046	1	3.057311	1.0	2940	Romme/name
+2.4825616	2	2.695226	1.0	4264	Ronaldo/name
+8.506094	1			5	Ronde.be/noun
+0.65378714	2	0.8653359	1.0	26219	Ronde/name
+10.115532	1			1	Roodthooft/name
+3.237257	1			989	Rotsaert/name
+-0.9027758	1			62721	Rotterdam/name
+-0.5639113	1			44643	Russisch/adj
+0.83015364	1			11128	Ruud/name
+8.259233	1	9.087353	1.0	7	SART-TILMAN/name
+0.495439	1			15328	SP.A/name
+8.506094	1			5	STOOPS/name
+1.9605863	1			3594	STVV/name
+1.6003608	1	2.508498	1.0	5099	Sabine/name
+7.554436	1	8.468313	1.0	13	Saddler/name
+4.3750963	1			315	Saenen/name
+5.3242974	1			122	Salomo/name
+1.1677583	1			7821	Sam/name
+3.2247703	1			996	Sankt/name
+2.4165957	1			2252	Sarajevo/name
+2.2753174	1			2607	Saskia/name
+4.141595	1	5.042736	1.0	405	Saul/name
+6.0875053	1	6.996812	1.0	57	Savicka/name
+4.37333	1			316	Scene/name
+9.422385	1	10.340116	1.0	2	Schiphouwer/name
+2.4462001	1	3.354647	1.0	2176	Schneider/name
+10.115532	1			1	Schonmutter/noun
+1.5551356	1			5293	School/name
+2.0505652	1			3278	Schrijver/name
+2.2211766	1			2737	Sebastian/name
+5.7063766	1			86	Sector/name
+5.956649	1			66	Securitas/noun
+3.5500557	1	4.4550533	1.0	725	Sedan/name
+0.9742309	1			9526	Senaat/name
+2.5573804	1			1960	Serie/name
+0.6716265	1	1.5807998	1.0	12834	Serviër/noun
+2.5774095	1			1913	Sex/name
+0.9024952	1			10405	Shell/name
+5.790076	1			76	Sian/name
+2.9612682	1			1310	Sigrid/name
+3.0087209	1	3.895984	1.0	1281	Sint-Laureins/name
+0.6201066	1			13897	Sint-Niklaas/name
+8.169621	1			7	Sint-Pancras/name
+2.641384	1			1869	Sint-Pieters-Leeuw/name
+0.7972165	1			11607	Sint-Truiden/name
+7.327439	1			17	Slapeloze/name
+1.5464201	1	2.4533293	1.0	5386	Smets/name
+7.8331494	1			10	Spa/Banesto/name
+-0.39440182	1			37678	Spaans/adj
+3.9748933	1			477	Spaanse/name
+0.9679077	1	1.8762043	1.0	9551	Spanjaard/noun
+-0.39285067	1			37330	Spanje/name
+5.509362	1			101	Spelleke/name
+1.3290447	1			6664	Spirit/name
+4.1233177	1			417	Stadskanaal/name
+2.4005978	2	2.6159725	1.0	4576	Staelens/name
+6.1145825	1			55	Stallen/name
+3.7377002	1			605	Stals/name
+0.7324869	1	1.6384051	1.0	12126	Standard/name
+5.675826	1	6.589142	1.0	87	Stappaerts/noun
+-0.86346304	1	0.042733487	1.0	59750	Staten/name
+1.6904321	1			4654	Station/name
+1.8447381	1			3983	Steenweg/name
+5.657123	1			87	Steenwegen/name
+2.826536	1			1511	Sterk/name
+3.5651662	1			711	Steunpunt/name
+0.26154456	1			19444	Steve/name
+0.070006765	1	0.9751458	1.0	23646	Steven/name
+1.2897958	1			6962	Stevens/name
+6.2858043	1			47	Stief/name
+0.60116875	1			13860	Stijn/name
+9.422385	1			2	Stock-vis/noun
+4.7500234	2			436	Stockhausen/name
+3.749577	1			593	Stoops/name
+2.4965684	1	3.4056573	1.0	2094	Storm/name
+10.403214	1			1	Strand-en/name
+4.032172	1			450	Streisand/name
+5.4939966	1	6.3948994	1.0	104	Suhrkamp/name
+1.7307508	1			4471	Super/name
+3.4178805	1			902	TE/name
+5.5470257	1			113	TIJD/name
+3.8508964	1	4.732018	1.0	656	TL/name
+9.140972	1			3	TNO_test/noun
+9.01692	1			3	TV1_publiek/noun
+3.6088514	1	4.5159607	1.0	679	TVN/name
+4.390314	1	5.291462	1.0	316	Teletubbies/name
+3.9318986	1	4.842691	1.0	492	Tellegen/name
+2.1109827	1	3.016161	1.0	3075	Thais/adj
+-1.0390826	2	-0.8233085	1.0	142242	The/name
+10.115532	1			1	Theatro_kelder/noun
+0.035208672	1			24577	Thomas/name
+8.036091	1			8	Tiebergijn/name
+0.6567585	1	1.5473568	1.0	13407	Tienen/name
+7.2823186	1	8.200049	1.0	17	Tigers/det
+0.30610508	1			19154	Tim/name
+1.3905932	1			6256	Time/name
+6.857435	1			26	Timme/name
+1.1541519	6	0.96193004	2.0	47916	Tom/name
+6.2717876	1			47	Tome/name
+4.757296	1			215	Tool/name
+1.3229747	1			6820	Top/name
+8.600405	1			5	Triptyk/noun
+3.4282987	1			816	Troje/name
+3.932208	1			495	Tuitert/name
+10.115532	1			1	Turamuziek/adj
+0.81331456	1			11133	Turk/noun
+9.422385	1			2	Tussenkopje/name
+2.1937242	1	3.0913446	1.0	2834	UZ/name
+2.2373197	1	3.12962	1.0	2790	Uitgeverij/name
+10.115532	1			1	Ultrasoon/name
+3.1930358	1			1040	Urk/name
+4.917035	1			183	Urlings/name
+7.3492126	1			16	V-Max/name
+0.44814652	1			17712	VAN/name
+4.770808	1			214	VANDERHAEGHE/name
+4.0041757	1	4.800078	1.0	650	VDBE/name
+4.8761687	1			218	VERDRUYE/name
+5.5326076	1			101	VEREECKE/name
+3.516478	1	4.417197	1.0	850	VERHOEVEN/name
+2.2632678	1	3.1548703	1.0	3060	VIERDE/name
+0.4463089	1			16119	VN/name
+-0.27020788	3	-0.46084708	1.0	98893	VS/name
+1.8587818	2	2.0804954	1.0	7741	VSt/name
+3.5128083	1			747	VU&ID/name
+2.8382843	1			1480	Vaessen/name
+6.3088694	1			45	Vakulenko/name
+1.4100517	1			6179	Valencia/name
+-0.72184753	13	-1.2790618	3.0	672711	Van/name
+3.6171367	2			1374	Vandecaveye/name
+1.1557512	1			7975	Vanden/name
+2.6067173	1			1856	Vandendriessche/name
+3.0899937	1			1145	Vandeputte/name
+8.34058	1	9.241503	1.0	6	Vanorshaegen/name
+2.68441	1			1758	Vara/name
+1.5651845	1	2.4692097	1.0	5317	Veerle/name
+1.391479	1			6270	Vera/name
+6.3155584	1			45	Vercoelen/name
+2.4231448	1			2227	Vercruysse/name
+-1.053467	1	-0.147982	1.0	72351	Verenigde/name
+2.304936	1	3.2129233	1.0	2515	Verhaegen/name
+1.6291485	2	2.5369227	2.0	9881	Verheyen/name
+4.1774683	1			386	Verloren/name
+7.342943	1	8.2606735	1.0	16	Vial/noun
+1.506854	1			5581	Vietnam/name
+9.422385	1			2	Vilbeluik/noun
+1.4464763	2	1.6608458	1.0	11860	Vincent/name
+6.019522	1			61	Vine/name
+1.8152393	1			4161	Virgin/name
+0.07265569	3	-0.11829132	1.0	70196	Vlaanderen/name
+9.527745	1			2	VlaanderenKm/name
+4.0021815	2	4.2147484	1.0	922	Vocht/name
+3.7207713	1			610	Volendammer/noun
+7.22516	1			18	Volkskok/name
+3.9786692	1			476	Voorn/name
+0.6835451	1			12733	Vos/name
+3.6942348	1			634	Vrijdagmarkt/name
+5.256495	1			132	Vroede/name
+3.0159585	2			2471	Vuelta/name
+5.3885865	1			132	WEEKEND/name
+4.3310914	1	5.2168956	1.0	340	WETTEREN/name
+6.2793107	1			47	WK-ganger/noun
+-0.5159087	1			42380	WK/noun
+7.431092	1			15	Wakayama/name
+0.623432	1			13716	Waregem/name
+2.3550436	1			2396	Wayne/name
+6.842168	1			27	Weird/noun
+10.115532	1	11.033262	1.0	1	Wellensreed/name
+4.1930156	1	5.0947375	1.0	383	Weller/name
+0.17774682	1	1.0890709	1.0	20906	Wereldoorlog/name
+1.9899898	1	2.8992715	1.0	3435	West_Vlaming/noun
+1.7919599	1			4183	Westers/adj
+2.9910135	1			1272	Wever/name
+1.4507381	1			6010	Willebroek/name
+3.183767	1	4.091106	1.0	1048	Willis/name
+1.451653	1	2.3474665	1.0	6011	Wilrijk/name
+0.59858346	3	1.0977101	2.0	42074	Wim/name
+4.106105	1			413	Works/name
+0.29288843	1			18832	World/name
+3.287686	1	4.197272	1.0	940	Wouda/name
+7.3398232	1	8.252892	1.0	17	XJR/name
+-0.7289165	1			52138	York/name
+4.2137184	2	5.1245003	2.0	740	Yorkers/name
+7.122303	1	8.03753	1.0	20	Ysewijn/noun
+4.9025	1			186	Zeddam/name
+6.194549	1	7.106351	1.0	51	Zeker/name
+4.7110543	1			228	Zellik_Galmaarden/name
+3.8196204	1			550	Zen/name
+4.0420265	1	4.9290276	1.0	466	Zeno/name
+3.8267443	1			555	Zetterberg/noun
+10.166825	1			1	Zoetelucht/noun
+6.7673836	1			30	Zork/name
+1.8527666	1			3934	Zuid-Amerika/name
+3.21813	1	4.1255074	1.0	1009	Zuid-Europa/name
+1.3759234	1			6365	Zuid/name
+7.2971334	1			17	Zuid_Polen/name
+0.4741107	1			15689	Zweden/name
+1.9699968	1	2.8575742	1.0	3960	^/noun
+-0.30275214	11	-0.18029557	5.0	372822	`/punct
+5.3632355	1	6.2721577	1.0	117	aal_DIM/noun
+-0.2116666	1			30941	aan/adj
+0.39765432	2			33475	aan/comp
+0.061140392	2			46885	aan/fixed
+-0.045894984	15	-1.843908	1.0	392664	aan/part
+-0.16533734	73	-0.7133235	17.0	2153601	aan/prep
+6.397094	1			42	aan_verwante/noun
+2.5241244	1	3.4081554	1.0	2122	aangehouden/adj
+1.3229709	2	1.5393987	1.0	13337	aangenaam/adj
+2.3451188	1			2412	aangeslagen/adj
+6.6639585	1			32	aanminnige/adj
+4.2885	1	5.196261	1.0	345	aanmoediging_prijs/noun
+0.9894721	3	1.4939736	2.0	27922	aanpak/noun
+2.6801825	1			1735	aanrader/noun
+-0.74676067	1			53111	aanslag/noun
+-0.630128	5	-1.3295404	1.0	235279	aantal/noun
+0.89087206	2	1.8004453	2.0	20536	aantrekkelijk/adj
+0.9673702	4	1.593992	3.0	37821	aanvankelijk/adj
+-0.6315101	1			46939	aanwezig/adj
+0.9394052	2			19470	aanwezigheid/noun
+1.7536834	1			4331	aanzien/noun
+0.23929483	1			19714	aanzienlijk/adj
+-0.158567	1			29293	aardig/adj
+2.4681516	1	3.380064	1.0	2114	abnormaal/adj
+5.4827466	1			104	abortus_wetgeving/noun
+0.3783735	2	0.59585065	1.0	34221	absoluut/adj
+1.0502635	1	1.9615953	1.0	8720	absoluut/adv
+3.7640355	1			581	accordeonist/noun
+6.1837063	1			51	acetylsalicylzuur/noun
+0.5369819	1			14588	ach/tag
+2.2575676	1			2618	achillespees/noun
+7.006471	1			23	achillespees_probleem/noun
+1.1022471	1			8317	acht/noun
+-0.4405399	2	0.467746	2.0	78182	acht/num
+-0.18709812	5	-0.8872043	1.0	150814	achter/prep
+2.3788102	1	3.2901013	1.0	2312	achter_bank/noun
+1.4041545	1			6099	achteraan/pp
+0.029058456	1			24190	achteraf/pp
+1.7095385	1			4512	achterkant/noun
+1.4286972	1			6022	achtervolging/noun
+2.46968	1			2107	achterzijde/noun
+-1.0945897	1			75133	actie/noun
+-0.7169898	1			51290	actief/adj
+1.5167127	1	2.4231255	1.0	5568	actievoerder/noun
+2.7351825	1			1620	adel/noun
+2.1021557	3			9185	adem/noun
+2.6362324	2			3581	adem/verb
+3.3652494	1	4.2782216	1.0	861	adem_uit/verb
+4.557161	1			263	ademhaling_moeilijkheid/noun
+1.9978019	1			3390	adequaat/adj
+3.0231245	1			1216	advies/prep
+0.66634005	1			12861	adviseer/verb
+0.5283317	1			14895	af/adj
+1.2576575	4			28306	af/adv
+-0.2493405	10	-0.54457295	3.0	321541	af/part
+5.501402	1			102	afbreuk_risico/noun
+2.8959632	1			1375	afdruk/noun
+0.72995335	1			12082	affiche/noun
+-0.6525017	3			144650	afgelopen/adj
+6.770905	1			29	afgereden/adj
+2.8280056	1			1476	afgevaardigd/adj
+5.2304597	1			133	afgietsel/noun
+0.9064899	2	1.1257643	1.0	20116	afhankelijk/adj
+6.148074	1			53	afhaspel/verb
+-0.041843683	1			25991	afkomstig/adj
+0.20323579	1	1.1148432	1.0	20387	afloop/noun
+2.124278	1			2990	afschuwelijk/adj
+0.56608	3	0.3786478	1.0	42494	afstand/noun
+1.3808672	2	1.5935779	1.0	12666	afval/noun
+4.752598	1	5.6574054	1.0	221	afval_bak_park/noun
+2.4743757	1			2111	afval_water/noun
+9.033727	1			3	afvalophaaldienst/noun
+3.9338603	2	4.1522365	1.0	977	afvoer/noun
+7.12985	1			20	afvoerputjes/noun
+2.3726308	1			2318	afwisseling/noun
+0.16269247	2	1.0697211	2.0	42933	agent/noun
+3.995894	1			456	agglomeratie/noun
+1.3250574	1	2.231887	1.0	6717	aids/noun
+2.4245603	1			2213	akker/noun
+3.1859174	1	4.099474	1.0	1031	akoestiek/noun
+2.062074	1			3167	akoestisch/adj
+0.09477968	47	0.10022059	19.0	1066466	al/adv
+0.6567356	8	-0.50710183	1.0	102942	al/comp
+0.0218828	3	0.52982813	2.0	73011	al/det
+2.324629	1			2443	alarmeer/verb
+0.7911578	1			11369	alcohol/noun
+1.9211093	1			3655	aldus/adv
+0.5433594	12	1.261421	10.0	176667	aldus/prep
+3.6943161	1	4.6057634	1.0	622	alge/noun
+0.81283575	1			11102	allang/adv
+-0.6295973	9	-1.2233961	2.0	422543	alle/det
+1.6262239	1			4908	alledaags/adj
+-0.35949886	5	0.041843783	3.0	178364	alleen/adj
+0.27052718	14	0.3352362	6.0	266562	alleen/adv
+0.56663895	9	-0.025911573	2.0	127360	allemaal/adv
+1.6462903	1			4824	allen/noun
+1.3934977	1			6212	allereerste/num
+3.3643136	2			1724	allerijl/adv
+0.6870324	3			37558	allerlei/det
+0.43762815	13	-0.117205285	3.0	209596	alles/noun
+1.1838412	1			7630	alles/pron
+1.2970496	1			6851	almaar/adv
+0.28460371	48	0.21758607	18.0	900481	als/comp
+-0.8446359	2			116190	als/comparative
+-0.21105886	41	-0.81648207	9.0	1263756	als/prep
+-0.34174806	2	-0.122545086	1.0	70045	als/vg
+-0.07735123	1	0.82581204	1.0	27201	alsnog/adv
+1.3088747	7			47122	alsof/comp
+-0.26476073	9	-0.8583601	2.0	292821	altijd/adv
+1.4347329	1	2.3453355	1.0	5936	alvorens/comp
+-0.059864577	1			26735	alweer/adv
+4.5849133	1			258	amai/tag
+6.920949	1			25	amaretto/noun
+1.8808343	1	2.7922182	1.0	3810	ambtelijk/adj
+8.506094	1	9.423824	1.0	5	ammoniak_stank/noun
+2.315306	14	3.0725536	12.0	34515	amper/adv
+1.2485943	2			14330	analyse/noun
+-2.236978	1			235035	andapos;/punct
+4.0672145	1			426	andapos;70/num
+2.5972142	6	2.8167803	3.0	11127	andapos;s/adv
+-0.28595775	20	-1.2710873	3.0	663512	ander/adj
+0.038715214	1			23974	ander/noun
+0.7693198	1			11617	anderhalf/adj
+0.8140811	2			22213	anderhalf/num
+0.65879786	11	0.27138877	3.0	142075	anders/adj
+0.49236694	1			15140	anderzijds/adv
+1.0246681	116	1.2866712	61.0	1060443	andquot;/punct
+0.58513546	2	0.80275345	1.0	27899	angst/noun
+1.9740218	1			3472	angstig/adj
+1.2684596	2			14095	anoniem/adj
+4.215224	1			368	ansjovis/noun
+6.6159987	1			34	anti-islamisme/noun
+8.323772	1	9.241503	1.0	6	anti_links/adj
+0.8443387	2	1.0642154	1.0	21413	antwoord/verb
+2.922372	1			1351	aperitief/noun
+0.41252175	1			16586	appartement/noun
+-1.0356479	1			70988	april/noun
+4.211397	1			373	arbeid_inspectie/noun
+2.4686527	1			2121	arbeid_kracht/noun
+0.5110402	1			15117	arbeider/noun
+3.2240584	1			991	arbeidsintensief/adj
+0.07097894	1			23364	arm/adj
+-0.030701783	1			25767	arm/noun
+4.34643	1			325	armetierig/adj
+0.8993188	1			10214	armoede/noun
+-0.3736916	1			36523	arts/noun
+1.7899352	1	2.6986709	1.0	4197	asfalt/noun
+3.781187	1	4.684998	1.0	579	asfalt_laag/noun
+3.813096	1			559	aspirine/noun
+2.6757963	1	3.58391	1.0	1738	astronaut/noun
+0.59714454	1	1.5053142	1.0	13853	atleet/noun
+1.3902925	1			6936	atletiek/noun
+0.2326766	3			59862	augustus/noun
+2.5996156	1			1857	authenticiteit/noun
+0.013821173	5			124344	auto/noun
+2.1644657	1			2888	auto_snel_weg/noun
+2.3464913	1			2397	auto_weg/noun
+4.0969386	1			417	autostrade/noun
+2.4378998	1			2195	autoverkeer/noun
+0.44703913	3			47971	avond/noun
+1.7894831	6	1.603636	2.0	24959	avonds/adv
+0.5637744	1	1.4727671	1.0	14282	avontuur/noun
+5.486157	1	6.386471	1.0	123	avt/noun
+8.169621	1	9.087353	1.0	7	azijn_geur/noun
+2.9566288	1			1297	baai/noun
+-0.29206172	2			67383	baan/noun
+2.5597315	1			1927	baan/verb
+2.0104508	1	2.9225724	1.0	3339	baan_DIM/noun
+1.4535373	1			5881	baar/verb
+-0.012028743	1			25417	baas/noun
+5.4749947	1			105	baba/noun
+3.5214605	1			736	backhand/noun
+3.7482886	1	4.656323	1.0	600	bah/tag
+1.044994	1			8792	bak/noun
+6.014543	1			61	bak/prefix
+-0.017996334	2	0.2007753	1.0	50751	bal/noun
+1.8144197	1			4077	balkon/noun
+9.422385	1			2	ballad-vorm/noun
+10.115532	1	11.033262	1.0	1	bamboe_rek/noun
+6.149968	1			53	band_wissel/noun
+0.2833162	2	0.4993213	1.0	37776	bang/adj
+-1.2548848	1			88074	bank/noun
+3.0940464	1	4.004064	1.0	1133	barbaars/adj
+1.9223806	1			3686	barbecue/noun
+3.3855884	2	4.299414	2.0	1686	barok/adj
+2.7256591	1			1648	barst/noun
+1.8652905	1			3915	barst/verb
+0.32696152	2			35982	basis/noun
+0.69338	1			12733	basis_school/noun
+1.3895376	1			6196	beaam/verb
+6.3636775	1			43	beat_muziek/noun
+-0.060749922	1			26564	bed/noun
+1.1148206	1			8297	bedank/verb
+2.6661212	1			1756	bederf/verb
+0.26549	2			38505	bedraag/verb
+-0.71430165	1			50977	bedrag/noun
+1.3490441	1			6623	bedreigd/adj
+-0.6813742	5			248130	bedrijf/noun
+2.3714387	1			2337	bedrogen/adj
+3.449636	3	3.2602468	1.0	2387	beek/noun
+3.9046307	1			502	beek_DIM/noun
+-0.01517934	4	0.20313296	2.0	101423	beeld/noun
+1.8075424	1			4103	been/fixed
+0.7681507	3	0.57904494	1.0	34824	been/noun
+5.3288736	1	6.245771	1.0	120	been_hard/adj
+0.9745363	1			9454	beest/noun
+0.901339	9	1.2235885	5.0	91319	beetje/noun
+0.30838183	1	1.2194262	1.0	18380	begeleid/verb
+-0.7439098	2			105186	begin/noun
+-0.017461257	11	-0.40797946	3.0	280945	begin/verb
+0.95315355	1			9780	begraaf/verb
+1.64607	1			4886	begraaf_plaats/noun
+4.2348595	1			364	begrafenis_plechtigheid/noun
+-0.060218807	1			26525	begrip/noun
+0.75043607	4	0.27793205	1.0	47110	behalve/comp
+-0.07786022	1			27083	behandeling/noun
+0.87362504	1			10458	beheers/verb
+0.07388371	2			46432	behoor/verb
+0.91427267	3	1.4203738	2.0	29977	behoorlijk/adj
+1.0303524	1			8888	behulp/prep
+-0.68111485	2	-0.46231464	1.0	98533	beide/det
+5.216387	2			270	beitel/noun
+-0.9387088	2			128314	bekend/adj
+-0.5470497	1			43245	bekijk/verb
+10.115532	1	11.033262	1.0	1	bekistingplaat/noun
+3.185575	1			1028	bekken/noun
+2.8741655	1			1405	beklag/noun
+3.4170172	1			817	bekleding/noun
+2.797722	1	3.7095969	1.0	1523	beklemmend/adj
+2.1862614	1	3.0994208	1.0	2797	bekwaam/adj
+3.4037306	1			827	bekwaam/verb
+0.72020274	3	1.627818	3.0	36697	bel/verb
+2.5848105	1			1885	belabberd/adj
+2.419524	1			2233	beladen/adj
+-1.1729773	1			80766	belang/noun
+-1.4342154	2			209497	belangrijk/adj
+0.52010435	2			29860	belangstelling/noun
+5.358929	1			118	belasting_klimaat/noun
+-0.010695093	1	0.8961515	1.0	25466	beleef/verb
+6.404402	1			41	beleer/adj
+-0.622687	1	0.28826162	1.0	46588	beleid/noun
+2.269568	1			2577	beleving/noun
+2.8390794	1			1459	belichaam/verb
+3.1230679	1	4.038298	1.0	1093	belichting/noun
+5.1254396	1	6.0368953	1.0	148	believe/name
+-0.0035588176	1			25249	belofte/noun
+4.8954463	1			186	belt/noun
+1.7039993	1			4559	bemanning/noun
+0.8046222	888	1.1243579	492.0	9938754	ben/verb
+1.4632224	1			5835	ben_kwijt/verb
+3.862184	1			525	ben_langs/verb
+1.9848104	1			3433	ben_op/verb
+0.7448685	1	1.654203	1.0	11883	ben_uit/verb
+1.1888318	2			15268	ben_weg/verb
+2.3515544	1			2368	benaming/noun
+4.3807354	1			312	benauw/verb
+2.5679774	1	3.4792552	1.0	1914	benauwd/adj
+0.71074384	1	1.6181666	1.0	12374	bende/noun
+1.0363144	2			17699	beneden/adv
+0.99396265	1			9255	benut/verb
+0.23847306	3	0.053908966	1.0	58714	bepaald/adj
+1.1415343	1			7963	bepaald/adv
+-0.30127314	1			33838	beperk/verb
+0.8106908	1			11102	beperking/noun
+-0.28619283	1			33306	beperkt/adj
+-1.137304	1			78177	bereik/verb
+2.9248183	1			1340	berekend/adj
+7.342943	1			16	berekoud/noun
+1.1051558	2			16558	berg/noun
+3.728821	1	4.64009	1.0	599	bergachtig/adj
+2.2378883	1			2675	berm/noun
+0.11780636	2	1.0245904	2.0	44649	beroep/noun
+9.422385	1			2	beroepscatcher/noun
+3.457906	1	4.3699703	1.0	786	beroepshalve/adv
+1.0410571	1			8840	berucht/adj
+1.6519505	1			4792	berust/verb
+1.2271752	1			7421	beschermd/adj
+1.5400982	1			5344	beschikking/noun
+0.80638295	2			22233	beschrijf/verb
+0.24848536	1			19572	beschuldig/verb
+0.30143586	2	0.5227747	1.0	36761	besef/verb
+-0.8200808	1			56883	beslis/verb
+-0.8719347	1			59799	beslissing/noun
+3.6848452	1	4.5979137	1.0	624	beslotenheid/noun
+0.6369692	7	1.1978076	5.0	94053	besluit/verb
+1.627644	1			4934	besmet/verb
+2.989391	3			3772	bespeur/verb
+2.5414355	1	3.4528816	1.0	1962	best/adv
+-0.2545566	1			32120	besta/adj
+-0.7018505	3			151384	besta/verb
+1.3159984	4	1.9373187	3.0	26854	bestaan/noun
+3.0373168	1			1198	bestanddeel/noun
+1.7441857	1	2.6513736	1.0	4424	bestel_wagen/noun
+3.311139	2			1815	bestrijk/verb
+3.3073208	1			918	bestrooi/verb
+-0.8910346	1	0.01769745	1.0	61240	bestuur/noun
+1.1847203	1			7663	bestuur/verb
+3.842938	1			534	bestuur_orgaan/noun
+-0.6048027	1			46000	bestuurder/noun
+-1.6982615	1			137583	betaal/verb
+0.28789517	5	-0.40770367	1.0	93316	beteken/verb
+3.6702883	1			638	beter/adj
+2.8901231	2			2812	beterschap/noun
+3.149378	4	2.6736007	1.0	4290	beton/noun
+10.115532	1			1	betonitis/name
+1.6357396	1			4859	betonnen/adj
+0.09715998	2	0.3166693	1.0	45210	betref/verb
+1.2575758	1			7131	betrekking/noun
+3.0788999	1	3.9863977	1.0	1158	betwist/adj
+1.5433772	1			5396	beu/adj
+2.013642	1			3341	bevalling/noun
+0.93201303	3	0.74662787	1.0	29453	bevat/verb
+1.9249696	1			3683	beveel/verb
+0.7984897	4			45058	bevestig/verb
+-0.39759618	1			37144	bevind/verb
+-0.02152464	2			51052	bevolking/noun
+1.6984243	1			4586	bevrijding/noun
+2.859764	1			1442	bewaakt/adj
+1.0326784	2	1.9447367	2.0	17781	beweeg/verb
+1.7848852	1			4180	bewerking/noun
+-0.14559336	1	0.7651535	1.0	28924	bewijs/noun
+-0.0407172	2			52009	bewijs/verb
+1.3749579	9	1.694685	5.0	57450	bewoner/noun
+2.9825153	2			2557	bewoonster/noun
+0.75695837	3	0.5718105	1.0	34997	bewust/adj
+1.7601168	1			4288	bewustzijn/noun
+0.40043858	4	-0.07415225	1.0	66821	bezig/adj
+-0.75222474	1			53195	bezoek/noun
+-0.3404245	1			35405	bezoek/verb
+-0.34880137	2	0.56099236	2.0	71043	bezoeker/noun
+1.2537779	1			7205	bezorgd/adj
+4.5208206	1	5.438551	1.0	269	bidon/noun
+-0.5492298	2	-0.3312761	1.0	86654	bied/verb
+-0.7665214	1	0.14391848	1.0	53920	bied_aan/verb
+0.3966285	1			16911	bier/noun
+7.4074817	1			15	bier_lucht/noun
+-0.5552172	1			43595	bij/part
+-0.46899274	45	-1.1700841	9.0	1803877	bij/prep
+8.323772	1	9.241503	1.0	6	bij_snijd/verb
+3.431858	1			807	bijkans/adv
+0.8534589	18	1.4368731	13.0	192484	bijna/adv
+1.6050713	1			5020	bijnaam/noun
+4.217417	2			737	bijt_door/verb
+-0.5782934	3	-0.7620278	1.0	132829	bijvoorbeeld/adv
+0.2853465	4			75089	bijzonder/adj
+1.0048131	1	1.9167933	1.0	9159	bind/verb
+1.8174703	10	1.5237563	3.0	40639	binnen/adv
+0.4064466	3			49935	binnen/part
+-0.92308867	2			125900	binnen/prep
+2.9291606	1			1328	binnenin/pp
+2.27577	1			2553	binnenkant/noun
+0.30231103	2			37433	binnenkort/adv
+2.6188517	1	3.5238588	1.0	1841	bio_technologie/noun
+9.01692	1			3	biopolitiek/name
+4.691794	2			464	biotechnologische/adj
+2.9958153	1	3.8585382	1.0	1350	bis/adv
+0.9818243	1			9400	bitter/adj
+1.6534604	2			9591	bizar/adj
+3.7856328	1			574	blaak/adj
+1.8234342	2			8127	blaas/verb
+1.82212	1			4085	blaas_af/verb
+3.0267894	1			1220	blaf/verb
+0.5206437	1			14871	blank/adj
+3.4214032	1			817	blank/fixed
+0.29158553	1			18742	blauw/adj
+-0.4751778	1	0.4336229	1.0	40346	blij/adj
+0.15545829	24	-0.03560411	8.0	516893	blijf/verb
+0.67202586	22	0.44006175	7.0	279801	blijk/verb
+1.1636916	5	1.5656767	3.0	38861	blijkbaar/adj
+2.7906137	1			1535	blijkens/prep
+0.11928745	1			22175	blik/noun
+1.959366	1			3528	blik_DIM/noun
+5.290022	1			127	bliksem_start/noun
+1.4744809	2			11534	blind/adj
+0.80447555	2			22430	bloed/noun
+6.410533	1			41	bloed_doorstroming/noun
+3.1225858	2			2204	bloeddruk/noun
+2.1532032	1			2902	bloei/adj
+1.1035023	2	2.0118077	2.0	16651	bloem/noun
+7.122303	1			20	bloemenperkje/noun
+0.8831659	1			10331	blok/noun
+0.90393233	1			10235	blokkeer/verb
+1.0505238	1			8763	bloot/adj
+1.9205018	1			3701	blues/noun
+1.8202789	3			12150	bocht/noun
+1.8111607	1			4090	boeg/noun
+1.4840685	2	1.7002732	1.0	11361	boeiend/adj
+0.104045555	7	-0.23854002	2.0	157857	boek/noun
+1.7230633	2			8917	boel/noun
+4.289237	1			343	boeltje/noun
+3.7851872	1	4.694889	1.0	571	boem/tag
+7.7176366	1			11	boer_kop/noun
+1.5823522	2			10284	boerderij/noun
+-0.26148894	1			32969	boete/noun
+4.3206906	1			332	boetedoening/noun
+2.7663975	1	3.6787403	1.0	1569	boks_op/verb
+3.9804	1	4.887469	1.0	470	bom_DIM/noun
+3.7572565	1			584	bonbon/noun
+4.8082547	1	5.7182107	1.0	204	bond_trainer/noun
+2.4243548	1			2212	bondgenootschap/noun
+-0.059424467	1			27001	bondscoach/noun
+5.996495	1			62	bons/adj
+-0.2149131	1			31144	boom/noun
+0.57009166	1			14161	boord/noun
+0.1363457	1	1.0408316	1.0	22151	boos/adj
+3.617024	1			675	borrel/verb
+8.323772	1			6	bot_letsel/noun
+8.048669	1			8	boter_zuur/noun
+1.9344411	1			3600	bouw_in/verb
+0.05864755	1			23519	bouw_op/verb
+1.6923033	4			18407	boven/adv
+1.0183841	8	-0.15221912	1.0	72337	boven/prep
+3.3974855	1	4.3095803	1.0	837	boven_been/noun
+0.7194097	12	0.9422793	6.0	145076	bovendien/adv
+3.8567157	1	4.772248	1.0	524	bovenlaag/noun
+3.4977949	1			755	bovennatuurlijk/adj
+0.7187369	1			12172	bovenop/prep
+2.7600186	1	3.6729994	1.0	1579	bovenverdieping/noun
+2.6539202	1	3.5631096	1.0	1766	boy/noun
+10.115532	1			1	braad_smeersel/noun
+5.1419063	1	6.0530863	1.0	146	brace/noun
+2.2886367	3			7658	brand/fixed
+1.1158077	1			8252	brand/verb
+1.4662058	1			5844	brandend/adj
+1.204528	4	1.415617	2.0	30254	brandweer/noun
+2.8565917	1	3.762167	1.0	1456	brandweer_commandant/noun
+0.9463365	3			29352	breek/verb
+3.2530355	1	4.164898	1.0	965	breekpunt/noun
+0.12740853	11	-0.66723996	2.0	243129	breng/verb
+0.52857524	1			14715	breng_aan/verb
+1.7660594	1			4282	breng_bij/verb
+0.58324575	1			13936	breng_door/verb
+1.2643625	1			7038	breng_in/verb
+1.8908324	2			7577	breuk/noun
+-0.16799693	2			59181	brief/noun
+1.9884523	1			3456	brievenbus/noun
+5.02948	1			164	broekie/noun
+0.57776845	3	0.39017066	1.0	42077	broer/noun
+2.3205132	2			4939	brok/noun
+-0.056005616	1			26394	bron/noun
+2.273921	1			2619	broos/adj
+1.4505483	1	2.3576562	1.0	5900	brouwerij/noun
+1.1247914	1	2.035605	1.0	8126	bruin/adj
+1.0216861	1			9060	bui/noun
+0.620603	1			13546	buig/verb
+1.1093968	1	2.019652	1.0	8241	buik/noun
+2.8331833	2	3.74489	2.0	2946	buit_uit/verb
+1.1713157	5	1.5716965	3.0	38732	buiten/adv
+3.9841604	3			1395	buiten/part
+0.108222045	3	-0.08198188	1.0	67390	buiten/prep
+2.2164278	3	2.723155	2.0	8157	buiten_wereld/noun
+2.326181	1			2436	buitenaf/adv
+0.7087247	1			12331	buitengewoon/adj
+-0.4108855	1			37877	buitenland/noun
+-0.73573726	1			52661	buitenlands/adj
+3.627848	1			660	buitenst/adj
+10.115532	1	11.033262	1.0	1	bulldozer-achtig/adj
+10.115532	1			1	bungelow/noun
+0.064342305	1			23431	bureau/noun
+0.25588134	5	-0.4485025	1.0	98304	burgemeester/noun
+-0.6913688	1			49948	burger/noun
+4.7910595	1			208	burgerman/noun
+2.8157346	2			3006	bus/fixed
+0.30130056	2			37339	bus/noun
+1.8005798	5			20692	buur/noun
+1.8645399	2			7748	buurman/noun
+0.6817616	5	0.67566055	2.0	63283	buurt/noun
+2.895524	1			1396	buurt_comité/noun
+2.5943453	7	1.5566424	1.0	13181	buurtbewoner/noun
+1.8637637	1			3882	buurvrouw/noun
+2.084862	1			3224	c/noun
+3.872628	1			524	cactus/noun
+2.013627	1	2.9194615	1.0	3369	cadeau_DIM/noun
+0.63716006	3			39812	café/noun
+3.2053297	1			1013	calorie/noun
+1.2943528	1			6919	camping/noun
+9.01692	1			3	carnaval_kap_el/noun
+0.76033103	3			35062	carrière/noun
+5.267808	1			128	catcher/noun
+4.7108297	1	5.6266513	1.0	223	catchy/noun
+0.23414174	1			19713	categorie/noun
+-0.44084966	1			39128	cd/noun
+0.7328277	3			37006	cel/noun
+3.0266225	1			1216	cement/noun
+-0.64780086	1			47812	centraal/adj
+-0.8868845	1			60925	centrum/noun
+1.838921	1			3977	charmant/adj
+1.7141538	1			4520	charme/noun
+-0.13589755	1			29037	chauffeur/noun
+2.767717	1	3.6754673	1.0	1576	chemicaliën/noun
+2.3944936	2	2.610737	1.0	4587	chirurg/noun
+3.2618632	1			956	chirurgisch/adj
+4.540341	1			269	choco/noun
+-0.97514296	2			132758	club/noun
+-0.54404473	1	0.3635777	1.0	43285	coach/noun
+6.354332	1	7.2662654	1.0	44	collectant/noun
+0.50543606	1			15096	collectief/adj
+1.2277342	1			7501	column/noun
+1.0587353	3	0.87237006	1.0	25952	combinatie/noun
+5.087712	1			155	comes/name
+1.7559053	1			4313	comfort/noun
+0.036980342	1			24780	commentaar/noun
+-0.28804582	1	0.6216592	1.0	33399	commercieel/adj
+-0.5244484	1	0.3857683	1.0	42369	commissie/noun
+1.9369352	1			3594	communisme/noun
+2.2738326	2			5149	communist/noun
+1.102174	1			8323	compenseer/verb
+0.6991969	3			37346	competitie/noun
+2.41578	1			2224	component/noun
+5.780859	1	6.6765537	1.0	79	composteringsinstallatie/noun
+4.9668756	1	5.8778057	1.0	174	computer_lokaal/noun
+1.0712698	1	1.9829001	1.0	8550	concentratie/noun
+5.0135336	1			166	concentratie_vermogen/noun
+-0.17449611	1			29896	concert/noun
+4.2259617	1	5.133023	1.0	368	concert_reeks/noun
+0.49440396	1			15216	concludeer/verb
+0.56145114	2	1.4711435	2.0	28563	concurrentie/noun
+-0.16662149	1	0.74165523	1.0	29686	conflict/noun
+1.4912976	2			11240	conservatief/adj
+2.4724324	1			2108	conservatorium/noun
+1.8248254	3			12023	constant/adj
+2.9830344	1	3.8939986	1.0	1265	consultatie/noun
+1.8135513	1			4061	continu/adj
+-0.08923823	2			54888	contract/noun
+1.3603697	1			6384	contrast/noun
+-0.6977523	1			50462	controle/noun
+2.045126	1			3249	controleur/noun
+5.3495193	1			118	cortisone/noun
+1.3931229	1			6212	coördinator/noun
+4.5152597	1	5.426542	1.0	273	criminaliteit_bestrijding/noun
+-0.005411028	1	0.9012111	1.0	25370	crisis/noun
+0.5676449	1			14171	cruciaal/adj
+-0.3677087	1			36192	cultureel/adj
+5.377143	1	6.264699	1.0	120	cv_ketel/noun
+2.4495676	1	3.3582966	1.0	2173	d/noun
+1.8413534	1			3960	daags/adv
+1.4358373	1			5974	daal/adj
+0.5431058	19	0.9097093	11.0	274838	daar/adv
+0.3799992	16	0.31060147	6.0	272748	daar/noun
+0.17011939	4	-0.3029452	1.0	84032	daarbij/pp
+2.0209703	1	2.9333665	1.0	3308	daarbuiten/pp
+0.743269	6	0.5581035	2.0	70989	daardoor/pp
+2.0096962	1			3317	daarenboven/adv
+1.001562	2	1.2217326	1.0	18280	daarentegen/adv
+-0.62343967	1	0.29006022	1.0	46447	daarin/pp
+-1.404315	1			101399	daarmee/pp
+-0.54230374	1	0.3705328	1.0	42815	daarna/adv
+0.27356878	3	0.08848944	1.0	56816	daarna/pp
+0.17126599	2	0.39459547	1.0	41842	daarnaast/pp
+0.10649175	6	0.3276108	3.0	134112	daarom/pp
+-0.46693543	1	0.4454793	1.0	39749	daarop/pp
+-0.1033246	1			27715	daarover/pp
+5.1363873	1			146	daaroverheen/pp
+2.0400736	1			3254	daartegen/pp
+0.7271332	1			12005	daaruit/pp
+-0.059337758	2	0.15932277	1.0	52923	daarvan/pp
+-0.47254315	2			79972	daarvoor/pp
+0.47898963	25	0.36584702	9.0	388220	dag/noun
+3.247974	1			1000	dag/tag
+0.3676393	3	0.17956114	1.0	51890	dagelijks/adj
+2.5871732	2	2.804018	1.0	3765	daglicht/noun
+0.086656995	1	0.9953151	1.0	22984	dak/noun
+3.3101416	1			913	dakpan/noun
+4.3520665	1			320	dal_uur/noun
+0.6398182	65	0.81223214	31.0	853168	dan/adv
+-0.534378	15	-0.38762876	7.0	640157	dan/comparative
+0.13846637	1	1.0502131	1.0	21758	dank/verb
+1.2144037	1			7439	dankbaar/adj
+-0.6015833	1			45766	dankzij/prep
+2.5054963	1			2035	darm/noun
+-0.05588218	122	-0.4198718	34.0	3205717	dat/comp
+-0.016667806	73	0.18923436	36.0	1849436	dat/det
+-0.108436994	3	-0.2930156	1.0	83100	dat/noun
+-0.3274302	16	-0.5780557	5.0	552171	dat/pron
+1.3979236	1			6144	datzelfde/det
+3.0404418	2	3.2599835	1.0	2385	de/adv
+0.06032373	1191	-0.35624182	316.0	28074105	de/det
+-0.13009866	6			170662	de/fixed
+-1.2587451	3	-1.451684	1.0	266348	de/name
+1.412922	1			6076	de/noun
+-0.49755916	1			41076	de/prep
+1.7984862	1			4205	dealer/noun
+1.9571874	1			3573	debatteer/verb
+3.4032443	1	4.3131933	1.0	838	decennium_lang/adj
+2.730518	1			1630	decibel/noun
+7.342943	1			16	decor_schilder/noun
+10.115532	1			1	deed?Aline/noun
+0.004469389	1			24796	deel/fixed
+-1.1023276	2			150293	deel/noun
+0.47546646	1			15567	deel/part
+0.5199972	1	1.431294	1.0	14825	deels/adv
+2.3182817	1	3.232127	1.0	2450	deeltje/noun
+0.9506545	1			9718	delegatie/noun
+0.16650473	1			21257	democratie/noun
+2.6842618	3	2.4981065	1.0	5095	den/adv
+3.1646693	1			1064	dender/verb
+-0.6751517	6	-0.4556836	3.0	294025	denk/verb
+1.0539643	1			8703	departement/noun
+1.3347828	1			6617	depressie/noun
+1.810802	1			4073	der/adv
+-1.5824326	1			122562	der/name
+1.5815947	2			10446	derby/noun
+-1.7521445	1			145516	derde/num
+0.48410904	3			46067	dergelijk/adj
+2.0318947	1			3283	dertiger/noun
+1.268625	1			7040	des/name
+2.220953	1			2709	desastreus/adj
+0.15992959	3			64045	deur/noun
+-0.14129719	25	-0.2523941	9.0	719674	deze/det
+-1.367242	1	-0.4553818	1.0	97788	dezelfde/det
+2.3931866	2			4559	diagnose/noun
+1.4962128	7			39413	dicht/adj
+1.4640439	1			5844	dicht/part
+1.3157195	1			6828	dicht/verb
+0.74841005	1			11888	dichtbij/adj
+1.7298151	1			4436	dictatuur/noun
+0.22888808	69	0.30947238	30.0	1365392	die/det
+-0.35528362	71	-0.5697809	23.0	2519801	die/pron
+-0.69148326	1			49814	dien/verb
+-0.31534973	3	-0.5047872	1.0	102939	dienst/noun
+0.69585794	4	0.21972865	1.0	49858	diep/adj
+0.41903573	3	0.23032776	1.0	49373	dier/noun
+2.063729	1	2.973117	1.0	3200	dier_arts/noun
+5.005353	1			170	dier_liefde/noun
+0.39117402	1			17026	digitaal/adj
+-0.27954185	1			33073	dik/adj
+-0.07526575	3	-0.2617184	1.0	80601	ding/noun
+0.102188975	3			68535	dinsdag/noun
+-0.6692325	1			48699	direct/adj
+-1.2373527	1			86626	directeur/noun
+0.47892758	2	0.69477123	1.0	31137	directie/noun
+9.01692	1	9.93465	1.0	3	disc/prefix
+1.6571072	2	1.8756902	1.0	9516	discipline/noun
+6.019522	1			61	disco_dreun/noun
+3.9552743	1	4.8681073	1.0	480	distantie/noun
+-0.24130858	25	-0.1521436	11.0	795783	dit/det
+-0.0069124224	1			25087	dit/noun
+0.22944234	2			39724	divers/adj
+0.65816355	1			13055	divisie/noun
+-0.77785456	1			54494	dochter/noun
+1.3721757	1	2.2807403	1.0	6350	dochter_DIM/noun
+0.120535694	33	-0.5192082	7.0	731956	doe/verb
+1.1044354	1			8284	doe_af/verb
+2.719749	1	3.6279187	1.0	1659	doe_dicht/verb
+3.451378	1	4.359017	1.0	798	doe_voort/verb
+0.50478923	1	1.4158499	1.0	15093	doek/noun
+-0.8513767	1			58563	doel/noun
+0.35404584	2			35208	doelman/noun
+2.3080626	1			2477	doem_op/verb
+3.7713878	1	4.6836867	1.0	574	dogmatisch/adj
+0.8018343	2			22471	dokter/noun
+1.2386314	1			7355	dol/adj
+-1.3345735	1			95858	dollar/noun
+2.6379843	1			1786	domweg/adv
+-0.2736065	2			66611	donderdag/noun
+0.77052516	5			58709	dood/adj
+-0.862871	1	0.044066366	1.0	59610	dood/noun
+3.5638804	1	4.4750648	1.0	710	doods/adj
+3.096414	1			1136	doodsbang/adj
+3.5647373	1			713	doodzonde/noun
+1.9935912	1			3434	doof/adj
+0.92898744	1	1.8393183	1.0	9878	door/adv
+0.6131837	7	0.68053085	3.0	94179	door/comp
+-0.7285345	2			103759	door/part
+0.34374952	74	0.8210617	48.0	1310789	door/prep
+1.0639206	4	1.2851503	2.0	34319	doordat/comp
+0.40373164	1	1.3150885	1.0	16656	doorgaans/adv
+1.9018251	2			7442	doorheen/prep
+2.0736203	1	2.9810455	1.0	3160	doorslag/noun
+1.747419	1			4373	doorsta/verb
+2.8904872	1			1388	doorzetting_vermogen/noun
+0.88766605	1	1.7970108	1.0	10305	doos/noun
+0.29065207	2			37386	dorp/noun
+1.2647779	1			7051	dorp_DIM/noun
+4.3914566	1			308	double/adj
+1.4974623	1	2.4073493	1.0	5606	douche/noun
+4.87723	1			193	dra_gelijk/adj
+-0.86162096	1			59174	draag/verb
+0.2090389	1			20276	draag_bij/verb
+3.2545013	1			969	draaglijk/adj
+-0.04583195	2	0.172515	1.0	52340	draai/verb
+10.115532	1			1	draai_bak_DIM/noun
+1.8807017	1			3805	draaiend/adj
+0.25013313	1			19580	drama/noun
+1.1854347	1	2.0945504	1.0	7687	dreigend/adj
+2.0198798	2			6641	drempel/noun
+10.115532	1			1	drempel_niveau/noun
+-0.22824496	13	-0.78575367	3.0	410377	drie/num
+0.9759789	1			9492	driehonderd/num
+2.364164	1			2352	driepunter/noun
+3.1136944	1			1113	drijf_boven/verb
+1.553853	1	2.4651387	1.0	5296	drijf_op/verb
+4.3544245	1			320	drijf_weg/verb
+8.506094	1			5	dril_kamp/noun
+0.23244098	1			19766	dring_aan/verb
+1.1051009	1	2.0140371	1.0	8294	dring_binnen/verb
+0.993613	1			9252	dring_door/verb
+1.9630387	2	2.182691	1.0	6997	dring_op/verb
+0.3442652	1			17802	dringend/adj
+-0.20616913	1			30796	drink/verb
+4.030577	4	4.654624	3.0	1782	droog/verb
+2.4591947	1			2153	droogte/noun
+0.735067	2			24175	droom/noun
+0.31846657	1			18357	droom/verb
+2.363476	1	3.2756767	1.0	2350	drop/verb
+5.9940586	1			66	drug_proces/noun
+7.4242887	1	8.3252125	1.0	15	drug_roes/noun
+4.174966	1			388	drugs_overlast/noun
+-0.23605628	2	-0.018932233	1.0	63359	druk/noun
+0.9733366	3			28471	dubbel/adj
+2.7088516	1	3.622613	1.0	1656	dubbelzinnig/adj
+-0.34393337	1	0.5620634	1.0	35461	duel/noun
+-1.8141806	1	-0.9015418	1.0	152880	duidelijk/adj
+1.5709692	4	1.0960681	1.0	20779	duik_op/verb
+4.387382	1			312	duizeligheid/noun
+-0.20842263	1			31114	duizenden/noun
+4.199195	1			375	dunk/noun
+3.821466	1			553	dunk/verb
+0.67682433	3			38070	durf/verb
+0.43908203	16	0.5244934	7.0	257023	dus/adv
+0.52237946	2			29477	dus/vg
+0.89807194	1			10172	dusver/adv
+-0.88945705	1			61418	duur/adj
+3.0661294	5	3.7553887	4.0	5799	duur/adv
+0.19862811	3			61769	duur/verb
+-0.23745994	1			31535	duur_voort/adj
+0.9992111	1			9240	duurzaam/adj
+0.68474764	1	1.5953186	1.0	12652	duw/verb
+5.360219	1	6.2742987	1.0	117	dvd_recorder/noun
+3.5080037	1	4.4227347	1.0	745	dwaal_af/verb
+0.45575482	16	0.20270252	5.0	253480	echt/adj
+3.7338428	18	4.642521	18.0	10753	echt/adv
+0.606742	2			27258	echt_genoot/noun
+-0.14533427	6	0.36210746	4.0	172600	echter/adv
+4.4046082	1	5.3154125	1.0	306	eczeem/noun
+-0.17784245	371	-0.45622194	113.0	11075723	een/det
+1.0573933	1			8684	een/pron
+0.5241182	1			14817	eenheid/noun
+0.017699556	1	0.9284885	1.0	24490	eenmaal/adv
+0.43720245	1	1.3505775	1.0	16096	eenmaal/noun
+0.024177978	12	-1.5509713	1.0	292605	eens/adv
+4.096513	2			832	eentonig/adj
+1.030222	1			8968	eenzaam/adj
+2.493186	2	2.7106557	1.0	4135	eenzaamheid/noun
+-0.2949651	5	-0.99319595	1.0	167651	eerder/adj
+0.6385499	2	1.5490236	2.0	26411	eerlijk/adj
+2.3711138	1			2327	eerlijkheid/noun
+10.115532	1			1	eermen/noun
+0.08007357	3			69450	eerst/adj
+-0.08150685	4	0.13819817	2.0	108250	eerst/adv
+-0.7577954	11	-1.5537843	2.0	588881	eerste/num
+4.547378	1			266	eerstejaars_junior/noun
+3.7440054	1			588	eetlust/noun
+4.6683636	1			236	eetwaren/noun
+0.32952246	2			35928	effect/noun
+-0.59319156	7			316997	eigen/adj
+0.45067284	3			47963	eigenaar/noun
+2.0279684	1	2.940526	1.0	3280	eigenaardig/adj
+-0.45074195	3	0.46138054	3.0	117491	eigenlijk/adj
+0.72375584	2			24302	eiland/noun
+1.2114424	5	1.2046702	2.0	37201	eind/adv
+-1.1778666	1			81442	eind/noun
+0.25445512	5			97048	einde/noun
+0.17074649	2			42813	eindelijk/adj
+0.98988926	1			9265	eindeloos/adj
+0.45796517	3			47716	eindig/verb
+-0.14169225	1			28821	eis/noun
+0.28877965	1			18855	electronisch/adj
+1.090299	1			8431	elektriciteit/noun
+4.4725614	1			284	elektriciteit_leiding/noun
+0.34421954	1			17612	element/noun
+1.2458807	1			7218	elf/noun
+0.60758454	2			27472	elf/num
+0.61306685	1			13493	elk/adv
+-0.35300377	7			249085	elk/det
+-0.5584987	5			218177	elkaar/pron
+2.4667206	1			2125	elleboog/noun
+5.6101823	1			92	elleboog_breuk/noun
+1.5429703	2			10721	ellende/noun
+2.0990655	1			3060	emmer/noun
+0.3606604	1			17426	emotie/noun
+10.115532	1			1	emoties.Psychiater/noun
+0.5014112	1			15129	emotioneel/adj
+1.085098	6			50456	en/adv
+0.22872978	29	0.6670167	18.0	574891	en/comp
+-0.011796489	335	-0.04016052	131.0	8462675	en/vg
+1.1431315	1			7902	enerzijds/adv
+3.9292204	1			496	engel_DIM/noun
+0.45068341	6	-0.4287604	1.0	95251	enig/adj
+-0.22303051	2	-0.0055348645	1.0	62482	enig/det
+1.0728443	2	1.2918748	1.0	17043	enigszins/adv
+-0.4709906	1	0.44253892	1.0	39864	enkel/adv
+-0.15296435	11	-0.94648737	2.0	319878	enkel/det
+2.3973057	3			6826	enkel/noun
+2.1665993	1	3.0799441	1.0	2855	enkeling/noun
+-1.0466325	1			71016	enorm/adj
+0.120889165	79	0.21945247	35.0	1744977	er/adv
+-0.14955781	23	-0.294448	8.0	665899	er/noun
+0.7134912	2			24484	erbij/pp
+2.0128698	1			3334	erdoor/pp
+2.1203601	1			3028	ere/noun
+1.9758434	1			3487	ere_plaats/noun
+-0.00093401736	6	-0.88173485	1.0	149936	erg/adj
+1.8503898	2	2.0662844	1.0	7894	erger/verb
+1.3559574	1			6465	ergernis/noun
+1.4661182	1			5786	erkend/adj
+2.2299206	1	3.14268	1.0	2678	erna/pp
+-0.6855303	1			49768	ernstig/adj
+0.69277936	4	0.2198796	1.0	49800	erop/pp
+3.799993	2	4.016989	1.0	1121	ertegen/pp
+0.7030715	1			12382	eruit/pp
+0.5329868	1			14625	ervaar/verb
+-1.1214509	1			76456	ervan/pp
+0.8526124	5	1.2536885	3.0	53176	ervaring/noun
+1.1051558	1			8243	essentieel/adj
+0.88813287	1			10385	etappe/noun
+0.90524656	2	1.1225511	1.0	20259	eten/noun
+0.75532866	1			11769	etnisch/adj
+-2.6492515	1			357235	euro/noun
+0.55408263	12	0.92501575	7.0	172619	even/adj
+-0.4337727	1	0.47713402	1.0	38485	eveneens/adv
+1.7247186	1	2.639	1.0	4428	evengoed/adv
+0.36047915	2	0.57684934	1.0	34838	eventueel/adj
+0.7363078	2	0.95617884	1.0	23819	evenwel/adv
+8.729238	1			4	ex-beroepsmilitair/adj
+6.8847275	1	7.789694	1.0	26	ex_junkie/noun
+4.7620163	1			218	ex_wielrenner/noun
+0.62207866	1			13448	experiment/noun
+0.73510283	1	1.6463567	1.0	12022	expert/noun
+0.72220355	1			12174	expositie/noun
+8.506094	1			5	exposition/noun
+1.2120564	1	2.1236894	1.0	7430	extern/adj
+-1.4071919	1			102779	extra/adj
+2.294952	1			2529	extra_DIM/noun
+1.5336846	3	2.0384386	2.0	16207	extreem/adj
+1.0334512	1			9066	eén/num
+0.81085455	1	1.7194183	1.0	11166	faal/verb
+3.7938647	1			562	fabricage/noun
+0.7510337	1			12018	fabrikant/noun
+0.78408074	1			11654	failliet/adj
+2.4281077	1			2203	fair/adj
+5.162879	1	6.0695443	1.0	144	fall/name
+0.5246238	1			14795	familie_lid/noun
+0.64604014	2			26338	fan/noun
+0.77114594	2	0.9901054	1.0	23060	fase/noun
+1.0984184	1			8449	fataal/adj
+3.2253299	1	4.138339	1.0	990	fauteuil/noun
+0.43337083	1			16279	favoriet/adj
+3.0789437	1			1150	façade/noun
+5.7913995	1	6.699245	1.0	77	feelings/noun
+3.6401763	1			660	feestgedruis/noun
+-1.2431899	1	-0.32982653	1.0	86310	feit/noun
+0.6112839	2	0.8271596	1.0	27213	fel/adj
+0.6504989	1			13029	fenomeen/noun
+2.1961758	1			2775	fervent/adj
+1.5290926	1			5449	fier/adj
+2.777944	1	3.682666	1.0	1595	fiets/adj
+0.7922469	3	1.2940122	2.0	34189	fiets/noun
+1.7422005	4	1.2635921	1.0	17675	fiets/verb
+6.102759	1			56	fiets_kader/noun
+0.65971917	1	1.5619627	1.0	13122	file/noun
+-0.9381308	2	-0.72157335	1.0	128189	film/noun
+5.5937433	1			100	film_agenda/noun
+9.422385	1			2	film_juweel_DIM/noun
+7.5505824	1			13	fils-à_papa/noun
+-1.3988221	1			101575	financieel/adj
+1.3156517	1			6720	finish/noun
+0.8331872	1	1.7393855	1.0	10932	fit/adj
+4.1537538	1			393	fitnesscentrum/noun
+2.3984253	1			2311	fl/num
+1.4257646	1			6013	flauw/adj
+3.9642897	1			476	flauw/part
+0.4503111	1	1.3601713	1.0	15945	fles/noun
+8.169621	1			7	flikker_af/verb
+0.45371687	3			47698	flink/adj
+2.255289	1			2649	flits/verb
+9.422385	1			2	floches/noun
+6.5745726	1			35	fond_werving/noun
+0.8315648	1	1.740513	1.0	10904	for/name
+2.302567	1			2502	fort/noun
+0.04924336	6	-0.9088349	1.0	174018	foto/noun
+0.41106865	1			16591	fout/adj
+0.24831425	1	1.1594291	1.0	19493	fraai/adj
+1.5988889	1			5096	fractie_leider/noun
+3.2579653	1			1013	fractie_lid/noun
+3.1797237	1			1046	franje/noun
+1.8096772	1	2.7194715	1.0	4096	frequentie/noun
+0.6679242	1			12855	fris/adj
+3.6421814	1			660	fris/noun
+7.9183073	1			9	frituur_lucht/noun
+2.7298667	1	3.6426954	1.0	1629	frivool/adj
+4.2731476	1			352	front_lijn/noun
+3.4905374	1			763	front_linie/noun
+1.1183414	1	2.0290549	1.0	8179	frustratie/noun
+7.9464784	1			9	frustratie_drempel/noun
+2.0255282	2			6713	fuif/noun
+9.199242	1			3	fuif_over_last/noun
+0.72038144	3	1.2247039	2.0	36497	functie/noun
+2.4404268	1	3.3545892	1.0	2162	functie/prep
+3.546752	2			1440	fundering/noun
+7.4074817	1			15	fundering_muur/noun
+0.29427448	1			18554	fysiek/adj
+-0.104739524	39	-0.5560065	10.0	1085158	ga/verb
+2.244564	1			2699	ga_dicht/verb
+-0.6727175	1	0.23484063	1.0	49276	ga_door/verb
+0.15462843	2			42891	ga_in/verb
+0.103055455	1			22560	ga_om/verb
+0.06500679	1			23467	ga_op/verb
+1.1559376	1			7924	ga_open/verb
+0.48905692	1			15337	ga_over/verb
+1.2325366	1			7282	ga_voor/adj
+1.3265421	1			6628	ga_vooraf/verb
+1.7776209	2	1.9961897	1.0	8452	ga_weg/verb
+4.6606383	1			236	gaanderij/noun
+0.7168175	1			12197	gang/fixed
+-0.11909222	1			28135	gang/noun
+2.2219598	1	3.1329038	1.0	2707	garde/noun
+3.875451	1			522	gas_masker/noun
+4.698099	1	5.584372	1.0	239	gas_ontploffing/noun
+1.3052711	3			20340	gat/noun
+1.6287361	1	2.5392356	1.0	4910	ge/pron
+4.1144886	1			409	geacteerd/adj
+2.1429625	1	3.0559375	1.0	2923	geallieerd/adj
+1.2309356	1			7262	gebaseerd/adj
+-1.9520726	1			176014	gebeur/verb
+0.15845385	1	1.06998	1.0	21301	gebeurtenis/noun
+-0.8719093	1			59707	gebied/noun
+1.6818291	1	2.5934904	1.0	4654	gebied/verb
+4.98741	1			171	gebonk/verb
+0.8530167	1			10649	geboorte/noun
+-0.9793567	1			66439	gebouw/noun
+1.2943085	1			6890	gebroken/adj
+-0.67442507	1			49055	gebruik/noun
+-0.9980687	2			135616	gebruik/verb
+5.242627	1			132	gebulder/verb
+1.8773519	1			3817	geconcentreerd/adj
+1.6891282	1			4621	gecontroleerd/adj
+0.4901491	2	0.7089698	1.0	30585	gedachte/noun
+1.7989261	1			4146	gedoe/noun
+1.3016325	3	1.1163961	1.0	20318	gedurende/prep
+1.0517908	1	1.9578688	1.0	8792	gedwongen/adj
+-0.61412895	8	-1.0898894	2.0	370341	geef/verb
+1.1605377	3	0.969289	1.0	23719	geef_op/verb
+0.4648249	3	0.27953586	1.0	46931	geef_toe/verb
+-0.0033834851	1			25276	geel/adj
+-0.36491045	29	-1.4377615	4.0	1048752	geen/det
+1.481098	3	1.2933017	1.0	17058	geest/noun
+3.4254353	1	4.337773	1.0	812	geestdrift/noun
+1.5567746	2	1.7736678	1.0	10547	geestelijk/adj
+-0.23246354	1	0.6796313	1.0	31458	gegeven/noun
+2.9595504	1			1327	gegijzeld/adj
+6.681545	1			31	gegolfd/adj
+3.3341339	1			899	gehaald/adj
+1.2571704	2			14452	gehandicapt/adj
+0.17913681	1	1.0915163	1.0	20838	geheel/noun
+10.115532	1	11.033262	1.0	1	geheim_spraak/noun
+1.0838758	1			8470	geheugen/noun
+2.2702138	1			2615	gehoord/adj
+3.7891142	1			563	gehoorzaamheid/noun
+2.132143	1			2978	geit/noun
+10.115532	2			2	geit_maag/noun
+-0.13897334	1			28844	gek/adj
+4.298421	1	5.209847	1.0	339	gekromd/adj
+2.7618737	1			1587	gekte/noun
+3.2819078	1			938	gekweld/adj
+-1.4038402	2			203976	geld/noun
+-0.38947672	2	-0.17115727	1.0	73758	geld/verb
+-0.33882663	6			210505	geleden/adj
+0.77874833	2			22829	gelegenheid/noun
+1.673294	2			9347	geleidelijk/adj
+2.5212514	1	3.43236	1.0	2005	geleverd/adj
+0.6255769	1			13374	geliefd/adj
+0.3215189	1			18180	gelijk/noun
+2.314202	1			2452	gelijkvloers/adj
+0.7835161	6	1.0016475	3.0	68521	geloof/verb
+1.3127162	1	2.2241836	1.0	6724	gelovig/adj
+1.2715297	3	1.7782595	2.0	20992	geluid/noun
+7.9183073	1	8.836038	1.0	9	geluid_emissie/noun
+7.848574	1			10	geluid_onderzoek/noun
+3.481605	4	3.695065	2.0	3096	geluid_overlast/noun
+-0.091727555	1			27417	geluk/noun
+0.39048198	4	0.6082078	2.0	67731	gelukkig/adj
+2.9167128	1			1364	gelukkig/adv
+0.14199723	2	0.36023977	1.0	43272	gemakkelijk/adj
+4.10721	1	5.01802	1.0	411	gemankeerd/adj
+2.1207142	1	3.0315306	1.0	2997	gemeen/adj
+-1.0006797	2			137741	gemeente/noun
+0.8240725	1			11166	gemeentehuis/noun
+-0.31113562	1			34792	gemeenteraad/noun
+-0.6802077	1			49323	gemiddeld/adj
+1.8114824	1	2.7165956	1.0	4137	gemist/adj
+2.3267815	1			2437	genaamd/prep
+0.48670164	2			30707	generatie/noun
+0.3514444	1	1.260952	1.0	17647	genoeg/adj
+0.12838821	3			65921	genoeg/adv
+1.1304686	3	0.94211346	1.0	24195	genoeg/det
+5.4886003	1			105	genoeg/verb
+3.813371	1			561	geopereerd/adj
+1.089481	1			8375	gepaard/adj
+4.0471063	1	4.95993	1.0	436	geraas/verb
+3.2126133	2			2018	gereedschap/noun
+0.14961198	1	1.061293	1.0	21472	geregeld/adj
+1.7073392	1	2.6176038	1.0	4540	gerenommeerd/adj
+-0.80367893	1	0.105646	1.0	55948	geschiedenis/noun
+2.2892084	1	3.2002568	1.0	2533	geschoold/adj
+1.0371671	2	1.2497628	1.0	17903	gesloten/adj
+3.7107167	1			611	gesmolten/adj
+5.1102443	1	6.0184693	1.0	151	gesofisticeerd/adj
+1.6742375	1			4680	gespannen/adj
+1.1907159	1	2.1016774	1.0	7593	gespeeld/adj
+0.10607605	3	-0.082820594	1.0	67522	gesprek/noun
+2.0821006	1			3109	gesprekspartner/noun
+2.6328502	1	3.5379984	1.0	1810	geteisterd/adj
+2.2417057	1	3.151986	1.0	2661	getekend/adj
+3.7076073	3	4.6201453	3.0	1835	getraind/adj
+3.5132833	1	4.4277954	1.0	741	getroost/verb
+1.2833492	2	1.5003587	1.0	13879	getuig/verb
+0.044191573	1			23995	getuige/noun
+4.0541363	21	4.31883	11.0	9104	geur/noun
+4.8377743	5	5.230012	3.0	1004	geur_hinder/noun
+7.5505824	1			13	geur_vrij/adj
+0.5569425	3	0.3672387	1.0	43094	gevaar/noun
+-0.34132338	1			35350	gevaarlijk/adj
+-0.7012148	3			150886	geval/noun
+4.41075	1			304	gevang/verb
+-0.048893873	1			26464	gevangenis/noun
+1.1667284	2			15719	gevecht/noun
+5.8374777	1			73	gevecht_kledij/noun
+-0.36317688	2	-0.14472507	1.0	71743	gevoel/noun
+0.98683554	2			18629	gevoelig/adj
+1.6696092	1			4693	gevolg/fixed
+-0.10574004	3	-0.2929478	1.0	83213	gevolg/noun
+2.726802	1	3.6396148	1.0	1629	gevormd/adj
+1.9688084	1			3501	gevreesd/adj
+10.115532	1	11.033262	1.0	1	gevulcaniseerd/noun
+1.7058572	1			4530	geweer/noun
+-0.59923136	1	0.3084077	1.0	45785	geweld/noun
+0.9615133	1	1.8690053	1.0	9619	gewelddadig/adj
+4.6113696	4	5.521095	4.0	994	gewerkt/adj
+0.776495	1	1.6878669	1.0	11478	gewicht/noun
+0.7330529	14	1.3059454	10.0	168179	gewoon/adj
+2.4831066	1			2080	gewoonweg/adv
+2.9342823	1			1328	gewricht/noun
+2.1963758	1	3.104136	1.0	2799	gezelligheid/noun
+-0.011113174	1	0.9012658	1.0	25199	gezelschap/noun
+0.050794315	2	0.26748905	1.0	47578	gezicht/noun
+0.9354498	2	1.1565875	1.0	19525	gezien/prep
+-0.7146857	1			51259	gezin/noun
+3.057376	1	3.967329	1.0	1177	gezin_lid/noun
+1.5148178	5	1.5056646	2.0	27640	gezond/adj
+4.650218	1	5.5594172	1.0	241	gezondheid_inspectie/noun
+3.4211555	1			822	gezondheid_klacht/noun
+4.176414	1			402	geëvacueerd/adj
+1.888437	1			3776	geïsoleerd/adj
+10.115532	1	11.033262	1.0	1	ghedroogde/noun
+2.4289794	1	3.33512	1.0	2221	gif/noun
+1.6898402	1			4649	giftig/adj
+1.5039198	2			11093	gigantisch/adj
+3.2629724	1			958	gil/adj
+2.6947136	1			1686	gil/verb
+3.4911346	2			1516	ginder/adv
+3.3092005	2	3.5248866	1.0	1832	gips/noun
+0.3571872	2	0.55504185	1.0	35811	gisteravond/adv
+-1.1505499	4	-1.6380423	1.0	320152	gisteren/adv
+2.6567116	1	3.5609748	1.0	1762	gisterenochtend/adv
+0.20953004	1			20257	glas/noun
+2.121625	1			3018	glas_DIM/noun
+6.364852	1			43	glas_plaat_DIM/noun
+3.8159394	1	4.7242537	1.0	553	glasscherf/noun
+3.6871843	1			627	glibberig/adj
+1.342604	1			6546	glimlach/noun
+-0.08292111	1			27215	god/noun
+2.9995031	1	3.912313	1.0	1242	godsdienstig/adj
+0.013765762	40	-0.1267872	14.0	987502	goed/adj
+3.416894	1			836	goed_trein/noun
+-0.47993088	1			40669	goedkoop/adj
+3.099326	1			1129	goh/tag
+3.954008	1	4.8673196	1.0	478	golfplaat/noun
+2.518211	1	3.4254465	1.0	2020	gooi/noun
+-0.42603925	1			38396	gooi/verb
+1.4017425	4	0.9279214	1.0	24629	graad/noun
+-1.2630773	1			88542	graag/adj
+4.0532594	1			438	graf_kelder/noun
+4.543568	2	5.4542403	2.0	532	graniet/noun
+1.4628512	2			11594	grap/noun
+2.1435144	1			2935	grap/verb
+2.9964223	1			1245	grasveld/noun
+-0.82416576	1			58478	gratis/adj
+3.3063822	1	4.214885	1.0	917	grein_DIM/noun
+3.6258712	1			666	greppel/noun
+2.7045195	1			1676	griezelig/adj
+3.398574	1			833	grif/verb
+0.084971294	1			23082	grijp/verb
+2.431093	1			2187	grijp_terug/verb
+0.61424357	1			13567	grijs/adj
+6.564479	1	7.4602146	1.0	36	grit/noun
+0.0051674116	2			50009	groei/verb
+2.8920174	1	3.8038766	1.0	1389	groei_aan/verb
+-0.5069484	1			41750	groen/adj
+4.728288	1			221	groente_tuin/noun
+-0.49936962	4			164593	groep/noun
+1.7616463	2			8586	grof/adj
+0.4565975	4	-0.018720185	1.0	63282	grond/noun
+3.4527185	1			795	grond_prijs/noun
+-1.0343478	11	-1.8295652	2.0	774779	groot/adj
+1.7717046	1			4229	gros/noun
+1.3069012	1			6786	gruwelijk/adj
+5.095937	1			159	gsm_antenne/noun
+3.1521528	1			1080	guerrilla_strijder/noun
+-1.7013098	1			138860	gulden/noun
+3.3851705	1	4.290382	1.0	861	guur/adj
+4.760598	1			214	gym_zaal/noun
+5.4260206	1	6.337338	1.0	110	gymleraar/noun
+2.5859106	6	2.3965433	2.0	11344	haak_af/verb
+-0.2761865	5	-0.9747776	1.0	165164	haal/verb
+2.6577208	1			1762	haal_neer/verb
+0.1507729	1			21571	haal_op/verb
+0.61479694	1	1.523679	1.0	13593	haal_uit/verb
+1.734932	2			8844	haal_weg/verb
+0.088028625	25	-1.1209296	3.0	570905	haar/det
+0.6831234	10	1.0846382	6.0	125811	haar/pron
+6.649796	1			32	haar_net_DIM/noun
+2.1861084	6	2.9166737	5.0	16778	haast/adv
+1.1073383	1			8253	hal/noun
+0.20193712	5	-0.498849	1.0	102394	half/adj
+0.51812124	1			15008	half/noun
+6.2590218	1			48	half_slaap/noun
+4.3117533	1			333	hallucinante/noun
+6.312208	1			48	ham_zuil/noun
+10.115532	1			1	hamburger_stal_DIM/noun
+1.8852345	1			3780	hamer/verb
+0.12357763	6	-0.06506663	2.0	132538	hand/noun
+6.657639	1			32	hand_been_DIM/noun
+5.4487963	1	6.3604336	1.0	107	hand_vat/noun
+3.5688183	1			703	handel_DIM/noun
+0.44731903	4			63915	hang/verb
+2.9286687	2	3.1484036	1.0	2666	hang_rond/verb
+2.0648286	1			3180	hang_uit/verb
+3.5148795	2			1523	hap/verb
+1.4682407	18	1.9720942	12.0	103806	hard/adj
+4.2732925	1	5.1792655	1.0	350	hard/part
+4.558945	4			1050	hard/verb
+7.5700006	1			13	hardest/noun
+8.729238	1			4	harding/noun
+3.893849	1			508	hardvochtig/adj
+3.96078	1			476	hark/verb
+2.9080424	1			1364	harnas/noun
+0.53964263	3	1.0429351	2.0	43809	hart/noun
+3.8588226	1			527	hart/prefix
+8.729238	1			4	havenpatronaat/noun
+2.5214527	1			1995	haverklap/noun
+5.726033	1	6.6219807	1.0	91	hd/noun
+-0.055817023	152	0.24732935	83.0	4034811	heb/verb
+1.8374084	1			3973	heb_aan/verb
+2.562429	1	3.475072	1.0	1924	heb_bij/verb
+3.0931096	1			1140	heb_lief/verb
+1.9490458	1			3547	heb_mee/verb
+1.6676352	1			4712	heb_op/verb
+1.0292989	1			8948	heb_over/verb
+1.0193406	1			8992	hecht/verb
+0.41699812	1			16486	hedendaags/adj
+0.39689273	15	0.2096381	5.0	251548	heel/adj
+-0.4593267	7	-1.4940631	1.0	276441	heel/adv
+-0.38109183	1			36490	heen/part
+0.14902967	1			21607	heer/noun
+1.2652974	2	1.4800862	1.0	14216	heerlijk/adj
+0.3306787	1			18034	heers/verb
+2.2418199	4	1.763993	1.0	10676	heet/adj
+0.37697208	3	0.8806688	2.0	51708	heet/verb
+1.5086077	2	1.7238463	1.0	11168	hef_op/verb
+1.148927	1	2.0597527	1.0	7919	heftig/adj
+2.6855958	2			3443	heimwee/noun
+0.06084376	1			23544	helaas/adv
+0.43826976	9	1.3487682	9.0	144941	helemaal/adv
+-0.7456896	2			105296	helft/noun
+0.14474268	4			87136	help/verb
+0.6213669	34	0.57185674	13.0	455207	hem/pron
+0.5557198	11	1.1496828	8.0	157140	hen/pron
+4.2144027	1			369	hendel/noun
+1.7660594	1			4261	her/adv
+2.6265392	1	3.5308	1.0	1826	her_aangelegd/adj
+-0.29444033	1	0.61929685	1.0	33432	herinner/verb
+1.1634637	1			7789	herkenbaar/adj
+3.5514648	1			720	hernia/noun
+2.3720672	1			2364	herrie/noun
+2.7927244	1			1532	hersens/noun
+1.5486537	1			5326	herstructurering/noun
+0.90775484	1			10276	hervat/verb
+2.596165	1			1865	hervatting/noun
+10.115532	1			1	het-verlangen-naar/noun
+-0.5240204	4			169158	het/adj
+-0.6340363	1			46936	het/comp
+0.08734797	508	-0.12681146	165.0	11650779	het/det
+-1.1570212	1			79591	het/fixed
+0.100590214	1			22669	het/name
+-0.24536313	24	-0.31223792	9.0	764720	het/noun
+-0.93011737	1			63184	hetzelfde/det
+2.594742	2	3.5063767	2.0	3724	heup/noun
+5.561655	1			96	heup/prefix
+8.600405	1	9.501786	1.0	5	heup_pijn/noun
+1.5945194	3	1.4030036	1.0	15336	hevig/adj
+10.115532	1			1	hi-techbatterij/noun
+2.3198855	1	3.2302358	1.0	2461	hiel/noun
+1.0180786	29	1.0479885	12.0	261019	hier/adv
+0.10887877	1			22412	hier/noun
+2.3081641	1	3.2205303	1.0	2487	hier/tag
+0.60363615	1			13636	hierdoor/pp
+3.2540824	1			963	hierheen/pp
+1.4000618	1	2.3134346	1.0	6145	hierin/pp
+0.024933549	99	0.27526194	51.0	2403923	hij/pron
+1.6542109	1			4761	hijzelf/pron
+2.3538365	3	2.1602497	1.0	7176	hinder/noun
+1.7703022	1	2.6790001	1.0	4292	hinder/verb
+6.5891714	1			34	hip_hop_producer/noun
+4.418932	17	5.0587435	13.0	5159	hitte/noun
+3.9553273	2			990	hitte_golf/noun
+8.729238	1			4	hobby_lijm/noun
+0.067082316	14	-0.27283907	4.0	327075	hoe/adj
+-0.47896865	2	-0.26226074	1.0	80808	hoef/verb
+-0.18250133	1	0.72912556	1.0	29922	hoek/noun
+2.409144	2	2.6312277	1.0	4462	hoekschop/noun
+2.2499409	1	3.1575258	1.0	2646	hoeve/noun
+2.476515	1			2101	hok/noun
+2.7048218	1			1668	hok_DIM/noun
+2.2397099	1			2663	hol/adj
+2.025145	1			3311	homoseksualiteit/noun
+-0.19704914	1			30731	hond/noun
+2.2107172	1			2758	hond_DIM/noun
+4.67767	1			236	hond_drol/noun
+-0.69252795	1	0.21535595	1.0	50287	honderd/num
+6.9168587	1			25	honderdvoudig/adj
+4.467967	1			294	honger_dood/noun
+-0.5874018	2			89877	hoofd/noun
+4.056993	1			431	hoofd_oorzaak/noun
+3.340337	3	4.250126	3.0	2663	hoofd_pijn/noun
+6.14524	1			53	hoofde/prep
+3.2241094	1			986	hoofdfiguur/noun
+-1.3321841	3			284594	hoog/adj
+2.8134398	1			1504	hooggespannen/adj
+0.13444696	1			21811	hoogte/noun
+1.481534	2			11331	hooguit/adv
+-0.5139354	1			41946	hoop/noun
+-0.37788305	3	0.12780203	2.0	109441	hoop/verb
+2.9875975	1			1260	hoop_DIM/noun
+3.3552332	1			872	hoop_op/verb
+0.3966736	1			16869	hoor/tag
+-0.8212427	3			170287	hoor/verb
+5.4520926	1			106	hoorn_DIM/noun
+1.5973792	1			5069	hopeloos/adj
+5.4989276	1			102	hopeloos_heid/noun
+5.661185	1	6.567354	1.0	87	horeca_exploitant/noun
+2.4348252	1	3.336425	1.0	2227	horizontaal/adj
+-0.30501905	10	-1.697908	1.0	340614	houd/verb
+0.44265324	1	1.3564795	1.0	16002	houd_in/verb
+1.4848672	1			5692	houd_stand/verb
+0.6939546	1			12559	houd_tegen/verb
+1.2355075	3			21894	houd_vast/verb
+1.3755393	1	2.2887743	1.0	6296	houd_voor/verb
+0.108856216	1			22348	houding/noun
+0.63262564	1			13239	houten/adj
+0.8390855	1	1.7499156	1.0	10793	huid/noun
+5.6625423	3	5.4716196	1.0	262	huid_ziekte/noun
+0.9600702	1			9613	huil/verb
+0.5456936	11	-0.24948144	2.0	159560	huis/noun
+2.8345592	1			1496	huisarrest/noun
+1.9708818	1			3510	huisdier/noun
+2.5180604	1			2046	huisvuil/noun
+3.2548158	1			990	huisvuil_zak/noun
+2.3784828	1			2314	hul/verb
+1.5580993	1			5288	hulp_dienst/noun
+7.0154395	1	7.8977685	1.0	23	humanity/noun
+0.49083608	1			15345	humor/noun
+0.02197789	37	-0.37565932	10.0	902917	hun/det
+3.0569026	1			1174	huur_contract/noun
+5.154087	1	6.029316	1.0	151	huur_video/noun
+1.3801032	1			6342	huurder/noun
+-0.15109587	1			29196	huwelijk/noun
+3.6014862	1			686	huzaar_stuk_DIM/noun
+5.453037	1	6.3698235	1.0	106	hy/noun
+4.4882708	1			279	hybride/noun
+3.0745142	1	3.985528	1.0	1154	hygiënisch/adj
+3.2926812	1	4.2033334	1.0	932	hysterie/noun
+1.9618585	2	2.8709958	2.0	7089	hè/tag
+0.9447435	1			9722	hé/tag
+3.0617301	1			1175	idealist/noun
+1.8982823	1			3732	ideologie/noun
+-0.051805962	3	0.45445445	2.0	78886	ieder/det
+0.040394742	7	0.10465071	3.0	168069	iedereen/pron
+0.10152544	5	-0.5950966	1.0	112501	iemand/noun
+0.27975512	13	-1.3738047	1.0	244998	iets/noun
+1.5826918	1			5108	ietwat/adv
+1.960888	3			10581	ijs/noun
+5.397033	1			114	ijs_water/noun
+2.6081164	1			1850	ijskoud/adj
+2.8719833	1			1420	ijzig/adj
+0.64978415	198	0.8899084	101.0	2577275	ik/pron
+1.4718868	2	1.6804898	1.0	11730	illegaal/noun
+1.2997167	1	2.2137449	1.0	6783	illustreer/verb
+-1.13606	1			77400	immers/adv
+3.4147394	1	4.322587	1.0	824	immuun/adj
+-0.59371305	2			90594	in/adj
+-0.5916229	1	0.3198452	1.0	45035	in/adv
+0.94792426	2			19273	in/comp
+-0.2656419	6	-1.1490936	1.0	195873	in/fixed
+-0.21724413	9	-1.5053478	1.0	279990	in/part
+1.1904832	1			7576	in/pp
+-0.121758044	335	-0.5391969	89.0	9492181	in/prep
+3.6679091	2	3.88531	1.0	1273	in_activiteit/noun
+4.165801	1			390	in_tolerant/adj
+2.2244568	3			8121	incasseer/verb
+-0.11278806	2			55695	inderdaad/adv
+0.028808655	1			24229	individueel/adj
+0.39963076	1			16777	indrukwekkend/adj
+0.23606814	1			19693	ineens/adv
+2.9791284	1			1277	infiltreer/verb
+3.831771	1			544	ingepakt/adj
+2.0803502	1			3126	ingetogen/adj
+0.58929014	1			13846	ingreep/noun
+2.4889374	1	3.400377	1.0	2073	inheems/adj
+-0.52078134	1	0.39133477	1.0	41957	initiatief/noun
+0.1363996	4	0.35444167	2.0	87135	inmiddels/adv
+2.05901	1			3173	innerlijk/adj
+2.219091	1	3.1304514	1.0	2715	innovatie/noun
+1.11901	1			8161	inrichting/noun
+3.24579	1			974	inspuiting/noun
+1.0421746	1			8833	installeer/verb
+4.1365194	1			406	instorting_gevaar/noun
+2.8432376	1			1447	instrumentale/adj
+-0.34263784	1	0.56907403	1.0	35172	interessant/adj
+9.422385	1			2	interestshow/noun
+-1.437993	1			105805	internationaal/adj
+6.3088694	1			45	international/name
+0.7890677	1			11476	international/noun
+7.3031216	1			17	interpelleren/noun
+3.219647	1			996	introvert/adj
+0.3889556	3	0.20468304	1.0	50529	intussen/adv
+1.932819	1			3622	invloed/prep
+-0.5339621	1	0.3719701	1.0	43126	inwoner/noun
+3.2597544	1			962	irrationeel/adj
+3.187729	2			2067	irritant/adj
+1.9628874	1	2.8723872	1.0	3527	irritatie/noun
+1.1350387	1	2.0457687	1.0	8029	ja/noun
+0.07941724	3	0.9925688	3.0	69377	ja/tag
+2.4256575	1			2219	jaag_op/verb
+-0.584922	35	-1.1523021	8.0	1574348	jaar/noun
+1.8965561	1			3766	jaar_DIM/noun
+-0.03603371	1			25893	jammer/adj
+0.5034082	2	1.4134276	2.0	30300	jarenlang/adj
+2.762354	1	3.6667383	1.0	1599	jat/verb
+3.4092505	2	3.6283748	1.0	1661	jazeker/tag
+0.25671622	8	-0.9117181	1.0	154475	je/det
+0.43737713	71	0.4886249	30.0	1142105	je/pron
+2.883847	1			1392	je/tag
+0.7551952	3	1.2573988	2.0	35564	jeugd/noun
+5.6930833	2			167	jeugd_categorie/noun
+3.759077	1	4.6734724	1.0	579	jeugd_reeks/noun
+3.1866515	1			1039	jeugd_trainer/noun
+1.3416908	1	2.2520142	1.0	6556	jeugdig/adj
+3.7353246	1			597	jeuk/noun
+0.052275226	1	0.964144	1.0	23694	jij/pron
+0.08586337	1			23143	job/noun
+3.821466	1			547	jolig/adj
+0.12452711	9	-0.063507184	3.0	199012	jong/adj
+0.092977166	4	0.3103104	2.0	91223	jongen/noun
+0.048223637	4	0.2637622	2.0	95975	jongere/noun
+4.4929595	1	5.3989196	1.0	282	jongere_café/noun
+0.38206193	1			17070	jood/noun
+0.13637468	2	0.3525997	1.0	43825	journalist/noun
+2.3302476	1	3.2351499	1.0	2495	judo/noun
+2.2921863	1			2581	judoka/noun
+-0.32551786	2			69134	juist/adj
+-0.26473004	2			65643	juli/noun
+-1.1028963	1			75845	juni/noun
+1.8119528	1			4121	junior/adv
+5.4939966	1			103	junior_team/noun
+1.1839073	1			7651	kaal/adj
+-0.8107311	1			56572	kaart/noun
+1.9084914	2	2.8176305	2.0	7440	kaas/noun
+6.123774	1	7.0259295	1.0	55	kakafonie/noun
+3.41351	1			832	kakkerlak/noun
+3.5410142	1			724	kalk/noun
+2.2552023	2			5252	kalm/adj
+-0.2366207	1			31600	kamer/noun
+0.26635274	1	1.1768862	1.0	19142	kamp/noun
+0.27130884	1			19190	kamp/verb
+-0.536062	1			43296	kampioen/noun
+0.14518043	1			21794	kampioenschap/noun
+0.12191855	89	0.28157008	42.0	1969534	kan/verb
+1.6519048	3	1.4635707	1.0	14414	kan_aan/verb
+-0.67580056	1	0.23160234	1.0	49442	kandidaat/noun
+3.2380297	1			986	kandidate/noun
+-0.5359963	4	0.086656995	3.0	170934	kans/noun
+0.3599187	5	-0.33741516	1.0	86945	kant/noun
+1.5932616	1			5100	kantine/noun
+2.1642485	3			8650	kapitein/noun
+0.8923543	1			10273	kapot/adj
+1.9825152	8	2.6067784	6.0	27485	karakter/noun
+5.224431	1	6.13729	1.0	134	karamel/noun
+2.9576797	2			2616	kassei/noun
+0.8253319	1			10959	kast/noun
+4.599486	1			251	kastelein/noun
+5.5053744	1			101	kat_pis/noun
+3.1432538	1	4.0578485	1.0	1072	katalysator/noun
+1.4558934	1			5831	keel/noun
+1.0672342	1			8608	keeper/noun
+-0.4604461	7	-1.4965196	1.0	277310	keer/noun
+2.0327282	1	2.9444704	1.0	3278	keer_om/verb
+2.281001	1			2563	keer_toe/verb
+7.085398	1			21	keffer/noun
+2.4356012	5	1.736733	1.0	10943	keihard/adj
+0.9521941	1	1.8621308	1.0	9649	kelder/noun
+0.32490063	8	-0.84302753	1.0	144534	ken/verb
+3.6979012	1	4.6075835	1.0	620	keramisch/adj
+1.7874916	2	2.6993914	2.0	8348	kerel/noun
+10.115532	1			1	kermisfreaks/noun
+1.0895742	4	1.713709	3.0	33587	kern/noun
+6.015371	1			62	kerst_special/noun
+5.794716	1			77	kerst_stal_DIM/noun
+2.4270766	1			2210	ketel/noun
+0.20279232	1			20391	keuken/noun
+-0.047590204	2			52416	keuze/noun
+2.1458457	1	3.0549514	1.0	2933	kick/noun
+3.2649822	1			955	kieper/verb
+-1.5342652	1	-0.623732	1.0	116271	kies/verb
+-0.34099844	4	-0.81544036	1.0	140629	kijk/verb
+0.20995656	1			20305	kijk_uit/verb
+-0.19160241	1			30365	kijker/noun
+-0.41565096	3			113570	kilo_meter/noun
+-0.10353017	11	0.48778495	8.0	305978	kind/noun
+3.2745576	1	4.17588	1.0	962	kind_soldaat/noun
+3.5635948	1			726	kind_spel/noun
+3.2477136	1			972	kinesist/noun
+4.455005	1	5.367701	1.0	290	kinesitherapie/noun
+1.6995301	3			13804	kip/noun
+8.169621	1			7	kip_kadaver/noun
+4.9516034	1			183	kip_mest/noun
+5.948092	1	6.8455033	1.0	69	kip_stal/noun
+2.1099312	9	2.2087088	4.0	27363	klaag/verb
+0.15213884	2	0.36086825	1.0	43586	klaar/adj
+4.917864	1			184	klaarwakker/adj
+0.960215	5			48285	klacht/noun
+2.357462	3	2.8644042	2.0	7092	klank/noun
+0.0100066615	3	-0.17802228	1.0	74277	klant/noun
+3.681146	1			635	klant_vriendelijk/adj
+-0.08277777	1			27360	klap/noun
+4.6805005	1			232	klap_in/verb
+0.75535876	1	1.6656193	1.0	11749	kleding/noun
+2.4678175	1			2113	klei/noun
+9.01692	1	9.93465	1.0	3	klei_homp/noun
+-0.13376649	8	-0.6096611	2.0	228937	klein/adj
+1.3108991	1	2.2211075	1.0	6738	kleine/det
+1.4516962	1	2.357763	1.0	5900	kleinkind/noun
+1.931646	1	2.8407266	1.0	3636	kleintje/noun
+4.5602493	1			260	kleur_combinatie/noun
+2.8291347	1			1484	kleurloos/adj
+4.43553	1			295	kliek_DIM/noun
+0.39603934	1			16833	klim/verb
+2.237675	4			10669	klimaat/noun
+1.9067816	1			3726	klink/adj
+0.46200204	4	0.6791214	2.0	63033	klink/verb
+3.7918005	1			569	kloot/noun
+3.242161	1			984	klootzak/noun
+-0.4100726	1	0.5011029	1.0	37718	klop/verb
+2.8896503	1	3.797013	1.0	1402	klucht/noun
+2.4821622	1			2094	knaag/verb
+7.610006	1			13	knaap_liefde/noun
+5.059923	1			158	kneus_DIM/noun
+8.729238	1			4	kneusing/noun
+1.9661276	6	2.1835034	3.0	20998	knie/noun
+9.422385	1			2	knieartrose/noun
+3.2250755	1			998	knijp_dicht/verb
+1.3471755	1	2.2538204	1.0	6552	knok/verb
+4.79962	1			206	knuffel_dier/noun
+2.3747153	1			2333	knutsel/verb
+6.0473604	1	6.9621015	1.0	59	koe_stront/noun
+2.288969	1			2539	koel_af/verb
+1.999787	1	2.9114108	1.0	3377	koepel/noun
+-0.64839745	1			48021	koers/noun
+5.7335052	1			80	koester/adj
+-1.2164537	1			85068	kom/adj
+-0.05157134	37	-0.11211924	14.0	973909	kom/verb
+0.87269694	3			31295	kom_aan/verb
+2.2178266	3			8159	kom_bij/verb
+2.688477	1			1696	kom_buiten/verb
+0.5697663	1	1.480672	1.0	14162	kom_op/verb
+0.42776245	1	1.3400254	1.0	16274	kom_over/verb
+1.36048	1	2.2723196	1.0	6415	kom_tegemoet/verb
+0.15577038	2	0.3755091	1.0	42714	kom_terecht/verb
+-0.2436131	1			31961	kom_terug/verb
+1.3008152	1			6808	kom_thuis/verb
+0.93041706	1			9867	kom_toe/verb
+-0.7177439	1			51341	kom_uit/verb
+-0.30138534	1			33801	kom_voor/verb
+2.3764992	1	3.2892883	1.0	2318	kom_voorbij/verb
+2.3194122	1			2462	komaf/noun
+1.8129934	3	1.625199	1.0	12292	kook/verb
+6.7362394	1			31	kool_stof/noun
+2.375781	1	3.2866917	1.0	2321	koorts/noun
+2.0205584	2			6622	kop/verb
+1.5548962	1			5279	kopman/noun
+2.4452434	1			2175	koppig/adj
+1.9197983	1			3723	korpschef/noun
+-0.77574015	2			112646	kort/adj
+-0.13547024	1			28546	kort/adv
+2.95624	1			1300	korte/fixed
+2.9482627	2			2613	kost/adv
+1.2570354	1			7128	kostbaar/adj
+3.1419046	5	3.8243153	4.0	5438	kou/noun
+0.9257872	2			19932	koud/adj
+3.9091072	2	4.125882	1.0	1004	koude/noun
+1.4158255	1			6136	kraak/verb
+4.4746895	1			287	kraak_helder/adj
+5.6123943	1			91	kracht_explosie/noun
+4.4129167	1			301	kracht_term/noun
+1.1070354	2			16515	krachtig/adj
+2.4896443	1			2069	krampachtig/adj
+4.996341	1			175	krant_verkoper/noun
+2.0146425	1	2.9257307	1.0	3341	kreet/noun
+3.7272227	1			603	kreng/noun
+3.0435343	1	3.950924	1.0	1200	kriebel/verb
+-0.68452924	15	-1.0968541	4.0	746610	krijg/verb
+3.639945	1			655	krijt_lijn/noun
+0.37484667	3	0.18546541	1.0	51699	kritiek/noun
+1.8536569	2			7869	kroon/noun
+2.5701423	1			1915	kroost/noun
+3.2171707	1			1022	krot/noun
+2.9179094	1			1354	kruis_band/noun
+1.7843913	1	2.6967223	1.0	4185	kruising/noun
+6.9800377	1			23	kunst_mat/noun
+9.01692	1			3	kunstdiamantjes/noun
+2.2298076	1	3.1359196	1.0	2715	kus/verb
+4.733793	1			320	kvk/noun
+0.7353644	1			12006	kwaad/noun
+3.7264664	1			601	kwaal_DIM/noun
+-0.66836834	1	0.24285637	1.0	48735	kwaliteit/noun
+2.0728083	2			6308	kweek/verb
+-0.45625284	1	0.4541173	1.0	39477	kwestie/noun
+1.6094401	2			10018	kwetsbaar/adj
+-0.025648814	1			25790	kwijt/part
+1.8542379	1			3910	laad/verb
+-0.69851595	2	0.21095988	2.0	100679	laag/adj
+-0.63853556	11	-1.0270298	3.0	520541	laat/adj
+-0.093632095	19	-0.04756791	8.0	521724	laat/verb
+2.566423	1	3.4803038	1.0	1907	laat/vg
+0.4702971	1			15666	laat_achter/verb
+4.1684113	1			387	laat_af/verb
+1.0392202	1			8834	laat_na/verb
+0.562361	1	1.4737276	1.0	14254	laat_over/verb
+6.45351	15	7.3630986	15.0	593	lab_euro/noun
+5.9708114	1			64	labradors/noun
+1.377109	1			6329	lach/adj
+0.79634726	4	1.0122919	2.0	45320	lach/verb
+2.933978	1	3.8402343	1.0	1335	lade/noun
+3.6667216	1			639	lak/noun
+10.115532	1			1	lak_eenheid/noun
+1.8777617	1			3815	laken/noun
+-0.8895761	5	-1.5884736	1.0	304215	land/noun
+8.036091	1	8.953821	1.0	8	land_arbeid/noun
+2.5813391	3	2.391112	1.0	5747	landbouwer/noun
+0.12240479	1			22270	landelijk/adj
+0.09538912	14	-0.53523487	3.0	318300	lang/adj
+2.388406	14	3.2951362	14.0	32202	langer/adv
+0.3486909	5	-0.3511646	1.0	88271	langs/prep
+2.2347276	1			2665	langszij/adv
+0.10183215	1			22620	langzaam/adj
+2.3291981	2			4887	langzamerhand/adv
+0.71420765	3			36808	last/noun
+0.076006755	1			23211	lastig/adj
+2.982635	1	3.8937013	1.0	1262	later/adv
+6.244331	1			48	latrine/noun
+5.661185	1			86	latrines/noun
+10.115532	1			1	laufst/noun
+4.6791387	28	4.5596614	10.0	6504	lawaai/noun
+4.1880727	2	4.407207	1.0	757	lawaai_hinder/noun
+6.0821767	3			172	lawaai_overlast/noun
+2.0414824	2	2.2578483	1.0	6499	leed/noun
+0.69187576	10	0.68511313	4.0	125630	leef/verb
+2.770942	1			1567	leefmilieu/noun
+1.0539294	5	0.35291868	1.0	43920	leeftijd/noun
+2.76791	1			1563	leeftijdscategorie/noun
+1.0806626	3			25572	leeg/adj
+1.2403792	13	0.27919808	2.0	94215	leer/verb
+0.5267996	1	1.436487	1.0	14812	leer_kracht/noun
+3.8631465	2			1057	leer_school/noun
+0.5654621	4	0.087351665	1.0	57361	leerling/noun
+2.6580381	1	3.5700428	1.0	1748	leermeester/noun
+-0.4997485	2			83176	lees/verb
+-0.13363357	3	-0.32095152	1.0	85868	leg/verb
+0.20133196	1	1.1090536	1.0	20589	leg_neer/verb
+0.4163948	3	0.2315998	1.0	49212	leg_uit/verb
+0.5717226	3	0.38116348	1.0	42653	leger/noun
+4.825247	1			201	legering/noun
+-0.9093066	2	-0.691877	1.0	124304	leid/verb
+0.59515864	1	1.5017358	1.0	13898	lek/adj
+3.7244527	1	4.6361246	1.0	603	lelijkheid/noun
+-0.037476223	1			25999	les/noun
+2.4083345	1			2279	les_DIM/noun
+0.9578832	2	1.1767027	1.0	19140	letterlijk/adj
+0.043661177	3			72064	leuk/adj
+7.518413	2	8.4305725	2.0	27	leukigheid/noun
+0.100849666	1			22751	leven/fixed
+1.2533343	21	1.6831443	13.0	150208	leven/noun
+4.1693263	1			386	leven_einde/noun
+0.5154731	1			14966	levend/adj
+1.3927484	6	1.2056171	2.0	37206	lichaam/noun
+5.075338	1			155	lichaam_geur/noun
+1.1278353	1			8072	lichamelijk/adj
+-0.66110605	1	0.24732281	1.0	48585	licht/adj
+0.3847622	2			34085	licht/noun
+4.686625	1			231	licht_flits/noun
+-1.459522	1			107912	lid/noun
+7.4074817	1			15	lid_dag/noun
+1.0413951	2			17673	lidstaat/noun
+5.527508	1			100	lied_kunst/noun
+0.44091445	4	-0.036090948	1.0	64492	lief/adj
+-0.50097406	1			41505	liefde/noun
+2.670991	2	2.8877854	1.0	3460	lies/noun
+1.1794969	1			7741	lift/noun
+0.10819714	13	0.063981585	5.0	291510	lig/verb
+-0.5691915	1	0.33910978	1.0	44366	lijd/verb
+1.6215818	2			9868	lijf/noun
+4.196907	1			380	lijf_behoud/noun
+0.7947241	1	1.701136	1.0	11375	lijk/noun
+0.2496026	12	-0.22616439	3.0	233946	lijk/verb
+6.9953723	2	7.905954	2.0	46	lijk_geur/noun
+4.17352	1			388	lijk_wagen/noun
+3.9139078	1	4.820406	1.0	501	lijkschouwing/noun
+3.269014	1			951	lijm/noun
+1.9210057	2	2.1371877	1.0	7334	lijst_DIM/noun
+7.2823186	1	8.200049	1.0	17	link_hamstring/noun
+4.1975794	2			751	linker_voet/noun
+2.235257	1	3.1452563	1.0	2676	lint/noun
+2.9818769	1	3.8903363	1.0	1274	list/noun
+0.43231082	1			16266	literair/adj
+0.41206667	1	1.3217908	1.0	16585	literatuur/noun
+4.879356	1	5.786238	1.0	191	literatuur_wetenschapper/noun
+0.79303765	1	1.7002952	1.0	11366	live/adj
+3.211032	1			1009	living/noun
+2.032512	1	2.9381974	1.0	3303	loep/noun
+1.6530167	1	2.5645506	1.0	4778	logica/noun
+0.6749016	1			12958	lok/verb
+-0.62366086	1			46703	lokaal/adj
+1.8696489	1			3883	loket/noun
+8.323772	1			6	long_patiënte/noun
+1.9971758	1			3395	loodzwaar/adj
+2.3708105	1	3.2830784	1.0	2329	loof/adj
+0.40791026	1			16683	loon/noun
+0.41923767	1			16358	loop/prep
+0.6059557	13	0.7437425	6.0	177403	loop/verb
+0.1722349	1			21148	loop_af/verb
+2.8673124	1			1430	loop_hard/verb
+1.9529301	1			3553	loop_in/verb
+-0.7774252	1			54590	loop_op/verb
+0.4708993	1	1.3833777	1.0	15567	loop_rond/verb
+1.246816	1			7210	loop_weg/verb
+1.1523076	1			7917	los/verb
+5.528526	1			99	los_rij/verb
+5.614057	1			91	losgekomen/adj
+0.20029369	1			20553	lot/noun
+1.1936272	1	2.1056664	1.0	7551	louter/adj
+2.031596	11	1.6429366	3.0	36061	lucht/noun
+5.5454707	1	6.4585514	1.0	97	lucht_verplaatsing/noun
+1.8080356	1	2.7141545	1.0	4138	luchtmacht/noun
+4.2534647	1	5.1660867	1.0	354	luchtvochtigheid/noun
+1.5958419	1			5067	lucratief/adj
+1.9165624	1	2.8243964	1.0	3697	lui/adj
+2.4581842	4	2.676106	2.0	8556	luid/adj
+-0.19565657	1	0.7116363	1.0	30527	luid/verb
+0.5411267	2	0.75948375	1.0	29120	luister/verb
+1.3464522	1	2.258022	1.0	6499	luisteraar/noun
+0.10622259	2	0.3247398	1.0	44910	luk/verb
+1.4055059	1			6159	luxe/noun
+1.7164469	1			4590	m/noun
+1.466425	1	2.3760247	1.0	5771	maag/noun
+-0.5220909	19	-0.47623947	8.0	801559	maak/verb
+2.3909307	1			2297	maak_kapot/verb
+1.9812549	1	2.89302	1.0	3445	maak_klaar/verb
+2.0261636	9	1.4344336	2.0	29623	maak_mee/verb
+1.8039248	1			4127	maak_schoon/verb
+-0.7181246	1			51143	maak_uit/verb
+5.9160767	1			68	maak_werk/noun
+2.4998147	1			2046	maak_wijs/verb
+0.039827872	1			24042	maal/noun
+1.4795784	1			5716	maan/noun
+-0.63592505	6	0.08929241	5.0	284554	maand/noun
+-1.1304874	1	-0.22968446	1.0	78674	maandag/noun
+1.005852	1			9244	maandag_avond/noun
+3.302692	1			928	maandag_namiddag/noun
+0.37350285	28	0.5167275	13.0	480969	maar/adv
+0.42513657	52	0.38568187	20.0	845227	maar/comp
+0.43315712	84	0.41251585	33.0	1352748	maar/vg
+0.29361513	1			18652	maat/noun
+-0.2519239	1			32114	maatschappij/noun
+2.163726	1			2874	maatstaf/noun
+-0.46900645	10	-0.7639863	3.0	401159	mag/verb
+3.7455454	1			598	mag_binnen/verb
+3.6121798	2	4.5235624	2.0	1351	majoor/noun
+0.8278174	4	1.0456492	2.0	43633	makkelijk/adj
+3.8415234	1			535	mal/noun
+0.36846763	22	-0.4272253	4.0	381643	man/noun
+6.5086765	1			44	man_volleybal_team/noun
+9.422385	1	10.340116	1.0	2	manager_vak/noun
+10.115532	1			1	mangaansulfiden/noun
+0.06524422	6	-0.8134128	1.0	139815	manier/noun
+2.514792	2			4036	manifesteer/verb
+1.0091864	1			9226	marathon/noun
+6.686395	1	7.599275	1.0	31	marathon_afstand/noun
+3.551606	1			718	margarine/noun
+6.6190243	1			33	marie/adv
+3.110491	2			2235	marteling/noun
+5.742294	1			81	masker_DIM/noun
+1.4588246	2	2.368695	2.0	11658	massa/noun
+2.03023	1			3289	mat/noun
+-0.43805045	1			38686	match/noun
+-0.19727995	1			30351	materiaal/noun
+2.3749328	1			2320	matras/noun
+2.8014119	1	3.710752	1.0	1519	me/name
+0.96960086	30	1.2529361	16.0	283602	me/pron
+4.7250915	1			221	mede_gedetineerde/noun
+-0.5718035	1	0.33499104	1.0	44624	medewerker/noun
+9.422385	1			2	media_geilheid/noun
+-1.057839	1			72129	mee/adv
+-0.08229958	5			135936	mee/part
+8.729238	1			4	mee_oefen/verb
+4.1089325	1			411	mee_vecht/verb
+2.031833	1			3296	meedogenloos/adj
+-0.8098155	1	0.1021754	1.0	56065	meen/verb
+-0.16771744	15	-0.02065836	7.0	444374	meer/adj
+2.3163466	174	3.096987	153.0	429100	meer/adv
+-1.256719	3	-1.4479967	1.0	264661	meer/det
+1.5719305	1			5234	meer/verb
+0.44452146	12	0.48054567	5.0	192090	meest/adj
+0.8720353	5	1.5624105	4.0	52041	meestal/adv
+1.3268356	2			13300	meester/noun
+1.827777	1			4010	meet/noun
+9.422385	1	10.340116	1.0	2	mega_spannend/adj
+10.115532	1			1	mehndi_kunst/noun
+1.4971459	1			5599	meid/noun
+5.410064	1			112	mein/noun
+-0.07902134	3			81418	meisje/noun
+0.045808043	7	0.112394534	3.0	166196	men/pron
+2.168201	3	1.9815515	1.0	8566	meng/verb
+2.8884325	2	3.1084666	1.0	2772	mengsel/noun
+1.1512903	1	2.062719	1.0	7909	menig/det
+3.089505	1			1138	meniscus/noun
+-0.0735902	20	-0.21285324	7.0	538442	mens/noun
+0.6159944	2	1.5264351	2.0	27021	menselijk/adj
+3.2260134	14	3.89537	11.0	13907	mentaal/adj
+1.2147375	1			7411	mentaliteit/noun
+5.6207347	1			91	mer/name
+-0.48631546	1	0.4276773	1.0	40458	merk/verb
+2.2159889	1	3.1239567	1.0	2740	mest/noun
+7.6202626	2	7.8295	1.0	25	mest_geur/noun
+10.115532	1			1	mest_koek/noun
+0.3591735	1			17380	met/adv
+1.4525903	2			11612	met/comp
+-0.5257242	100	-1.0856525	23.0	4230163	met/prep
+1.7545015	1			4325	metaal/noun
+7.12985	1			20	metaal_leeg_ring/noun
+0.15857549	6	-0.72029376	1.0	127413	meteen/adv
+0.41826358	8	0.34904814	3.0	131418	meter/noun
+0.6753187	1	1.5874746	1.0	12692	methode/noun
+1.8548064	1	2.766295	1.0	3906	meting/noun
+2.504308	1			2061	metro_station/noun
+4.253322	1	5.1689215	1.0	353	metsel_werk/noun
+2.9560456	1			1300	metten/fixed
+3.8013952	2			1135	mevrouw/tag
+1.7217366	5	2.6340141	5.0	22270	mezelf/pron
+3.919088	1			493	microscopisch/adj
+4.853101	1			198	middag_dutje/noun
+1.9440879	2	2.1624942	1.0	7139	middags/adv
+0.4452509	3			48001	middel/noun
+2.6764133	1	3.5887215	1.0	1713	middels/prep
+2.618186	1			1820	midden/prep
+2.3594437	1			2360	middenin/prep
+0.8457158	1			10683	middenveld/noun
+5.4403696	1			110	miezer/verb
+0.099093445	10	0.49952927	6.0	225916	mij/pron
+2.5644765	1			1934	mijlpaal/noun
+0.85048205	53	0.43106446	14.0	564919	mijn/det
+1.5613898	1			5264	mijn/noun
+2.8585997	2			2864	mijzelf/pron
+0.6949468	1			12653	mik/verb
+0.3487895	1	1.2586244	1.0	17663	milieu/noun
+4.8438153	1			201	milieu_hinder/noun
+4.348305	2			650	milieu_inspectie/noun
+2.0745697	1			3195	milieu_vergunning/noun
+-0.6165293	1	0.29311198	1.0	46412	militair/adj
+-1.7293559	1			142457	miljard/noun
+-1.9630588	2			359331	miljoen/noun
+1.5908767	1			5116	milli_meter/noun
+8.036091	1	8.953821	1.0	8	millitaire/adj
+-0.04714852	4	0.17069533	2.0	104962	minder/adj
+10.115532	1			1	miniatuur_grasspriet/noun
+4.0233173	1			448	minimalisme/noun
+3.016578	1			1221	minimum/adj
+-2.2023969	1			229276	minister/noun
+0.8080467	1			11200	minste/adv
+1.0602983	4	0.58416027	1.0	34626	minstens/adv
+-0.031716373	5	-0.73037016	1.0	128910	minuut/noun
+0.7835183	1			11433	mis/adj
+0.45563063	4	0.6708599	2.0	63781	mis/verb
+3.1132166	2			2238	miserie/noun
+0.85381424	1	1.76111	1.0	10722	mislukt/adj
+0.26506844	8	0.48431405	4.0	153063	misschien/adv
+2.7736268	1			1564	misselijk/adj
+2.361222	2			4749	mist/noun
+3.2772338	1			946	mistig/adj
+5.545989	1			98	mistral/noun
+0.025790976	1			24621	mobiel/adj
+2.3817024	3			6950	moe/adj
+3.1573212	1	4.067356	1.0	1070	moeder/det
+0.48996755	6	-0.3904437	1.0	91972	moeder/noun
+8.729238	1			4	moederken/noun
+0.24928129	7	1.0060319	6.0	136220	moeilijk/adj
+0.86402804	4			42056	moeite/noun
+0.346577	88	0.44290188	39.0	1557442	moet/verb
+2.3171935	1			2481	moet_in/verb
+-1.452158	2	-1.2358876	1.0	213777	mogelijk/adj
+0.45368433	9	0.26745915	3.0	142407	moment/noun
+0.75111085	2	0.96976286	1.0	23551	mond/noun
+9.01692	1	9.93465	1.0	3	mond_bescherming/noun
+7.0710096	1			21	mond_voorraad/noun
+2.0863435	1			3106	monnik/noun
+3.2747715	1	4.1903124	1.0	940	monotoon/adj
+0.23886877	8	-0.23885417	2.0	158026	mooi/adj
+0.13552672	2	0.34694988	1.0	44102	moord/noun
+1.7165519	3	1.5280162	1.0	13480	moreel/adj
+2.9856336	1			1263	moreel/noun
+4.217074	2			736	morfine/noun
+8.380931	3			17	morfine_pomp/noun
+1.7435553	2			8702	morgens/adv
+3.9043295	1			504	mortuarium/noun
+3.6223078	1			670	mot/noun
+0.8641408	2			21113	motor/noun
+4.1720767	1			390	mountainbiker/noun
+2.6054025	1			1856	mug/noun
+2.026663	1			3315	must/noun
+9.422385	1			2	mute_knop/noun
+0.4458666	2			31978	muur/noun
+0.28217772	5	-0.41637835	1.0	94376	muziek/noun
+1.1615882	2			15644	muzikant/noun
+0.7237037	1	1.6202772	1.0	12566	n/noun
+-0.70416933	1	0.20605189	1.0	50531	na/part
+0.15355355	37	-0.3511365	9.0	796990	na/prep
+-0.627641	3	-0.81610847	1.0	140818	naam/noun
+0.38442945	1	1.2921394	1.0	17103	naar/adj
+0.682204	1	1.5953783	1.0	12598	naar/comp
+-0.36229452	42	-1.5829089	5.0	1512452	naar/prep
+0.3332511	6			107233	naast/prep
+1.0438044	1			8832	nabij/prep
+0.41062948	3	0.2188184	1.0	49935	nacht/noun
+3.4104438	1	4.313947	1.0	836	nacht_lawaai/noun
+2.143635	1	3.0427701	1.0	2993	nacht_vlucht/noun
+2.2486532	6	2.0609334	2.0	15808	nachts/adv
+-1.3791914	1			99062	nadat/comp
+1.0893909	1			8471	nader/verb
+0.56601584	2	0.7874005	1.0	28187	nadien/pp
+10.115532	1			1	namaak_eten/noun
+0.5768919	1			13965	name/adv
+1.0159667	1			8994	name/comp
+-0.29757953	1	0.6153134	1.0	33504	namelijk/adv
+1.1537683	1			7936	nat/adj
+-0.53624773	2	-0.32186377	1.0	85915	nationaal/adj
+2.2220905	1			2701	nature/noun
+0.50902116	10	0.5053734	4.0	149989	natuurlijk/adj
+4.230818	1			365	natuurverschijnsel/noun
+2.5689135	36	3.4226882	34.0	68849	nauwelijks/adv
+1.366394	1			6378	naïef/adj
+0.01252878	2	0.23310289	1.0	49405	nee/tag
+1.5246887	1	2.437004	1.0	5438	neef/noun
+-0.5775792	7	-0.22719401	4.0	312837	neem/verb
+0.9041821	3	0.71749145	1.0	30341	neem_aan/verb
+-0.4503059	1			39288	neem_deel/verb
+-0.24230772	1			31896	neem_mee/verb
+-1.0560849	1			72022	neem_op/verb
+0.61523455	1			13529	neem_toe/adj
+0.79065377	3			34091	neer/part
+1.1437534	1			7970	negen/noun
+0.053711385	2			47706	negen/num
+-0.056198727	1			26372	negentig/num
+10.115532	1			1	nep-human/noun
+0.3456272	1			17723	nergens/adv
+-0.35876	1			35739	net/adj
+0.2871996	10	0.28333613	4.0	187091	net/adv
+0.80156606	2	1.0192571	1.0	22416	net/noun
+0.22090098	1			20065	netwerk/noun
+0.10148738	1			22574	neus/noun
+-1.402303	1			101844	niemand/pron
+10.115532	1			1	niet-blij_ben/verb
+1.5742431	667	2.3233397	568.0	3455007	niet/adv
+0.6846955	1			12639	niets/adv
+-0.04961435	8	-0.52661633	2.0	210486	niets/noun
+0.61699086	1	1.5316714	1.0	13413	niettemin/adv
+-0.6376834	14	-1.2727115	3.0	669062	nieuw/adj
+1.6080053	1			5040	nieuwjaar/noun
+0.46204537	1	1.3713291	1.0	15806	nieuwkomer/noun
+0.020473024	2			49864	nieuws/noun
+3.5071266	1	4.419375	1.0	748	nijdig/adj
+0.668011	1			12851	niks/adv
+0.84202427	3			32326	niks/noun
+-0.08962935	2			54600	niveau/noun
+1.6332667	6	1.8565521	3.0	29018	nochtans/adv
+-0.11520871	6	0.101998724	3.0	168407	nodig/adj
+0.11041782	1			22403	nodig_uit/verb
+-0.6920469	3	-0.18579097	2.0	149858	noem/verb
+0.03998981	70	0.101538606	30.0	1683041	nog/adv
+2.0009828	1	2.9087415	1.0	3416	nominatie/noun
+1.3123256	1	2.223064	1.0	6725	noodgedwongen/adj
+0.46454743	15	-1.3341304	1.0	235945	nooit/adv
+5.225935	1			135	noordoosten_wind/noun
+3.01968	1			1211	notie/noun
+-0.17590307	27	-0.25783405	10.0	803160	nu/adv
+1.3157345	1			6715	nuchter/adj
+-1.2288104	1			85984	nummer/noun
+2.2746484	1	3.1821852	1.0	2584	nutteloos/adj
+3.312082	1			907	obsedeer/verb
+1.1988146	2			15130	ochtend/noun
+4.9320645	1			179	ochtendlijke/adj
+1.5865337	2			10189	ochtends/adv
+0.97670907	1	1.8854892	1.0	9476	oefen/verb
+2.8649673	1	3.7675705	1.0	1437	oefen_duel/noun
+1.8550391	1			3969	oefenwedstrijd/noun
+1.6735688	1			4681	oever/noun
+0.090619884	14	-0.026560133	5.0	318628	of/comp
+-0.77199286	1	0.13651621	1.0	54259	of/name
+-0.32534328	24	-0.64730954	7.0	829986	of/vg
+4.275908	1			348	ofte/noun
+1.5704609	1			5164	ofwel/comp
+0.68263215	1			12576	ofwel/vg
+3.736936	1	4.64849	1.0	595	oksel/noun
+0.05902791	3	-0.1344595	1.0	71246	oktober/noun
+1.0257955	2	1.9332533	2.0	17999	olie/noun
+0.1583315	74	0.52818316	43.0	1570989	om/comp
+0.35314146	1			17690	om/fixed
+0.18462378	2	0.40019336	1.0	41685	om/part
+-0.59870875	11	-1.3941877	2.0	500648	om/prep
+0.6425841	33	-0.32984135	5.0	430972	omdat/comp
+2.6349344	1			1793	omgeef/verb
+-0.5442513	1			43016	omgeving/noun
+0.75491124	2			23625	omhoog/adv
+0.51731354	1			14949	omstreeks/prep
+3.9496415	2	4.864829	2.0	956	omtrek/noun
+2.66991	1			1728	omwenteling/noun
+1.8709352	2	2.778555	2.0	7754	omwonende/noun
+7.4074817	1			15	on_gebakken/adj
+6.2537503	1			49	on_geblust/adj
+6.477946	1			38	on_getalenteerd/adj
+5.941914	1	6.8493056	1.0	66	on_kuisheid/noun
+5.032886	1			163	on_verzadigd/adj
+2.970257	1			1375	onaangekondigd/adj
+2.891252	1			1408	onafwendbaar/adj
+0.30768147	2			37304	onbekend/adj
+8.729238	1	9.646968	1.0	4	onbeschrijfbaar/adj
+4.1862087	1			379	onbeschrijfelijk/adj
+0.6011569	5	0.59570223	2.0	68830	ondanks/prep
+1.7525045	1			4338	ondenkbaar/adj
+0.153056	6	-0.032904096	2.0	128088	onder/adv
+-0.16772239	14	-0.51107293	4.0	414521	onder/prep
+7.975466	2			17	onder_begroeiing/noun
+5.3632355	1			117	onder_buur/noun
+2.43084	1			2201	onderaan/prep
+-0.33358404	1	0.5758	1.0	34892	onderdeel/noun
+1.181871	2	1.397589	1.0	15414	onderga/verb
+0.82481045	1			10941	onderscheid/verb
+2.7027678	2			3363	onderschrijf/verb
+0.807253	1			11168	ondersteun/verb
+1.0757272	5	0.38126105	1.0	42329	ondertussen/adv
+0.42212054	3			49322	onderwijs/noun
+-0.4765961	4	-0.95490444	1.0	161749	onderzoek/noun
+3.7784407	1	4.692242	1.0	569	ondoordringbaar/adj
+2.3170295	1			2470	ondraaglijk/adj
+0.36088088	1	1.2703309	1.0	17555	onduidelijk/adj
+4.2171426	2			739	ongedierte/noun
+0.86134213	1			10561	ongelooflijk/adj
+2.3963578	1			2288	ongepast/adj
+4.7308073	1			221	ongesteld/adj
+0.82786715	2			21829	ongetwijfeld/adv
+-1.2159148	1			84612	ongeveer/adv
+-0.81363064	1			56458	onlangs/adv
+3.8768167	1			520	only/name
+3.6524506	3			1951	onmenselijk/adj
+-0.5454851	1			43072	onmiddellijk/adj
+-0.23934807	1			31758	onmogelijk/adj
+3.3612776	1			864	onnatuurlijk/adj
+1.9436641	1			3584	onrecht/noun
+-0.16072105	16	-0.41463554	5.0	470011	ons/det
+0.76385653	20	0.28903404	5.0	232248	ons/pron
+1.6923308	1			4627	onschuld/noun
+2.78739	1	3.698362	1.0	1539	ontbinding/noun
+0.6329125	3	1.1357584	2.0	39984	ontbreek/verb
+-0.5865028	1			45068	ontdek/verb
+1.385092	1			6276	onterecht/adj
+3.5277064	1	4.4369698	1.0	738	ontgroei/verb
+1.2961918	1			6922	ontkom/verb
+2.9526694	1	3.8604543	1.0	1312	ontmanteling/noun
+4.2964883	2	4.514484	1.0	682	ontnuchter/adj
+4.571136	1			264	ontplof/adj
+1.9437064	2			7216	ontplof/verb
+5.37147	1			116	ontsmet/adj
+1.0121367	2			18326	ontsnap/verb
+0.035087183	3			72241	ontsta/verb
+-0.69353926	1			50285	ontvang/verb
+-0.45446876	1	0.45768222	1.0	39330	ontwikkel/verb
+3.1476228	1			1081	ontzetting/noun
+2.9045658	1	3.815269	1.0	1374	onvermoeibaar/adj
+1.0719725	1			8561	onwaarschijnlijk/adj
+3.1602254	1			1055	onwillekeurig/adj
+3.4728496	1	4.384116	1.0	777	onwrikbaar/adj
+7.853769	3	8.747484	3.0	31	onzacht/noun
+4.9721155	1			173	onzuiver_heid/noun
+0.8827014	9	0.28963253	2.0	92972	oog/noun
+6.91482	1			25	oog_irritatie/noun
+2.375346	1	3.28918	1.0	2312	oogpunt/noun
+-1.4481456	1			106607	ooit/adv
+0.087509066	97	-0.20735347	29.0	2214625	ook/adv
+0.19038808	1			20664	oor/noun
+0.24159163	1			19613	oordeel/verb
+0.17293966	4	-0.30476034	1.0	84444	oorlog/noun
+4.6934495	1	5.604465	1.0	229	oorlog_ervaring/noun
+3.5053744	1	4.4135227	1.0	756	oorlog_tijd/noun
+10.115532	1			1	oorlogstriptiek/noun
+2.825819	1			1489	oorverdovend/adj
+-0.058942985	5	-0.7608802	1.0	133314	op/adj
+1.9703014	5			17364	op/adv
+-0.23877883	2			63484	op/fixed
+0.06382923	23	-0.37120068	6.0	540823	op/part
+-0.33077115	129	-1.2868083	20.0	4502370	op/prep
+4.6644936	1			235	op_leider/noun
+6.9271154	1	7.8295	1.0	25	op_schilder/verb
+1.3851889	1			6218	opdat/comp
+0.11537376	2	0.33399782	1.0	44445	opdracht/noun
+1.4389191	1	2.349983	1.0	5925	opdrachtgever/noun
+-0.95812005	1			65589	open/adj
+-0.16937561	1			29749	open/part
+-0.23270154	2			63842	open/verb
+3.1031463	1			1130	open_lucht/noun
+0.119075574	3			67063	openbaar/adj
+3.788399	1			564	openbaarmaking/noun
+1.2501515	4	1.46765	2.0	28650	operatie/noun
+1.5803384	3			15484	opereer/verb
+9.01692	1			3	opinionleader/adj
+0.4436612	2			32075	opleiding/noun
+-0.09666659	2			55296	oplossing/noun
+1.3562949	1	2.2610977	1.0	6515	opmars/noun
+-0.13626997	1			28701	opmerkelijk/adj
+0.08776314	7	-0.95345706	1.0	161924	opnieuw/adv
+2.8939152	1			1399	oppermachtig/adj
+2.4042516	1	3.3187523	1.0	2246	oppervlak/noun
+1.2748287	1			6974	oppervlakte/noun
+0.058851298	1			23848	oppositie/noun
+1.5760392	1	2.4866319	1.0	5171	oprecht/adj
+3.3211133	1			903	oprisping/noun
+0.4034652	1			16722	oproep/noun
+1.3332934	1			6613	opstand/noun
+1.6366016	1	2.551515	1.0	4834	opteer/verb
+1.0274496	1			8942	optimaal/adj
+0.8305747	4	0.35422435	1.0	43579	optreden/noun
+0.65541	1			12931	opvatting/noun
+7.377923	1			16	opzeg_brief/noun
+0.55608165	1			14314	opzicht/noun
+2.4095266	1			2261	or/noun
+-1.0755202	1			73727	organiseer/verb
+0.43199617	1			16218	origineel/adj
+10.115532	1			1	orkest_kuil/noun
+4.7878985	1			208	orthopedisch/adj
+2.7532039	1			1593	oubollig/adj
+-0.07700738	9	-1.3644919	1.0	243584	oud/adj
+2.3184872	1	3.2205303	1.0	2519	oud_premier/noun
+-0.23748599	3			95202	ouder/noun
+0.8085686	1			11158	ouderwets/adj
+1.3203207	1			6763	out/UNKNOWN
+2.730053	3	3.2338166	2.0	4907	oven/noun
+1.2675397	1	2.1757295	1.0	7062	over/noun
+-1.493513	1			111584	over/part
+-0.7312814	25	-1.6554321	4.0	1300877	over/prep
+2.4198875	1	3.3296907	1.0	2230	over_gewicht/noun
+2.5808094	2			3801	over_vol/adj
+8.036091	1			8	over_werkuur/noun
+1.1417345	5	0.44352335	1.0	39909	overal/adv
+1.7959851	1			4148	overal/noun
+3.192051	1			1034	overbelasting/noun
+4.3216043	2			665	overbevolkt/adj
+2.352036	3			7128	overdag/adv
+2.5362618	1			1999	overdosis/noun
+2.1789076	1			2838	overeind/adj
+1.6399423	1			4867	overeind/adv
+2.6976514	1	3.6079047	1.0	1682	overhaast/adj
+1.5955228	1			5091	overheers/verb
+0.45978805	4	0.6804943	2.0	62813	overigens/adv
+2.6992638	6	2.911213	3.0	10171	overlast/noun
+0.7001977	2			25035	overleef/verb
+-0.328591	1			35300	overlijd/verb
+2.6194901	1	3.536402	1.0	1804	overmaat/adv
+3.0036936	1			1259	overnemer/noun
+4.531284	1			268	overreding_kracht/noun
+0.7858453	1			11426	overtreding/noun
+0.86805475	1			10459	overtuiging/noun
+-0.5745283	1			44574	overwinning/noun
+0.63756806	1			13252	overzicht/noun
+0.24238908	7	0.59478396	4.0	136924	paar/noun
+7.22516	1			18	paard_stront/noun
+2.723901	1			1664	paas_vakantie/noun
+0.06794295	2	0.26865342	1.0	49701	pagina/noun
+-0.52734566	1	0.38033307	1.0	42666	pak/verb
+1.4800758	1	2.3941615	1.0	5661	pakweg/adv
+0.78377956	2	1.0008926	1.0	22826	pand/noun
+1.4408821	2	1.6566347	1.0	11911	paniek/noun
+3.9892087	1			463	pantser/noun
+0.49696526	2			30453	papier/noun
+7.5505824	1			13	paracetamolletjes/noun
+10.115532	1			1	paracetamoltablet/noun
+2.20904	1			2755	parfum/noun
+0.558525	1			14412	parkeer/verb
+3.3243666	1			917	parkeer_probleem/noun
+2.0203755	1			3347	parkeergarage/noun
+0.81867445	1			11107	parking/noun
+6.3838325	1	7.295593	1.0	42	parkoers_ken_nis/noun
+-0.4078343	1	0.5002833	1.0	37839	parlement/noun
+2.4789486	2			4210	parten/fixed
+-2.055806	1	-1.1455219	1.0	195439	partij/noun
+-0.3930445	1			37073	partner/noun
+-0.08620541	6	-0.27326593	2.0	163211	pas/adv
+0.8960039	1			10182	pas/noun
+6.8086452	1	7.701058	1.0	28	passagier_bus/noun
+0.972018	2			18897	passeer/verb
+8.169621	1			7	passementerie/noun
+3.5845814	1			692	pathos/noun
+1.2959996	2	1.5170195	1.0	13602	pauze/noun
+2.8237736	1	3.7349865	1.0	1482	pedaal/noun
+5.605222	1			91	pension_DIM/noun
+-0.6203981	5	-1.3210949	1.0	232898	per/prep
+-0.25998378	1			32368	perfect/adj
+0.4677221	5	-0.22976309	1.0	78068	periode/noun
+0.65013856	1			13024	persconferentie/noun
+0.19304354	1			20478	personage/noun
+0.70198035	4	0.22331233	1.0	49896	personeel/noun
+2.5997517	1			1881	personeelstekort/noun
+-0.810839	1			56188	persoon/noun
+4.7349434	1			220	pff/tag
+3.9661026	1	4.879201	1.0	472	piek_moment/noun
+3.0988774	1			1128	pier/noun
+4.81069	131	5.122574	72.0	26684	pijn/noun
+0.37923598	1	1.289819	1.0	17121	pijnlijk/adj
+4.8619504	1	5.7777224	1.0	192	pijnscheut/noun
+2.7805173	1	3.6862044	1.0	1566	pijnstiller/noun
+4.7095942	2			451	pik/noun
+4.310096	1			335	pikzwart/adj
+0.9764352	1			9455	pil/noun
+6.8440638	1	7.751412	1.0	27	pis_lucht/noun
+1.2786204	1			6987	piste/noun
+3.0591843	1			1177	pit/noun
+2.9314716	1			1331	pittoresk/adj
+4.3725286	1			315	pixels/noun
+0.60074455	2	0.8203619	1.0	27330	plaat/noun
+3.6879923	1			633	plaat_industrie/noun
+5.6972938	1	6.60692	1.0	84	plaat_staal/noun
+0.50895894	1			14960	plaats/comp
+-0.5634873	5	-1.263137	1.0	219685	plaats/noun
+1.7271613	1			4430	plaats/pp
+0.104848295	1			22500	plaats/prep
+0.9395553	1			9776	plaats_DIM/noun
+1.7296098	4			17762	plaatse/noun
+-0.1730003	1			29659	plaatselijk/adj
+1.3805294	1			6294	plak/verb
+0.18007585	1			20863	plan/fixed
+-1.4690856	1			108930	plan/noun
+0.6357142	1			13219	plant/noun
+1.468961	1	2.3782005	1.0	5801	plant/verb
+2.850452	1			1452	plant_DIM/noun
+3.6056457	1			686	plas_DIM/noun
+5.579712	1			96	plastic_zak/noun
+2.3830311	1			2305	plastisch/adj
+0.8064962	1			11203	plat/adj
+2.9478	1	3.8615096	1.0	1305	plateau/noun
+1.1292168	1			8088	platteland/noun
+-0.30135095	1			33946	pleeg/verb
+0.44215798	3			48145	plek/noun
+2.187207	2			5627	plek_DIM/noun
+-0.7555426	3	-0.942369	1.0	159236	ploeg/noun
+2.3025537	3	3.2143798	3.0	7481	ploeg_maat/noun
+4.542618	1			268	ploeg_manager/noun
+0.94326216	3	0.75831485	1.0	29082	plots/adj
+1.3544204	2	1.5730295	1.0	12862	plus/prep
+-0.26138932	1			32501	podium/noun
+3.5138943	1			748	poep/noun
+-0.07822403	2	0.13789214	1.0	54316	politicus/noun
+0.49938872	12	0.015194284	3.0	185518	politie/noun
+4.58076	1			259	politiecombi/noun
+-0.14638014	5	0.25207344	3.0	145013	politiek/adj
+0.23063019	3	0.7343097	2.0	59756	politiek/noun
+1.934623	1			3612	pols/noun
+1.1279477	1			8108	poort/noun
+1.7752131	2			8546	pop/noun
+3.9509547	1			486	pop_theater/noun
+3.1617045	1			1057	porselein/noun
+1.7154795	1			4499	portie/noun
+-0.5968315	1	0.31345648	1.0	45391	positie/noun
+-0.84389174	1			58281	positief/adj
+0.4431445	1			16130	post/noun
+10.115532	1	11.033262	1.0	1	postbode-sorteerder/adj
+1.7002164	1			4690	postbode/noun
+0.9940392	1			9268	pot/noun
+6.91482	1			26	pot_doof/adj
+4.9334674	1			179	potentaat/noun
+3.6507878	1			647	potig/adj
+8.169621	1	9.087353	1.0	7	pottenbakker_schijf/noun
+2.7809741	1	3.690726	1.0	1553	power/noun
+-1.1297487	1	-0.22013257	1.0	77615	praat/verb
+0.13006124	2			43891	prachtig/adj
+2.4737754	1			2100	pragmatisch/adj
+0.7532347	4	0.2784895	1.0	46964	precies/adj
+1.7162668	1	2.6287622	1.0	4482	prent/noun
+5.289621	1			125	presentie/noun
+5.618504	2	6.532065	2.0	181	prestatie_druk/noun
+3.3580184	1			873	pret_DIM/noun
+1.2952977	1			6872	preventief/adj
+-1.4892112	1			111414	prijs/noun
+2.3289802	1	3.2357657	1.0	2455	prijs_geld/noun
+10.115532	1			1	prisons/name
+0.50814646	10	0.9092857	6.0	150013	probeer/verb
+-0.513707	5			208882	probleem/noun
+-2.2589822	2	-2.0436366	1.0	480632	procent/noun
+1.5031195	1			5622	proces-verbaal/noun
+0.26856577	2			38421	proces/noun
+4.7580028	1			215	producente/noun
+-0.39830256	1			37238	productie/noun
+2.9118288	1			1352	productie_proces/noun
+5.46874	1	6.3828797	1.0	105	productie_wijze/noun
+2.4745438	1	3.3830342	1.0	2125	proeve/noun
+1.2265476	1	2.1345553	1.0	7375	prof/noun
+4.718954	1			222	prof_circuit/noun
+0.16189562	1	1.072804	1.0	21246	professioneel/adj
+9.422385	1			2	professioneel_juridisch/adj
+-1.2845131	1	-0.37385932	1.0	90499	programma/noun
+2.9100823	1			1357	prooi/fixed
+0.36005145	1			17707	protest/noun
+3.4688168	1			780	prothese/noun
+-0.27130264	1	0.6285528	1.0	34010	provinciaal/adj
+0.4461583	3	0.25381672	1.0	48624	provincie/noun
+3.443942	1	4.3464656	1.0	811	provincie_raad_lid/noun
+2.4880605	1			2081	provocatie/noun
+2.5558422	1			1938	pseudoniem/noun
+1.3572373	1			6465	psychiater/noun
+1.1832006	1			7735	psychiatrisch/adj
+1.2547207	1			7142	psychisch/adj
+0.9088834	1			10057	psychologisch/adj
+1.4115688	1			6112	psycholoog/noun
+3.1118302	1			1112	psychopaat/noun
+-1.2743034	1			89319	publiek/noun
+1.7658938	1			4297	puin/noun
+5.304568	1			125	pup_pies/noun
+2.1367755	1	3.0494814	1.0	2940	pupil/noun
+7.2363334	1			18	purschuim/noun
+1.4657328	1			5792	put/noun
+1.4789791	4	1.6961353	2.0	22808	puur/adj
+10.115532	1			1	quarterlife/noun
+1.7954125	1			4151	raad/verb
+1.6447126	2	1.8564531	1.0	9783	raad_lid/noun
+-0.8750594	2			120335	raak/verb
+2.464602	2	2.6847246	1.0	4243	raak_aan/verb
+4.547951	1			263	raak_uit/verb
+0.13603054	1			21768	raam/noun
+3.0850725	1	3.9988747	1.0	1136	raam_DIM/noun
+2.041864	1			3274	raas/verb
+0.9184744	2			20115	radio/noun
+2.823501	1			1490	radio/prefix
+1.8593659	1			3898	rail/noun
+2.6196012	1			1804	ramp/adv
+0.020808505	1			24657	ramp/noun
+1.973949	1			3478	rampzalig/adj
+5.376268	1	6.2861586	1.0	116	rap_muziek/noun
+6.491191	1	7.4089217	1.0	38	ras_optimist/noun
+2.8862731	3	2.6954052	1.0	4216	rat/noun
+5.520412	1			103	rat_gif/noun
+5.7717266	1			77	rationalistisch/adj
+6.5530663	1			36	ratten/name
+1.5670921	1			5220	rauw/adj
+0.02245037	2			49051	reactie/noun
+0.862453	1			10549	realistisch/adj
+5.4487963	1			108	realiteit_gehalte/noun
+0.20757438	2			40532	recent/adj
+1.4050195	1	2.3128836	1.0	6153	receptie/noun
+0.09621807	3	-0.098003514	1.0	68903	rechter/noun
+3.2961707	1	4.205227	1.0	932	rechter_knie/noun
+7.090241	1			21	rechtover/noun
+0.4027298	1			16780	rechts/adj
+1.4217503	1	2.3324778	1.0	6029	rechts/adv
+4.1271973	1			404	rechtsomkeert/fixed
+-0.09860443	1			27592	rechtstreeks/adj
+0.9914332	2	1.2057655	1.0	18693	reclame/noun
+4.1985216	1	5.1026764	1.0	380	record_tempo/noun
+2.3101082	2			4979	recupereer/verb
+1.2409323	3	2.1521904	3.0	21648	redelijk/adj
+-1.2069259	1			83250	reden/noun
+-0.1957796	2			60771	reeks/noun
+2.3081846	1			2513	reflex/noun
+1.0846533	1			8516	regeer/verb
+-0.70782197	1			50751	regel/noun
+-0.2520355	1			32081	regelmatig/adj
+1.1231704	2			16453	regen/noun
+1.1767576	1			7754	regen/verb
+2.8643997	1	3.77116	1.0	1437	regenbui/noun
+7.05448	1			22	regie_stijl/noun
+-0.26656276	1			32833	regisseur/noun
+1.8654473	1	2.7762983	1.0	3877	registratie/noun
+2.8792105	2			2799	reik_aan/verb
+1.6055044	1			5020	reis_af/verb
+2.7378669	1			1616	rek/verb
+-0.9708968	1	-0.060918853	1.0	66007	rekening/noun
+0.15578693	2			42670	relatie/noun
+1.648233	1			4824	rem/noun
+1.9941407	1	2.9054887	1.0	3409	rem/verb
+5.313973	1	6.2292414	1.0	122	remember/noun
+1.459882	1			5797	ren/verb
+-0.26745	1			32662	renner/noun
+0.5177886	1			15162	reportage/noun
+8.506094	1			5	reptiel_afdeling/noun
+-0.23778047	2			63293	rest/noun
+1.3014096	1	2.213394	1.0	6790	rest/verb
+-0.21357134	1			30973	restaurant/noun
+-1.3890362	1			100377	resultaat/noun
+2.4006536	1			2259	retoriek/noun
+4.2014885	1	5.1143684	1.0	373	reuk/noun
+2.8099406	1			1520	revalideer/verb
+2.846786	1			1456	revelatie/noun
+1.6808403	1			4652	revolutionair/adj
+3.1621103	2			2182	rib/noun
+-0.45101207	1			39138	richt/verb
+1.3156705	2			13401	richt_in/verb
+-0.26755524	1			32625	richt_op/verb
+2.2553468	1			2630	riek/verb
+-0.15747614	4	-0.6336344	1.0	117377	rij/verb
+2.2291687	1			2695	rij_door/verb
+5.005051	1	5.9205217	1.0	167	rij_over/verb
+3.077626	1			1146	rij_vak/noun
+3.0234156	1			1213	rij_voorbij/verb
+5.476927	1			106	rij_wind/noun
+2.4424715	1			2181	rijbaan/noun
+-0.42445838	1			38290	rijk/adj
+1.4168508	1			6052	rijkdom/noun
+1.7112163	1	2.6172442	1.0	4576	rijkswachter/noun
+1.1072344	1			8266	rijp/adj
+2.5811968	1	3.4937701	1.0	1890	rijp/verb
+5.6553874	1			87	rimpelingen/noun
+0.72359526	1			12189	ring/noun
+2.052524	6	1.8631258	2.0	19328	rit/noun
+0.90403223	1			10084	ritme/noun
+7.22516	1			18	rittenkoersjes/noun
+1.4429345	1	2.344619	1.0	6004	rock/noun
+3.5381575	1			726	rock_muziek/noun
+0.098071925	2			45260	roep/verb
+0.9317563	1			9876	rol/verb
+1.7120563	1	2.620347	1.0	4533	rol_stoel/noun
+0.38176566	2			34167	roman/noun
+0.869974	1			10497	romantisch/adj
+2.0081131	1			3372	rond/adv
+2.1558194	1			2898	rond/noun
+0.16521804	1	1.0765837	1.0	21150	rond/part
+-1.0720303	2			146554	rond/prep
+4.8107357	1			203	rond_maak/verb
+-0.852155	1			58805	ronde/noun
+5.5759673	1			94	rondetijden/noun
+-0.7513694	1	0.15608831	1.0	53277	rood/adj
+2.624221	4	2.839016	2.0	7280	rook/noun
+0.50455475	1			15175	rook/verb
+10.115532	1			1	rook_geurtje/noun
+8.729238	1			4	rook_hoek_DIM/noun
+6.2707176	1			47	rook_pauze/noun
+6.331342	1	7.249073	1.0	44	rook_walm/noun
+1.256211	1			7172	roos/noun
+6.265384	1			47	rooster_DIM/noun
+2.6510508	2	2.8665493	1.0	3542	rot/adj
+3.6633253	1	4.572576	1.0	645	rot/verb
+10.115532	1			1	rot_licht/noun
+6.213559	1			50	rover_hol/noun
+4.1012464	3			1240	rubber/noun
+1.1628942	4	0.687291	1.0	31221	rug/noun
+4.318411	3	4.82191	2.0	1003	rug_pijn/noun
+1.0480636	1			8800	ruik/verb
+6.104569	2			112	ruil_operatie/noun
+-0.49005884	1			40811	ruim/adj
+-1.3113513	1			93699	ruim/adv
+1.1977187	1	2.1017766	1.0	7668	ruim_op/verb
+0.110043	3			67003	ruimte/noun
+3.3895984	1			844	ruiterlijk/adj
+2.961229	1			1301	rumoer/noun
+-0.43704903	2			77212	rust/noun
+3.5062163	2	3.7179608	1.0	1521	rust_dag/noun
+3.5184546	1			741	rust_periode/noun
+0.19578478	2	0.41177964	1.0	41223	rustig/adj
+2.92988	1			1332	ruwweg/adv
+0.28844768	1			18933	ruzie/noun
+3.496059	1	4.40671	1.0	760	röntgenfoto/noun
+2.2304614	4	2.8500514	3.0	10814	saai/adj
+3.4106276	1	4.3165164	1.0	839	sabotage/noun
+9.01692	1			3	salvation/name
+-0.30362177	4	-0.08500242	2.0	135100	samen/adj
+1.1765018	2			15451	samen/adv
+-0.3894685	1			36908	samen/part
+1.9641842	1			3496	samenhang/noun
+2.3446124	1			2384	samenspraak/noun
+-0.40535504	1			37542	samenwerking/noun
+9.422385	1			2	samenzwering_denker/noun
+3.5704696	1			701	sandwich/noun
+3.5337145	1			728	scan/noun
+3.7328703	1			598	schaal_DIM/noun
+1.5052856	1	2.416043	1.0	5561	schaar/verb
+1.7934295	1	2.7006834	1.0	4231	schaats/verb
+1.7861272	1			4257	schaatser/noun
+-0.48350617	1			40841	schade/noun
+0.82549816	1	1.7338358	1.0	10998	schaduw/noun
+2.2825856	1			2547	schakel/verb
+0.8158034	1			11085	schakel_in/verb
+5.714929	1			82	schal/adj
+1.3742596	1			6364	schande/noun
+3.3152504	1			913	schatrijk/adj
+0.994624	1	1.904539	1.0	9272	scheel/verb
+3.5128083	1			747	scheen_been/noun
+4.0958443	1			412	scheep_in/verb
+2.9489572	1			1308	scheep_op/verb
+8.506094	1	9.423824	1.0	5	schel_heid/noun
+0.4154098	1			16497	schep/verb
+0.33219147	1	1.2423629	1.0	17949	scherm/noun
+0.55468786	2			28724	scherp/adj
+1.5755211	1			5178	scheur/verb
+3.208702	2	3.4261916	1.0	2017	scheur_DIM/noun
+0.5449609	1			14522	schijn/verb
+2.6009502	1			1856	schild/noun
+-0.32958636	1	0.57860184	1.0	34921	schip/noun
+0.7640176	2	0.9818453	1.0	23278	schitterend/adj
+3.0004508	3	2.8118172	1.0	3749	schokkend/adj
+-0.5349646	3			128591	school/noun
+2.9803224	1	3.884131	1.0	1281	school_bank/noun
+3.229358	1			994	schoolplein/noun
+3.0484679	1			1187	schoolvoorbeeld/noun
+1.3506274	2			13045	schoon/adj
+4.9579144	1			175	schoon_zuster/noun
+0.8233213	1			11027	schoonheid/noun
+1.1649343	1			7802	schop/verb
+6.72607	1	7.6362405	1.0	30	schorsing_procedure/noun
+3.7166874	1			608	schraag/verb
+3.833826	1	4.7288136	1.0	551	schrap/fixed
+0.8772992	1			10400	schreeuw/verb
+-1.169	2			160883	schrijf/verb
+1.5457178	1			5326	schrijf_op/verb
+1.2197995	1			7356	schrijf_toe/verb
+1.6135743	1	2.5260692	1.0	4972	schrijnend/adj
+1.6670245	1			4739	schuif_aan/verb
+5.594287	1			94	schuil_adres/noun
+7.6688466	1	8.580105	1.0	12	schuun/noun
+3.3070998	1	4.22078	1.0	913	schuur/verb
+8.323772	1	9.241503	1.0	6	schuur_poeder/noun
+-1.0241914	1			69888	scoor/verb
+2.131785	1	3.0443802	1.0	2957	script/noun
+0.43468493	1	1.3481097	1.0	16126	scène/noun
+0.4177533	2	0.6357649	1.0	32908	seconde/noun
+-0.40280607	1			37346	sector/noun
+5.5543137	1			97	sedatie/noun
+-0.8325038	3			172823	seizoen/noun
+0.728733	1	1.6390289	1.0	12075	selecteer/verb
+0.9636314	1			9749	senior/noun
+5.9550877	1			65	sensibiliseringsacties/noun
+2.443123	1			2173	sentimenteel/adj
+-0.2791493	3	-0.47229844	1.0	99854	september/noun
+7.171093	1	8.088823	1.0	19	septisch/adj
+0.5210029	2			29730	serie/noun
+1.0492063	1			8818	serveer/verb
+1.189692	1			7609	service/noun
+1.314065	6	0.43387216	1.0	40266	sfeer/noun
+1.4751747	1			5723	shirt/noun
+3.5835617	1	4.4971147	1.0	692	sijpel/verb
+2.2198446	2	2.439085	1.0	5407	simpelweg/adv
+0.845909	2	1.7592199	2.0	21490	sinds/comp
+-0.609601	4	-1.0868744	1.0	184528	sinds/prep
+1.1218706	3			24314	sindsdien/pp
+1.1385432	1			8028	single/noun
+1.0560893	8	1.4979063	5.0	69414	situatie/noun
+0.12118195	3	0.626193	2.0	66622	sla/verb
+-0.86748874	1	0.044222545	1.0	59378	slaag/verb
+1.4957122	4	1.0187815	1.0	22520	slaap/verb
+4.9674563	1			173	slaapkamer_raam/noun
+-0.14579265	3			87376	slachtoffer/noun
+0.86768675	5	0.1661117	1.0	52694	slag/noun
+2.9332178	1			1340	slagerij/noun
+4.55639	1	5.4606333	1.0	266	slang_kuil/noun
+0.37690133	7	-0.66034776	1.0	120435	slecht/adj
+-0.57902133	3	0.33262157	3.0	133553	slechts/adv
+2.23933	1	3.1439438	1.0	2687	slepend/adj
+2.2347844	1			2671	sleur/verb
+6.6190243	1	7.536755	1.0	33	sleur_op/verb
+1.0560668	1			8693	sleutel/noun
+3.4156623	1			830	sleutel_been/noun
+2.7884414	1			1549	slib/noun
+3.1654837	1	4.075527	1.0	1059	slijp/verb
+0.701655	1	1.6122763	1.0	12418	slik/verb
+3.7917109	1			565	slinger_rond/verb
+2.683936	1	3.5931892	1.0	1714	sloop/adj
+1.7768914	1	2.6791177	1.0	4279	sloot/noun
+6.177841	1			53	sluik_afval/noun
+-0.24796258	2			64597	sluit/verb
+0.8739691	1			10561	sluiting/noun
+4.913175	1			188	sluiting_dag/noun
+3.3712373	2			1720	smeer/verb
+8.228462	1	9.12372	1.0	7	smeer_af/verb
+6.205511	1			51	smeer_boel/noun
+6.9800377	1	7.8977685	1.0	23	smeerbare/adj
+2.2665396	1	3.1766524	1.0	2594	smerig/adj
+2.2561767	1			2620	smijt/verb
+2.859182	2			2892	smokkel/verb
+2.9526694	1	3.8578684	1.0	1316	sms_DIM/noun
+2.9022424	1			1381	snackbar/noun
+2.467102	1			2160	snak/verb
+4.205413	1	5.1180716	1.0	372	snauw/verb
+4.14376	1	5.054693	1.0	396	snedig/adj
+5.198475	1			138	sneeuw_laag/noun
+0.17910582	11	0.07640083	4.0	230240	snel/adj
+0.999255	1			9304	snel_weg/noun
+0.0053574964	1			24849	snelheid/noun
+2.7294328	1	3.6396918	1.0	1640	so/noun
+-0.5968287	2	0.31193253	2.0	91206	sociaal/adj
+6.8827534	1			26	socialistisch_realistisch/adj
+3.0584304	2			2362	soelaas/noun
+5.621852	1			91	soeverein/noun
+3.5288432	2	3.7470708	1.0	1465	soft/adj
+2.4835184	1	3.3889413	1.0	2103	soft_drug/noun
+1.5163828	5	2.2026417	4.0	27548	soldaat/noun
+1.7975705	1			4138	solo/noun
+0.5884083	2			27638	sommig/adj
+1.2716348	11	1.3970549	5.0	76903	sommige/det
+2.1087499	40	2.6285279	27.0	121121	soms/adv
+0.7137079	1	1.62825	1.0	12173	song/noun
+6.1274743	1	7.0442786	1.0	54	soo/noun
+-0.29598284	3	-0.48203018	1.0	100421	soort/noun
+4.9118	1			187	spaar_bekken/noun
+0.13333255	1	1.0414436	1.0	21978	spannend/adj
+1.5981047	5	1.9966705	3.0	25407	spanning/noun
+1.9818271	1	2.8929834	1.0	3442	speech/noun
+1.5805774	1			5153	speel/adj
+-0.09484992	12	-0.2833173	4.0	330463	speel/verb
+0.3587768	1	1.2718066	1.0	17416	speel_af/verb
+3.8018026	1			555	speel_helft/noun
+1.0314353	1			8892	speel_in/verb
+0.6668323	1			12830	speel_mee/verb
+1.1867856	1			7620	speelster/noun
+2.3702478	1			2367	speeltuin/noun
+1.1096667	1	2.0171897	1.0	8309	spektakel/noun
+4.0016284	1			458	spelenderwijs/adv
+0.49535713	9	1.0013194	6.0	136926	speler/noun
+2.7191813	2			3297	spendeer/verb
+4.0318303	1	4.9430842	1.0	444	spier_pijn/noun
+0.9019767	1			10160	spijt/noun
+4.8030653	1			205	spit_roede/noun
+-0.29917318	1			33708	spits/noun
+4.2799416	3			1039	spitsuur/noun
+3.738805	1			599	splijt/verb
+3.5922635	1	4.496571	1.0	698	spoel_door/verb
+6.599519	1			34	spoel_om/verb
+-0.388871	1			37307	spoor/noun
+9.422385	1			2	spoor_vast/adj
+3.4333606	1	4.3404036	1.0	817	spoorweg_politie/noun
+2.4639838	1			2119	sporadisch/adj
+-0.41330564	1	0.49467736	1.0	38173	sport/noun
+3.4114852	1	4.3200026	1.0	829	sport_krant/noun
+2.9164512	1	3.822444	1.0	1370	sport_wereld/noun
+-0.6890941	1			49726	sprake/noun
+-0.24291264	4	-0.024474077	2.0	127396	spreek/verb
+3.811906	1			594	springruiter/noun
+1.3093101	1	2.2189136	1.0	6757	sprong/noun
+7.476475	1			14	sprongsgewijze/adj
+2.9692717	1	3.8805044	1.0	1289	spui/verb
+3.27777	1			938	spuit_in/verb
+4.179382	2			766	spuitbus/noun
+1.8407586	3			11884	spul/noun
+2.3192067	1			2467	spurt/verb
+-0.43361318	17	-2.3558815	1.0	655795	sta/verb
+0.65443283	1			13005	sta_op/verb
+2.51004	1			2035	sta_stil/adj
+1.3888966	2			12702	staak/verb
+2.1543622	2	3.064878	2.0	5796	staal/noun
+2.7771962	1			1558	staal/verb
+2.0007734	1			3382	staal_DIM/noun
+7.8331494	1			10	staal_vezel_beton/noun
+2.5672657	1	3.4808283	1.0	1907	staan/vg
+-0.15095502	1			28923	staat/adj
+1.0499052	1			8801	stabiel/adj
+-0.07559073	7	-0.0140132	3.0	189573	stad/noun
+4.5740724	1	5.4822426	1.0	258	stad_bestuurder/noun
+5.2996955	1	6.2079535	1.0	126	stad_ingenieur/noun
+4.7580028	1			214	stad_verkeer/noun
+1.3737562	1			6313	stadium/noun
+1.8976009	2			7501	stal/noun
+1.7429715	1			4364	stalen/adj
+1.9980106	1			3379	stam/noun
+6.857435	1			26	stand-upper/noun
+0.50677454	1			15018	stand/fixed
+0.13160329	1	1.0427032	1.0	21888	standpunt/noun
+7.182133	122	7.678066	81.0	2341	stank/noun
+5.134669	1	6.0368953	1.0	150	stank_hinder/noun
+8.7937765	1	9.646968	1.0	4	stank_over_last/noun
+-0.65382427	1			48222	stap/noun
+-0.46093455	1			39890	stap/verb
+1.7707179	1			4248	stap_af/verb
+1.6829385	1			4633	stap_binnen/verb
+0.4226975	1	1.3250221	1.0	16637	stap_op/verb
+2.8019116	1			1516	stapel/verb
+0.45181763	4			64506	start/verb
+0.25624368	13	-0.7064504	2.0	252048	steeds/adv
+3.4731104	1			778	steeg/noun
+0.5118117	4	0.036248464	1.0	60108	steek/verb
+0.3896232	1			16949	steen/noun
+-0.34649226	6			212176	stel/verb
+0.74565685	1			11834	stel_samen/verb
+0.4572099	1	1.3613209	1.0	16061	stel_uit/verb
+1.1158797	6	0.23680656	1.0	49028	stel_vast/verb
+-1.00687	1			68366	stel_voor/verb
+0.46000907	1			15735	stelling/noun
+-0.17857355	2	0.039306123	1.0	59760	stem/noun
+3.6392522	1			653	stem_DIM/noun
+1.1273918	2	1.3441988	1.0	16236	stemming/noun
+-0.3180352	1			34708	sterf/verb
+2.9793272	1	3.8896449	1.0	1274	sterfte/noun
+0.255915	9	0.067314565	3.0	174284	sterk/adj
+2.5313942	1	3.4448123	1.0	1982	sterk/verb
+-0.06448448	2	0.15136187	1.0	53435	steun/noun
+3.183767	1			1036	stiel/noun
+6.4266524	1			40	stijf_op/verb
+-1.1794097	1			81713	stijg/verb
+2.3673415	2			4686	stijg_op/verb
+0.6700898	2	0.88890934	1.0	25522	stijl/noun
+0.099267185	1	1.0067335	1.0	22793	stil/adj
+0.57562166	1	1.4850402	1.0	14070	stilaan/adv
+2.703583	1	3.6192923	1.0	1660	stilistisch/adj
+0.6247834	1	1.5327089	1.0	13474	stilte/noun
+2.6536903	1			1766	stink/adj
+3.4531872	3	3.9561865	2.0	2389	stink/verb
+6.161408	1	7.070071	1.0	53	stink_dier/noun
+0.25579253	1			19320	stoel/noun
+0.019644609	1			24502	stof/noun
+5.4653883	1			106	stof_hinder/noun
+5.7210827	1			81	stompzinnig_heid/noun
+6.1302586	1	7.0442786	1.0	54	stook_ketel/noun
+3.294588	1			932	stoom/verb
+4.7043324	3			686	stoot_DIM/noun
+3.0922184	1	4.0036216	1.0	1138	stoot_uit/verb
+0.6426196	5			66374	stop/verb
+1.6872464	2			9355	storm/noun
+9.422385	1			2	storput/noun
+1.7453954	4			17524	stort/verb
+5.35807	1			118	straal_motor/noun
+1.0610632	10	0.7663	3.0	86633	straat/noun
+3.2569668	1			993	straat_naam/noun
+2.3512146	1			2415	strafrechter/noun
+0.28251246	1	1.1936203	1.0	18845	strafschop/noun
+0.524067	1	1.4368012	1.0	14752	strak/adj
+-0.6049949	1			45903	straks/adv
+0.32342577	1	1.2339764	1.0	18080	streek/noun
+7.292666	2			34	stremsel/noun
+0.43036366	2	0.6449327	1.0	32727	streng/adj
+2.6395862	5	3.0374084	3.0	8963	stress/noun
+1.5264833	1			5420	streven/noun
+1.5656618	12	1.9332254	7.0	63111	strijd/noun
+4.0324	1			441	strijd_makker/noun
+2.2016451	2	2.4185796	1.0	5550	strijder/noun
+7.812947	1			10	stro_leem/noun
+2.4366505	1			2184	stroef/adj
+3.5325377	1	4.444508	1.0	731	strompel/verb
+1.9105594	1	2.823682	1.0	3684	strook/noun
+4.8270125	1	5.7299576	1.0	203	stroom_uitval/noun
+-0.6541534	1	0.25433484	1.0	48534	student/noun
+-0.4190186	1			37972	studie/noun
+8.729238	1			4	studie_top_sport/noun
+0.08892494	5	-0.60917914	1.0	114181	stuk/noun
+0.668222	2			25704	stuk_DIM/noun
+1.630294	2	1.8468562	1.0	9795	stuur/noun
+0.16911341	3			63604	stuur/verb
+-0.47930244	2	-0.26352918	1.0	81026	succes/noun
+4.612235	1	5.51933	1.0	252	succes_story/noun
+-0.055888966	1	0.85235155	1.0	26523	succesvol/adj
+2.7040966	1			1675	suf/adj
+7.7313666	1	8.635367	1.0	11	suiker_biet_campagne/noun
+4.033541	1			444	suikerbiet/noun
+9.422385	1	10.340116	1.0	2	sulfermijnen/noun
+4.720088	1			224	super_vorm/noun
+-0.13441531	1			28807	supporter/noun
+6.724385	1			30	survivaltochten/noun
+0.8027613	1			11181	symbool/noun
+-0.6187614	1	0.29394072	1.0	46242	systeem/noun
+2.1810005	1			2834	taai/adj
+-0.31231573	1			34097	taak/noun
+4.117837	1	5.0281415	1.0	407	taal_DIM/noun
+2.5093186	1			2030	taalgebruik/noun
+1.2425542	1	2.1557236	1.0	7195	tactisch/adj
+4.0649734	1			428	tafereel_DIM/noun
+4.8030653	1			204	tal/noun
+0.86218476	3			31690	talent/noun
+5.531075	1			100	talkshow_host/noun
+1.0948097	1			8340	tamelijk/adj
+3.565309	1			710	tandvlees/noun
+2.5469203	1			1983	tap/verb
+1.2192963	2			14826	tarief/noun
+4.4924173	1			281	tattoo/noun
+-0.3918751	11	-0.49427047	4.0	407519	te/adv
+1.5396007	739	2.3494384	668.0	3960435	te/comp
+-0.8210805	1	0.08874761	1.0	56768	te/fixed
+-0.37207493	3	-0.562743	1.0	109204	te/prep
+0.17458001	3			62942	team/noun
+2.2330096	2	3.1438737	2.0	5360	teen/noun
+3.0877295	1	3.9978838	1.0	1142	teer/adj
+0.46457812	2	0.6855981	1.0	31265	tegelijk/adj
+0.70341057	1			12449	tegemoet/part
+0.7688005	1	1.6781726	1.0	11653	tegen/adj
+0.67694527	57	1.0062423	32.0	727647	tegen/prep
+2.4295762	1			2193	tegen_partij/noun
+6.2237115	1			49	tegenop/adv
+-0.19761525	2			60755	tegenover/prep
+3.371944	8	3.812267	5.0	6867	tegenslag/noun
+-0.64038706	1			47393	tegenstander/noun
+1.1091669	2	1.3294766	1.0	16446	tegenstelling/prep
+-0.3352154	1			34946	tegenwoordig/adj
+1.1458756	2	2.0556269	2.0	15901	teken/noun
+0.14746289	1			21690	tekort/noun
+2.1925097	1	3.1038659	1.0	2787	tekortkoming/noun
+-0.83262724	1			57540	tekst/noun
+1.5375636	1			5393	tel_mee/verb
+-0.16707163	1			30042	telefoon/noun
+0.8945039	1	1.8050576	1.0	10224	telefoontje/noun
+5.9723973	1	6.8901277	1.0	63	telegram_stijl/noun
+1.4416085	1			5949	teleurgesteld/adj
+-0.47811586	1			40477	televisie/noun
+7.9183073	1	8.836038	1.0	9	televisie_hoofd/noun
+3.2664127	1	4.168806	1.0	974	televisie_kijker/noun
+3.0147212	1			1229	televisietoestel/noun
+0.10879872	2			44623	telkens/adv
+2.4775827	6	2.6952758	3.0	12595	temperatuur/noun
+-0.2947702	1	0.61714965	1.0	33443	ten/adv
+0.7492268	3			35447	ten/fixed
+0.17449333	1			20991	tenminste/adv
+5.9311943	1			67	tennis_loop_baan/noun
+0.34422526	1			17649	tenslotte/adv
+0.58878356	1			13865	tent/noun
+-0.5848951	1	0.3256288	1.0	44943	tentoonstelling/noun
+0.46955943	1			15635	ter/fixed
+0.60651577	4			54534	ter/prep
+3.0366426	1			1202	tergend/adj
+-0.514459	1			41823	termijn/noun
+2.7459311	1			1611	terminaal/adj
+0.9885949	1			9311	terras/noun
+1.005748	5			45680	terrein/noun
+1.2220073	1			7422	terreur/noun
+0.8605481	1			10572	terug/adj
+-0.11888395	2	0.7855737	2.0	56901	terug/adv
+-0.7111038	3			153390	terug/part
+2.6437137	1			1806	terugblik/noun
+-0.71105283	3	-0.20179427	2.0	152130	terwijl/comp
+1.3180288	2			13515	test/verb
+1.2324256	1			7312	tevergeefs/adj
+0.9759789	1			9386	tevoren/pp
+0.06166401	2	0.27570274	1.0	47292	tevreden/adj
+-0.040928815	2	0.17444378	1.0	52219	the/name
+1.1441818	2			15950	the/noun
+1.6578447	1			4770	therapie/noun
+3.837386	1			539	thesis/noun
+0.91666716	1			10097	thriller/noun
+1.0540578	7	1.6261903	5.0	61183	thuis/adv
+4.7379413	1			219	thuis_zit/verb
+-0.19253701	1	0.71968305	1.0	30223	thuisploeg/noun
+-0.49351358	4			164540	tien/num
+1.0543936	1	1.9615521	1.0	8808	tienduizenden/noun
+1.0717244	1			8551	tiental/noun
+2.8995936	1			1376	tier/verb
+-0.557388	8	-1.0335883	2.0	349223	tijd/noun
+0.33504146	16	0.0801787	5.0	286801	tijdens/prep
+0.19761153	1			20454	tijdje/noun
+1.2034494	1			7492	tijdstip/noun
+2.0371537	1			3271	tik/noun
+4.0792136	1			424	tiranniek/adj
+1.408632	2	2.3181615	2.0	12249	to/name
+3.1213696	1			1117	tob/verb
+0.32999894	26	0.4678196	12.0	466609	toch/adv
+0.84340525	1			10818	toch/tag
+1.2032001	2	2.1137507	2.0	15008	tocht/noun
+1.3438795	5			32467	toe/adv
+-0.6294364	5			234552	toe/part
+5.3705997	1			117	toegang_verbod/noun
+-1.1356462	1			78319	toekomst/noun
+-0.08166139	6	0.13905644	3.0	161932	toen/adv
+0.26074088	16	0.6002678	9.0	306628	toen/comp
+1.8734205	1			3834	toepassing/adj
+0.13315926	1	1.0398085	1.0	22085	toerist/noun
+5.4060016	1	6.3181176	1.0	112	toernooitje/noun
+0.73032063	2	0.94656837	1.0	24125	toestand/noun
+0.11685466	1			22211	toestel/noun
+0.5104201	1			15029	toeval/noun
+0.30157256	1			18404	toevallig/adj
+1.7014685	1	2.609611	1.0	4598	toezichthouder/noun
+1.8091708	2			8208	toilet/noun
+1.4326718	1			6007	tong/noun
+0.31586164	1	1.2280564	1.0	18185	toon/noun
+-0.10658631	3	-0.29452997	1.0	83591	toon/verb
+3.668226	1			653	top_crimineel/noun
+2.8867083	1			1395	top_niveau/noun
+7.05448	1			22	top_sport_cultuur/noun
+7.7313666	1	8.635367	1.0	11	top_tafeltennis/noun
+4.6857476	1			231	top_zwaar/adj
+0.3629981	1	1.2655731	1.0	17649	topper/noun
+2.057442	1	2.96392	1.0	3230	topsporter/noun
+1.2228004	2	1.4412119	1.0	14688	tot/adv
+0.9428973	4	0.46992603	1.0	38740	tot/comp
+0.352563	1			17493	tot/fixed
+-0.683479	23	-1.3006045	5.0	1139189	tot/prep
+-0.8425011	1			58015	tot/vg
+0.377265	3			51346	totaal/adj
+1.5229344	1			5423	totnogtoe/adv
+0.6117349	1	1.5202283	1.0	13638	traag/adj
+3.7795029	1			575	traan_DIM/noun
+1.2718447	2	1.4913996	1.0	13954	tracht/verb
+2.14329	1			2972	tractor/noun
+0.052447837	1			23708	traditie/noun
+0.40112624	2	0.6182845	1.0	33531	train/verb
+1.9095215	1	2.819305	1.0	3705	train_mee/verb
+-1.3467842	1			96686	trainer/noun
+1.3594762	5			32116	training/noun
+4.774155	1			211	training_dag/noun
+1.0811534	1			8465	traject/noun
+1.5304044	2			10954	tram/noun
+1.8914757	1	2.8013875	1.0	3770	transparant/adj
+1.0056723	2			18223	trap/noun
+0.85428935	1	1.7661756	1.0	10636	trap/verb
+6.0982485	1			56	trashy/noun
+3.0673194	1	3.9780574	1.0	1165	treed_in/verb
+-0.5673791	1			44190	treed_op/verb
+-0.506522	1	0.40216896	1.0	41701	tref/verb
+0.049228493	1			23834	tref_aan/verb
+-0.4498254	3	-0.63843334	1.0	117953	trek/verb
+2.3190832	1			2458	trek_DIM/noun
+0.3318194	1			18037	trek_terug/verb
+2.4164598	1	3.3273246	1.0	2231	tril/verb
+3.5663104	2	3.7862709	1.0	1410	trilling/noun
+0.19229567	1			20700	troep/noun
+4.348696	2			650	troost/adj
+1.6517712	1			4844	tropisch/adj
+0.19798863	1			20583	trots/adj
+1.2357811	1			7288	trots/noun
+0.7953265	4	1.017063	2.0	44807	trouwens/adv
+1.887068	2			7531	trouwens/tag
+3.3030767	1	4.216116	1.0	923	tsja/tag
+0.52286375	2	0.7392754	1.0	29695	tuin/noun
+4.557161	1	5.467785	1.0	263	tumultueus/adj
+-0.7161744	8	-1.192859	2.0	409604	tussen/prep
+1.6327128	1			4858	tussendoor/adv
+0.82309556	2	1.0365692	1.0	22119	tv/noun
+5.6079745	1			92	tv_fragment/noun
+2.4869657	1			2082	tv_station/noun
+-0.6167629	1			46592	twaalf/num
+-0.15758517	25	-0.6754641	6.0	734505	twee/num
+2.7239625	1			1658	tweedaagse/adj
+-0.43486252	7	-0.37409875	3.0	271831	tweede/num
+0.6022466	1			13799	tweehonderd/num
+0.4033986	1			16739	tweemaal/noun
+4.943345	2	5.1629066	1.0	356	tweeëneenhalf/adj
+3.844638	1			534	twijfel/adj
+-0.09977101	1	0.8108486	1.0	27674	twijfel/noun
+-0.37838602	2			73213	twintig/num
+0.1511492	1			21426	typisch/adj
+0.17550835	3	-0.01572095	1.0	63355	u/det
+-1.1324931	3	-0.62868357	2.0	233365	u/pron
+9.422385	1			2	uh-oh/name
+10.115532	1			1	ui_handel/noun
+1.8758032	8	2.650058	7.0	30756	uit/adj
+0.753297	2			23512	uit/fixed
+0.2750597	25	0.045051083	8.0	475164	uit/part
+-0.25708598	35	-0.9585512	7.0	1135560	uit/prep
+0.2469749	1			19576	uit/verb
+0.91701114	1			10067	uitbater/noun
+5.4653883	1			105	uitbatingsvergunning/noun
+0.40969026	6			99204	uiteindelijk/adj
+0.98148155	4	1.2021172	2.0	37270	uiteraard/adv
+1.337206	1			6546	uiterlijk/noun
+1.8035933	1			4114	uiterste/noun
+2.97885	1			1270	uitgelaten/adj
+0.80060637	1			11365	uitgeverij/noun
+7.843406	1			10	uitharding/noun
+2.4222097	1			2208	uithoek/noun
+5.581321	1			94	uithuizigheid/noun
+0.86544216	1			10503	uitkomst/noun
+3.383679	1			850	uitlaat_gas/noun
+0.43596947	1			16151	uitleg/noun
+-0.04535373	1			26877	uitslag/noun
+2.9000163	2	3.1111374	1.0	2780	uitsluitsel/noun
+1.2847624	1			6901	uitstek/noun
+-0.16528185	1			29481	uitstekend/adj
+2.455017	1			2144	uitvoerder/noun
+1.0002636	2	1.9111115	2.0	18376	uitvoering/noun
+1.6735797	1			4680	uitwerking/noun
+3.1485176	1			1073	uitwerpsel/noun
+0.43396056	1			16218	uitzending/noun
+0.6055352	1			13619	uitzicht/noun
+0.56657875	1			14194	uitzonderlijk/adj
+0.004051012	1			24998	uniek/adj
+-0.25865278	1			32476	universiteit/noun
+10.115532	1			1	urinegeur/noun
+-0.18197031	15	-1.2909737	2.0	454414	uur/noun
+6.2506003	1	7.1620617	1.0	48	uur:een/noun
+1.7823217	2	1.9984965	1.0	8426	uur_DIM/noun
+3.0643692	1	3.9748268	1.0	1173	uzelf/pron
+1.1149131	1			8167	vaag/adj
+0.5863654	14	0.9381033	8.0	194279	vaak/adj
+1.6807208	1			4637	vaardigheid/noun
+1.2648424	1			7067	vaart/noun
+2.8514318	1			1451	vaat_ziekte/noun
+0.16761991	5			105748	vader/noun
+0.9464668	2	1.1634222	1.0	19549	vak/noun
+7.6688466	1			12	vak_historicus/noun
+-0.26510242	1			32915	vakantie/noun
+4.0853276	1			428	vakantie_job/noun
+3.977589	1	4.8853283	1.0	473	vakbond_bestuurder/noun
+3.4214032	1			826	vakbond_man/noun
+2.47157	1			2105	vakkundig/adj
+2.5167818	1			2017	vakman/noun
+0.51406205	13	0.46861002	5.0	194806	val/verb
+3.1106954	1	4.0248704	1.0	1109	val_bij/verb
+3.354075	1			875	val_flauw/verb
+0.16040352	1			21225	val_op/verb
+1.0702137	1			8556	val_weg/verb
+0.23838322	1			19950	vals/adj
+4.615703	1			247	valselijk/adj
+0.8263758	1			10943	van/adj
+0.95386726	1	1.8638613	1.0	9628	van/adv
+0.09022284	2	0.30712476	1.0	45718	van/comp
+-0.5900782	9	-1.1902691	2.0	411074	van/name
+0.011929972	1			24589	van/pp
+-0.5933117	279	-1.1887373	62.0	12638933	van/prep
+1.184165	1			7628	van/pron
+-0.7727299	3			163636	vanaf/prep
+-0.48519316	1			41290	vanavond/adv
+-0.2562318	5	-0.27302006	2.0	164467	vandaag/adv
+1.2944045	3	1.1109409	1.0	20443	vandaar/adv
+1.9865043	1	2.8912356	1.0	3495	vandalisme/noun
+1.1082262	1			8417	vanmiddag/adv
+0.40825698	1			17052	vanochtend/adv
+-1.2572633	1			87643	vanuit/prep
+2.9271948	1			1330	vanwaar/pp
+0.18433802	2			41526	vanwege/prep
+-0.96310526	1			65503	vast/adj
+0.14027193	3	-0.04749835	1.0	65209	vast/part
+3.178655	1			1045	vat_DIM/noun
+1.5654651	1			5245	vedette/noun
+-0.27094454	13	-0.1322601	6.0	425020	veel/adj
+-1.3418763	3	-1.5303141	1.0	287287	veel/det
+2.2975643	1			2513	veelzeggend/adj
+1.8882098	1			3784	veer/noun
+0.4536081	2	0.6696835	1.0	31909	veertig/num
+2.988882	1			1263	veiligheid_beleid/noun
+1.5667626	1			5236	vel/noun
+0.71935433	4	0.2443275	1.0	48619	veld/noun
+1.9009179	1			3720	venster/noun
+4.639696	2			485	ventilatie/noun
+0.11708653	13	0.071637906	5.0	289310	ver/adj
+3.0927975	1			1132	veranda/noun
+-0.08268158	3	0.42302227	2.0	81533	verander/verb
+3.3672707	2	3.5858026	1.0	1722	veranker/verb
+0.100590214	2			45136	verantwoordelijk/adj
+0.22399297	1			19932	verband/noun
+0.9046567	1			10192	verbazing/noun
+2.2148952	1			2738	verbeterd/adj
+0.564169	1			14254	verbetering/noun
+0.93910515	1	1.8507302	1.0	9758	verbinding/noun
+1.8170421	3	1.6287646	1.0	12176	verblijf/noun
+1.2289224	2	1.4418693	1.0	14757	verbod/noun
+0.57452184	1	1.4766852	1.0	14354	verdacht/adj
+3.6133418	1			673	verdedigbaar/adj
+1.1907027	1			7697	verdeeld/adj
+0.596689	1			13978	verder/adv
+0.6670688	1	1.5814182	1.0	12769	verderop/adj
+0.37274143	1			17150	verdieping/noun
+2.7831628	1			1550	verdoof/adj
+4.385757	1			311	verdorie/tag
+2.9081538	3			4096	verdraag/verb
+2.7916024	1			1544	verdraagzaamheid/noun
+3.489079	1	4.3983006	1.0	767	verdraai/verb
+3.8153884	1			548	verdraaid/adj
+1.0613075	1	1.9700888	1.0	8696	verdriet/noun
+1.6483381	1	2.5586114	1.0	4833	verdring/verb
+1.1982815	1	2.1102877	1.0	7519	verduidelijk/verb
+3.187582	1			1036	vereffen/verb
+1.4167842	1			6084	verenig/verb
+1.1812943	1	2.091995	1.0	7673	verf/noun
+8.036091	1			8	verf_brander/noun
+3.4346774	1	4.345219	1.0	811	vergaan/adj
+1.70783	1			4561	vergeef/verb
+1.0562005	3	0.8711291	1.0	25977	vergelijk/verb
+0.63564163	1			13200	vergelijkbaar/adj
+4.421127	1			298	vergelijking/comp
+0.6579917	1			12895	vergelijking/noun
+4.3405147	1			330	vergeven/adj
+3.6209464	1			671	vergooi/verb
+-0.16546527	4			117716	verhaal/noun
+1.8406651	1			4006	verhelp/verb
+3.4957254	2	3.7144742	1.0	1521	verhit/verb
+0.5877365	2	0.8027084	1.0	28007	verhoog/verb
+1.2392504	3	1.7461115	2.0	21649	verhouding/noun
+1.2560034	4			28794	verhuis/verb
+2.5348322	1	3.444243	1.0	1991	verhuurder/noun
+3.6827526	1			628	vering/noun
+1.331209	5	1.3195366	2.0	33311	verkeer/noun
+3.492131	1	4.395022	1.0	771	verkeer_drukte/noun
+9.01692	1	9.93465	1.0	3	verkeer_herrie/noun
+4.436213	1			297	verkeer_onveiligheid/noun
+4.673439	2	5.5755405	2.0	475	verkeer_overlast/noun
+-0.3948407	1			37144	verkeerd/adj
+-1.165162	1	-0.25303525	1.0	80009	verklaar/verb
+1.8970952	1			3800	verkoop_uit/verb
+1.2172005	1	2.1279876	1.0	7412	verkoper/noun
+1.199717	1			7615	verkrijgbaar/adj
+0.00038046503	2	0.21534342	1.0	50334	verlaat/verb
+3.409281	1			827	verlam/adj
+0.681949	4	0.89988416	2.0	50511	verleden/noun
+-0.8108471	1			56457	verlies/noun
+-0.24988022	4	-0.034234893	2.0	129017	verlies/verb
+2.5719674	2			3832	verlof/noun
+4.0426025	1	4.953615	1.0	439	verlokking/noun
+0.061533887	1			23612	verloren/adj
+0.52262324	1			14821	vermeld/verb
+1.8449941	1			3977	vermelding/noun
+3.099685	2			2239	vermeng/verb
+0.12260824	1	1.0324837	1.0	22177	vermijd/verb
+0.4354786	1			16255	verminder/verb
+-0.0066653597	1	0.9064364	1.0	25092	vermoed/verb
+-0.02924553	1	0.8776261	1.0	25835	vermoedelijk/adj
+1.408049	1			6239	vermoord/adj
+0.17869665	1	1.0881592	1.0	21049	vermoord/verb
+2.2735085	1			2574	vernedering/noun
+5.710033	1			83	vernis_laag/noun
+0.27906063	2			38099	veroorzaak/verb
+0.3837584	1	1.292088	1.0	17101	verplicht/adj
+1.4465108	1			5899	verraad/verb
+0.029341642	1			24356	verrassend/adj
+1.2336054	2	1.4509362	1.0	14585	vers/adj
+1.1617142	2	1.3798803	1.0	15631	verscheiden/adj
+3.2308407	1			991	verscheurd/adj
+-1.020787	1			69723	verschijn/verb
+-0.7460608	2			105062	verschil/adj
+1.749557	3	2.2550907	2.0	13031	verschrikkelijk/adj
+2.3289595	1			2450	verslaafde/noun
+2.397313	1	3.3087053	1.0	2275	versleten/adj
+2.2451367	1			2649	verslijt/verb
+2.8820043	1			1417	versper/verb
+0.96745	2	1.1852348	1.0	19029	verspreid/verb
+1.190829	1			7626	verstand/noun
+1.4294486	1			6004	verstop/verb
+0.40939835	1			16576	vertegenwoordig/verb
+0.3507587	9	0.6768992	5.0	157643	vertel/verb
+2.5416796	2			3917	verteller/noun
+2.348522	1			2377	verticaal/adj
+0.12331032	1			22114	vertoon/verb
+-0.12977248	1			28522	vertrek/noun
+2.9679334	1	3.8807	1.0	1279	vervaarlijk/adj
+1.5398353	7	0.502634	1.0	37703	vervang/verb
+2.3238852	2	2.5409513	1.0	4901	vervanging/noun
+1.6476866	1			4842	verveel/verb
+0.64044166	1			13185	vervelend/adj
+1.1142411	2	2.0244877	2.0	16503	vervolg/noun
+-0.18280458	2			59690	vervolgens/adv
+-1.60972	1			125713	verwacht/verb
+0.34197512	2	0.5569433	1.0	35646	verwachting/noun
+2.7827704	1			1546	verwante/noun
+1.9970864	1	2.9061162	1.0	3400	verwijs_door/verb
+0.98022765	2			18750	verwijt/verb
+1.3224965	1	2.2326589	1.0	6684	verwittig/verb
+2.4358068	2			4439	verwoest/verb
+2.4818718	2	2.7041473	1.0	4151	verwonderlijk/adj
+0.70815384	1			12498	verwonding/noun
+2.7030697	1			1671	verworven/adj
+3.491998	1			758	verwrongen/adj
+3.869716	1			522	verzakkingen/noun
+0.09361266	1			22839	verzeker/verb
+1.6055614	3			15119	verzet/verb
+1.3825098	1	2.2878983	1.0	6307	verzorging/noun
+3.467325	1	4.37477	1.0	785	verzuring/noun
+2.2671251	2	3.1786146	2.0	5175	vet/noun
+4.1910086	1			377	vetzuur/noun
+-1.239664	2			172971	via/prep
+2.9773796	1			1282	videorecorder/noun
+0.6654584	1			12885	vier/noun
+0.23252688	3	0.039902803	1.0	60104	vierde/num
+3.820912	1			549	vieren/noun
+2.422719	3			6661	vies/adj
+5.701119	3			250	viezigheid/noun
+-0.2586093	6	-0.4487952	2.0	195360	vijf/num
+3.7902772	1			565	vijf_etter/noun
+-0.29333997	1	0.6129511	1.0	33765	vijfde/num
+1.0143983	1	1.9216243	1.0	9145	vijfhonderd/num
+1.8090721	1			4083	vijftal/noun
+0.5055891	3	1.0088551	2.0	45450	vijftien/num
+0.52571344	3			44496	vijftig/num
+0.14345914	25	0.03281284	9.0	541702	vind/verb
+-0.7335624	1			52138	vind_plaats/verb
+1.33314	3			19856	vind_terug/verb
+1.4333838	1			5969	vind_uit/verb
+0.23357195	1			19783	vinger/noun
+3.1186218	1	4.029629	1.0	1105	vinger_DIM/noun
+1.237599	1			7315	virtueel/adj
+1.0701281	2			17213	vis/noun
+1.5771155	1			5202	vis/verb
+7.7176366	1	8.635367	1.0	11	vis_geur/noun
+4.617954	1			248	vis_restaurant/noun
+7.3182507	1	8.222355	1.0	17	visserman/noun
+2.3694692	1	3.2815185	1.0	2331	vlaag/noun
+0.5418496	2	0.7615099	1.0	29016	vlak/adv
+0.6429235	2	1.5563408	2.0	26146	vlak/noun
+1.0720375	1			8547	vlakbij/prep
+0.32690823	1			18048	vlees/noun
+7.812947	1			10	vlees_maak/noun
+0.89371765	1			10250	vleugel/noun
+3.4322023	4	2.9547682	1.0	3252	vlieg/noun
+0.45434844	2	1.3631543	2.0	31964	vlieg/verb
+2.3958914	1			2274	vlieg_over/verb
+0.41762125	2	1.3256948	2.0	33073	vliegtuig/noun
+7.2882185	1	8.200049	1.0	17	vlo_beet/noun
+3.4175105	3	3.9198658	2.0	2474	vloeibaar/adj
+2.3051794	1			2500	vloek/verb
+0.38129178	1			17036	vloer/noun
+4.936843	1			178	vloer_bekleding/noun
+-0.09010073	1			27492	vlucht/noun
+1.9036146	4	2.119317	2.0	15018	vlucht/verb
+3.9753242	1			469	vlucht_uit/verb
+2.3197207	1	3.2298784	1.0	2460	vlucht_weg/verb
+2.1973584	1			2789	vluchteling_kamp/noun
+0.6446482	1			13086	vlug/adj
+2.077924	1			3122	vocht/noun
+1.4798182	1			5695	voed_op/verb
+10.115532	1	11.033262	1.0	1	voedsel_ervaring/noun
+1.9420623	2			7159	voeg/verb
+-0.3400489	1	0.57239735	1.0	35043	voeg_toe/verb
+0.6362265	9	0.73684853	4.0	119091	voel/verb
+1.2224054	1			7311	voel_aan/verb
+-0.902118	1			61815	voer/verb
+1.403681	2	1.6223309	1.0	12273	voer_aan/verb
+1.1859443	1			7674	voer_af/verb
+-0.18608809	2	0.030889757	1.0	60420	voer_uit/verb
+1.5689256	4	1.7851628	2.0	20845	voertuig/noun
+0.91225743	5	0.21290436	1.0	50196	voet/noun
+2.8047144	1			1518	voet_DIM/noun
+-0.24346884	2			66800	voetbal/noun
+0.019028129	1	0.9283761	1.0	24776	voetbal/verb
+5.712478	1	6.612917	1.0	85	voetbal_hart/noun
+5.206929	1			140	voetbal_journalist/noun
+3.4452727	1			827	voetbal_trainer/noun
+0.04743925	1			24128	voetballer/noun
+5.2061915	1	6.1233687	1.0	136	voeteneinde/noun
+4.269816	1			351	voetzool/noun
+0.5316472	1			14750	vogel/noun
+0.183529	3	0.6876063	2.0	62461	vol/adj
+0.864352	1			10528	vol/part
+0.13788936	2			43706	vol/prep
+0.7543757	2	1.6657687	2.0	23472	voldoende/adj
+-0.09893604	1			27505	voldoende/det
+-0.27182776	6			198218	volg/adj
+-1.1122047	2			152227	volg/verb
+-0.12127499	17	0.038965132	8.0	478509	volgens/prep
+4.1648893	1	5.079046	1.0	387	volgestouwd/adj
+0.22449405	2			40017	volk/noun
+-0.5990219	2			91004	volledig/adj
+1.641549	1			5452	volleybal/noun
+0.9533057	1			9630	volsta/verb
+1.8469924	2			7889	voluit/adv
+0.7949346	1	1.705139	1.0	11300	volwassen/adj
+-0.2998387	4	-0.7775466	1.0	135587	voor/adj
+1.1392508	5	1.1353939	2.0	39845	voor/comp
+-0.82233334	1			57605	voor/name
+-0.40605852	101	-0.7468439	29.0	3806927	voor/prep
+3.5478754	1			717	voor_trekker/noun
+3.1255057	1			1096	voor_vader/noun
+1.2405664	1			7210	vooraan/adv
+1.951591	1			3562	vooraf/part
+1.5579264	1			5264	voorafgaand/adj
+3.7593374	1			582	voorafgaande/prep
+0.62422174	25	0.26468953	7.0	333204	vooral/adv
+1.6990821	2	2.611947	2.0	9088	vooraleer/comp
+0.373602	3	0.18698347	1.0	51528	voorbeeld/noun
+0.6868857	2			25171	voorbereiding/noun
+-0.064397894	3			79966	voorbij/adj
+1.4981631	2	1.7154363	1.0	11180	voorbij/part
+4.7952085	1			206	voorbij_razend/adj
+-0.4946728	1			40906	voordeel/noun
+0.6632498	1	1.5784575	1.0	12788	voordien/pp
+2.4137893	1	3.3274372	1.0	2229	voorhoofd/noun
+1.1888716	2			15305	voorjaar/noun
+-1.0310051	1			70740	voorlopig/adj
+-0.34374553	2	-0.13064614	1.0	71323	voormalig/adj
+0.33759344	1			17756	voornamelijk/adv
+2.0457983	2			6453	voorop/adv
+4.813472	1			202	voorover_gebogen/adj
+1.1717385	1	2.0817251	1.0	7754	voorraad/noun
+0.09961341	1			22728	voorspel/verb
+-0.45554778	1	0.45751628	1.0	39249	voorsprong/noun
+0.2766789	1	1.1829054	1.0	19087	voort/part
+10.115532	1	11.033262	1.0	1	voortbulderende/adj
+1.2449813	2			14278	voorts/adv
+2.7353384	1			1624	voortvarend/adj
+0.9157319	1			9999	vooruitgang/noun
+0.6501773	1	1.5604616	1.0	13080	vooruitzicht/noun
+0.92841154	2	1.1453964	1.0	19789	voorzichtig/adj
+-0.017821528	2	0.19983773	1.0	50916	voorzie/verb
+3.5215974	1			739	voorzijde/noun
+-0.89778054	6			368206	vorig/adj
+0.5246122	5	0.51988196	2.0	73809	vorm/noun
+0.90597314	8	1.3480616	5.0	80702	vorm/verb
+6.5659146	1			35	vorming_pakket/noun
+1.7214673	1			4469	vorst/noun
+-1.2918377	2			181894	vraag/noun
+-0.7035121	4	-0.48563573	2.0	202345	vraag/verb
+-0.43303457	1			38360	vraag_af/verb
+0.67633235	2	0.88838387	1.0	25773	vracht_wagen/noun
+3.865026	2			1059	vrachtverkeer/noun
+1.4259244	1			6016	vreemdeling/noun
+0.9612488	1			9570	vrees/noun
+7.342943	1	8.2606735	1.0	16	vreetbui/noun
+1.428731	2	1.6468282	1.0	11970	vreselijk/adj
+0.38217574	5			85282	vriend/noun
+2.4745598	3			6312	vriend_DIM/noun
+0.5876255	1			13891	vriendelijk/adj
+2.5560246	1	3.4648833	1.0	1949	vriendenkring/noun
+-0.17254263	1			29704	vriendin/noun
+-0.8161593	2	-0.599037	1.0	113103	vrij/adj
+2.9148831	1			1371	vrijdag_morgen/noun
+5.417783	1			111	vrijdag_training/noun
+-0.38144544	1			36682	vrijwel/adv
+5.3780184	1			118	vrind/noun
+0.3335258	8	-0.14126377	2.0	143189	vroeg/adj
+2.485969	1			2116	vroeg/adv
+1.5535693	3	1.3647064	1.0	15902	vrolijk/adj
+-0.68989486	6	-0.8790874	2.0	300299	vrouw/noun
+1.1733848	1			7727	vrucht/noun
+2.829991	2	3.04731	1.0	2951	vuil/noun
+4.096209	1	5.0070944	1.0	416	vuiligheid/noun
+2.9633415	1			1304	vuilnis/noun
+5.4630013	1			108	vuilnis_bak_DIM/noun
+5.8067484	1			76	vuilnis_hoop/noun
+3.8834279	2	4.10448	1.0	1023	vulling/noun
+0.42135435	2			33011	vuur/noun
+1.494826	1			5609	waai/verb
+0.026616953	15	-0.3820219	4.0	363546	waar/adv
+-0.25506234	3	0.25196517	2.0	96455	waar/noun
+0.25565672	1			19268	waaraan/pp
+0.24175322	4	0.8682588	3.0	77960	waarbij/pp
+0.2764629	3	0.08853798	1.0	56906	waarde/noun
+-0.29119378	2	-0.07012397	1.0	66417	waardoor/pp
+-0.2956638	5			166863	waarin/pp
+-1.0570151	1	-0.14384404	1.0	71540	waarmee/pp
+0.06668941	1			23231	waarna/pp
+0.3065254	5	0.30312857	2.0	92213	waarom/adv
+-1.2362983	1			85583	waarop/pp
+-0.82956535	1			57435	waarschijnlijk/adj
+-1.0231777	1	-0.11007286	1.0	69133	waarvan/pp
+-0.13362207	2			57234	wagen/noun
+2.7360868	1			1624	wagon/noun
+0.4123782	1			16625	wakker/adj
+3.202093	1			1026	walgelijk/adj
+5.139488	1	6.04283	1.0	148	walm/adj
+5.259992	1			129	walm/verb
+4.300059	1			342	walnoot/noun
+4.491695	1	5.4042935	1.0	279	wan_smakelijk/adj
+0.6001768	1			13868	wandel/verb
+4.268082	1	5.168212	1.0	359	wandel_in/verb
+1.346359	1			6574	wandelaar/noun
+5.2021422	1			138	wanhoop_kreet/noun
+1.4696729	1			5758	wanhopig/adj
+0.4430311	5	0.84665483	3.0	79872	wanneer/comp
+2.2782538	1			2545	wanorde/noun
+0.66360766	7	0.7325044	3.0	89604	want/comp
+0.82881635	20	0.35781598	5.0	216432	want/vg
+3.1133304	1			1115	wantoestand/noun
+-0.35475555	1			35759	wapen/noun
+1.7415309	8	0.5702199	1.0	35235	warm/adj
+2.5392551	3	2.352315	1.0	5918	warmte/noun
+6.896656	1	7.814387	1.0	25	warmte_behandeling/noun
+2.8117785	3	2.6241837	1.0	4503	was/noun
+1.9955827	2			6814	was/verb
+3.7688434	1			586	wasserij/noun
+0.25921953	8	0.1896993	3.0	153932	wat/adv
+-0.39246282	5			184781	wat/det
+0.22440335	30	0.13382393	11.0	598351	wat/pron
+1.090624	10	1.084158	4.0	84146	water/noun
+4.4807425	1			284	water_plas/noun
+3.5821793	1			705	water_zuivering_station/noun
+3.6143174	1	4.522818	1.0	678	waterput/noun
+2.729929	2			3262	wc/noun
+0.34392586	77	0.4099528	33.0	1359191	we/pron
+1.6402968	1			4841	wederzijds/adj
+-0.41239855	5	-0.41863164	2.0	188737	wedstrijd/noun
+4.232488	1			361	wedstrijd_DIM/noun
+0.5172796	1			14913	weeg/verb
+2.4796486	1	3.385894	1.0	2105	week/adj
+0.070798755	19	0.1126501	8.0	444591	week/noun
+2.0937996	1	2.9975383	1.0	3114	week_DIM/noun
+1.8434467	2			7937	week_blad/noun
+-0.25340357	1			32634	weekeinde/noun
+0.8991906	5	0.88694394	2.0	51263	weekend/noun
+0.286402	21	0.34456494	9.0	396780	weer/adv
+1.9946079	9	1.798929	3.0	31045	weer/noun
+1.7012578	1			4550	weerhoud/verb
+3.8680694	1	4.7815995	1.0	521	weerkaats/verb
+2.389937	1			2293	weerklink/verb
+2.1743076	1	3.0839062	1.0	2849	weersomstandigheden/noun
+2.6232173	1			1808	weet/tag
+-0.19197825	15	0.20937404	9.0	453326	weet/verb
+0.14242737	1			21797	weg/adj
+0.38972473	2	0.5999043	1.0	34399	weg/adv
+0.9032934	1			10149	weg/fixed
+-0.43128693	3			115910	weg/noun
+-0.024320059	3	-0.21401797	1.0	77015	weg/part
+4.446686	1			303	weg_werker/noun
+5.9819665	2			128	weg_zap/verb
+1.5420908	1			5382	wegdek/noun
+-0.4250753	2	0.4800671	2.0	76919	wegens/prep
+1.3944921	1			6215	weide/noun
+-0.1278399	4	0.08987372	2.0	113581	weinig/adj
+-0.36355934	2			72083	weinig/det
+10.115532	1			1	weirder/noun
+10.115532	1			1	weirdst/noun
+1.5561225	1			5266	wek_op/verb
+1.9807858	1	2.891454	1.0	3455	wekenlang/adj
+0.36022165	51	0.2297879	18.0	887396	wel/adv
+0.9232868	2	1.1424233	1.0	19901	wel/tag
+3.9563308	1	4.86496	1.0	481	welbeschouwd/adj
+-0.1317687	1			28317	weliswaar/adv
+-1.2324293	1			85665	welk/det
+0.4706208	1			15884	welkom/adj
+-0.13554353	2	0.7737802	2.0	57316	wellicht/adv
+4.238777	1			363	wellust/noun
+2.9160776	1	3.8176548	1.0	1393	wenk/verb
+-0.83518076	3	-1.0247132	1.0	173351	wereld/noun
+2.2523613	1	3.1645777	1.0	2623	wereld_DIM/noun
+2.7247334	1			1639	wereld_beeld/noun
+1.0315006	2			18065	wereldkampioen/noun
+1.2226046	1			7461	wereldtitel/noun
+3.1217825	1			1106	wereldvreemd/adj
+1.9198052	2	2.829548	2.0	7345	werk/adj
+1.1255827	1	2.0382216	1.0	8082	werk/fixed
+0.055379845	11	0.3593065	6.0	260426	werk/noun
+0.7155142	21	1.2209337	14.0	256961	werk/verb
+0.41547415	1			16520	werk_af/verb
+6.681545	1			31	werk_boek_DIM/noun
+0.26397207	1	1.1737202	1.0	19253	werk_mee/verb
+2.9474144	1	3.8562436	1.0	1315	werk_omstandigheid/noun
+4.5341053	1			271	werk_ongeval/noun
+1.8447125	1			3977	werk_plaats/noun
+-0.08470645	1			27323	werk_samen/verb
+5.1176443	2			298	werk_tafel/noun
+2.5890028	1			1882	werk_tegen/verb
+1.8106908	1	2.7193184	1.0	4106	werkdruk/noun
+0.68225604	2	1.5933194	2.0	25230	werkelijk/adj
+5.6239505	4	6.5324116	4.0	362	werkelijk/adv
+1.0878652	3			25243	werkelijkheid/noun
+-0.31278473	1			34402	werkgever/noun
+4.1564612	1			391	werking_middel/noun
+-0.9978774	1			68515	werknemer/noun
+2.2477753	1			2650	werkvloer/noun
+0.79205483	1			11320	werp/verb
+1.8525474	1			3923	westelijk/adj
+-0.86549747	1			59507	wet/noun
+4.6035156	1			251	when/name
+8.169621	1	9.087353	1.0	7	whiskas/noun
+-0.24223982	9	-0.83561873	2.0	288288	wie/pron
+1.0175991	1			9044	wiel/noun
+2.8609297	2	3.075429	1.0	2876	wieler_sport/noun
+1.6930176	2	2.5930583	2.0	9825	wielren/verb
+-0.14253661	11	0.16432306	6.0	316273	wij/pron
+1.5548196	1	2.4650435	1.0	5282	wijd/adj
+0.36170223	2			34911	wijk/noun
+2.607787	1			1870	wijk_agent/noun
+1.3394111	1			6564	wijk_uit/verb
+1.3671436	2			12740	wijs/adj
+-0.9652705	1	-0.051605202	1.0	65402	wijs/verb
+0.49160618	1	1.4028722	1.0	15296	wijs_aan/verb
+1.4245956	2	1.6422164	1.0	12035	wijs_uit/verb
+0.8007775	1			11182	wijt/verb
+1.3344295	1			6547	wijze/prep
+-0.5840553	21	-0.64064145	8.0	946915	wil/verb
+2.8255801	1			1489	wil_kracht/noun
+0.43048027	1	1.339108	1.0	16334	wild/adj
+10.115532	1			1	wild_plas_locatie/noun
+1.1111646	1			8298	win/adj
+-2.059716	1			198109	win/verb
+2.12376	8	1.6476829	2.0	23943	wind/noun
+-0.71576375	1			51244	winkel/noun
+3.8223898	1			550	winstbejag/noun
+1.5056714	3	2.0075815	2.0	16704	winter/noun
+2.9403484	1	3.8526216	1.0	1317	winters/adv
+1.2894946	1			6918	winterstop/noun
+1.3439136	1			6534	wis/verb
+6.40196	1			41	wissel_beleid/noun
+0.1378557	2	0.35540783	1.0	43614	wit/adj
+6.937478	1			24	woede_bui/noun
+-0.37631088	2			73839	woensdag/noun
+1.047337	1			8863	woensdag_avond/noun
+2.6862187	1			1709	woensdag_namiddag/noun
+5.873486	1			70	woensdags/adv
+1.5772429	1			5178	woestijn/noun
+-0.029864663	3			77696	woning/noun
+0.73431337	8	0.95288473	4.0	95960	woon/verb
+0.8549691	1	1.7647239	1.0	10676	woon_bij/verb
+6.3790536	1	7.295593	1.0	42	woon_stee/noun
+2.6026413	1			1860	woonhuis/noun
+1.8312801	1			3997	woonkamer/noun
+-0.7907011	2			110168	woord/noun
+-0.21855468	112	-0.019477548	55.0	3486710	word/verb
+4.608576	1			249	working/noun
+1.5326728	1	2.4451218	1.0	5390	workshop/noun
+5.209887	1			137	worm_DIM/noun
+3.8686502	1			529	worstelaar/noun
+2.4126596	1			2238	wreedheid/noun
+2.6353292	1			1818	wrevel/noun
+1.3615922	1			6411	you/name
+1.8486737	1			3937	z'n/det
+-0.19185618	6	0.024414621	3.0	181886	zaak/noun
+2.401926	1			2258	zaak_DIM/noun
+0.07847439	2			46193	zaal/noun
+2.2786093	1	3.1920152	1.0	2548	zaal_DIM/noun
+10.546315	1			1	zaalkampioenschappen/name
+1.8875554	5	2.2865791	3.0	19014	zacht/adj
+2.0378675	1			3261	zadel_op/verb
+1.0898198	3	0.9006294	1.0	25268	zak/noun
+0.10856538	1			22486	zak/verb
+0.8556731	1			10697	zakenman/noun
+-0.32625976	48	-0.2907645	20.0	1661300	zal/verb
+0.9460292	1			9723	zand/noun
+4.10451	1			415	zandapos;n/det
+4.0971823	1			416	zandzak/noun
+0.09494316	7	-0.9481303	1.0	161018	zaterdag/noun
+0.36464792	1			17561	zaterdag_avond/noun
+2.309935	1			2512	zaterdag_morgen/noun
+0.35873312	104	0.51953626	49.0	1808509	ze/pron
+0.69561565	2	0.9104035	1.0	25044	zee/noun
+2.8271167	1	3.737273	1.0	1482	zeeman/noun
+0.13751414	6	0.6430861	4.0	130472	zeer/adv
+10.472207	1			1	zeeschilderingen/name
+0.3329384	55	0.49642968	26.0	982307	zeg/verb
+1.4149678	1			6107	zeg_op/verb
+4.52997	1			272	zege_zeker/adj
+1.7873023	3	1.6009493	1.0	12491	zeggen/verb
+10.115532	1			1	zeiler_oog/noun
+-1.0087612	2	-0.7925165	1.0	137098	zeker/adj
+0.43585503	5	0.8364945	3.0	80807	zeker/adv
+1.7197834	1	2.6300502	1.0	4511	zeker/tag
+0.81564796	2			22196	zelden/adj
+0.80333465	1			11248	zeldzaam/adj
+0.19114783	16	-0.2833987	4.0	329698	zelf/adv
+3.78403	1			567	zelfgekozen/adj
+4.5445194	1			265	zelfmedelijden/noun
+2.0791688	1			3190	zelfmoord_aanslag/noun
+4.482172	1			283	zelfrelativering/noun
+0.39782816	16	0.4849082	7.0	267410	zelfs/adv
+0.4668044	1			15721	zelfstandig/adj
+2.1055875	1			3053	zelfverzekerd/adj
+10.115532	1			1	zemelende/adj
+0.14170708	1			21863	zend_uit/verb
+1.466723	1			5766	zenuw/noun
+3.563024	1			708	zenuwslopend/adj
+4.0137568	1			455	zesmaal/adj
+0.8901552	2			20651	zestien/num
+-0.34034967	1			35192	zestig/num
+4.5316596	1			273	zesvoudig/adj
+-0.16143344	6	-0.35008234	2.0	177146	zet/verb
+0.88512427	1	1.7969985	1.0	10324	zet_af/verb
+0.5194157	3			44779	zet_in/verb
+0.37803403	1			17094	zet_neer/verb
+-0.06856398	1			26757	zet_op/verb
+1.3081124	1			6783	zet_stop/verb
+2.4801314	1			2099	zet_vast/verb
+0.26303378	4	-0.21511784	1.0	77362	zeven/num
+3.5360029	1			730	zevenjarige/adj
+0.18762828	53	0.30554125	24.0	1097010	zich/pron
+-1.2400594	1	-0.32998624	1.0	86407	zichzelf/pron
+-0.1579269	19	0.006558329	9.0	555838	zie/verb
+1.4047146	1	2.3174849	1.0	6121	zie_aan/verb
+0.75350106	1			11915	zie_af/verb
+3.8146544	1	4.726075	1.0	554	zied/adj
+-0.29996005	1			33913	ziek/adj
+0.8053432	6	-0.08440127	1.0	68053	ziekenhuis/noun
+-0.29410133	1			33580	ziekte/noun
+2.0812695	4	2.2975867	2.0	12499	ziel/noun
+4.0094004	1	4.918751	1.0	456	ziel_DIM/noun
+2.4713545	1			2104	zij/noun
+2.4241035	1	3.3346097	1.0	2211	zij/prep
+-0.55945086	9	-0.051530723	6.0	392068	zij/pron
+0.4884305	1			15268	zijde/noun
+-0.20011736	71	-0.7794794	16.0	2164588	zijn/det
+-1.0694574	1			72693	zin/noun
+3.937173	1	4.8391123	1.0	495	zink/adj
+1.417919	1	2.325821	1.0	6085	zinloos/adj
+0.30146903	23	-0.31297302	5.0	425170	zit/verb
+1.8978505	1			3786	zit_mee/verb
+1.3856658	1			6298	zit_uit/verb
+0.038352776	9	0.13882963	4.0	216106	zo'n/det
+0.17597815	5	0.17283541	2.0	104398	zo/adj
+0.26185104	39	0.3435175	17.0	748301	zo/adv
+-0.48097834	7	-0.8202535	2.0	281645	zoals/comp
+1.0216767	3	0.83547884	1.0	26916	zoals/prep
+1.2502792	3	1.0624552	1.0	21429	zoandapos;n/det
+1.1301204	10	1.534495	6.0	80070	zodat/comp
+1.5697852	4	1.0981793	1.0	20719	zodra/comp
+-0.7345796	1	0.17151245	1.0	52439	zoek/adj
+0.10914985	5			113590	zoek/verb
+0.6927693	1			12481	zoek_op/verb
+1.227817	1			7355	zoet/adj
+0.0560561	1	0.97026366	1.0	23481	zogenaamd/adj
+1.5872949	2	1.8055121	1.0	10202	zogenoemd/adj
+-0.05606298	1			26365	zoiets/pron
+1.8619658	1			3869	zolang/adv
+1.4279654	4	2.3413756	4.0	23908	zolang/comp
+4.5684032	1			259	zoldering/noun
+1.0419873	3	1.5472382	2.0	26410	zomaar/adv
+1.6786658	11	0.8788192	2.0	51730	zomer/noun
+3.7265503	1	4.630102	1.0	612	zomer_avond/noun
+4.256956	2			715	zomer_dag/noun
+6.175894	1	7.082019	1.0	53	zomer_hitte/noun
+5.36108	1			119	zomer_nacht/noun
+2.2542672	1	3.162476	1.0	2629	zomermaand/noun
+3.4297957	2	3.6485746	1.0	1613	zomers/adv
+1.0958054	3			25266	zon/noun
+2.6421788	1			1790	zon_DIM/noun
+-1.0101942	2	-0.7993687	1.0	138349	zondag/noun
+2.1748414	1	3.0798562	1.0	2852	zondag_namiddag/noun
+-0.24273616	1			31732	zonder/comp
+0.016245302	9	0.3335997	5.0	226930	zonder/prep
+0.49181366	4	0.7086805	2.0	61213	zoon/noun
+2.1330075	3	1.9431847	1.0	8902	zoon_DIM/noun
+-0.7256712	1			51767	zorg/noun
+-0.08049799	5	-0.7790377	1.0	135526	zorg/verb
+-0.6757759	1			49013	zoveel/det
+0.81613725	1			11056	zoveelste/num
+2.9649482	1			1280	zovele/adj
+1.6205844	1			4926	zover/comp
+-0.04990057	1	0.8627628	1.0	26145	zowat/adv
+0.27247402	1			18936	zowel/adv
+-0.36306715	2	-0.14283794	1.0	71549	zowel/vg
+0.904252	1			10107	zucht/verb
+1.5919293	2	1.8096235	1.0	10172	zuiver/adj
+2.1999283	1			2771	zuivering/noun
+0.5282271	2	0.74740785	1.0	29382	zulk/det
+2.0066078	1			3368	zuurstof/noun
+-1.0955858	2			150398	zwaar/adj
+3.6527364	1			650	zwaarlijvig/adj
+0.43323046	2			32473	zwak/adj
+-0.9843266	1			67059	zwart/adj
+3.977373	1			468	zwavel/noun
+7.346073	1	8.2606735	1.0	16	zwavel_rijk/adj
+2.0186536	1			3327	zweet/noun
+6.532013	1			36	zweet_geur/noun
+6.683159	1	7.599275	1.0	31	zweet_lucht/noun
+3.9608862	1			475	zwel/verb
+3.5829792	1			692	zwel_aan/adj
+1.6617188	3	2.164339	2.0	14381	zwem/verb
+1.2446828	2			14482	zwijg/verb
+1.7084773	1	2.5044372	1.0	5868	©/noun
+-0.4120742	1			37763	à/vg
+1.6289216	1			4905	één/noun
+-0.21554464	11	-0.60459816	3.0	341260	één/num
+-1.4741606	2	-1.2553148	1.0	218147	één/pron
+8.506094	1			5	één_dag_koers/noun

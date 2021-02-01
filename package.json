@@ -1,0 +1,16 @@
+{
+  "name": "nephovis",
+  "version": "1.0.0",
+  "description": "The visualization tool of the Nephological Semantics projects.",
+  "main": "index.html",
+  "scripts": {
+    "test": "jest",
+    "cypress:open": "cypress open"
+  },
+  "author": "Montes, Mariana",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^5.1.0",
+    "jest": "^26.4.2"
+  }
+}

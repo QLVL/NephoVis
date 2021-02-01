@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="custom.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+  <title>NephoVis Level 2</title>
+
+  <style>
+    body {
+      background-color: #154360;
+    }
+
+  
+    path.lighter {
+      fill-opacity: .25;
+      stroke-opacity: .1;
+    }
+
+    .axis line {
+      stroke: "none";
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid" style="background-color:white;">
+    <div class="vizPage">
+      <header>
+        <h1></h1>
+        <h4 id="solutionName"></h4>
+      </header>
+      <main>
+        <div class="sidebar" id="sidebar">
+          <div class="btn-group">
+            <button type="button" class="btn shadow-sm btn-marigreen dropdown-toggle" data-toggle="dropdown">Color
+              models</button>
+            <div class="dropdown-menu" id="modelColour"></div>
+          </div>
+          <hr>
+          <div class="btn-group-vertical">
+            <div class="btn-group">
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select
+                color</button>
+              <div class="dropdown-menu" id="colour"></div>
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select
+                shape</button>
+              <div class="dropdown-menu" id="shape"></div>
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select
+                size</button>
+              <div class="dropdown-menu" id="size"></div>
+            </div>
+          </div>
+          <hr>
+          <div class="btn-group-vertical btn-group-toggle" id="selection" data-toggle="buttons">
+            <label class="btn btn-danger active">
+              <input type="radio" name="selection" value="click" autocomplete="off" checked> <i
+                class="fas fa-mouse-pointer"></i> Click
+            </label>
+            <label class="btn btn-danger">
+              <input type="radio" name="selection" value="brush" autocomplete="off"> <i class="fas fa-crop-alt"></i>
+              Select area
+            </label>
+          </div>
+          <hr>
+          <div class="btn-group-vertical">
+            <button type="button" class="btn shadow-sm btn-secondary" id="clearSelect"><i class="fas fa-eraser"></i> Clear
+              selection</button>
+            <button type="button" class="btn shadow-sm btn-secondary" id="showMatrix"><i class="fas fa-sticky-note"></i>
+              Distance matrix </button>
+            <button type="button" class="btn shadow-sm btn-secondary" id="showTable"><i class="fas fa-sticky-note"></i>
+              Frequency table</button>
+          </div>
+          <hr>
+          <div class="btn-group-vertical" id="moveAround">
+            <button type="button" class="btn shadow-sm btn-marigreen" id="toLevel1"><i
+                class="fas fa-arrow-alt-circle-up"></i> LEVEL 1</button>
+            <div class="btn-group">
+              <button type="button" class="btn shadow-sm btn-marigreen dropdown-toggle" data-toggle="dropdown"><i
+                  class="fas fa-arrow-alt-circle-down"></i> Go to model</button>
+              <div class="dropdown-menu" id="models"></div>
+            </div>
+          </div>
+        </div>
+        <div class="plotArea withConc resizable">
+          <div id="concordance"></div>
+          <div id="miniPlots"></div>
+        </div>
+        <div class="legendBar">
+          <div id="colorLegendContainer"></div>
+          <div id="shapeLegendContainer"></div>
+          <div id="sizeLegendContainer"></div>
+        </div>
+      </main>
+      
+      <footer><p style="text-align:center;">Like this page? Send me chocolate!</p></footer>
+    </div>
+  </div>
+
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+      <!-- General d3 (version 4?) release -->
+      <script src="js/d3.min.js"></script>
+      <!-- d3 component to deal with arrays (in particular, for "extent"/"min"/"max"...) -->
+      <script src="js/d3-array.min.js"></script>
+      <!-- d3 component to generate axes -->
+      <script src="js/d3-axis.min.js"></script>
+      <!-- d3 component to generate legends -->
+      <script src="js/d3-legend.min.js"></script>
+      <!-- d3 component for brush -->
+      <script src="js/d3-brush.min.js"></script>
+      <!-- d3 component for sequential color palettes -->
+      <script src="js/d3-scale-chromatic.v1.min.js"></script>
+      <!-- d3 component for file handling -->
+      <script src="js/d3-fetch.min.js"></script>
+      <!-- lodash -->
+      <script src="js/lodash.min.js"></script>
+      <!-- My own set of functions! -->
+      <script src="src/utils/url.js"></script>
+      <script src="src/NephoVis.js"></script>
+      <script src="src/level2.js"></script>
+      <script src="src/loadData.js"></script>
+      <script>
+
+        var type = getUrlParameter(window.location, "type");
+
+        d3.select("title").text(type + ": Level 2");
+        loadData(type = type, files = ["model", "distances", "tokens", "variables"]);
+      </script>
+</body>
+
+</html>
