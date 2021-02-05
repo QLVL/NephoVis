@@ -1,17 +1,18 @@
 
 // var type = getUrlParameter(window.location, "type");
 function loadData(type, files, other_args = null) {
-    
+    const sourcedir = "tokenclouds/data/"
+    console.log(sourcedir)
     var allFiles = {
-        "model" : "data/" + type + "/" + type + ".models.tsv",
-        "distances" : "data/" + type + "/" + type + ".models.dist.tsv",
-        "tokens" : "data/" + type + "/" + type + ".tsv",
-        "weights" : "data/" + type + "/" + type + ".ppmi.tsv",
-        "variables" : "data/" + type + "/" + type + ".variables.tsv",
-        "medoids" : "data/" + type + "/" + type + ".medoids.tsv"
+        "model" : sourcedir + type + "/" + type + ".models.tsv",
+        "distances" : sourcedir + type + "/" + type + ".models.dist.tsv",
+        "tokens" : sourcedir + type + "/" + type + ".tsv",
+        "weights" : sourcedir + type + "/" + type + ".ppmi.tsv",
+        "variables" : sourcedir + type + "/" + type + ".variables.tsv",
+        "medoids" : sourcedir + type + "/" + type + ".medoids.tsv"
     };
 
-    fetch("data/" + type + "/" + type + ".solutions.json").then(response => {
+    fetch(sourcedir + type + "/" + type + ".solutions.json").then(response => {
         if (!response.ok) {
             return "";
         }
@@ -21,9 +22,9 @@ function loadData(type, files, other_args = null) {
                 const solutions = d3.keys(data).length > 0 ? d3.keys(data) : ["unique"];
                 solutions.forEach(function(d) {
                     const suffix = d === "unique" ? "" : data[d];
-                    allFiles[d] = "data/" + type + "/" + type + suffix + ".tsv";
+                    allFiles[d] = sourcedir + type + "/" + type + suffix + ".tsv";
                     if (files.indexOf("focdists") > -1) {
-                        allFiles[d + ".cws"] = "data/" + type + "/" + type + suffix + ".cws.tsv";
+                        allFiles[d + ".cws"] = sourcedir + type + "/" + type + suffix + ".cws.tsv";
                         files.push(d + ".cws");
                     }
                     files.push(d);
