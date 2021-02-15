@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+	<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="custom.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+
+	<title>QLVL News VERBS</title>
+
+	<style>
+	
+	h1 {
+		color: var(--pal1);
+	}
+
+	h2 {
+		color: var(--pal1);
+	}
+
+	p {
+		color: var(--pal1);
+	}
+
+	a.btn {
+		background-color: var(--pal1);
+		color: var(--pal4);
+	}
+
+	
+	a.btn:hover {
+		background-color: var(--pal4);
+		color: var(--pal1);
+	}
+
+
+	</style>
+
+	</head>
+	<body>
+	<div class="container main">
+      <div class="row homelead">
+        <div class="col-sm-9">
+		  <h1 style="font-size:4em;" id="title"></h1>
+        </div>
+        <div class="col-sm-3">
+		  <a href="https://www.arts.kuleuven.be/ling/qlvl/projects/current/nephological-semantics"><img src="QLVLcloud.png" alt="QLVL logo" style="width:100%; max-width:150px;"></a>
+        </div>
+      </div>
+      <div class="row m-10">
+        <div class="col-8">
+			<div class="row"  id='lemmas'></div>
+        </div>
+        <div class="col-4">
+          <div class="news">
+			<p>Welcome to the visualization tool of the Nephological Semantics projects. Click on a type on the left to look at the corresponding cloud of models (level 1).</p>
+			<hr>
+			<div class="btn-group-vertical">
+				<a role="button" class="btn shadow-sm" href="index.html"><i class="fas fa-home"></i> Back to home </a>
+			</div>
+          </div>
+        </div>
+      </div>
+	</div>
+
+	<!-- Optional JavaScript -->
+	<!-- General d3 (version 5) release -->
+	 <script src="js/d3.js"></script>
+	 <!-- d3 bootstrap -->
+	 <script src="js/d3-bootstrap-withextra.min.js"></script>
+	 <script src="src/utils/url.js"></script>
+	 <script src="src/fillIndex.js"></script>
+	<script>
+		const pos = getUrlParameter(window.location, "pos");
+		const pilots = ["church", "zwart"];
+		d3.tsv('tokenclouds/data/procrustes_register.tsv').then( data => {
+			console.log(data)
+			let dataset;
+			if (pos === "pilot") {
+				dataset = data.filter(d => pilots.indexOf(d.type) > -1);
+				d3.select("#title").text("Pilot studies")
+			} else {
+				dataset = data.filter(d => pilots.indexOf(d.type) === -1 && d.part_of_speech === pos);
+				d3.select("#title").text(capitalize(pos) + "s from QLVLNews Corpus")
+			}
+			console.log(dataset);
+			displayLemmas(dataset);
+		});		
+		
+	</script>
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	
+	</body>
+</html>
