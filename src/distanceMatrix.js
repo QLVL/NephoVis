@@ -1,26 +1,24 @@
 function execute(datasets, type) {
-    var data = datasets["distances"], distances;
-    var distMatrix, distCols, distRows;
-    var miniWidth, miniHeight;
-    var distWidth = 350, distHeight = 350, distPad = 25;
-    var modselection;
+    const { modelsdist : data } = datasets;
+    const distWidth = 350,
+        distHeight = 350,
+        distPad = 25;
     var color;
 
-    modselection = listFromLS("modelselection-" + type);
-    console.log(modselection)
-    distances = data.filter(d => modselection.indexOf(d['_model']) !== -1);
+    const modselection = listFromLS("modelselection-" + type);
+    const distances = data.filter(d => modselection.indexOf(d['_model']) !== -1);
     
 
-    distMatrix = d3.select("#distMatrix").append("svg")
+    const distMatrix = d3.select("#distMatrix").append("svg")
         .attr("width", distWidth)
         .attr("height", distHeight)
         .attr("padding", distPad)
-        .attr("transform", "translate(" + distPad + "," + distPad + ")");
+        .attr("transform", `translate(${distPad},${distPad})`);
 
-    miniWidth = (distWidth-3*distPad)/distances.length;
-    miniHeight = (distHeight-3*distPad)/distances.length;
+    const miniWidth = (distWidth-3*distPad)/distances.length;
+    const miniHeight = (distHeight-3*distPad)/distances.length;
 
-    distCols = distMatrix.append('g');
+    const distCols = distMatrix.append('g');
 
     distCols.selectAll('text')
         .data(modselection).enter()
@@ -30,7 +28,7 @@ function execute(datasets, type) {
         // .style('font-size', '0.6em')
         .text(d => modselection.indexOf(d)+1);
 
-    distRows = distMatrix.append('g');
+    const distRows = distMatrix.append('g');
 
     distRows.selectAll('text')
         .data(modselection).enter()
@@ -51,8 +49,8 @@ function execute(datasets, type) {
         .append("g")
             .attr('class', 'distrow')
             .attr('transform', function(d) {
-            return('translate(' + distPad + ',' + (distPad + miniHeight * modselection.indexOf(d['_model'])) + ')');
-        })
+                return('translate(' + distPad + ',' + (distPad + miniHeight * modselection.indexOf(d['_model'])) + ')');
+            })
             .each(fillRow);
 
     function fillRow(p) {

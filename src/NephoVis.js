@@ -286,6 +286,7 @@ function subsetCoords(datasets, alt, model, actualAlt = null) {
 
 function offerAlternatives(datasets, alternatives, model, type) {
     if (d3.keys(datasets).indexOf("tokens") === -1 && !_.isNull(alternatives)) {
+        console.log(alternatives)
         const storageSolution = JSON.parse(localStorage.getItem("solution-" + type));
         const chosenSolution = _.isNull(storageSolution) ? alternatives[0] : storageSolution;
         const alts = d3.select("#moveAround").append("div") // setup the dropdown for the alternatives

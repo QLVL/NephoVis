@@ -2,7 +2,7 @@ function execute(datasets, type) {
   const width = 600;
   const height = 600;
   const padding = 40;
-  const dataset = datasets["model"];
+  const {models:dataset, medoids} = datasets;
   const level = 'model';
   // const LSselectionIndex = listFromLS("modelselection-" + type + "-groups");
   // LSselectionIndex.filter((d) => {return(d3.keys(localStorage).indexOf("modelselection-" + type + "-group" + d) > -1)});
@@ -25,10 +25,9 @@ function execute(datasets, type) {
     });
 
   d3.select("#medoidsSelect")
-    .attr("disabled", () => {return(d3.keys(datasets).indexOf("medoids") === -1 ? true : null)})
+    .attr("disabled", medoids === undefined ? true : null)
     .on("click", () => {
-      const medoids = datasets["medoids"].map((d) => d.medoid);
-      updateModelSelection(medoids);
+      updateModelSelection(medoids.map(d => d.medoid));
     });
   d3.select("#modelSelect").on("click", function () {
     // localStorage.setItem("modelselection-" + type + "-groupnone", JSON.stringify(modelSelection));

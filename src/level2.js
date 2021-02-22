@@ -1,5 +1,6 @@
 function execute(datasets, type, alternatives) {
-  const models = datasets["model"];
+  const {models} = datasets;
+  
   const level = "token";
   // const group = getUrlParameter("group");
   const tokenSelection = listFromLS(level + "selection-" + type);
@@ -75,7 +76,8 @@ function execute(datasets, type, alternatives) {
   const coordinates = offerAlternatives(datasets, alternatives, modelSelection, type);
   const storageSolution = JSON.parse(localStorage.getItem("solution-" + type));
   let chosenSolution = _.isNull(storageSolution) ? alternatives[0] : storageSolution;
-  if (chosenSolution === undefined) chosenSolution = "tokens";
+  console.log(chosenSolution)
+  if (chosenSolution === undefined) chosenSolution = "unique";
 
   d3.select("#solutions").selectAll("button").on("click", function (d) {
     localStorage.setItem("solution-" + type, JSON.stringify(d));

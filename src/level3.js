@@ -10,7 +10,8 @@ const settings = {
   color: d3.scaleOrdinal(myColors),
   shape: d3.scaleOrdinal(d3.symbols),
   size: d3.scaleLinear().range([40, 200]),
-  cwSelection: []
+  cwSelection: [],
+  includeFOC: false
 }
 
 function collectFromStorage(settings) {
@@ -115,9 +116,13 @@ function updateSelections(settings) {
     .selectAll("path.graph")
     .call(styleToken, settings);
 
-  settings.focSvg.svg.selectAll(".dot")
+  if (settings.includeFOC) {
+    settings.focSvg.svg.selectAll(".dot")
     .selectAll("path.graph")
     .call(styleCw, settings);
+  }
+
+  
 }
 
 function setUpDropdowns(settings) {
@@ -208,7 +213,7 @@ function zoomed() {
 
 function adjustValues(settings, tduration = 1000) {
   adjustPlot(settings.tokenSvg, settings.chosenSolution, tduration);
-  adjustPlot(settings.focSvg, settings.chosenSolution, tduration);
+  if (settings.includeFOC)  adjustPlot(settings.focSvg, settings.chosenSolution, tduration);
 }
 function adjustPlot(valueSet, chosenSolution, tduration = 1000) {
   // const { svg, xAxis, yAxis, newX, newY, dot_present } = valueSet;
@@ -544,9 +549,9 @@ function updatePlot(settings) {
 }
 
 function offerFocDists(datasets, alternatives, model) {
-  const coords = subsetCoords(datasets, alternatives[0] + ".cws", model, alternatives[0]);
+  const coords = subsetCoords(datasets, alternatives[0] + "cws", model, alternatives[0]);
   for (let i = 1; i < alternatives.length; i++) {
-    mergeVariables(coords, subsetCoords(datasets, alternatives[i] + ".cws", model, alternatives[i]));
+    mergeVariables(coords, subsetCoords(datasets, alternatives[i] + "cws", model, alternatives[i]));
   }
   return (coords)
 }
@@ -572,10 +577,11 @@ function removeFocDists() {
 function execute(datasets, type, alternatives) {
   settings.type = type;
   settings.alternatives = alternatives;
+  settings.includeFOC = d3.keys(datasets).filter(d => d.endsWith("cws")).length > 0;
 
   settings.datasets = datasets;
   settings.dataset = offerAlternatives(datasets, alternatives, settings.model, type);
-  settings.focdists = offerFocDists(datasets, alternatives, settings.model);
+  
 
   collectFromStorage(settings);
   setUpTexts(settings);
@@ -619,7 +625,8 @@ function execute(datasets, type, alternatives) {
 
   // Set up canvas #######################################################################################
   setUpCanvas(d3.select("#svgContainer1"), settings, target = "tokenSvg");
-  if (d3.keys(datasets).indexOf("mds.cws") !== -1) {
+  if (settings.includeFOC) {
+    settings.focdists = offerFocDists(datasets, alternatives, settings.model);
     setUpCanvas(d3.select("#svgContainer2"), settings, target = "focSvg");
   }
   

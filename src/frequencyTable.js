@@ -1,17 +1,13 @@
 function execute(datasets, type, other_args) {
-    const bigdata = datasets["variables"];
-    const freqdata = datasets["weights"];
+    const { variables : bigdata,
+        ppmi : freqdata}  = datasets;
     const cws_column = other_args;
 
     const tokselection = listFromLS("tokenselection-" + type);
-    const cws = bigdata.filter(function (d) {
-        return (tokselection.indexOf(d['_id']) !== -1);
-    }).map(function (d) {
-        return (d[cws_column]);
-    }).join(';').split(';')
-        .filter((d) => {
-            return(freqdata.map((c) => {return(c.cw); }).indexOf(d)>-1);
-        });
+    const cws = bigdata.filter(d => tokselection.indexOf(d['_id']) !== -1)
+        .map(d => d[cws_column])
+        .join(';').split(';')
+        .filter(d => freqdata.map(c => c.cw).indexOf(d)>-1);
     console.log(cws)
 
     const mySet = new Set(cws);
@@ -21,13 +17,11 @@ function execute(datasets, type, other_args) {
     cwsFreq = Array.from(mySet).map(function (d) {
         const freqs = freqdata.filter(p => p.cw === d)[0];
         
-        const tokens = cws.filter(function (p) {
-            return (p.split(';').indexOf(d) !== -1);
-        }).length;
+        const tokens = cws.filter(p => p.split(';').indexOf(d) !== -1).length;
 
         const set_var = { 'cw': d, 'tokens': tokens };
-        freqcols.forEach(function (x) {
-            set_var[x] = d3.format('.3')(freqs[x])
+        freqcols.forEach((x) => {
+            set_var[x] = d3.format('.3')(freqs[x]);
         });
         return (set_var);
     });
@@ -40,17 +34,14 @@ function execute(datasets, type, other_args) {
         .selectAll('th')
         .data(cols).enter()
         .append("th")
-        .text(function (d) { return (d); });
+        .text(d => d);
 
     const rows = table.append('tbody').selectAll('tr')
         .data(cwsFreq).enter()
         .append('tr');
     rows.selectAll('td')
-        .data(function (d) {
-            return (d3.keys(cwsFreq[0]).map(function (k) {
-                return ({ 'name': k, 'value': d[k] });
-            }));
-        }).enter()
+        .data(d => d3.keys(cwsFreq[0]).map(k => ({ 'name': k, 'value': d[k] })))
+        .enter()
         .append('td')
         .attr('data-th', d => d.name)
         .text(d => d.value);
