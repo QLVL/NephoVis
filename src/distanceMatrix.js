@@ -5,12 +5,11 @@ function execute(datasets, type) {
     var distWidth = 350, distHeight = 350, distPad = 25;
     var modselection;
     var color;
-    console.log(data);
 
     modselection = listFromLS("modelselection-" + type);
     console.log(modselection)
-    distances = data.filter(function(d) {return (modselection.indexOf(d['_model']) !== -1); });
-    console.log(distances)
+    distances = data.filter(d => modselection.indexOf(d['_model']) !== -1);
+    
 
     distMatrix = d3.select("#distMatrix").append("svg")
         .attr("width", distWidth)
@@ -26,10 +25,10 @@ function execute(datasets, type) {
     distCols.selectAll('text')
         .data(modselection).enter()
         .append('text')
-        .attr('x', function(d) {return (distPad + miniWidth*(modselection.indexOf(d)+0.5)); })
+        .attr('x', d=> distPad + miniWidth*(modselection.indexOf(d)+0.5))
         .attr('y', distPad/2)
         // .style('font-size', '0.6em')
-        .text(function(d) {return (modselection.indexOf(d)+1); });
+        .text(d => modselection.indexOf(d)+1);
 
     distRows = distMatrix.append('g');
 
@@ -37,11 +36,13 @@ function execute(datasets, type) {
         .data(modselection).enter()
         .append('text')
         .attr('x', 0)
-        .attr('y', function(d) {return (distPad + miniHeight *(modselection.indexOf(d)+0.5)); })
+        .attr('y', d => distPad + miniHeight *(modselection.indexOf(d)+0.5))
         // .style('font-size', '0.6em')
-        .text(function(d) {return (modselection.indexOf(d)+1); });
+        .text(d => modselection.indexOf(d)+1);
 
-    color = d3.scaleSequential(d3.interpolateGreens);
+    const valRange = Math.max(...distances.map(d => Math.max(...d3.values(d).filter(d => !isNaN(d)))));
+    color = d3.scaleSequential(d3.interpolateGreens)
+        .domain([0, Math.max(1, valRange)]);
 
     rows = distMatrix.append("g")
         .selectAll(".distrowrow")
@@ -50,15 +51,14 @@ function execute(datasets, type) {
         .append("g")
             .attr('class', 'distrow')
             .attr('transform', function(d) {
-            return('translate(' + distPad + ',' + (distPad + miniHeight * modselection.indexOf(d['_model'])) + ')'); })
+            return('translate(' + distPad + ',' + (distPad + miniHeight * modselection.indexOf(d['_model'])) + ')');
+        })
             .each(fillRow);
 
     function fillRow(p) {
-        var row = d3.select(this);
-        var rowData = [];
-        modselection.forEach(function(d) {
-            rowData.push({'model' : d, 'value' : p[d]})
-        });
+        const row = d3.select(this);
+        const rowData = modselection.map(d => ({"model" : d, "value" : p[d]}));
+        
 
         row.selectAll("rect")
             .data(rowData)
@@ -69,16 +69,16 @@ function execute(datasets, type) {
             .attr('transform', function(d) {
                 return ('translate(' + miniWidth * (modselection.indexOf(d.model)) + ', 0)'); 
                 })
-            .style('fill', function(d) {return (color(d.value)); });
+            .style('fill', d => color(d.value));
 
         row.selectAll('text')
             .data(rowData).enter()
                 .append('text')
-                .attr('x', function(d) {return (miniWidth * (modselection.indexOf(d.model)+0.3)); })
+                .attr('x', d => miniWidth * (modselection.indexOf(d.model)+0.3))
                 .attr('y', miniHeight/2)
                 .attr('dy', (1/modselection.length) + 'em')
                 .attr('dx', '-' + (1/modselection.length) + 'em')
-                .text(function(d) {return (d3.format('.2f')(d.value)); })
+                .text(d => d3.format('.2f')(d.value))
                 .style('font-size', (1/modselection.length)*4  + 'em')
                 .style('fill', function(d) {
                     var light = d3.hsl(color(d.value))['l'];
