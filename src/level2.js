@@ -180,7 +180,7 @@ function execute(datasets, type, alternatives) {
       d3.selectAll(".miniplot").append("g")
         .attr("transform", "translate(" + padding + ", " + padding + ")")
         .attr("class", "brush")
-        .attr("id", (d) => { return (d.m); })
+        .attr("id", d => d.m)
         .call(brush);
     } else {
       d3.selectAll(".brush").remove();
@@ -244,7 +244,7 @@ function execute(datasets, type, alternatives) {
     .attr("class", "miniSvg")
     .append("svg")
     .attr("class", "miniplot")
-    .attr("viewBox", `0 0 ${height + padding} ${width + padding}`)
+    .attr("viewBox", d => `0 0 ${width + padding*d.cols} ${height + padding}`)
     .attr("preserveAspectRatio", "xMinYMin meet")
     // .classed("svgPlot", true)
     .append("g")
@@ -295,12 +295,17 @@ function execute(datasets, type, alternatives) {
 
   // To combine data of the models in one
   function combine(m, i) {
+    const lostTokens = dataset.filter(d => (!exists(d, m + "-" + chosenSolution))).length;
+    const lostColumns = lostTokens/25 < 1 ? 2 : Math.ceil(lostTokens/25);
+    
     const base = {
       m: m,
       j: Math.floor(i / ncol),
-      i: i - ncol * Math.floor(i / ncol)
+      i: i - ncol * Math.floor(i / ncol),
+      cols: lostColumns/2
     }
-    alternatives.forEach((solution) => base[solution] = setUpScales(m, solution, padding, height, width));
+    console.log((lostColumns/2))
+    alternatives.forEach(solution => base[solution] = setUpScales(m, solution, padding, height, width));
     return (base);
   }
 
@@ -327,9 +332,7 @@ function execute(datasets, type, alternatives) {
       .attr("dy", "-0.5em")
       .attr("font-size", "0.7em")
       .style("cursor", "pointer")
-      .text(function (d) {
-        return (d.m.length > 40 ? d.m.substring(0, 37) + "..." : d.m);
-      })
+      .text(d => d.m.length > 40 ? d.m.substring(0, 37) + "..." : d.m)
       .on("click", function (d) {
         window.open("level3.html" + "?type=" + type + "&model=" + d.m);
         // window.open("level3.html" + "?type=" + type + "&group=" + group + "&model=" + d.m);
@@ -486,8 +489,8 @@ function execute(datasets, type, alternatives) {
   // ACTUALLY PLOTTING STUFF!!
   function plotCell(p) {
     const miniplot = d3.select(this);
-    const present = dataset.filter((d) => exists(d, p.m + "-" + chosenSolution));
-    const bin = dataset.filter( (d) => (!exists(d, p.m + "-" + chosenSolution)));
+    const present = dataset.filter(d => exists(d, p.m + "-" + chosenSolution));
+    const bin = dataset.filter(d => (!exists(d, p.m + "-" + chosenSolution)));
     
     titleCell(miniplot);
 
