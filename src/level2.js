@@ -40,7 +40,8 @@ function execute(datasets, type, alternatives) {
   });
 
   d3.select("#showTable").on("click", function () {
-    const params = "width=1000,height=700,menubar=no,toolbar=no,location=no,status=no";
+    const winwidth = modelSelection.length*100 + 400
+    const params = "width=" + winwidth + ",height=700,menubar=no,toolbar=no,location=no,status=no";
     window.open("cwsTable.html?type=" + type, "freqtable", params);
     // window.open("cwsTable.html?type=" + type + "&group=" + group, "freqtable", params);
   });

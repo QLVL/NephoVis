@@ -106,8 +106,8 @@ function execute(datasets, type) {
     const tokSelection = listFromLS("tokenselection-" + type);
     const selectedTokens = datasets["variables"].filter((t) => tokSelection.indexOf(t["_id"]) !== -1 );
     const deselectedTokens = datasets["variables"].filter((t) => tokSelection.indexOf(t["_id"]) === -1 );
-    console.log(selectedTokens.length);
-    console.log(deselectedTokens.length);
+    
+    
     function findCwsColumn(m) {
         return (datasets["variables"].columns.filter((d) => {
             return (d.startsWith("_cws.") && m.search(d.slice(5)) === 0)
@@ -116,30 +116,31 @@ function execute(datasets, type) {
     const cwsColumns = modelSelection.map(findCwsColumn);
 
     const infoOptions = [
-        {name : "Absolute frequency", value : "raw", suffix : "raw"},
         {name : "Selected and non selected", value : "both", suffix : "-"},
         {name : "Cue validity", value :"cue", suffix : "-cv"},
         {name : "Log Fisher Exact p-value", value : "fisher", suffix : "-F"},
         {name : "(Smoothed) odds ratio", value : "odds", suffix : "-OR"},
-        {name : "&Delta;P", value : "dp", suffix : "-dp"}
+        {name : "&Delta;P", value : "dp", suffix : "-dp"},
+        {name : "Absolute frequency", value : "raw", suffix : "raw"}
     ]
 
     buildDropdown("info", infoOptions,
-        valueFunction = (d) => d.value, textFunction = (d) => d.name)
-        .on("click", (d) => drawTable(d, freqcols));
+        valueFunction = d => d.value,
+        textFunction = d => d.name)
+        .on("click", d => drawTable(d, freqcols));
 
-    const cws = cwsColumns.map((m) => { // for each model
-        return (selectedTokens.map((d) => { return (d[m]); }).join(";"));
-    }).join(";").split(";").filter((d) => {return(d !== "NA"); });
+    const cws = cwsColumns.map(m => { // for each model
+        return (selectedTokens.map(d => d[m]).join(";"));
+    }).join(";").split(";").filter(d => (d !== "NA"));
 
-    const freqcols = modelSelection.map((d) => modelSelection.indexOf(d) + 1 ); 
+    const freqcols = modelSelection.map(d => modelSelection.indexOf(d) + 1 ); 
 
-    const cwsFrequencies = _.uniq(cws).map((d) =>
+    const cwsFrequencies = _.uniq(cws).map(d =>
         freqFunctions(d, freqcols, cwsColumns, selectedTokens, deselectedTokens)
         );
 
     function createTable(info, freqcols){
-        const tableData = cwsFrequencies.map((d) => d[info.value]);
+        const tableData = cwsFrequencies.map(d => d[info.value]);
         return({tableData : tableData, cols : nameColumns(info.suffix, freqcols)});
     }
     
@@ -165,7 +166,7 @@ function execute(datasets, type) {
             .append('tr')        
         
         rows.selectAll('td')
-            .data((d) => tableData.cols.map((k) => {return({ 'name': k, 'value': d[k] })}))
+            .data((d) => tableData.cols.map(k => ({ 'name': k, 'value': d[k] })))
                 .enter()
             .append('td')
             .attr("class", d => typeof d.name === "string" && (d.name.endsWith("+") | d.name.endsWith("A")) ? "plus" : "minus")
