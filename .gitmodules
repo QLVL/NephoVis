@@ -1,3 +1,3 @@
 [submodule "tokenclouds"]
 	path = tokenclouds
-	url = git@github.com:QLVL/tokenclouds.git
+	url = https://github.com/QLVL/tokenclouds.git
