@@ -1,13 +1,13 @@
 # NephoVis
 
-The files in this folder allow you to visualize 2D scatterplots **as long as they respect a certain format**. It is not super straightforward, I will make it more user-friendly later.
-This file gives you the necessary instructions to reuse this somewhere else.
-Last update (of this file): 5-Feb-2021
+This is a visualization tool written in [D3.js](https://d3js.org/) by
+[Mariana Montes](https://www.marianamontes.me) and
+Thomas Wielfaert as part of the [Nephological Semantics project](https://www.arts.kuleuven.be/ling/qlvl/projects/current/nephological-semantics).
 
-One note: when I use curly braces, it means you fill in information inside, but you shouldn't write the braces.
+It is meant for visual inspection of vector space models.
 
-## WHAT FILES DO I NEED?
-For the visualization tool itself, clone this repository.
+# Acknowledgements
+This work was supported by KU Leuven (KU Leuven Research Fund C1).
+We are also greatful to the team of the Nephological Semantics project for their support and feedback: Dirk Geeraerts, Dirk Speelman, Benedikt Szmrecsanyi, Stefania Marzo, Kris Heylen, Weiwei Zhang, Karlien Franco and Stefano De Pascale.
 
-The data is stored in [this other repository](https://github.com/montesmariana/tokenclouds.git), which you can load as a submodule (as it is here). You only need the "data" directory there.
-For each of the types you want to visualize, you would need a number of files with predefined formats and names. I should make this more flexible (in particular, allow the visualization to work "impaired" when less important files are not available).
+We must also acknowledge the invaluable help of Alex Scigalszky as well as Mike Bostock's inspiring examples.
