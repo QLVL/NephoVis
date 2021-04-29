@@ -4,7 +4,8 @@
 
 This is a visualization tool written in [D3.js](https://d3js.org/) by
 [Mariana Montes](https://www.marianamontes.me) ([@montesmariana](https://github.com/montesmariana)) and
-Thomas Wielfaert as part of the [Nephological Semantics project](https://www.arts.kuleuven.be/ling/qlvl/projects/current/nephological-semantics).
+Thomas Wielfaert ([@twielfaert](https://github.com/twielfaert))
+as part of the [Nephological Semantics project](https://www.arts.kuleuven.be/ling/qlvl/projects/current/nephological-semantics).
 
 It is meant for visual inspection of vector space models.
 
