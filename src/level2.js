@@ -1,6 +1,9 @@
 /* Interactive visualization of token-level distributional models
 Copyright (C) 2021  Thomas Wielfaert and Mariana Montes - QLVL, KU Lueven
 
+The code in this site was inspired by Mike's Bostock brushable Scatterplot matrix
+https://observablehq.com/@d3/brushable-scatterplot-matrix
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
