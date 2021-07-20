@@ -11,13 +11,13 @@
  */
 :root {
   --pal1: #fef9d9;
-  --pal2: #ce7d00;
-  --pal3: #935900;
-  --pal4: #00541a;
+  --pal2: #116e8a;
+  --pal3: #1d8db0;
+  --pal4: #d7e2ee;
   --pal5: #ffffb5;
-  --pal6: #616f39;
+  --pal6: #154360;
   --pal7: #6b8c42;
-  --pal8: #5a3921;
+  --pal8: #154360;
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -101,10 +101,10 @@ body {
 }
 
 .main {
-  height: 100%;
+  height: 100vh;
   padding-top: 20px;
   padding-bottom: 0px;
-  background-color: var(--pal2);
+  background: linear-gradient(var(--pal2) 90%, var(--pal3));
   border-style: none solid solid solid;
   border-width: 3px 3px 10px 3px;
   border-color: var(--pal8);
@@ -128,11 +128,17 @@ body {
 .news {
   margin: 10px 5px 15px 0px;
   padding: 10px;
-  background-color: var(--pal6);
+  background-color: var(--pal4);
   border-style: solid;
-  border-color: var(--pal4);
+  border-color: var(--pal8);
+  place-content: center;
 }
 
+.news p {
+  color: var(--pal8);
+  font-weight: bold;
+  text-align: center;
+}
 hr {
   box-sizing: content-box;
   height: 0;
@@ -226,7 +232,7 @@ a {
   -webkit-text-decoration-skip: objects;
 }
 a:hover {
-  color:var(--pal2);
+  color:var(--pal4);
   text-decoration: underline;
 }
 

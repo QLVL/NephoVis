@@ -29,14 +29,15 @@
 	}
 
 	a.btn {
-		background-color: var(--pal1);
+		background-color: var(--pal8);
 		color: var(--pal4);
 	}
 
 	
 	a.btn:hover {
-		background-color: var(--pal4);
-		color: var(--pal1);
+		background-color: var(--pal1);
+		color: var(--pal8);
+		border-color: var(--pal8);
 	}
 
 
@@ -59,7 +60,7 @@
         </div>
         <div class="col-4">
           <div class="news">
-			<p>Welcome to the visualization tool of the Nephological Semantics projects. Click on a type on the left to look at the corresponding cloud of models (level 1).</p>
+			<p>Welcome to the visualization tool of the Nephological Semantics projects. Click on a type on the left to look at the corresponding cloud of models (Level 1).</p>
 			<hr>
 			<div class="btn-group-vertical">
 				<a role="button" class="btn shadow-sm" href="index.html"><i class="fas fa-home"></i> Back to home </a>
@@ -87,7 +88,8 @@
 				d3.select("#title").text("Pilot studies")
 			} else {
 				dataset = data.filter(d => pilots.indexOf(d.type) === -1 && d.part_of_speech === pos);
-				d3.select("#title").text(capitalize(pos) + "s from QLVLNews Corpus")
+				const pos2 = pos === "adj" ? "adjective" : pos;
+				d3.select("#title").text(capitalize(pos2) + "s from QLVLNews Corpus");
 			}
 			console.log(dataset);
 			displayLemmas(dataset);
