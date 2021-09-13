@@ -36,8 +36,9 @@ function loadData(type, files, other_args = null) {
         }
 
         if (solutions !== undefined){
-            console.log(`${sourcedir}${type}/${solutions[0]}`)
-            d3.json(`${sourcedir}${type}/${solutions[0]}`).then((json) => {
+            const solutions_fname = typeof solutions === 'object' ? solutions[0] : solutions
+            console.log(`${sourcedir}${type}/${solutions_fname}`)
+            d3.json(`${sourcedir}${type}/${solutions_fname}`).then((json) => {
                 if (files.indexOf("tokens") > -1) {
                     d3.keys(json).forEach(d => files.push(d));
                     if (other_args === null) other_args = d3.keys(json);
@@ -60,9 +61,12 @@ function loadData(type, files, other_args = null) {
 function retrieveFiles(sourcedir, files, allFiles, type, other_args){
     console.log(other_args)
     const toLoad = files.map(f => {
-        return d3.keys(allFiles).indexOf(f) > -1
-        ? d3.tsv(`${sourcedir}${type}/${allFiles[f][0]}`)
-        : undefined;
+        if (d3.keys(allFiles).indexOf(f) === -1) {
+            return undefined;
+        } else {
+            const fname = typeof allFiles[f] === 'object' ? allFiles[f][0] : allFiles[f];
+            return d3.tsv(`${sourcedir}${type}/${fname}`);
+        }        
     });
     Promise.all(toLoad).then(function(results) {
         const loadedDatasets = _.fromPairs(_.zip(files, results));
