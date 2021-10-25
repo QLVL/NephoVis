@@ -80,10 +80,14 @@ In short, the most important files are the `paths.json` file, the "models" file 
 
 ### How to create the data
 
-There are several steps to creating the data necessary for the visualization. The first set of steps uses Python3, in particular the `qlvl` module and the `semasioFlow` module. A link to the corresponding workflow will be added soon. The second set of steps uses R and a number of functions from the *ad hoc* [`semcloud`](https://github.com/montesmariana/semcloud) package; the corresponding workflow will be linked soon.
+There are several steps to creating the data necessary for the visualization. The first set of steps uses Python3, in particular the `qlvl` module and the `semasioFlow` module. A link to the corresponding workflow will be added soon. The second set of steps uses R and a number of functions from the *ad hoc* [`semcloud`](https://github.com/montesmariana/semcloud) package; the corresponding workflow will be linked soon. This code covers how to create the kind of clouds that I worked with, *except* for the addition of **categorical variables**. Project-specific information such as register, manual sense annotation, etc., is not included and must be added by the user based on the desired information and resorces available.
+
+Of course, you don't *need* to use this specific code to create this data. Any other code that generates comparable dataframes will work.
 
 ## Publications
 
 Wielfaert, Thomas, Kris Heylen, Dirk Speelman & Dirk Geeraerts. 2019. Visual Analytics for Parameter Tuning of Semantic Vector Space Models. In Miriam Butt, Annette Hautli-Janisz & Verena Lyding (eds.), *LingVis: visual analytics for linguistics*, 215–245. Stanford, California: CSLI Publications, Center for the Study of Language and Information.
 
 Montes, Mariana & Kris Heylen. Forthcoming. Visualizing Distributional Semantics. In Dennis Tay & Molly Xie Pan (eds.), *[Data Analytics in Cognitive Linguistics, Methods and Insights](https://www.degruyter.com/document/isbn/9783110687156/html)*. De Gruyter Mouton.
+
+Montes, Mariana (2021). [_Cloudspotting. Visual analytics for distributional semantics_](https://cloudspotting.marianamontes.me/). PhD dissertation.
