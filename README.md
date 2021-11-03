@@ -1,6 +1,8 @@
 # NephoVis
 
 [![DOI](https://zenodo.org/badge/224012839.svg)](https://zenodo.org/badge/latestdoi/224012839)
+![Latest release](https://img.shields.io/github/v/release/qlvl/nephovis)
+[![License](https://img.shields.io/github/license/qlvl/nephovis)](https://www.gnu.org/licenses/gpl-3.0)
 
 This is a visualization tool written in [D3.js](https://d3js.org/) by
 [Mariana Montes](https://www.marianamontes.me) ([@montesmariana](https://github.com/montesmariana)) and
