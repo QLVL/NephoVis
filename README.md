@@ -82,7 +82,7 @@ In short, the most important files are the `paths.json` file, the "models" file 
 
 ### How to create the data
 
-There are several steps to creating the data necessary for the visualization. The first set of steps uses Python3, in particular the [`nephosem` module](https://github.com/QLVL/nephosem/) and the `semasioFlow` module (public soon). The second set of steps uses R and a number of functions from the *ad hoc* [`semcloud`](https://github.com/montesmariana/semcloud) package; the corresponding workflow will be linked soon. This code covers how to create the kind of clouds that I worked with, *except* for the addition of **categorical variables**. Project-specific information such as register, manual sense annotation, etc., is not included and must be added by the user based on the desired information and resorces available.
+There are several steps to creating the data necessary for the visualization. The first set of steps uses Python3, in particular the [`nephosem` module](https://github.com/QLVL/nephosem/) and the [`semasioFlow` module](https://github.com/montesmariana/semasioFlow). The second set of steps uses R and a number of functions from the *ad hoc* [`semcloud`](https://github.com/montesmariana/semcloud) package; the corresponding workflow will be linked soon. This code covers how to create the kind of clouds that I worked with, *except* for the addition of **categorical variables**. Project-specific information such as register, manual sense annotation, etc., is not included and must be added by the user based on the desired information and resorces available.
 
 Of course, you don't *need* to use this specific code to create this data. Any other code that generates comparable dataframes will work.
 
