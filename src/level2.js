@@ -102,9 +102,9 @@ function execute(datasets, type, alternatives) {
   d3.select("#solutions").selectAll("button").on("click", function (d) {
     localStorage.setItem("solution-" + type, JSON.stringify(d));
     d3.select("#solutions").selectAll("button").html(t => {
-      return (t === d ? "<b>" + t + "</b>" : t);
+      return (t === d ? `<b>${t}</b>` : t);
     });
-    const technique = d.toLowerCase().search("tsne") > -1 ? "t-SNE, perplexity: " + d.match("[0-9]+") : d.toUpperCase();
+    const technique = d.toLowerCase().search("tsne") > -1 ? `t-SNE, perplexity: ${d.match("[0-9]+")}` : d.toUpperCase();
     d3.select("h4#solutionName").text("Technique: " + technique);
     chosenSolution = d;
     applySolution(chosenSolution);
@@ -164,7 +164,8 @@ function execute(datasets, type, alternatives) {
     updateLegend(colorvar, shapevar, sizevar, padding+10, level, type, dataset);
   });
   buildDropdown("shape",
-    nominals.filter(function (d) { return (d === "Reset" || getValues(dataset, d).length <= 7); })).on("click", function () {
+    nominals.filter(d => d === "Reset" || getValues(dataset, d).length <= 7))
+    .on("click", function () {
       shapevar = updateVar(dataset, "shape", this.value, level, type);
       updatePlot();
       updateLegend(colorvar, shapevar, sizevar, padding+10, level, type, dataset);
@@ -198,7 +199,7 @@ function execute(datasets, type, alternatives) {
       // tokenSelection = [];
       updateTokSelection(tokenSelection);
       d3.selectAll(".miniplot").append("g")
-        .attr("transform", "translate(" + padding + ", " + padding + ")")
+        .attr("transform", `translate(${padding},${padding})`)
         .attr("class", "brush")
         .attr("id", d => d.m)
         .call(brush);
@@ -209,10 +210,8 @@ function execute(datasets, type, alternatives) {
 
   // Set up scales (axes) - coordinates multiplied to get some padding in a way
   function setUpScales(m, solution, padding, height, width){
-    modelRange = [...getValues(dataset, m + "-" + solution + ".x"), ...getValues(dataset, m + "-" + solution + ".y")]
+    modelRange = [...getValues(dataset, `${m}-${solution}.x`), ...getValues(dataset, `${m}-${solution}.y`)]
     const range = setRange(modelRange, 1.05);
-    // const xrange = setRange(getValues(dataset, m + "-" + solution + ".x"), 1.05);
-    // const yrange = setRange(getValues(dataset,  m + "-" + solution + ".y"), 1.05);
     
     const x = d3.scaleLinear()
       // .domain(xrange)
@@ -234,26 +233,6 @@ function execute(datasets, type, alternatives) {
     // return({x : x, y : y, xAxis : xAxis, yAxis : yAxis});
     return({x : x, y : y});
   }
-  // const xvalues = d3.merge(modelSelection.map(function (m) {
-  //   return (getValues(dataset, m + "-" + chosenSolution + ".x"));
-  // }));
-  // const yvalues = d3.merge(modelSelection.map(function (m) {
-  //   return (getValues(dataset,  m + "-" + chosenSolution + ".y"));
-  // }));
-  // const xrange = setRange(xvalues, 1.05);
-  // const yrange = setRange(yvalues, 1.05);
-
-  // let x = d3.scaleLinear()
-  //   .domain(xrange)
-  //   .range([padding, width]);
-
-  // let y = d3.scaleLinear()
-  //   .domain(yrange)
-  //   .range([height, padding]);
-
-  // // Vertical center
-  // const xAxis = d3.axisBottom(x).tickSizeOuter(0);
-  // const yAxis = d3.axisLeft(y).tickSizeOuter(0);
 
   // DRAW PLOT ##############################################################################################################
   d3.select("#miniPlots")
@@ -273,17 +252,6 @@ function execute(datasets, type, alternatives) {
     .attr("transform", "translate(0,0)")
     .each(plotCell);
 
-  // miniplots = svg.selectAll(".miniplot")
-  //   .data(modelSelection.map(combine))
-  //   .enter()
-  //   .append("g")
-  //   .attr("class", "miniplot")
-  //   .attr("transform", function (d) {
-  //     return ("translate(" + (+d.i) * (width + padding) + ", " + +((height + padding / 2) * (+d.j)) + ")");
-  //   })
-  //   .attr("model", function (d) { return (d.m) })
-  //   .each(plotCell);
-
   colorCircles();
   updateLegend(colorvar, shapevar, sizevar, padding+10, level, type, dataset);
   updatePlot();
@@ -294,12 +262,9 @@ function execute(datasets, type, alternatives) {
 
   function adjustValues(p, solution, tduration = 1500) {
     const newValues = p[solution]
-    const c = d3.select(".miniplot[model='" + p.m + "']");
+    const c = d3.select(`.miniplot[model='${p.m}']`);
     let x = newValues.x, y = newValues.y;
-    // c.select(".xAxis").transition().duration(tduration)
-    //   .call(newValues.xAxis.scale(x)); // x axis rescaled
-    // c.selectAll(".yAxis").transition().duration(tduration)
-    //   .call(newValues.yAxis.scale(y)); // y axis rescaled
+ 
     
     c.select(".xcenter").transition().duration(tduration)
       .attr("x1", x(0)).attr("x2", x(0)); // central x rescaled
@@ -309,13 +274,15 @@ function execute(datasets, type, alternatives) {
     c.selectAll("path.present")
       .transition().duration(tduration)
       .attr("transform", (d) => {
-        return ("translate(" + x(d[p.m + "-" + solution + ".x"]) + "," + y(d[p.m + "-" + solution + ".y"]) + ")");
+        const xcoord = x(d[`${p.m}-${solution}.x`]);
+        const ycoord = y(d[`${p.m}-${solution}.y`]);
+        return(`translate(${xcoord},${ycoord})`);
       });
   }
 
   // To combine data of the models in one
   function combine(m, i) {
-    const lostTokens = dataset.filter(d => (!exists(d, m + "-" + chosenSolution))).length;
+    const lostTokens = dataset.filter(d => (!exists(d, `${m}-${chosenSolution}`))).length;
     const lostColumns = lostTokens/25 < 1 ? 2 : Math.ceil(lostTokens/25);
     
     const base = {
@@ -353,10 +320,7 @@ function execute(datasets, type, alternatives) {
       .attr("font-size", "0.7em")
       .style("cursor", "pointer")
       .text(d => d.m.length > 40 ? d.m.substring(0, 37) + "..." : d.m)
-      .on("click", function (d) {
-        window.open("level3.html" + "?type=" + type + "&model=" + d.m);
-        // window.open("level3.html" + "?type=" + type + "&group=" + group + "&model=" + d.m);
-      });
+      .on("click", d => window.open(`level3.html?type=${type}&model=${d.m}`));
   }
 
   function drawFrame(miniplot, p) {
@@ -390,7 +354,7 @@ function execute(datasets, type, alternatives) {
   function colorCircles() {
     d3.selectAll("circle")
       .style("fill", function (d) {
-        const m = models.filter(function (row) { return (row["_model"] === d.m) })[0];
+        const m = models.filter(row => row["_model"] === d.m)[0];
         return (code(m, colorModel, color8, "#1f77b4"));
       });
   }
@@ -421,9 +385,9 @@ function execute(datasets, type, alternatives) {
     const color = colorvar.values.length <= 8 ? color8 : color12;
     const tooltipColor = code(d, colorvar, color, "#1f77b4")
     // const tooltiptext = typeof(ctxtvar) == "string" ? d[ctxtvar].replace(/<em>/g, "<em style='color:" +tooltipcolor + ";font-weight:bold;'>") : ""
-    const ctxt = colnames["all"].filter(function (d) { return (d.startsWith("_ctxt") && d.endsWith(".raw")); })[0];
+    const ctxt = colnames["all"].filter(d => d.startsWith("_ctxt") && d.endsWith(".raw"))[0];
     const tooltipText1 = "<p><b>" + d["_id"] + "</b></p><p>";
-    const tooltipText2 = d[ctxt].replace(/class=["']target["']/g, 'style="color:' + tooltipColor + ';font-weight:bold;"') + "</p>";
+    const tooltipText2 = d[ctxt].replace(/class=["']target["']/g, `style="color:${tooltipColor};font-weight:bold;"`) + "</p>";
 
     d3.select("#concordance").append("p")
       .attr("class", "text-center p-2 ml-2")
@@ -485,8 +449,8 @@ function execute(datasets, type, alternatives) {
     if (!_.isNull(e)) {
       d3.selectAll(".dot").selectAll("path")
         .classed("lighter", function (d) {
-          var xc = p[chosenSolution].x(d[p.m + "-" + chosenSolution + ".x"]);
-          var yc = p[chosenSolution].y(d[p.m + "-" + chosenSolution + ".y"]);
+          var xc = p[chosenSolution].x(d[`${p.m}-${chosenSolution}.x`]);
+          var yc = p[chosenSolution].y(d[`${p.m}-${chosenSolution}.y`]);
           return (xc < e[0][0] + padding || xc > e[1][0] + padding || yc < e[0][1] + padding || yc > e[1][1] + padding || !exists(d, p.m + "-" + chosenSolution));
         });
     }
@@ -509,8 +473,8 @@ function execute(datasets, type, alternatives) {
   // ACTUALLY PLOTTING STUFF!!
   function plotCell(p) {
     const miniplot = d3.select(this);
-    const present = dataset.filter(d => exists(d, p.m + "-" + chosenSolution));
-    const bin = dataset.filter(d => (!exists(d, p.m + "-" + chosenSolution)));
+    const present = dataset.filter(d => exists(d, `${p.m}-${chosenSolution}`));
+    const bin = dataset.filter(d => (!exists(d, `${p.m}-${chosenSolution}`)));
     
     titleCell(miniplot);
 
@@ -519,6 +483,7 @@ function execute(datasets, type, alternatives) {
     numberCell(miniplot);
 
     // Draw present tokens
+    console.log('2021.11.16')
 
     miniplot.append("g")
       .attr("transform", "translate(0,0)")
@@ -528,14 +493,16 @@ function execute(datasets, type, alternatives) {
       .append("path")
       .attr("class", "graph present")
       .attr("transform", function (d) {
-        return ("translate(" + p[chosenSolution].x(d[p.m + "-" + chosenSolution + ".x"]) + "," + p[chosenSolution].y(d[p.m + "-" + chosenSolution +  ".y"]) + ")");
+        const xcoord = p[chosenSolution].x(d[`${p.m}-${chosenSolution}.x`]);
+        const ycoord = p[chosenSolution].y(d[`${p.m}-${chosenSolution}.y`]);
+        return(`translate(${xcoord},${ycoord})`);
       })
       .each(styleDot);
 
     // Draw lost tokens
 
     miniplot.append("g")
-      .attr("transform", "translate(" + (width + padding / 4) + "," + padding / 2 + ")")
+      .attr("transform", `translate(${width + padding / 4}, ${padding / 2})`)
       .attr("class", "dot")
       .selectAll("path")
       .data(bin).enter()
@@ -545,7 +512,7 @@ function execute(datasets, type, alternatives) {
         var j = bin.indexOf(d);
         var i = Math.floor((j * 10) / width);
         j = j - (i * (width / 10));
-        return ("translate(" + i * 10 + "," + j * 10 + ")");
+        return (`translate(${i * 10}, ${j * 10})`);
       })
       .each(styleDot);
   }

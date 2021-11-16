@@ -66,14 +66,13 @@ function setUpButtons(settings) {
 
   d3.select("#modelSelect")
     .on("click", function () {
-      const group = getUrlParameter(window.location, "group");
-      window.open("level2.html" + "?type=" + type + "&group=" + group);
+      window.open(`level2.html?type=${type}`);
     });
 
   d3.select("#solutions").selectAll("button").on("click", function (d) {
     localStorage.setItem("solution-" + type, JSON.stringify(d));
-    d3.select("#solutions").selectAll("button").html(t => t === d ? "<b>" + t + "</b>" : t);
-    const technique = d.toLowerCase().search("tsne") > -1 ? "t-SNE, perplexity: " + d.match("[0-9]+") : d.toUpperCase();
+    d3.select("#solutions").selectAll("button").html(t => t === d ? `<b>${t}</b>` : t);
+    const technique = d.toLowerCase().search("tsne") > -1 ? `t-SNE, perplexity: ${d.match("[0-9]+")}` : d.toUpperCase();
     d3.select("h4#solutionName").text("Technique: " + technique);
     settings.chosenSolution = d;
     applySolution(settings);
@@ -97,24 +96,26 @@ function findByContext(column, by, settings) {
   });
   if (result.length > 0) {
     _.pullAll(tokenSelection, tokenSelection);
-    result.forEach(function (d) { tokenSelection.push(d["_id"]); });
+    result.forEach(d => tokenSelection.push(d["_id"]));
     updateSelections(settings);
   } else {
     const spec = by === "Feature" ? "as a feature" : "in a concordance";
-    window.alert('Sorry, "' + cw2search + '" is not present ' + spec + ' in this model.');
+    window.alert(`Sorry, "${cw2search}" is not present ${spec} in this model.`);
   }
 }
 
 function token2context(settings) {
   const { dataset, cwsColumn, tokenSelection } = settings;
-  selectedFOCs = dataset.filter((d) => tokenSelection.indexOf(d["_id"]) !== -1)
-    .map((d) => d[cwsColumn]).join(";").split(";");
+  selectedFOCs = dataset.filter(d => tokenSelection.indexOf(d["_id"]) !== -1)
+    .map(d => d[cwsColumn]).join(";").split(";");
   settings.cwSelection = selectedFOCs;
   updateSelections(settings);
 }
 function context2token(settings) {
   const { dataset, cwsColumn, cwSelection } = settings;
-  const tokens = cwSelection.map((cw) => dataset.filter((d) => d[cwsColumn].search(cw) !== -1).map((d) => d["_id"])).flat()
+  const tokens = cwSelection.map((cw) => dataset
+    .filter(d => d[cwsColumn].search(cw) !== -1).map(d => d["_id"]))
+    .flat();
 
   settings.tokenSelection = _.uniq(tokens);
   updateSelections(settings);
@@ -125,9 +126,8 @@ function updateSelections(settings) {
   if (tokenSelection.length > 0 && tokenSelection.indexOf("undefined") > -1) _.pull(tokenSelection, "undefined");
   if (cwSelection.length > 0 && cwSelection.indexOf("undefined") > -1) _.pull(cwSelection, "undefined");
 
-  ["color", "shape", "size"].forEach((variable) => { boldenLegend(variable, level, type) });
-  localStorage.setItem(level + "selection-" + type, tokenSelection.length > 0 ? JSON.stringify(tokenSelection) : JSON.stringify(null));
-  // if something is selected everything else is translucent
+  ["color", "shape", "size"].forEach(variable => boldenLegend(variable, level, type));
+  localStorage.setItem(`${level}selection-${type}`, tokenSelection.length > 0 ? JSON.stringify(tokenSelection) : JSON.stringify(null));
   settings.tokenSvg.svg.selectAll(".dot")
     .selectAll("path.graph")
     .call(styleToken, settings);
@@ -152,7 +152,7 @@ function setUpDropdowns(settings) {
   });
 
   buildDropdown("shape",
-    nominals.filter((d) => (d === "Reset" || getValues(dataset, d).length <= 7)))
+    nominals.filter(d => (d === "Reset" || getValues(dataset, d).length <= 7)))
     .on("click", function () {
       settings.shapevar = updateVar(dataset, "shape", this.value, level, type);
       settings.shapeselection = [];
@@ -176,15 +176,15 @@ function setUpDropdowns(settings) {
     valueFunction = d => d,
     textFunction = d => {
       const txt = _.replace(d, type + ".", "");
-      return (d === model ? "<b>" + txt + "</b>" : txt)
+      return (d === model ? `<b>${txt}</b>` : txt)
     }
   )
     .on("click", function () {
-      window.open("level3.html" + "?type=" + type + "&model=" + this.value, "_self");
+      window.open(`level3.html?type=${type}&model=${this.value}`, "_self");
     });
 
   d3.select("#tokenIDs").selectAll("option")
-    .data(dataset.map((d) => d["_id"]))
+    .data(dataset.map(d => d["_id"]))
     .enter()
     .append("option")
     .attr("value", d => d);
@@ -241,7 +241,7 @@ function adjustPlot(valueSet, chosenSolution, tduration = 1000) {
   //   .call(yAxis.scale(newY)); // y axis rescaled
   dot_present
     .transition().duration(tduration)
-    .attr("transform", d => "translate(" + newX(d[chosenSolution + ".x"]) + "," + newY(d[chosenSolution + ".y"]) + ")"); // dots repositioned
+    .attr("transform", d => `translate(${newX(d[chosenSolution + ".x"])},${newY(d[chosenSolution + ".y"])})`); // dots repositioned
   svg.select("#xCenter").transition().duration(tduration)
     .attr("x1", newX(0)).attr("x2", newX(0)); // central x rescaled
   svg.select("#yCenter").transition().duration(tduration)
@@ -268,8 +268,6 @@ function setUpCanvas(container, settings, target) {
   modelRange = [...getValues(dataset, chosenSolution + ".x"), ...getValues(dataset, chosenSolution + ".y")]
   const range = setRange(modelRange, 1.05);
 
-  // const xrange = setRange(getValues(dataset, chosenSolution + ".x"), 1.1);
-  // const yrange = setRange(getValues(dataset, chosenSolution + ".y"), 1.1);
   svgData.x = d3.scaleLinear()
     // .domain(xrange)
     .domain(range)
@@ -289,27 +287,10 @@ function setUpCanvas(container, settings, target) {
   traceCenter(svg, x1 = padding, x2 = width - padding, y1 = svgData.newY(0), y2 = svgData.newY(0))
     .attr("id", "yCenter");
 
-  // Axes (tickSizeOuter(0) avoids overlap of axes)
-  // svgData.xAxis = d3.axisBottom(svgData.newX)
-  //   // .ticks(0)
-  //   .tickSizeOuter(0);
-  // svg.append("g")
-  //   .attr("id", "xaxis")
-  //   .attr("transform", "translate(0, " + (height - padding) + ")")
-  //   .call(svgData.xAxis);
-
-  // svgData.yAxis = d3.axisLeft(svgData.newY)
-  //   // .ticks(0)
-  //   .tickSizeOuter(0);
-  // svg.append("g")
-  //   .attr("id", "yaxis")
-  //   .attr("transform", "translate(" + padding + ", 0)")
-  //   .call(svgData.yAxis);
-
   setPointerEvents(svg, width, height);
 
-  svgData.present = dataset.filter((d) => exists(d, chosenSolution));
-  svgData.bin = dataset.filter((d) => !(exists(d, chosenSolution)));
+  svgData.present = dataset.filter(d => exists(d, chosenSolution));
+  svgData.bin = dataset.filter(d => !(exists(d, chosenSolution)));
 
   if (target === "focSvg") {
     svgData.tooltip = d3.select("body").append("div")
@@ -331,7 +312,7 @@ function setUpCanvas(container, settings, target) {
     .data(svgData.present).enter()
     .append("path")
     .attr("class", "graph present")
-    .attr("transform", (d) => "translate(" + svgData.newX(d[chosenSolution + ".x"]) + "," + svgData.newY(d[chosenSolution + ".y"]) + ")")
+    .attr("transform", d => `translate(${svgData.newX(d[chosenSolution + ".x"])},${svgData.newY(d[chosenSolution + ".y"])})`)
     .call(styleDot, settings, target);
 
   // Lost tokens
@@ -352,7 +333,7 @@ function setUpCanvas(container, settings, target) {
       .attr("height", dotsColumns*10 + padding/2)
       .attr("transform", "translate(0,0)")
       .append("g")
-      .attr("transform", "translate(" + 10 + "," + 10 + ")")
+      .attr("transform", `translate(${10},${10})`)
       .attr("class", "dot")
       .selectAll("path")
       .data(svgData.bin).enter()
@@ -361,7 +342,7 @@ function setUpCanvas(container, settings, target) {
       .attr("transform", function (d) {
         const j = Math.floor(svgData.bin.indexOf(d) / dotsPerRow);
         const i = svgData.bin.indexOf(d) - (j * dotsPerRow);
-        return ("translate(" + (i * 10) + "," + (j * 10) + ")");
+        return (`translate(${i * 10},${j * 10})`);
       })
       .call(styleDot, settings, target);
   }
@@ -399,13 +380,13 @@ function styleToken(selection, settings) {
   
   const color = colorvar.values.length <= 8 ? settings.color : d3.scaleOrdinal(d3.schemeSet3);
   selection.attr("d", d3.symbol()
-    .type((d) => code(d, shapevar, shape, d3.symbolCircle))
-    .size((d) => code(d, sizevar, size, 64))
+    .type(d => code(d, shapevar, shape, d3.symbolCircle))
+    .size(d => code(d, sizevar, size, 64))
   )
     .style("stroke", "gray")
-    .style("fill", (d) => code(d, colorvar, color, "#1f77b4"))
+    .style("fill", d => code(d, colorvar, color, "#1f77b4"))
     .style("opacity", tokenSelection.length > 0 ? 1 : 0.7)
-    .classed("lighter", (d) => tokenSelection.length > 0 ? (tokenSelection.indexOf(d["_id"]) === -1) : false)
+    .classed("lighter", d => tokenSelection.length > 0 ? (tokenSelection.indexOf(d["_id"]) === -1) : false)
     // .classed("lost", function(d) {return (!exists(d, chosenSolution)); })
     .on("mouseover", showContext)
     .on("mouseout", function () {
@@ -414,7 +395,7 @@ function styleToken(selection, settings) {
     })
     .on("click", function (d) {
       _.pullAll(tokenSelection, tokenSelection);
-      listFromLS(level + "selection-" + type).forEach(d => tokenSelection.push(d));
+      listFromLS(level + `${level}selection-${type}`).forEach(d => tokenSelection.push(d));
       tokenSelection.indexOf(d["_id"]) === -1 ? tokenSelection.push(d["_id"]) : _.pull(tokenSelection, d["_id"]);
       token2context(settings);
     });
@@ -423,7 +404,7 @@ function styleToken(selection, settings) {
 function countTokensForCw(settings, cw2search) {
   const { dataset, cwsColumn, tokenSelection } = settings;
 
-  const tokens = dataset.filter((d) => {
+  const tokens = dataset.filter(d => {
     return((tokenSelection.length === 0 || tokenSelection.indexOf(d["_id"]) !== -1) && 
     d[cwsColumn].split(";").indexOf(cw2search) !== -1);
   }).length;
@@ -433,20 +414,20 @@ function countTokensForCw(settings, cw2search) {
 function styleCw(selection, settings) {
   const tooltip = settings.focSvg.tooltip;
   selection.attr("d", d3.symbol().type(d3.symbolStar)
-    .size((d) => {
+    .size(d => {
     const isSelected = settings.cwSelection.indexOf(d["_id"]) !== -1;
     return(isSelected ? settings.size.domain([1, settings.tokenSelection.length])(countTokensForCw(settings, d["_id"])) : 64);
   }))
     .style("stroke", "gray")
     .style("fill", "#1f77b4")
     .style("opacity", settings.cwSelection.length > 0 ? 1 : 0.7)
-    .classed("lighter", (d) => settings.cwSelection.length > 0 ? settings.cwSelection.indexOf(d["_id"]) === -1 : false)
+    .classed("lighter", d => settings.cwSelection.length > 0 ? settings.cwSelection.indexOf(d["_id"]) === -1 : false)
     // .classed("lost", function(d) {return (!exists(d, chosenSolution)); })
-    .on("click", (d) => {
+    .on("click", d => {
       settings.cwSelection.indexOf(d["_id"]) === -1 ? settings.cwSelection.push(d["_id"]) : _.pull(settings.cwSelection, d["_id"]);
       context2token(settings);
     })
-    .on("mouseover", (d) => {
+    .on("mouseover", d => {
       tooltip.transition()
         .duration(200)
         .style("opacity", .9);
@@ -469,8 +450,8 @@ function showContext(d) {
     const newVar = _.filter(tailoredContexts, ["key", "model"])[0]["value"];
     ctxtvar = updateVar(dataset, "ctxt", newVar, level, type)["variable"];
   }
-  const tooltipText1 = "<p><b>" + d["_id"] + "</b></p><p>";
-  const tooltipText2 = d[ctxtvar].replace(/class=["']target["']/g, 'style="color:' + tooltipColor + ';font-weight:bold;"') + "</p>";
+  const tooltipText1 = `<p><b>${d["_id"]}</b></p><p>`;
+  const tooltipText2 = d[ctxtvar].replace(/class=["']target["']/g, `style="color:${tooltipColor};font-weight:bold;"`) + "</p>";
   // var tooltiptext = d[model + ".x"] + ", " + d[model + ".y"];
 
   d3.select("#concordance").append("p")
@@ -558,10 +539,10 @@ function brushedFocs(settings) {
 function updatePlot(settings) {
   const { colorvar, shapevar, sizevar, shape, size } = settings;
   const color = colorvar.values.length <= 8 ? settings.color : d3.scaleOrdinal(d3.schemeSet3);
-  d3.selectAll(".dot").selectAll("path").style("fill", (d) => code(d, colorvar, color, "#1f77b4"))
+  d3.selectAll(".dot").selectAll("path").style("fill", d => code(d, colorvar, color, "#1f77b4"))
     .attr("d", d3.symbol()
-      .type((d) => code(d, shapevar, shape, d3.symbolCircle))
-      .size((d) => code(d, sizevar, size, 64)));
+      .type(d => code(d, shapevar, shape, d3.symbolCircle))
+      .size(d => code(d, sizevar, size, 64)));
 }
 
 function offerFocDists(datasets, alternatives, model) {
@@ -620,10 +601,10 @@ function execute(datasets, type, alternatives) {
     });
 
   settings.tailoredNumerals = settings.numerals
-    .filter((d) => {
+    .filter(d => {
       return (!d.startsWith("_count") || settings.model.search(d.split(".").splice(1).join(".")) === 0);
     })
-    .map((d) => {
+    .map(d => {
       return ({
         "key": d.startsWith("_count") ? "number of foc" : d,
         "value": d
@@ -665,11 +646,11 @@ function execute(datasets, type, alternatives) {
     const svg2 = settings.focSvg.svg;
     if (d3.select(this).attr("value") === "brush") {
       svg1.append("g")
-        .attr("transform", "translate(" + settings.padding + ", " + settings.padding + ")")
+        .attr("transform", `translate(${settings.padding}, ${settings.padding})`)
         .attr("class", "brush")
         .call(settings.tokenSvg.brush);
       svg2.append("g")
-        .attr("transform", "translate(" + settings.padding + ", " + settings.padding + ")")
+        .attr("transform", `translate(${settings.padding}, ${settings.padding})`)
         .attr("class", "brush")
         .call(settings.focSvg.brush);
     } else {

@@ -78,8 +78,8 @@ function execute(datasets, type) {
 
   initVars(dataset, "mod"); // sets colnames, nominals, numerals, sizevar, colorvar...
 
-  const foc = nominals.filter(function (d) { return (d.startsWith('foc_')); });
-  const soc = nominals.filter(function (d) { return (d.startsWith('soc_')); });
+  const foc = nominals.filter(d => d.startsWith('foc_'));
+  const soc = nominals.filter(d => d.startsWith('soc_'));
 
   const modelSelection = listFromLS(level + "selection-" + type);
   d3.select("#numSelected").text(modelSelection.length);
@@ -87,7 +87,7 @@ function execute(datasets, type) {
   // Set up selection by buttons ###################################################
   
   const VSFromLS = JSON.parse(localStorage.getItem(type + "-modselectionFromButtons"));
-  const variableSelection = _.isNull(VSFromLS) ? _.fromPairs(_.map(nominals, function (x) { return ([x, []]); })) : VSFromLS;
+  const variableSelection = _.isNull(VSFromLS) ? _.fromPairs(_.map(nominals, x => [x, []])) : VSFromLS;
   checkboxSections("focrow", foc, dataset); // create buttons for "foc"
   checkboxSections("socrow", soc, dataset); // create buttons for "soc"
   
@@ -198,12 +198,12 @@ function execute(datasets, type) {
     .data(dataset).enter()
     .append('path')
     .attr("class", "graph")
-    .attr("transform", function (d) { return ("translate(" + newX(d['model.x']) + "," + newY(d['model.y']) + ")"); }) // coordinates!
+    .attr("transform", d => `translate(${newX(d['model.x'])}, ${newY(d['model.y'])})`) // coordinates!
     .attr("d", d3.symbol() // original look
-      .type(function (d) { return (code(d, shapevar, shape, d3.symbolWye)); }) // original shape
-      .size(function (d) { return (code(d, sizevar, size, 64)); })) // original size
-    .style('fill', function (d) { return (code(d, colorvar, color8, "#1f77b4")); }) // original color
-    .classed("lighter", function (d) { return (modelSelection.length > 0 ? modelSelection.indexOf(d['_model']) === -1 : false); }) // is selected?
+      .type(d => code(d, shapevar, shape, d3.symbolWye)) // original shape
+      .size(d => code(d, sizevar, size, 64))) // original size
+    .style('fill', d => code(d, colorvar, color8, "#1f77b4")) // original color
+    .classed("lighter", d => modelSelection.length > 0 ? modelSelection.indexOf(d['_model']) === -1 : false) // is selected?
     .on("mouseover", mouseoverDot)
     .on('mouseout', function () {
       tooltip.transition().duration(200).style("opacity", 0);
@@ -260,21 +260,16 @@ function execute(datasets, type) {
     newX = d3.event.transform.rescaleX(x);
     svg.select('#xaxis').call(xAxis.scale(newX)); // x axis rescaled
     svg.select('#yaxis').call(yAxis.scale(newY)); // y axis rescaled
-    dot.attr("transform", function (d) {
-      return ("translate(" + newX(d['model.x']) + ", " + newY(d['model.y']) + ")");
-    }) // dots repositioned
+    dot.attr("transform", d => "translate(" + newX(d['model.x']) + ", " + newY(d['model.y']) + ")") // dots repositioned
     xCenter.attr("x1", newX(0)).attr("x2", newX(0)); // central x rescaled
     yCenter.attr("y1", newY(0)).attr("y2", newY(0)); // central y rescaled
   };
 
   // Updating color, shape and size after every button clicking
   function updatePlot() {
-    dot.style("fill", function (d) { return (code(d, colorvar, color8, "#1f77b4")); })
-      .attr("d", d3.symbol().type(function (d) {
-        return (code(d, shapevar, shape, d3.symbolWye));
-      }).size(function (d) {
-        return (code(d, sizevar, size, 64));
-      }));
+    dot.style("fill", d => code(d, colorvar, color8, "#1f77b4"))
+      .attr("d", d3.symbol().type(d => code(d, shapevar, shape, d3.symbolWye))
+      .size(d => code(d, sizevar, size, 64)));
   }
 
   function checkboxSections(where, data, dataset) {
@@ -303,14 +298,12 @@ function execute(datasets, type) {
         .attr("class", "btn btn-secondary py-0 m-0")
         .attr("parent", p)
         .attr("name", "selectionByButtons")
-        .classed("active", function(d) {
-          return(variableSelection[p].indexOf(d) > -1);
-        })
-        .text(function (d) { return (d); })
+        .classed("active", d => variableSelection[p].indexOf(d) > -1)
+        .text(d => d)
         .append("input")
         .attr("type", "checkbox")
         .attr("autocomplete", "off")
-        .attr("id", function (d) { return (p + ":" + d); });
+        .attr("id", d => `${p}:${d}`);
     }
   }
 
