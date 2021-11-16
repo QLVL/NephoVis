@@ -37,3 +37,16 @@ function getQueryStringParameter(querystring, sParam) {
 function capitalize(string){
     return(string.slice(0, 1).toUpperCase() + string.slice(1))
 }
+
+// Hard code paths
+function hcpaths(args = 'dir'){
+    const sourcedir = "tokenclouds/data/";
+    const lemmas_register = 'euclidean_register.tsv'; // For posIndex.html line 83
+    if (args === 'dir') {
+        return(sourcedir);
+    } else if (args == 'register') {
+        return(sourcedir + lemmas_register);
+    } else {
+        return;
+    }
+}

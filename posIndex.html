@@ -80,7 +80,7 @@
 	<script>
 		const pos = getUrlParameter(window.location, "pos");
 		const pilots = ["church", "zwart"];
-		d3.tsv('tokenclouds/data/procrustes_register.tsv').then( data => {
+		d3.tsv(hcpaths('register')).then( data => {
 			console.log(data)
 			let dataset;
 			if (pos === "pilot") {

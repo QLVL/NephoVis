@@ -17,7 +17,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>. */
 
 // var type = getUrlParameter(window.location, "type");
 function loadData(type, files, other_args = null) {
-    const sourcedir = "tokenclouds/data/"
+    const sourcedir = hcpaths();
     
     fetch (`${sourcedir}${type}/paths.json`).then(response => {
         if (!response.ok) {

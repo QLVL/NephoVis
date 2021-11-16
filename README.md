@@ -40,13 +40,24 @@ Now you have a copy of the code on your computer, under a folder called NephoVis
 
 In its current implementation, our dataset is included as a submodule: an independent GitHub repository (`tokenclouds`) that is called as a subdirectory of the NephoVis repository. It will not be automatically included with the forked NephoVis, so if you want to use our data you will need to clone/fork it independently. But if you forked the repository in the first place that is probably not your goal; instead, you want to use your own dataset.
 
-If you go to `src/loadData.js`, line 20 reads:
+If you go to `src/utils/url.js`, lines 42-52 read:
 
 ```js
-const sourcedir = "tokenclouds/data/";
+function hcpaths(args = 'dir'){
+    const sourcedir = "tokenclouds/data/";
+    const lemmas_register = 'euclidean_register.tsv'; // For posIndex.html line 83
+    if (args === 'dir') {
+        return(sourcedir);
+    } else if (args == 'register') {
+        return(sourcedir + lemmas_register);
+    } else {
+        return;
+    }
+}
 ```
 
-This line sets a variable `sourcedir` pointing to the path in which all the necessary files can be accessed. In this case, it goes to the subdirectory `tokenclouds` (the submodule with our datasets) and, within it, the `data` subdirectory, which has one subfolder per lemma and a tab-separated file with information on the lemmas themselves (which helps automatically generate the index pages). All you need to do to plug your own data to the visualization is then to modify the value of `sourcedir` to the path to your own dataset. That is the path that the Python workflow cited below calls `github_dir` and that the R workflow may call `output_dir`.
+This function sets up hard coded values to be used by `posIndex.html` (which gives you a list of lemmas based on a part-of-speech) and `loadData.js`, which opens your dataset.
+In this case, it goes to the subdirectory `tokenclouds` (the submodule with our datasets) and, within it, the `data` subdirectory, which has one subfolder per lemma and a tab-separated file with information on the lemmas themselves (which helps automatically generate the index pages). The `eucidean_register.tsv` file has a tab-separated table with lemmas in a `type` column and their part-of-speech in the `part-of-speech` column. All you need to do to plug your own data to the visualization is then to modify the value of `sourcedir` to the path to your own dataset. That is the path that the Python workflow cited below calls `github_dir` and that the R workflow may call `output_dir`. the `euclidean_register.tsv` file is ony necessary for the index pages; you can still access your data by opening `level1.html?type={type}` (and replacing `{type}` with the name in your filenames).
 
 Before we dive into the specifications of the files this visualization can read, we'll explain how you can actually access the visualization. One of the options is to turn your forked NephoVis repository into a [GitHub Page](https://pages.github.com/), so that you can access it with your data at `https://username.github.io/NephoVis/`. That requires you to include your dataset in the (public) repository and publish it (unless you have a paid account). A local alternative is to run a server on your own computer, which is extremely easy with Python 3. From a command prompt in which you can run Python 3, go to the folder of the forked repository and run:
 
