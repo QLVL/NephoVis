@@ -121,18 +121,13 @@
   <script src="js/d3-fetch.min.js"></script>
   <!-- lodash -->
   <script src="js/lodash.min.js"></script>
+  <!-- Navigo router -->
+  <script src="//unpkg.com/navigo@7.1.2/lib/navigo.min.js"></script>
   <!-- My own set of functions! -->
-  <script src="src/utils/url.js"></script>
-  <script src="src/NephoVis.js"></script>
-  <script src="src/level1.js"></script>
-  <script src="src/loadData.js"></script>
-  <script>
-    var type = getUrlParameter(window.location, 'type');
-
-    d3.select("title").text(type + ": Level 1");
-
-    loadData(type = type, files = ["models", "medoids"]);
-  </script>
+  <script src="src/Constants.js"></script>
+  <script src="src/DataLoader.js"></script>
+  <script src="src/NephoVisNew.js"></script>
+  <script src="src/Router.js"></script>
 </body>
 
 </html>
