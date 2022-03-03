@@ -2,9 +2,9 @@ class Router
 {
 	constructor()
 	{
-		this.router = new Navigo("/nephovis", true);
-		this.routes = { ":level": { as: "level",
-									uses: (params) => {	console.log("miep"); } 
+		this.router = new Navigo("/nephovis/new.html", { hash: true });
+		this.routes = { "level/:level": { as: "levels.level",
+									uses: (params) => { alert("haaa"); console.log(params); } 
 								  },
 					  }
 		this.router.on(this.routes);
@@ -12,3 +12,4 @@ class Router
 }
 
 let router = new Router();
+console.log(router);
