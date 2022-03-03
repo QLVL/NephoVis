@@ -1,5 +1,5 @@
 class NephoVis {
-	constructor()
-	{
+	constructor(level) {
+		this.level = level;
 	}
 }
