@@ -1,6 +1,7 @@
 class DataLoader {
-	constructor(type) {
+	constructor(type, requestedFiles) {
 		this.type = type;
+		this.requestedFiles = requestedFiles;
 		this.typeDir = `${Constants.sourceDir}${this.type}/`;
 	}
 
@@ -20,6 +21,7 @@ class DataLoader {
 	{
 		await this.loadPaths();
 		await this.loadSolutions();
+		await this.retrieveFiles();
 	}
 
 	async loadPaths()
@@ -48,14 +50,16 @@ class DataLoader {
 		if (!"solutions" in this.paths)
 		{
 			// "Unique" case
-			if ("tokens" in this.paths)
+			if ("tokens" in this.requestedFiles)
 			{
-				// "unique" data?
+				this.paths["unique"] = `${typeDir}/${type}.tsv`;
+				// set as "unique" TODO what does this mean?
+				// other_args = [ "unique" ]
 			}
 
-			if ("focdists" in this.paths)
+			if ("focdists" in this.requestedFiles)
 			{
-				// context words data?
+				this.paths["unique"] = `${typeDir}/${type}.cws.tsv`;
 			}
 		}
 		// If solutions is defined
@@ -74,6 +78,52 @@ class DataLoader {
 			// If the response is defined, parse and save it
 			// Else, set it to "null"
 			this.solutions = this.checkResponse(response, "Something went wrong while fetching 'solutions.tsv'!") ? await response.json() : null;
+		
+			this.something();
 		}
+	}
+
+	// TODO: give a clear name once I figure out what this does
+	something()
+	{
+		if ("tokens" in this.requestedFiles)
+		{
+			// todo implement
+		}
+		
+		if ("focdists" in this.requestedFiles)
+		{
+			// todo implement
+		}
+	}
+
+	async retrieveFiles()
+	{
+		let filenamesToLoad = this.requestedFiles.map((file) => {
+			// If the file we need isn't in the paths object, return undefined
+			if (!file in this.paths) {
+				return undefined;
+			}
+			// Else, TODO
+			else {
+				let file_filename = this.paths[file];
+				// Apparently, every value can also be an object
+				// If it is, only use the first value
+				if (typeof this.paths[file] == "object") {
+					file_filename = this.paths[file][0];
+				}
+				return `${this.typeDir}${file_filename}`;
+			}
+		});
+
+		let loadedDatasets = {};
+
+		for (let i = 0; i < this.requestedFiles.length; i++)
+		{
+			let key = this.requestedFiles[i];
+			loadedDatasets[key] = await d3.tsv(filenamesToLoad[i]);
+		}
+
+		this.datasets = loadedDatasets;
 	}
 }
