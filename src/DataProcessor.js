@@ -2,6 +2,11 @@ class DataProcessor {
 	constructor(datasets) {
 		this.datasets = datasets;
 
+		this.extractColumnNames();
+		this.extractOrderFeatures();
+	}
+
+	extractColumnNames() {
 		// We infer the column names from the keys of first entry of the "models" data point
 		this.columnNames = Object.keys(this.datasets["models"][0]);
 
@@ -40,6 +45,13 @@ class DataProcessor {
 		this.contexts = this.columnNames.filter(columnName => columnName.startsWith("_ctxt"));
 	
 		console.log(this.columnNames, this.variableNames, this.nominalNames, this.numeralNames, this.contexts);
+	}
+
+	extractOrderFeatures() {
+		// First order columns
+		this.foc = this.nominalNames.filter(columnName => columnName.startsWith("foc_"));
+		// Second order columns 
+		this.soc = this.nominalNames.filter(columnName => columnName.startsWith("soc_"));
 	}
 
 	uniqueValues(array, columnName) {
