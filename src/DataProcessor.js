@@ -16,7 +16,7 @@ class DataProcessor {
 		// 3: columns which have no unique values
 		this.variableNames = this.columnNames.filter((columnName) => {
 			return (!([ ".x", ".y" ].includes(columnName.slice(-2))) // 1 and 2 
-					&& this.uniqueValues(this.datasets["models"], columnName).length > 1 // 3
+					&& Helpers.uniqueValues(this.datasets["models"], columnName).length > 1 // 3
 				);
 		});
 
@@ -25,7 +25,7 @@ class DataProcessor {
 		// 2: models with NaN values
 		this.nominalNames = this.variableNames.filter((columnName) => {
 			return (!columnName.startsWith("_") // 1
-            	&& !this.uniqueValues(this.datasets["models"], columnName).every(value => 
+            	&& !Helpers.uniqueValues(this.datasets["models"], columnName).every(value => 
             			{ return (!isNaN(value)); })); //2
 		});
 
@@ -34,11 +34,11 @@ class DataProcessor {
 		// Second pass: filter more columns
 		// filter all columns with more than 10 unique values
 		this.nominalNames = this.nominalNames.filter((columnName) => { 
-			return this.uniqueValues(this.datasets["models"], columnName).length <= 10 });
+			return Helpers.uniqueValues(this.datasets["models"], columnName).length <= 10 });
 		this.nominalNames.push("Reset"); // I don't know why this needs to be in
 
 		this.numeralNames = this.variableNames.filter((columnName) => {
-			return this.uniqueValues(this.datasets["models"], columnName).every(value => !isNaN(value));
+			return Helpers.uniqueValues(this.datasets["models"], columnName).every(value => !isNaN(value));
 		});
 		this.numeralNames.push("Reset") // I don't know why this needs to be in
 
@@ -53,11 +53,4 @@ class DataProcessor {
 		// Second order columns 
 		this.soc = this.nominalNames.filter(columnName => columnName.startsWith("soc_"));
 	}
-
-	uniqueValues(array, columnName) {
-		return [...new Set( array.map(obj => obj[columnName])) ];
-	}
 }
-
-//columnName.slice(-2) in [ ".x", ".y" ] && this.this.uniqueValues(this.datasets["models"],
-//												    							  columnName).length > 1
