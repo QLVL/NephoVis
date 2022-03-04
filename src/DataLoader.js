@@ -27,7 +27,7 @@ class DataLoader {
 	async loadPaths()
 	{
 		// Load the paths.json file
-		// We use "await" for avoid the hell of promises
+		// We use "await" to avoid the hell of promises
 		let response = await fetch(`${this.typeDir}paths.json`);
 
 		// If the response is defined, parse and save it
