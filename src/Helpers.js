@@ -8,9 +8,9 @@ class Helpers {
 		let isNumeric = values.every(value => !isNaN(value));
 
 		if (isNumeric) {
-			return values.map((value) => +d ).sort();
+			return values.map((value) => +value ).sort();
 		} else {
-			return values.map((value) => d.toString() ).sort();
+			return values.map((value) => value.toString() ).sort();
 		}
 	}
 }
