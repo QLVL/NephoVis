@@ -99,12 +99,14 @@ class DataLoader {
 
 	async retrieveFiles()
 	{
+		// For each requested file, check if it's actually present
+		// If so, build its full filename
 		let filenamesToLoad = this.requestedFiles.map((file) => {
 			// If the file we need isn't in the paths object, return undefined
 			if (!file in this.paths) {
 				return undefined;
 			}
-			// Else, TODO
+			// Else, build the full filename
 			else {
 				let file_filename = this.paths[file];
 				// Apparently, every value can also be an object
@@ -116,14 +118,18 @@ class DataLoader {
 			}
 		});
 
+		// This object will hold all requested files and their contents
+		// file -> content
 		let loadedDatasets = {};
 
+		// Retrieve file contents for each requested file
 		for (let i = 0; i < this.requestedFiles.length; i++)
 		{
 			let key = this.requestedFiles[i];
 			loadedDatasets[key] = await d3.tsv(filenamesToLoad[i]);
 		}
 
+		// Save the datasets in this object
 		this.datasets = loadedDatasets;
 	}
 }
