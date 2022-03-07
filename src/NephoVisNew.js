@@ -20,10 +20,14 @@ class NephoVis {
 
 
 		UserInterface.createButtons("focrow", this.dataProcessor.foc, 
-									this.dataLoader.datasets["models"], this.variableSelection);
+									this.dataLoader.datasets["models"], this.variableSelection, 
+									(property, value, checked) => 
+										{ this.handleCheckboxChange(property, value, checked); });
 
 		UserInterface.createButtons("socrow", this.dataProcessor.soc,
-									this.dataLoader.datasets["models"], this.variableSelection);
+									this.dataLoader.datasets["models"], this.variableSelection,
+									(property, value, checked) => 
+										{ this.handleCheckboxChange(property, value, checked); });
 		//this.prepareUI();
 	}
 
@@ -38,5 +42,19 @@ class NephoVis {
 			let nominal = this.dataProcessor.nominalNames[i];
 			this.variableSelection[nominal] = [];
 		}
+	}
+
+	handleCheckboxChange(property, value, checked) {
+
+		if (checked)
+		{
+			this.variableSelection[property].push(value);
+		} else {
+			let toDeleteIndex = this.variableSelection[property].indexOf(value);
+			this.variableSelection[property].splice(toDeleteIndex, 1); 
+		}
+
+		// todo: re-implement local storage if deemed necessary
+		// todo: re-implement updateCheckbox, whenever I figure out what it does
 	}
 }

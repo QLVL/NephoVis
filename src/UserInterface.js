@@ -21,7 +21,7 @@ class UserInterface {
 		};
 	}
 
-	static createButtons(targetElement, buttons, dataset, variableSelection) {
+	static createButtons(targetElement, buttons, dataset, variableSelection, changeCallback) {
 		d3.select("#" + targetElement).selectAll("div")
 		  .data(buttons)
 		  .enter()
@@ -29,10 +29,11 @@ class UserInterface {
 		  .attr("class", "btn-group-toggle")
 		  .attr("data-toggle", "buttons")
 		  .each( (property, index, buttonDivs) => { 
-		  	UserInterface.attachCheckbox(property, index, buttonDivs, dataset, variableSelection); } );
+		  	UserInterface.attachCheckbox(property, index, buttonDivs, dataset, variableSelection,
+		  									changeCallback); } );
 	}
 
-	static attachCheckbox(property, index, buttonDivs, dataset, variableSelection) {
+	static attachCheckbox(property, index, buttonDivs, dataset, variableSelection, changeCallback) {
 		let buttonGroup = d3.select(buttonDivs[index]);
 		let buttonText = UserInterface.formatVariableName(property);
 
@@ -53,7 +54,11 @@ class UserInterface {
         		   .append("input")
         		   .attr("type", "checkbox")
         		   .attr("autocomplete", "off")
-        		   .attr("id", d => `${property}:${d}`);
+        		   .attr("id", d => `${property}:${d}`)
+        		   .each( (propertyValue, labelIndex, labelDivs) => 
+        		   		{ labelDivs[labelIndex].onchange = () => { changeCallback(property, propertyValue,
+										        		   			labelDivs[labelIndex].checked); }; } );
+        		   		// Why is Javascript like this...
 	}
 
 	static formatVariableName(variableName) {
