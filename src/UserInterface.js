@@ -48,7 +48,7 @@ class UserInterface {
         		   .attr("class", "btn btn-secondary py-0 m-0")
         		   .attr("parent", property)
         		   .attr("name", "selectionByButtons")
-        		   .classed("active", d => variableSelection[property].indexOf(d) > -1)
+        		   .classed("active", d => variableSelection[property].includes(d))
         		   .text(d => d)
         		   .append("input")
         		   .attr("type", "checkbox")
