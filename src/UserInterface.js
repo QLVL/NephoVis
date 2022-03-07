@@ -61,6 +61,30 @@ class UserInterface {
         		   		// Why is Javascript like this...
 	}
 
+	static buildDropdown(targetElementName, dataset, level, clickCallback) {
+		let className = targetElementName.slice(0, 3)
+
+		let valueFunction = d => d;
+		let textFunction = d => d;
+
+		switch (level) {
+			case "model":
+				textFunction = UserInterface.formatVariableName;
+				break;
+		}
+
+		d3.select("#" + targetElementName)
+          .selectAll("button")
+          .data(dataset).enter()
+          .append("button")
+          .attr("class", `dropdown-item ${className}`)
+          .attr("xlink:href", "#")
+          .attr("value", valueFunction)
+          .html(textFunction).each( (propertyValue, dropdownIndex, dropdownDivs) => 
+        		   		{ dropdownDivs[dropdownIndex].onclick = () => 
+        		   			{ clickCallback(propertyValue); }; } );
+	}
+
 	static formatVariableName(variableName) {
 		return UserInterface.kebabCase(variableName).replace(/^[f|s]oc_/, "");
 	}

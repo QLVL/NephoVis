@@ -28,6 +28,15 @@ class NephoVis {
 									this.dataLoader.datasets["models"], this.variableSelection,
 									(property, value, checked) => 
 										{ this.handleCheckboxChange(property, value, checked); });
+
+		for (let dataPointStyleName in this.dataPointStyles)
+		{
+			let dataPointStyle = this.dataPointStyles[dataPointStyleName];
+			UserInterface.buildDropdown(dataPointStyleName, dataPointStyle.candidates, "model", 
+										(variable) => 
+										{ this.handleDropdownChange(dataPointStyleName, variable); });
+		}
+		
 		//this.prepareUI();
 	}
 
@@ -37,10 +46,24 @@ class NephoVis {
 
 		// TODO: re-introduce LocalStorage if deemed necessary
 		this.modelSelection = []
+
 		this.variableSelection = {};
 		for (var i = 0; i < this.dataProcessor.nominalNames.length; i++) {
 			let nominal = this.dataProcessor.nominalNames[i];
 			this.variableSelection[nominal] = [];
+		}
+
+		let dataOptionsTable = { "colour": this.dataProcessor.nominalNames,
+							 	 "shape": this.dataProcessor.nominalNames,
+							 	 "size": this.dataProcessor.numeralNames };
+
+		this.dataPointStyles = {};
+		for (var i = 0; i < Constants.dataPointStyles.length; i++)
+		{
+			// todo: embed this in "Constants" somehow
+			let dataPointStyleName = Constants.dataPointStyles[i];
+			this.dataPointStyles[dataPointStyleName] = new DataPointStyle(dataPointStyleName,
+													    dataOptionsTable[dataPointStyleName]);
 		}
 	}
 
@@ -56,5 +79,18 @@ class NephoVis {
 
 		// todo: re-implement local storage if deemed necessary
 		// todo: re-implement updateCheckbox, whenever I figure out what it does
+	}
+
+	handleDropdownChange(dataPointStyleName, variable) {
+		// todo: re-implement local storage if deemed necessary
+
+		this.dataPointStyles[dataPointStyleName].assign(variable,
+												 Helpers.getValues(this.dataLoader.datasets["models"],
+																   variable));
+
+		// TODO: I don't really understand how the data structure works
+
+		// TODO updatePlot
+		// TODO updateLegend
 	}
 }
