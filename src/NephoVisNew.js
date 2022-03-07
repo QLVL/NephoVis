@@ -37,6 +37,12 @@ class NephoVis {
 										{ this.handleDropdownChange(dataPointStyleName, variable); });
 		}
 		
+		this.plot = new Plot("svgContainer",
+							 { "width": 600, "height": 600, "padding": 40 },
+							 this.dataLoader.datasets["models"],
+							 this.dataPointStyles,
+							 this.modelSelection);
+
 		//this.prepareUI();
 	}
 
