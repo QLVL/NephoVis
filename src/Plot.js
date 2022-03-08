@@ -9,6 +9,9 @@ class Plot {
 		// TODO: this should probably be variable
 		this.scale = 1.05;
 
+		// Time-out for the tooltip
+		this.tooltipTimeoutDuration = 200;
+
 		// Find the svg element which we will plot to
 		this.targetElement = d3.select(`#${targetElementName}`);
 
@@ -255,10 +258,11 @@ class Plot {
 		d3.selectAll(".selector").remove()
 
 		// Do the fade-out effect
-		this.tooltip.transition().duration(200).style("opacity", 0);
+		this.tooltip.transition().duration(this.tooltipTimeoutDuration).style("opacity", 0);
 
 		// Completely set display to "none" after the set timeout
-		this.tooltipHideTimeout = setTimeout(() => { this.tooltip.style("display", "none"); }, 200);
+		this.tooltipHideTimeout = setTimeout(
+			() => { this.tooltip.style("display", "none"); }, this.tooltipTimeoutDuration);
 	}
 
 	generateComplementaryColour(colour) {
