@@ -4,6 +4,7 @@ class DataPointStyle {
 		this.candidates = candidates;
 		this.variable = null;
 		this.values = null;
+		this.format = input => input;
 
 		// Attach d3 styles
 		switch (this.style) {
@@ -16,6 +17,7 @@ class DataPointStyle {
 				// todo: find out what this means
 				this.schema = d3.scaleLinear().range([40, 200]);
 				this.default_value = 64;
+				this.format = input => d3.format(".3r")(+input);
 				break;
 			case "colour":
 				this.schema = d3.scaleOrdinal(Constants.colourPalette);

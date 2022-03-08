@@ -9,7 +9,7 @@ class Plot {
 		// TODO: this should probably be variable
 		this.scale = 1.05;
 
-		// Find the svg container element which we will plot to
+		// Find the svg element which we will plot to
 		this.targetElement = d3.select(`#${targetElementName}`);
 
 		// Save the dimensions
@@ -45,7 +45,7 @@ class Plot {
 	}
 
 	setPointerEvents() {
-		this.svg.append("rect")
+		this.svgContainer = this.svg.append("rect")
         		.attr("viewBox", `0 0 ${this.dimensions["height"]} ${this.dimensions["width"]}`)
         		.classed("svgPlot", true)
         		.style("pointer-events", "all")
@@ -120,7 +120,7 @@ class Plot {
 									)
 									.style("fill", (row) => { return this.codePoint(row, this.dataPointStyles["colour"]); } )
 						.classed("lighter", (row) => { return !this.isPointSelected(row); })
-						.on("mouseover", () => {}) // todo implement mouseOver
+						.on("mouseover", (row, index, points) => {  this.mouseOverPoint(row, points[index]); })
 						.on("mouseout", () => {}) // todo implement mouseOut
 						.on("click", () => {}) // todo iimplement onClick
 		  ;
@@ -180,5 +180,82 @@ class Plot {
 		}
 
 		return true;
+	}
+
+	mouseOverPoint(row, pointElement) {
+		this.svgContainer = d3.select(".svgPlot");
+
+		pointElement = d3.select(pointElement);
+		// Reconstruct the coordinates from element attributes
+		let position = [ parseFloat(pointElement.attr("x")), 
+						 parseFloat(pointElement.attr("y")) ];
+
+		let svgDimensions = { "width": parseFloat(this.svgContainer.style("width")),
+							  "height": parseFloat(this.svgContainer.style("height")) };
+
+		// The plot is actually scaled depending on the screen size
+		// We compute the actual "real" absolute coordinates
+		let realCoordinates = [ svgDimensions["width"] / this.dimensions["width"] * position[0],
+								svgDimensions["height"] / this.dimensions["height"] * position[1] ];
+
+		console.log(position, svgDimensions, realCoordinates);
+
+		// --- TOOLTIP ---
+
+		// Show the tooltip
+		this.tooltip.transition()
+					.duration(200)
+					.style("opacity", 1);
+
+		// TODO: move away from reliance on opacity (element is still there, or maybe change its z-index)
+
+		// Check for each data point style whether there is a variable attached to it
+		// If there is, generate the required tooltip text
+		let tooltipData = [];
+		for (let dataPointStyleName in this.dataPointStyles) {
+			let dataPointStyle = this.dataPointStyles[dataPointStyleName];
+			let tooltipRow = dataPointStyle.variable == null ? 
+							 "" :
+							 `<br><strong>${dataPointStyle.variable}: ${dataPointStyle.format(row[dataPointStyle.variable])}</strong>`;
+			tooltipData.push(tooltipRow);
+		}
+	
+		let tooltipContent = `<strong>${row["_model"]}</strong>` + tooltipData.join("");
+
+		// Create the tooltip first (we need its width to position it)
+		this.tooltip.html(tooltipContent)
+			 	    .style("top", realCoordinates[1] + "px");
+
+		// Determine the tooltip location
+		let tooltipLeftCoordinate = position[0];
+		let tooltipWidth = parseInt(this.tooltip.style("width"));
+		// If there isn't enough room to show the tooltip
+		if (svgDimensions["width"] - position[0] < tooltipWidth) {
+			// Adjust the tooltip position
+			tooltipLeftCoordinate = Math.max(0, (position[0] - tooltipWidth)) + "px";
+		}
+
+		// Adjust the left coordinate
+		this.tooltip.style("left", tooltipLeftCoordinate);
+
+		console.log(this.tooltip.style("left"), this.tooltip.style("top"));
+
+		// -- HIGHLIGHT EFFECT --
+		this.svg.select(".dot")
+				.append("path")
+				.attr("class", "selector")
+				.attr("transform", pointElement.attr("transform"))
+				.attr("d", d3.symbol().type(d3.symbolCircle).size(250))
+				.style("fill", "none")
+				.style("stroke", this.generateComplementaryColour(pointElement.style("fill")))
+				.style("stroke-width", 2);
+	}
+
+	generateComplementaryColour(colour) {
+		let hslColour = d3.hsl(colour);
+		let hue = hslColour["h"];
+		let newHue = +hue < 180 ? +(hue + 180) : +(hue - 180);
+		hslColour["h"] = newHue;
+		return hslColour.toString();
 	}
 }
