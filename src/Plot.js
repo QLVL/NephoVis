@@ -94,8 +94,7 @@ class Plot {
 
 	generatePointCloud() {
 		// Pre-compute the point cloud coordinates
-		// This way, we can use them in the actual CSS transform,
-		// as well as in the attributes of a point in the cloud
+		// This way, we can save them for later use
 		this.pointCloudCoordinates = this.dataset.map((row) => { return this.scaleDataPoint(row); });
 
 		this.pointCloud = this.svg.append("g") // create another SVG group
@@ -112,8 +111,7 @@ class Plot {
 								  .attr("transform",
 								   (row, index) => 
 								   `translate(${this.pointCloudCoordinates[index][0]}, ${this.pointCloudCoordinates[index][1]})`)
-								  .attr("x", (row, index) => this.pointCloudCoordinates[index][0])
-								  .attr("y", (row, index) => this.pointCloudCoordinates[index][1])
+								  .attr("pointIndex", (row, index) => index)
 								  ;
 
 		// Set data points style
@@ -190,9 +188,8 @@ class Plot {
 		this.svgContainer = d3.select(".svgPlot");
 
 		pointElement = d3.select(pointElement);
-		// Reconstruct the coordinates from element attributes
-		let position = [ parseFloat(pointElement.attr("x")), 
-						 parseFloat(pointElement.attr("y")) ];
+		// Reconstruct the coordinates from point inderx
+		let position = this.pointCloudCoordinates[+pointElement.attr("pointIndex")];
 
 		let svgDimensions = { "width": parseFloat(this.svgContainer.style("width")),
 							  "height": parseFloat(this.svgContainer.style("height")) };
