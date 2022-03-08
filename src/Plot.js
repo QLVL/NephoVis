@@ -239,8 +239,6 @@ class Plot {
 		// Adjust the left coordinate
 		this.tooltip.style("left", tooltipLeftCoordinate);
 
-		console.log(this.tooltip.style("left"), this.tooltip.style("top"));
-
 		// -- HIGHLIGHT EFFECT --
 		this.svg.select(".dot")
 				.append("path")
