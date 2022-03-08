@@ -210,8 +210,6 @@ class Plot {
 					.style("opacity", 1)
 					.style("display", "block");
 
-		// TODO: move away from reliance on opacity (element is still there, or maybe change its z-index)
-
 		// Check for each data point style whether there is a variable attached to it
 		// If there is, generate the required tooltip text
 		let tooltipData = [];
@@ -255,7 +253,13 @@ class Plot {
 	}
 
 	mouseOut() {
+		// Remove selector rings
+		d3.selectAll(".selector").remove()
+
+		// Do the fade-out effect
 		this.tooltip.transition().duration(200).style("opacity", 0);
+
+		// Completely set display to "none" after the set timeout
 		this.tooltipHideTimeout = setTimeout(() => { this.tooltip.style("display", "none"); }, 200);
 	}
 
