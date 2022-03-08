@@ -90,6 +90,11 @@ class Plot {
 	}
 
 	generatePointCloud() {
+		// Pre-compute the point cloud coordinates
+		// This way, we can use them in the actual CSS transform,
+		// as well as in the attributes of a point in the cloud
+		this.pointCloudCoordinates = this.dataset.map((row) => { return this.scaleDataPoint(row); });
+
 		this.pointCloud = this.svg.append("g") // create another SVG group
 								   // give it the "dot" class
 								  .attr("class", "dot") 
@@ -101,7 +106,12 @@ class Plot {
 								  .attr("class", "graph")
 								   // give the SVG path a scaled transform
 								   // this will effectively absolutely position the token
-								  .attr("transform", (row) => { return this.translateDataPoint(row); } );
+								  .attr("transform",
+								   (row, index) => 
+								   `translate(${this.pointCloudCoordinates[index][0]}, ${this.pointCloudCoordinates[index][1]})`)
+								  .attr("x", (row, index) => this.pointCloudCoordinates[index][0])
+								  .attr("y", (row, index) => this.pointCloudCoordinates[index][1])
+								  ;
 
 		// Set data points style
 		this.pointCloud.attr("d", d3.symbol()
@@ -131,6 +141,16 @@ class Plot {
 	// We can scale the values to get some form of padding
 	getRangeFromValues(values) {
 		return [ Math.min(...values) * this.scale, Math.max(...values) * this.scale ];
+	}
+
+	scaleDataPoint(row) {
+		// We get the x and y coordinates for this data point, and scale them
+		// todo: make this variable for other levels
+
+		// We return the transformed coordinates as some sort of tuple
+		// Why? Because we can them encode them separately
+		return [ this.d3AxisScaler["x"](row['model.x']),
+				 this.d3AxisScaler["y"](row['model.y']) ];
 	}
 
 	translateDataPoint(row) {
