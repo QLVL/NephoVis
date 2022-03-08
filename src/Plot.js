@@ -121,7 +121,7 @@ class Plot {
 									.style("fill", (row) => { return this.codePoint(row, this.dataPointStyles["colour"]); } )
 						.classed("lighter", (row) => { return !this.isPointSelected(row); })
 						.on("mouseover", (row, index, points) => {  this.mouseOverPoint(row, points[index]); })
-						.on("mouseout", () => {}) // todo implement mouseOut
+						.on("mouseout", () => { this.mouseOut(); }) // todo implement mouseOut
 						.on("click", () => {}) // todo iimplement onClick
 		  ;
 	}
@@ -183,6 +183,7 @@ class Plot {
 	}
 
 	mouseOverPoint(row, pointElement) {
+		// Update svg container reference
 		this.svgContainer = d3.select(".svgPlot");
 
 		pointElement = d3.select(pointElement);
@@ -198,14 +199,16 @@ class Plot {
 		let realCoordinates = [ svgDimensions["width"] / this.dimensions["width"] * position[0],
 								svgDimensions["height"] / this.dimensions["height"] * position[1] ];
 
-		console.log(position, svgDimensions, realCoordinates);
-
 		// --- TOOLTIP ---
+
+		// Clear tooltip hide timeout
+		clearTimeout(this.tooltipHideTimeout);
 
 		// Show the tooltip
 		this.tooltip.transition()
 					.duration(200)
-					.style("opacity", 1);
+					.style("opacity", 1)
+					.style("display", "block");
 
 		// TODO: move away from reliance on opacity (element is still there, or maybe change its z-index)
 
@@ -249,6 +252,11 @@ class Plot {
 				.style("fill", "none")
 				.style("stroke", this.generateComplementaryColour(pointElement.style("fill")))
 				.style("stroke-width", 2);
+	}
+
+	mouseOut() {
+		this.tooltip.transition().duration(200).style("opacity", 0);
+		this.tooltipHideTimeout = setTimeout(() => { this.tooltip.style("display", "none"); }, 200);
 	}
 
 	generateComplementaryColour(colour) {
