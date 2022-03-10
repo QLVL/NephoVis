@@ -83,11 +83,14 @@ class NephoVis {
 		// So, we update the UI as well
 		UserInterface.prepareUI(this.level, this.type, this.modelSelection.count);
 
+		let mouseClickFunction = this.mouseClickPoint.bind(this);
+
 		this.plot = new Plot("svgContainer",
 							 { "width": 600, "height": 600, "padding": 40 },
 							 this.dataLoader.datasets["models"],
 							 this.dataPointStyles,
-							 this.modelSelection);
+							 this.modelSelection,
+							 mouseClickFunction);
 	}
 
 	handleCheckboxChange(property, value, checked) {
@@ -123,5 +126,18 @@ class NephoVis {
 
 		// TODO updatePlot
 		// TODO updateLegend
+	}
+
+	mouseClickPoint(row, pointElement) {
+		// We manually add a model to the model selection
+		// Or, if it's already in the model selection, we remove it
+		if (!this.modelSelection.models.includes(row["_model"])) {
+			this.modelSelection.add(row["_model"]);
+		} else {
+			this.modelSelection.remove(row["_model"]);
+		}
+
+		// Redraw the plot
+		this.drawPlot();
 	}
 }

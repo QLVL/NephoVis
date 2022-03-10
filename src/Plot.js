@@ -1,9 +1,10 @@
 class Plot {
-	constructor(targetElementName, dimensions, dataset, dataPointStyles, modelSelection) {
+	constructor(targetElementName, dimensions, dataset, dataPointStyles, modelSelection, onDataPointClick) {
 		// Save the correct dataset
 		this.dataset = dataset;
 		this.dataPointStyles = dataPointStyles;
 		this.modelSelection = modelSelection;
+		this.onDataPointClick = onDataPointClick;
 
 		// Set plot-wide scale
 		// TODO: this should probably be variable
@@ -127,8 +128,7 @@ class Plot {
 						.classed("lighter", (row) => { return !this.isPointSelected(row); })
 						.on("mouseover", (row, index, points) => {  this.mouseOverPoint(row, points[index]); })
 						.on("mouseout", () => { this.mouseOut(); }) // todo implement mouseOut
-						.on("click", () => {}) // todo iimplement onClick
-		  ;
+						.on("click", (row, index, points) => { this.onDataPointClick(row, points[index]); });
 	}
 
 	traceCenter(p, x1, x2, y1, y2) {
