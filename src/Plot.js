@@ -250,6 +250,8 @@ class Plot {
 				.style("fill", "none")
 				.style("stroke", this.generateComplementaryColour(pointElement.style("fill")))
 				.style("stroke-width", 2);
+
+		this.updateSelection();
 	}
 
 	mouseOut() {
@@ -262,6 +264,33 @@ class Plot {
 		// Completely set display to "none" after the set timeout
 		this.tooltipHideTimeout = setTimeout(
 			() => { this.tooltip.style("display", "none"); }, this.tooltipTimeoutDuration);
+	}
+
+	updateSelection() {
+		// Todo: check how something of "undefined" can end up here
+		// I'll just mirror its functionality for now
+		if (this.modelSelection.count > 0 && this.modelSelection.models.includes("undefined")) {
+			this.modelSelection = this.modelSelection.filter((model) => { model != "undefined" });
+		}
+
+		for (let dataPointStyleName in this.dataPointStyles) {
+			// todo: implement "boldenLegend"
+
+			// If something is selected, everything else is translucent
+			d3.selectAll(".dot")
+			  .selectAll("path.graph")
+			  // If no models are selected, everything is translucent
+			  // Else, only selected models are fully opaque
+			  .style("opacity", this.modelSelection.count > 0 ? 1 : 0.7)
+			  .classed("lighter", (row) => 
+			  	{ let idColumn = this.level == "model" ? "_model" : "_id";
+			  	  if (this.modelSelection.count > 0) {
+			  	  	return !this.modelSelection.models.includes(row[idColumn]);
+			  	  } else {
+			  	  	return false;
+			  	  }
+			  	  } );
+		}
 	}
 
 	generateComplementaryColour(colour) {
