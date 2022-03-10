@@ -81,7 +81,7 @@ class UserInterface {
 	}
 
 	static formatVariableName(variableName) {
-		return UserInterface.kebabCase(variableName).replace(/^[f|s]oc_/, "");
+		return UserInterface.kebabCase(variableName).replace(/^[f|s]oc-/i, "");
 	}
 
 	static kebabCase(input) {
