@@ -11,9 +11,13 @@ class UserInterface {
 		d3.select("#numSelected").text(modelCount);
 	}
 
-	static setButton(targetElementName, onclickEvent) {
-		d3.select(`#${targetElementName}`)
-		  .on("click", () => { onclickEvent(); });
+	static setButton(targetElementName, onclickEvent, additionalD3=null) {
+		let button = d3.select(`#${targetElementName}`)
+		  			   .on("click", () => { onclickEvent(); });
+
+		if (additionalD3 != null) {
+			additionalD3(button);
+		}
 	}
 
 	static createButtons(targetElement, buttons, dataset, variableSelection, changeCallback) {
@@ -78,6 +82,11 @@ class UserInterface {
           .html(textFunction).each( (propertyValue, dropdownIndex, dropdownDivs) => 
         		   		{ dropdownDivs[dropdownIndex].onclick = () => 
         		   			{ clickCallback(propertyValue); }; } );
+	}
+
+	static resetSelectionButtons() {
+		// Reset selection buttons
+		d3.selectAll("label[name='selectionByButtons']").classed("active", false);
 	}
 
 	static formatVariableName(variableName) {

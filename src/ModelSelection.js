@@ -21,6 +21,11 @@ class ModelSelection {
 		this.models = models;
 	}
 
+	fromMedoids(medoids) {
+		this.models = medoids;
+		this.callback();
+	}
+
 	select(variableSelection) {
 		let selectedModels = [];
 		for (let variable in variableSelection) {

@@ -31,9 +31,16 @@ class NephoVis {
 		UserInterface.setButton("clearSelect", () => 
 			{
 				this.modelSelection.clear();
+				UserInterface.resetSelectionButtons();
+			});
 
-				// Reset selection buttons
-				d3.selectAll("label[name='selectionByButtons']").classed("active", false);
+		UserInterface.setButton("medoidsSelect", () =>
+			{
+				let selectedModels = this.dataLoader.datasets["medoids"].map((row) => row.medoid);
+
+				this.initVariableSelection();
+				this.modelSelection.fromMedoids(selectedModels);
+				UserInterface.resetSelectionButtons();
 			});
 
 		UserInterface.createButtons("focrow", this.dataProcessor.foc, 
@@ -64,11 +71,7 @@ class NephoVis {
 		this.modelSelection = new ModelSelection(this.dataLoader.datasets["models"],
 												 () => { this.drawPlot(); });
 
-		this.variableSelection = {};
-		for (var i = 0; i < this.dataProcessor.nominalNames.length; i++) {
-			let nominal = this.dataProcessor.nominalNames[i];
-			this.variableSelection[nominal] = [];
-		}
+		this.initVariableSelection();
 
 		let dataOptionsTable = { "colour": this.dataProcessor.nominalNames,
 							 	 "shape": this.dataProcessor.nominalNames,
@@ -81,6 +84,14 @@ class NephoVis {
 			let dataPointStyleName = Constants.dataPointStyles[i];
 			this.dataPointStyles[dataPointStyleName] = new DataPointStyle(dataPointStyleName,
 													    dataOptionsTable[dataPointStyleName]);
+		}
+	}
+
+	initVariableSelection() {
+		this.variableSelection = {};
+		for (var i = 0; i < this.dataProcessor.nominalNames.length; i++) {
+			let nominal = this.dataProcessor.nominalNames[i];
+			this.variableSelection[nominal] = [];
 		}
 	}
 
