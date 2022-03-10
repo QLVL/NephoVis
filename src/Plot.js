@@ -39,6 +39,8 @@ class Plot {
 
 		// Add the data points to the plot
 		this.generatePointCloud();
+
+		this.updateSelection();
 	}
 
 	onZoom(idk) {
@@ -250,8 +252,6 @@ class Plot {
 				.style("fill", "none")
 				.style("stroke", this.generateComplementaryColour(pointElement.style("fill")))
 				.style("stroke-width", 2);
-
-		this.updateSelection();
 	}
 
 	mouseOut() {
