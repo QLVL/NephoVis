@@ -1,12 +1,18 @@
 class NephoVis {
-	constructor(level, type) {
+	constructor(level, type, selection=null) {
+		console.log("building a new one", level, type);
+
 		this.level = level;
 		this.type = type;
 		this.requestedFiles = RequestedFilesMapper[level];
+		this.selection = selection;
 
 		// Define the data loader and load the CSV files for this type
 		this.dataLoader = new DataLoader(this.type, this.requestedFiles);
 		this.dataLoader.loadData().then(() => { this.execute(); });
+
+		// Disable importing from selection hash
+		this.preventImport = false;
 	}
 
 	// This method really deserves a rename, but I'm leaving it in for now for transparency
@@ -18,6 +24,9 @@ class NephoVis {
 
 		this.initVars();
 
+		if (this.selection != null) {
+			this.importSelection(this.selection);
+		}
 
 		UserInterface.setButton("clearSelect", () => 
 			{
@@ -85,6 +94,12 @@ class NephoVis {
 
 		let mouseClickFunction = this.mouseClickPoint.bind(this);
 
+		this.preventImport = true;
+		window.location.href = router.router.generate("level.type.selection",
+													  { level: this.level,
+													  	type: this.type,
+													  	selection: this.exportSelection() });
+
 		this.plot = new Plot(this.level,
 							 "svgContainer",
 							 { "width": 600, "height": 600, "padding": 40 },
@@ -140,5 +155,46 @@ class NephoVis {
 
 		// Redraw the plot
 		this.drawPlot();
+	}
+
+	// To export
+	exportSelection() {
+		let toExport = { "level": this.level,
+						 "type": this.type,
+						 "modelSelection": this.modelSelection.models,
+						 "variableSelection": this.variableSelection };
+		// Base64 encode our selection
+		let json = JSON.stringify(toExport);
+		let encodedExport = btoa(json);
+
+		// Compress the string so it (hopefully) fits in the browser URL
+		//let compressed = LZString.compress(encodedExport);
+
+		return encodedExport;
+	}
+
+	importSelection(encodedExport) {
+		if (this.preventImport) {
+			this.preventImport = false;
+			return;
+		}
+
+		let decodedExport = ""
+		try {
+			decodedExport = JSON.parse(atob(encodedExport));
+		}
+		catch (error) {
+			console.log(error);
+			return;
+		}
+
+		// This selection belongs to another type
+		if (this.type != decodedExport["type"]) {
+			console.log("Rejecting");
+			return;
+		}
+
+		this.modelSelection.restore(decodedExport["modelSelection"]);
+		this.variableSelection = decodedExport["variableSelection"];
 	}
 }
