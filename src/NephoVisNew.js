@@ -134,7 +134,7 @@ class NephoVis {
 
 	handleDropdownChange(dataPointStyleName, variable) {
 		if (variable == "Reset") {
-			this.dataPointStyles[dataPointStyleName].assign(null, null);
+			this.dataPointStyles[dataPointStyleName].clear();
 		}
 		else {
 			this.dataPointStyles[dataPointStyleName].assign(variable,

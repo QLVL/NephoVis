@@ -44,12 +44,12 @@ class DataPointStyle {
 		this.updateLegendScales();
 	}
 
-	updateLegendScales() {
-		// todo: build a "reset" method which sets null and doesn't go here so we can skip the check
-		if (this.values == null) {
-			return;
-		}
+	clear() {
+		this.variable = null;
+		this.values = null;
+	}
 
+	updateLegendScales() {
 		switch (this.style) {
 			case "colour":
 				// TODO: won't this cause a desync between the point styles and the legend?
