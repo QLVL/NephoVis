@@ -30,7 +30,6 @@ class NephoVis {
 
 		UserInterface.setButton("clearSelect", () => 
 			{
-				// todo: update model selection (probably should be done automatically)
 				this.modelSelection.clear();
 
 				// Reset selection buttons
@@ -60,10 +59,8 @@ class NephoVis {
 
 	initVars() {
 		this.dataProcessor = new DataProcessor(this.dataLoader.datasets);
-		// TODO: color var, shapevar, sizevar
 
 		// TODO: re-introduce LocalStorage if deemed necessary
-		//this.modelSelection = []
 		this.modelSelection = new ModelSelection(this.dataLoader.datasets["models"],
 												 () => { this.drawPlot(); });
 
@@ -140,7 +137,6 @@ class NephoVis {
 
 		this.drawPlot();
 
-		// TODO updatePlot
 		// TODO updateLegend
 	}
 
