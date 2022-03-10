@@ -168,7 +168,7 @@ class Plot {
 		} else {
 			// if not a number (so not size? todo)
 			if (isNaN(dataPointStyle.default_value)) {
-				return dataPointStyle.schema.domain(dataPointStyle.values)([dataPointStyle.variable]);
+				return dataPointStyle.schema.domain(dataPointStyle.values)(row[dataPointStyle.variable]);
 			}
 			// todo: check what the if NAN does here because I don't know
 			// also I don't know what any of this means 🤷‍

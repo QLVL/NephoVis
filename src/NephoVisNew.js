@@ -114,6 +114,8 @@ class NephoVis {
 
 		// TODO: I don't really understand how the data structure works
 
+		this.drawPlot();
+
 		// TODO updatePlot
 		// TODO updateLegend
 	}
