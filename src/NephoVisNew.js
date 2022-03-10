@@ -106,11 +106,16 @@ class NephoVis {
 	}
 
 	handleDropdownChange(dataPointStyleName, variable) {
-		// todo: re-implement local storage if deemed necessary
+		if (variable == "Reset") {
+			this.dataPointStyles[dataPointStyleName].assign(null, null);
+		}
+		else {
+			this.dataPointStyles[dataPointStyleName].assign(variable,
+												 			Helpers.getValues(this.dataLoader.datasets["models"],
+																  	 		  variable));
+		}
 
-		this.dataPointStyles[dataPointStyleName].assign(variable,
-												 Helpers.getValues(this.dataLoader.datasets["models"],
-																   variable));
+		// todo: re-implement local storage if deemed necessary
 
 		// TODO: I don't really understand how the data structure works
 
