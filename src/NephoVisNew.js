@@ -85,7 +85,8 @@ class NephoVis {
 
 		let mouseClickFunction = this.mouseClickPoint.bind(this);
 
-		this.plot = new Plot("svgContainer",
+		this.plot = new Plot(this.level,
+							 "svgContainer",
 							 { "width": 600, "height": 600, "padding": 40 },
 							 this.dataLoader.datasets["models"],
 							 this.dataPointStyles,

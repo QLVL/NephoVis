@@ -1,5 +1,7 @@
 class Plot {
-	constructor(targetElementName, dimensions, dataset, dataPointStyles, modelSelection, onDataPointClick) {
+	constructor(level, targetElementName, dimensions, dataset, dataPointStyles, modelSelection, onDataPointClick) {
+		this.level = level;
+
 		// Save the correct dataset
 		this.dataset = dataset;
 		this.dataPointStyles = dataPointStyles;
@@ -283,7 +285,7 @@ class Plot {
 			  // Else, only selected models are fully opaque
 			  .style("opacity", this.modelSelection.count > 0 ? 1 : 0.7)
 			  .classed("lighter", (row) => 
-			  	{ let idColumn = this.level == "model" ? "_model" : "_id";
+			  	{ let idColumn = (this.level == "model" ? "_model" : "_id");
 			  	  if (this.modelSelection.count > 0) {
 			  	  	return !this.modelSelection.models.includes(row[idColumn]);
 			  	  } else {
