@@ -44,6 +44,9 @@ class Plot {
 		this.generatePointCloud();
 
 		this.updateSelection();
+
+		this.legend = new Legend(this.dataset, this.level, this.type,
+								 this.dataPointStyles, this.dimensions["padding"]);
 	}
 
 	onZoom(idk) {
