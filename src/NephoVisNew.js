@@ -47,7 +47,6 @@ class NephoVis {
 		}
 		
 		this.drawPlot();
-		//this.prepareUI();
 	}
 
 	initVars() {
@@ -80,6 +79,10 @@ class NephoVis {
 	}
 
 	drawPlot() {
+		// If the plot has to redraw, surely some other update has happened
+		// So, we update the UI as well
+		UserInterface.prepareUI(this.level, this.type, this.modelSelection.count);
+
 		this.plot = new Plot("svgContainer",
 							 { "width": 600, "height": 600, "padding": 40 },
 							 this.dataLoader.datasets["models"],

@@ -3,22 +3,12 @@ class UserInterface {
 
 	}
 
-	prepareUI()
+	static prepareUI(level, type, modelCount)
 	{
 		// Update the page title
 		// Template: Level X (type)
-		d3.select("#nephoVisTitle").html(`${this.level} level (<em>${this.type}</em>)`);
-		d3.select("#numSelected").text(this.modelSelection.length);
-
-		// --- Button behaviour ---
-
-		// Clear selection
-		document.getElementById("clearSelect").onclick = () => {
-			// TODO: clear storage (whatever that means)
-			// "reset" variable ?
-
-			// TODO fix this whole thing because it references things which aren't assigned yet
-		};
+		d3.select("#nephoVisTitle").html(`${level} level (<em>${type}</em>)`);
+		d3.select("#numSelected").text(modelCount);
 	}
 
 	static setButton(targetElementName, onclickEvent) {
