@@ -19,6 +19,15 @@ class NephoVis {
 		this.initVars();
 
 
+		UserInterface.setButton("clearSelect", () => 
+			{
+				// todo: update model selection (probably should be done automatically)
+				this.modelSelection.clear();
+
+				// Reset selection buttons
+				d3.selectAll("label[name='selectionByButtons']").classed("active", false);
+			});
+
 		UserInterface.createButtons("focrow", this.dataProcessor.foc, 
 									this.dataLoader.datasets["models"], this.variableSelection, 
 									(property, value, checked) => 
@@ -37,12 +46,7 @@ class NephoVis {
 										{ this.handleDropdownChange(dataPointStyleName, variable); });
 		}
 		
-		this.plot = new Plot("svgContainer",
-							 { "width": 600, "height": 600, "padding": 40 },
-							 this.dataLoader.datasets["models"],
-							 this.dataPointStyles,
-							 this.modelSelection);
-
+		this.drawPlot();
 		//this.prepareUI();
 	}
 
@@ -51,7 +55,9 @@ class NephoVis {
 		// TODO: color var, shapevar, sizevar
 
 		// TODO: re-introduce LocalStorage if deemed necessary
-		this.modelSelection = []
+		//this.modelSelection = []
+		this.modelSelection = new ModelSelection(this.dataLoader.datasets["models"],
+												 () => { this.drawPlot(); });
 
 		this.variableSelection = {};
 		for (var i = 0; i < this.dataProcessor.nominalNames.length; i++) {
@@ -73,6 +79,14 @@ class NephoVis {
 		}
 	}
 
+	drawPlot() {
+		this.plot = new Plot("svgContainer",
+							 { "width": 600, "height": 600, "padding": 40 },
+							 this.dataLoader.datasets["models"],
+							 this.dataPointStyles,
+							 this.modelSelection);
+	}
+
 	handleCheckboxChange(property, value, checked) {
 
 		if (checked)
@@ -83,8 +97,9 @@ class NephoVis {
 			this.variableSelection[property].splice(toDeleteIndex, 1); 
 		}
 
+		this.modelSelection.select(this.variableSelection);
+
 		// todo: re-implement local storage if deemed necessary
-		// todo: re-implement updateCheckbox, whenever I figure out what it does
 	}
 
 	handleDropdownChange(dataPointStyleName, variable) {

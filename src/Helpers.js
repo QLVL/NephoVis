@@ -13,4 +13,9 @@ class Helpers {
 			return values.map((value) => value.toString() ).sort();
 		}
 	}
+
+	// https://stackoverflow.com/a/51874332
+	static intersection(data) {
+		return data.reduce((a, b) => a.filter(c => b.includes(c)));
+	}
 }

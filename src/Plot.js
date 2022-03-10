@@ -14,6 +14,8 @@ class Plot {
 
 		// Find the svg element which we will plot to
 		this.targetElement = d3.select(`#${targetElementName}`);
+		// Clear target element contents
+		this.targetElement.html("");
 
 		// Save the dimensions
 		this.dimensions = dimensions;
@@ -175,9 +177,9 @@ class Plot {
 	}
 
 	isPointSelected(row) {
-		if (this.modelSelection.length > 0)
+		if (this.modelSelection.models.length > 0)
 		{
-			return this.modelSelection.includes(row["_model"]);
+			return this.modelSelection.models.includes(row["_model"]);
 		}
 
 		return true;

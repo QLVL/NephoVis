@@ -21,6 +21,11 @@ class UserInterface {
 		};
 	}
 
+	static setButton(targetElementName, onclickEvent) {
+		d3.select(`#${targetElementName}`)
+		  .on("click", () => { onclickEvent(); });
+	}
+
 	static createButtons(targetElement, buttons, dataset, variableSelection, changeCallback) {
 		d3.select("#" + targetElement).selectAll("div")
 		  .data(buttons)
