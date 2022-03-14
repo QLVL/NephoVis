@@ -115,6 +115,7 @@ class NephoVis {
 							 this.dataLoader.datasets["models"],
 							 this.dataPointStyles,
 							 this.modelSelection,
+							 this.variableSelection,
 							 mouseClickFunction,
 							 selectionByLegendFunction);
 	}

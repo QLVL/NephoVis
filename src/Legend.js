@@ -1,11 +1,12 @@
 class Legend {
-	constructor(dataset, level, type, dataPointStyles, padding, selectionByLegend) {
+	constructor(dataset, level, type, variableSelection, dataPointStyles, padding, selectionByLegend) {
 		// Remove everything already in the legend bar
 		d3.select(".legendBar").selectAll("svg").remove();
 
 		this.dataset = dataset;
 		this.level = level;
 		this.type = type;
+		this.variableSelection = variableSelection;
 		this.dataPointStyles = dataPointStyles;
 		this.padding = padding;
 		this.selectionByLegend = selectionByLegend;
@@ -28,7 +29,7 @@ class Legend {
 				this.selectionByLegend(dataPointStyle.variable, variable);
 			 });
 
-			d3.select(dataPointStyle.legendContainer)
+			let legendContainer = d3.select(dataPointStyle.legendContainer)
 			  .append("svg")
 			  .style("width", d3.select(".legendBar").style("width"))
               .style("height", (dataPointStyle.values.length * 25 + this.padding) + "px")
@@ -38,6 +39,16 @@ class Legend {
               .attr("class", "legend")
               .attr("transform", "translate(" + 0 + ", " + this.padding / 2 + ")")
               .call(legend);
+
+             // Apply bold
+             // Yes, there is no other way to do this. You have to manipulate the DOM.
+             // I even tried to adjust d3-legend.js, but it's a mess as well
+             // This is the cleanest solution I could think of, after having spent three hours
+             // on making text bold. Please have mercy.
+            legendContainer.selectAll(`.${dataPointStyle.style}label`)
+			  			   .classed("selected", (variable) => { 
+			  					return this.variableSelection[dataPointStyle.variable].includes(variable);
+			 });
 		}
 	}
 }

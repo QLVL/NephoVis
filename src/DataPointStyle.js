@@ -78,7 +78,8 @@ class DataPointStyle {
 		// Pre-build the legend title and legend
 		let legendTitle = UserInterface.formatVariableName(this.variable);
 		this.legend = this.baseLegend.scale(this.scale)
-			  	   					 .title(legendTitle);
+			  	   					 .title(legendTitle)
+			  	   					 .classPrefix(this.style);
 		// Size-specific additions
 		if (this.style == "size") {
 			// TODO: find explanation

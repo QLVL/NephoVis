@@ -1,12 +1,13 @@
 class Plot {
 	constructor(level, targetElementName, dimensions, dataset, dataPointStyles,
-				modelSelection, onDataPointClick, selectionByLegend) {
+				modelSelection, variableSelection, onDataPointClick, selectionByLegend) {
 		this.level = level;
 
 		// Save the correct dataset
 		this.dataset = dataset;
 		this.dataPointStyles = dataPointStyles;
 		this.modelSelection = modelSelection;
+		this.variableSelection = variableSelection;
 		this.onDataPointClick = onDataPointClick;
 		this.selectionByLegend = selectionByLegend;
 
@@ -47,9 +48,8 @@ class Plot {
 
 		this.updateSelection();
 
-		this.legend = new Legend(this.dataset, this.level, this.type,
-								 this.dataPointStyles, this.dimensions["padding"],
-								 this.selectionByLegend);
+		this.legend = new Legend(this.dataset, this.level, this.type, this.variableSelection,
+								 this.dataPointStyles, this.dimensions["padding"], this.selectionByLegend);
 	}
 
 	onZoom(idk) {
