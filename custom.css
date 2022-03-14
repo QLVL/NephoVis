@@ -9892,6 +9892,11 @@ main {
   align-content: flex-start;  
 }
 
+g.cell {
+  cursor: pointer;
+  user-select: none;
+}
+
 .tooltip {
   width : auto;
   position : absolute;
