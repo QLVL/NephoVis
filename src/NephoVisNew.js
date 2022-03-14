@@ -101,6 +101,7 @@ class NephoVis {
 		UserInterface.prepareUI(this.level, this.type, this.modelSelection.count);
 
 		let mouseClickFunction = this.mouseClickPoint.bind(this);
+		let selectionByLegendFunction = this.selectionByLegend.bind(this);
 
 		this.preventImport = true;
 		window.location.href = router.router.generate("level.type.selection",
@@ -114,7 +115,8 @@ class NephoVis {
 							 this.dataLoader.datasets["models"],
 							 this.dataPointStyles,
 							 this.modelSelection,
-							 mouseClickFunction);
+							 mouseClickFunction,
+							 selectionByLegendFunction);
 	}
 
 	handleCheckboxChange(property, value, checked) {
@@ -159,6 +161,21 @@ class NephoVis {
 		} else {
 			this.modelSelection.remove(row["_model"]);
 		}
+
+		// Redraw the plot
+		this.drawPlot();
+	}
+
+	selectionByLegend(variable, value) {
+		if (this.variableSelection[variable].includes(value)) {
+			let toDeleteIndex = this.variableSelection[variable].indexOf(value);
+			this.variableSelection[variable].splice(toDeleteIndex, 1); 
+		} else {
+			this.variableSelection[variable].push(value);
+		}
+
+		this.modelSelection.select(this.variableSelection);
+		//this.modelSelection.toggle({});
 
 		// Redraw the plot
 		this.drawPlot();

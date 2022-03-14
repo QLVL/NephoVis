@@ -1,5 +1,5 @@
 class Legend {
-	constructor(dataset, level, type, dataPointStyles, padding) {
+	constructor(dataset, level, type, dataPointStyles, padding, selectionByLegend) {
 		// Remove everything already in the legend bar
 		d3.select(".legendBar").selectAll("svg").remove();
 
@@ -8,6 +8,7 @@ class Legend {
 		this.type = type;
 		this.dataPointStyles = dataPointStyles;
 		this.padding = padding;
+		this.selectionByLegend = selectionByLegend;
 
 		this.buildLegend();
 	}
@@ -21,7 +22,11 @@ class Legend {
 				continue;
 			}
 
-			let legend = dataPointStyle.legend.on("cellclick", () => { }); // todo
+			// When this legend cell is clicked, we toggle the selection for all elements
+			// which adhere to this legend style
+			let legend = dataPointStyle.legend.on("cellclick", (variable) => {
+				this.selectionByLegend(dataPointStyle.variable, variable);
+			 });
 
 			d3.select(dataPointStyle.legendContainer)
 			  .append("svg")

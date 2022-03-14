@@ -1,5 +1,6 @@
 class Plot {
-	constructor(level, targetElementName, dimensions, dataset, dataPointStyles, modelSelection, onDataPointClick) {
+	constructor(level, targetElementName, dimensions, dataset, dataPointStyles,
+				modelSelection, onDataPointClick, selectionByLegend) {
 		this.level = level;
 
 		// Save the correct dataset
@@ -7,6 +8,7 @@ class Plot {
 		this.dataPointStyles = dataPointStyles;
 		this.modelSelection = modelSelection;
 		this.onDataPointClick = onDataPointClick;
+		this.selectionByLegend = selectionByLegend;
 
 		// Set plot-wide scale
 		// TODO: this should probably be variable
@@ -46,7 +48,8 @@ class Plot {
 		this.updateSelection();
 
 		this.legend = new Legend(this.dataset, this.level, this.type,
-								 this.dataPointStyles, this.dimensions["padding"]);
+								 this.dataPointStyles, this.dimensions["padding"],
+								 this.selectionByLegend);
 	}
 
 	onZoom(idk) {
