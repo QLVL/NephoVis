@@ -28,6 +28,7 @@ class NephoVisLevel3 extends NephoVis {
 		this.contextVar = null; // todo: what is this?
 
 		this.initTailoredVars();
+		this.initContextWordsColumn();
 	}
 
 	initTailoredVars() {
@@ -59,6 +60,13 @@ class NephoVisLevel3 extends NephoVis {
 				};
 			});
 		// These last lines are only if you use the "ctxt2" dropdown instead of "ctxt" (for tailored contexts, that is, matched to the cloud)
+	}
+
+	initContextWordsColumn() {
+		this.dataProcessor.contextWordsColumn = this.dataProcessor.columnNames.filter((columnName) => {
+			// TODO: WHAT is this magic number???
+			return (columnName.startsWith("_cws") && this.model.includes(columnName.slice(5)));
+		});
 	}
 
 	buildSolutionSwitchDropdown(update=false) {
