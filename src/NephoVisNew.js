@@ -1,7 +1,5 @@
 class NephoVis {
-	constructor(level, type, selection=null, model=null) {
-		console.log("building a new one", level, type);
-
+	constructor(level, type, selection=null) {
 		UserInterface.setLevelUI(level);
 
 		this.level = level;
@@ -17,109 +15,12 @@ class NephoVis {
 		this.preventImport = false;
 	}
 
-	// This method really deserves a rename, but I'm leaving it in for now for transparency
-	execute() {
-		// TODO: should this be responsive?
-		this.canvasWidth = 600;
-		this.canvasHeight = 600;
-		this.canvasPadding = 40;
-
-		this.initVars();
-
-		if (this.selection != null) {
-			this.importSelection(this.selection);
-		}
-
-		UserInterface.setButton("clearSelect", () => 
-			{
-				this.modelSelection.clear();
-				UserInterface.resetSelectionButtons();
-			});
-
-		UserInterface.setButton("medoidsSelect", () =>
-			{
-				let selectedModels = this.dataLoader.datasets["medoids"].map((row) => row.medoid);
-
-				this.initVariableSelection();
-				this.modelSelection.fromMedoids(selectedModels);
-				UserInterface.resetSelectionButtons();
-			});
-
-		UserInterface.createButtons("focrow", this.dataProcessor.foc, 
-									this.dataLoader.datasets["models"], this.variableSelection, 
-									(property, value, checked) => 
-										{ this.handleCheckboxChange(property, value, checked); });
-
-		UserInterface.createButtons("socrow", this.dataProcessor.soc,
-									this.dataLoader.datasets["models"], this.variableSelection,
-									(property, value, checked) => 
-										{ this.handleCheckboxChange(property, value, checked); });
-
-		for (let dataPointStyleName in this.dataPointStyles)
-		{
-			let dataPointStyle = this.dataPointStyles[dataPointStyleName];
-			UserInterface.buildDropdown(dataPointStyleName, dataPointStyle.candidates, "model", 
-										(variable) => 
-										{ this.handleDropdownChange(dataPointStyleName, variable); });
-		}
-		
-		this.drawPlot();
-	}
-
-	initVars() {
-		this.dataProcessor = new DataProcessor(this.dataLoader.datasets);
-
-		// TODO: re-introduce LocalStorage if deemed necessary
-		this.modelSelection = new ModelSelection(this.dataLoader.datasets["models"],
-												 () => { this.drawPlot(); });
-
-		this.initVariableSelection();
-
-		let dataOptionsTable = { "colour": this.dataProcessor.nominalNames,
-							 	 "shape": this.dataProcessor.nominalNames,
-							 	 "size": this.dataProcessor.numeralNames };
-
-		this.dataPointStyles = {};
-		for (var i = 0; i < Constants.dataPointStyles.length; i++)
-		{
-			// todo: embed this in "Constants" somehow
-			let dataPointStyleName = Constants.dataPointStyles[i];
-			this.dataPointStyles[dataPointStyleName] = new DataPointStyle(dataPointStyleName,
-													    dataOptionsTable[dataPointStyleName]);
-		}
-	}
-
 	initVariableSelection() {
 		this.variableSelection = {};
 		for (var i = 0; i < this.dataProcessor.nominalNames.length; i++) {
 			let nominal = this.dataProcessor.nominalNames[i];
 			this.variableSelection[nominal] = [];
 		}
-	}
-
-	drawPlot() {
-		// If the plot has to redraw, surely some other update has happened
-		// So, we update the UI as well
-		UserInterface.prepareUI(this.level, this.type, this.modelSelection.count);
-
-		let mouseClickFunction = this.mouseClickPoint.bind(this);
-		let selectionByLegendFunction = this.selectionByLegend.bind(this);
-
-		this.preventImport = true;
-		window.location.href = router.router.generate("level.type.selection",
-													  { level: this.level,
-													  	type: this.type,
-													  	selection: this.exportSelection() });
-
-		this.plot = new Plot(this.level,
-							 "svgContainer",
-							 { "width": 600, "height": 600, "padding": 40 },
-							 this.dataLoader.datasets["models"],
-							 this.dataPointStyles,
-							 this.modelSelection,
-							 this.variableSelection,
-							 mouseClickFunction,
-							 selectionByLegendFunction);
 	}
 
 	handleCheckboxChange(property, value, checked) {

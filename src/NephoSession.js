@@ -17,7 +17,15 @@ class NephoSession {
 		}
 
 		// In all other cases, build a new nephovis
-		this.nephoVis = new NephoVis(level, type, selection, model);
+		switch (level) {
+			case "model":
+				this.nephoVis = new NephoVisLevel1(level, type, selection);
+				break;
+			case "token":
+				this.nephoVis = new NephoVisLevel3(level, type, model, selection);
+				break;
+		}
+		
 	}
 }
 
