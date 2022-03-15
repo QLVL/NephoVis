@@ -11,6 +11,10 @@ class NephoVisLevel3 extends NephoVis {
 		this.buildSolutionSwitchDropdown();
 		// Merge all different dimension reduction solutions into one dataset
 		this.dataLoader.datasets["tokens"] = this.mergeSolutions();
+
+		this.importSelection();
+
+		// todo: setup texts
 	}
 
 	buildSolutionSwitchDropdown(update=false) {
