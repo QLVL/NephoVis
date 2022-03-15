@@ -22,8 +22,7 @@ class NephoVisLevel3 extends NephoVis {
 
 		this.contextVar = null; // todo: what is this?
 
-		this.initTailoredVars();
-		this.initContextWordsColumn();
+		this.buildButtons();
 	}
 
 	buildTokenDataset() {
@@ -63,6 +62,7 @@ class NephoVisLevel3 extends NephoVis {
 					"value": context
 				};
 			});
+
 		// These last lines are only if you use the "ctxt2" dropdown instead of "ctxt" (for tailored contexts, that is, matched to the cloud)
 	}
 
@@ -131,6 +131,18 @@ class NephoVisLevel3 extends NephoVis {
 		});
 
 		return subset;
+	}
+
+	buildButtons() {
+		for (let dataPointStyleName in this.dataPointStyles)
+		{
+			let dataPointStyle = this.dataPointStyles[dataPointStyleName];
+			UserInterface.buildDropdown(dataPointStyleName, dataPointStyle.candidates,
+										(variable) => 
+										{ this.handleDropdownChange(dataPointStyleName, variable); },
+										dataPointStyle.textFunction,
+										dataPointStyle.valueFunction);
+		}
 	}
 
 	get chosenSolution() {

@@ -35,16 +35,33 @@ class NephoVis {
 
 		this.initVariableSelection();
 
-		let dataOptionsTable = { "colour": this.dataProcessor.nominalNames,
-							 	 "shape": this.dataProcessor.nominalNames,
-							 	 "size": this.dataProcessor.numeralNames };
+		let dataOptionsTable;
+		switch (this.level) {
+			case "model":
+				dataOptionsTable = { "colour": this.dataProcessor.nominalNames,
+							 	 	 "shape": this.dataProcessor.nominalNames,
+							 	 	 "size": this.dataProcessor.numeralNames };
+				break;
+			case "token":
+				this.initTailoredVars();
+				this.initContextWordsColumn();
+
+				dataOptionsTable = { "colour": this.dataProcessor.nominalNames,
+							 	 	 "shape": this.dataProcessor.nominalNames.filter((nominal) => {
+										return (nominal == "Reset" || 
+							Helpers.getValues(this.dataLoader.datasets[centralDataset], nominal).length <= 7);
+										}),
+							 	 	 "size": this.dataProcessor.tailoredNumerals };
+				break;
+		}
 
 		this.dataPointStyles = {};
 		for (var i = 0; i < Constants.dataPointStyles.length; i++)
 		{
 			// todo: embed this in "Constants" somehow
 			let dataPointStyleName = Constants.dataPointStyles[i];
-			this.dataPointStyles[dataPointStyleName] = new DataPointStyle(dataPointStyleName,
+			this.dataPointStyles[dataPointStyleName] = new DataPointStyle(this.level,
+														dataPointStyleName,
 													    dataOptionsTable[dataPointStyleName]);
 		}
 	}
