@@ -135,6 +135,7 @@ class NephoVisLevel3 extends NephoVis {
 	}
 
 	buildButtons() {
+		// We build the dropdowns for the styles automatically
 		for (let dataPointStyleName in this.dataPointStyles)
 		{
 			let dataPointStyle = this.dataPointStyles[dataPointStyleName];
@@ -144,6 +145,13 @@ class NephoVisLevel3 extends NephoVis {
 										dataPointStyle.textFunction,
 										dataPointStyle.valueFunction);
 		}
+
+		// We have to build the dropdown for the context words manually
+		UserInterface.buildDropdown("ctxt",
+									this.dataProcessor.tailoredContexts,
+									d => d.value,
+									d => d.key,
+									(variable) => { this.contextVar = variable; });
 	}
 
 	get chosenSolution() {
