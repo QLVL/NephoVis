@@ -101,7 +101,7 @@ class NephoVis {
 		return encodedExport;
 	}
 
-	importSelection(encodedExport) {
+	importSelection() {
 		if (this.selection == null) {
 			return;
 		}
@@ -113,7 +113,7 @@ class NephoVis {
 
 		let decodedExport = ""
 		try {
-			decodedExport = JSON.parse(atob(encodedExport));
+			decodedExport = JSON.parse(atob(this.selection));
 		}
 		catch (error) {
 			console.log(error);

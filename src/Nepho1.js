@@ -12,7 +12,7 @@ class NephoVisLevel1 extends NephoVis {
 
 		this.initVars();
 
-		this.importSelection(this.selection);
+		this.importSelection();
 
 		UserInterface.setButton("clearSelect", () => 
 			{
