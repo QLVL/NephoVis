@@ -151,7 +151,8 @@ class NephoVisLevel3 extends NephoVis {
 									this.dataProcessor.tailoredContexts,
 									d => d.value,
 									d => d.key,
-									(variable) => { this.contextVar = variable; });
+									(variable) => { this.contextVar = variable;
+													/* todo handle change */ });
 	}
 
 	get chosenSolution() {
