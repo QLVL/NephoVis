@@ -9892,9 +9892,13 @@ main {
   align-content: flex-start;  
 }
 
-g.cell {
+g.legend {
   cursor: pointer;
   user-select: none;
+}
+
+g  text.selected {
+  font-weight: bold;
 }
 
 .tooltip {
