@@ -153,6 +153,22 @@ class NephoVisLevel3 extends NephoVis {
 													/* todo handle change */ },
 									d => d.key,
 									d => d.value);
+
+		console.log(this.modelSelection.models);
+
+		// We build the model switcher as well
+		UserInterface.buildDropdown("models",
+									this.modelSelection.models,
+									modelName => { window.location.href = 
+										router.router.generate("token.type.model.selection", 
+																{ type: this.type,
+																  model: modelName,
+																  selection: this.selection }); },
+									modelName => { let truncatedModelName = modelName.replace(`${this.type}.`, "");
+												   return ( modelName == this.model ?
+												   		   `<b>${truncatedModelName}</b>` :
+												   		   truncatedModelName); }
+									); // TODO: again, very hard-coded behaviour here...
 	}
 
 	get chosenSolution() {
