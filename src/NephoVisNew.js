@@ -16,18 +16,16 @@ class NephoVis {
 	}
 
 	initVars() {
-		let modelSelectionDataset, centralDataset;
+		let modelSelectionDataset;
 
 		if (this.level == "model") {
 			modelSelectionDataset = this.dataLoader.datasets["models"];
-			centralDataset = "models";
 		}
 		else {
 			modelSelectionDataset = [];
-			centralDataset = "tokens";
 		}
 
-		this.dataProcessor = new DataProcessor(this.dataLoader.datasets, centralDataset);
+		this.dataProcessor = new DataProcessor(this.dataLoader.datasets, this.centralDataset);
 
 		// TODO: re-introduce LocalStorage if deemed necessary
 		this.modelSelection = new ModelSelection(modelSelectionDataset,
@@ -49,7 +47,7 @@ class NephoVis {
 				dataOptionsTable = { "colour": this.dataProcessor.nominalNames,
 							 	 	 "shape": this.dataProcessor.nominalNames.filter((nominal) => {
 										return (nominal == "Reset" || 
-							Helpers.getValues(this.dataLoader.datasets[centralDataset], nominal).length <= 7);
+							Helpers.getValues(this.dataLoader.datasets[this.centralDataset], nominal).length <= 7);
 										}),
 							 	 	 "size": this.dataProcessor.tailoredNumerals };
 				break;
@@ -95,8 +93,8 @@ class NephoVis {
 		}
 		else {
 			this.dataPointStyles[dataPointStyleName].assign(variable,
-												 			Helpers.getValues(this.dataLoader.datasets["models"],
-																  	 		  variable));
+							Helpers.getValues(this.dataLoader.datasets[this.centralDataset],
+							variable));
 		}
 
 		// todo: re-implement local storage if deemed necessary

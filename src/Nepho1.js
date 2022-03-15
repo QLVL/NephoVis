@@ -1,6 +1,7 @@
 class NephoVisLevel1 extends NephoVis {
 	constructor(level, type, selection=null) {
 		super(level, type, selection);
+		this.centralDataset = "models";
 	}
 
 	// This method really deserves a rename, but I'm leaving it in for now for transparency
