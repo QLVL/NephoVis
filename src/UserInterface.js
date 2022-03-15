@@ -95,7 +95,7 @@ class UserInterface {
 	}
 
 	// Set up the dropdown for alternative solutions
-	static buildSolutionSwitchDropdown(targetElementName, dataset) {
+	static buildSolutionSwitchDropdown(targetElementName, dataset, textFunction) {
 		// Create the button group
 		let alternativeSolutionDropdown = d3.select(`#${targetElementName}`)
 											.append("div") 
@@ -113,7 +113,9 @@ class UserInterface {
             					   .attr("class", "dropdown-menu")
             					   .attr("id", "solutions");
 
-        UserInterface.buildDropdown("solutions", dataset, "token", () => { /* todo click callback */ });
+        UserInterface.buildDropdown("solutions", dataset,
+    								() => { /* todo click callback */ },
+    								textFunction);
 	}
 
 	/* General */

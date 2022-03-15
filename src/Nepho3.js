@@ -13,7 +13,10 @@ class NephoVisLevel3 extends NephoVis {
 	offerAlternatives() {
 		// TODO: how can tokens be in the datasets if we always remove it if it's there?
 		if (!("tokens" in this.dataLoader.datasets) && this.dataLoader.alternatives != null) {
-			UserInterface.buildSolutionSwitchDropdown("moveAround", this.dataLoader.alternatives);
+			UserInterface.buildSolutionSwitchDropdown("moveAround", this.dataLoader.alternatives,
+													  (solution) => { return solution == this.chosenSolution ?
+													  				  		`<b>${solution}</b>` :
+													  				  		solution });
 		}
 	}
 }
