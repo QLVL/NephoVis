@@ -79,21 +79,41 @@ class DataLoader {
 			// Else, set it to "null"
 			this.solutions = this.checkResponse(response, "Something went wrong while fetching 'solutions.tsv'!") ? await response.json() : null;
 		
-			this.something();
+			this.associateSolutionFiles();
 		}
 	}
 
-	// TODO: give a clear name once I figure out what this does
-	something()
+	associateSolutionFiles()
 	{
-		if ("tokens" in this.requestedFiles)
+		// If tokens are requested, we need to add all available dimension reduction techniques
+		// to the list of files we want to load in
+		if (this.requestedFiles.includes("tokens"))
 		{
-			// todo implement
+			for (let dimensionReductionSolution in this.solutions) {
+				this.requestedFiles.push(dimensionReductionSolution);
+			}
+
+			// Remove "tokens" itself from the requested files list
+			let toDeleteIndex = this.requestedFiles.indexOf("tokens");
+			this.requestedFiles.splice(toDeleteIndex, 1); 
 		}
 		
-		if ("focdists" in this.requestedFiles)
+		// If foc distances are requested, we need to add all context word files 
+		// for all available dimension reduction techniques
+		if (this.requestedFiles.includes("focdists"))
 		{
-			// todo implement
+			for (let dimensionReductionSolution in this.solutions) {
+				let contextWordsFilename = `${dimensionReductionSolution}cws`
+
+				// Check if the requested cws file is available in the paths listing
+				if (contextWordsFilename in this.paths) {
+					this.requestedFiles.push(contextWordsFilename);
+				}
+			}
+
+			// Remove "focdists" itself from the requested files list
+			let toDeleteIndex = this.requestedFiles.indexOf("focdists");
+			this.requestedFiles.splice(toDeleteIndex, 1); 
 		}
 	}
 
