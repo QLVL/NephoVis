@@ -11,13 +11,6 @@ class NephoVisLevel3 extends NephoVis {
 		// Build the switcher which allows you to switch between dimension reduction solutions
 		this.buildSolutionSwitchDropdown();
 
-		// Merge all different dimension reduction solutions into one dataset
-		this.dataLoader.datasets["tokens"] = this.mergeSolutions();
-
-		// Infuse the tokens dataset with variables information
-		this.dataLoader.datasets["tokens"] = Helpers.mergeVariables(this.dataLoader.datasets["tokens"],
-																	this.dataLoader.datasets["variables"]);
-
 		// Initialise all variables
 		this.initVars();
 
@@ -29,6 +22,15 @@ class NephoVisLevel3 extends NephoVis {
 
 		this.initTailoredVars();
 		this.initContextWordsColumn();
+	}
+
+	buildTokenDataset() {
+		// Merge all different dimension reduction solutions into one dataset
+		this.dataLoader.datasets["tokens"] = this.mergeSolutions();
+
+		// Infuse the tokens dataset with variables information
+		this.dataLoader.datasets["tokens"] = Helpers.mergeVariables(this.dataLoader.datasets["tokens"],
+																	this.dataLoader.datasets["variables"]);
 	}
 
 	initTailoredVars() {
