@@ -51,29 +51,6 @@ class NephoVisLevel1 extends NephoVis {
 		this.drawPlot();
 	}
 
-	initVars() {
-		this.dataProcessor = new DataProcessor(this.dataLoader.datasets);
-
-		// TODO: re-introduce LocalStorage if deemed necessary
-		this.modelSelection = new ModelSelection(this.dataLoader.datasets["models"],
-												 () => { this.drawPlot(); });
-
-		this.initVariableSelection();
-
-		let dataOptionsTable = { "colour": this.dataProcessor.nominalNames,
-							 	 "shape": this.dataProcessor.nominalNames,
-							 	 "size": this.dataProcessor.numeralNames };
-
-		this.dataPointStyles = {};
-		for (var i = 0; i < Constants.dataPointStyles.length; i++)
-		{
-			// todo: embed this in "Constants" somehow
-			let dataPointStyleName = Constants.dataPointStyles[i];
-			this.dataPointStyles[dataPointStyleName] = new DataPointStyle(dataPointStyleName,
-													    dataOptionsTable[dataPointStyleName]);
-		}
-	}
-
 	drawPlot() {
 		// If the plot has to redraw, surely some other update has happened
 		// So, we update the UI as well

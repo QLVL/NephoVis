@@ -15,6 +15,40 @@ class NephoVis {
 		this.preventImport = false;
 	}
 
+	initVars() {
+		let modelSelectionDataset, centralDataset;
+
+		if (this.level == "model") {
+			modelSelectionDataset = this.dataLoader.datasets["models"];
+			centralDataset = "models";
+		}
+		else {
+			modelSelectionDataset = [];
+			centralDataset = "tokens";
+		}
+
+		this.dataProcessor = new DataProcessor(this.dataLoader.datasets, centralDataset);
+
+		// TODO: re-introduce LocalStorage if deemed necessary
+		this.modelSelection = new ModelSelection(modelSelectionDataset,
+												 () => { this.drawPlot(); });
+
+		this.initVariableSelection();
+
+		let dataOptionsTable = { "colour": this.dataProcessor.nominalNames,
+							 	 "shape": this.dataProcessor.nominalNames,
+							 	 "size": this.dataProcessor.numeralNames };
+
+		this.dataPointStyles = {};
+		for (var i = 0; i < Constants.dataPointStyles.length; i++)
+		{
+			// todo: embed this in "Constants" somehow
+			let dataPointStyleName = Constants.dataPointStyles[i];
+			this.dataPointStyles[dataPointStyleName] = new DataPointStyle(dataPointStyleName,
+													    dataOptionsTable[dataPointStyleName]);
+		}
+	}
+
 	initVariableSelection() {
 		this.variableSelection = {};
 		for (var i = 0; i < this.dataProcessor.nominalNames.length; i++) {
