@@ -67,10 +67,8 @@ class UserInterface {
         		   		// Why is Javascript like this...
 	}
 
-	static buildDropdown(targetElementName, dataset, clickCallback, textFunction = d => d) {
+	static buildDropdown(targetElementName, dataset, clickCallback, textFunction = d => d, valueFunction = d => d) {
 		let className = targetElementName.slice(0, 3)
-
-		let valueFunction = d => d;
 
 		d3.select("#" + targetElementName)
 		  .html("") // Necessary to "reset" in case this dropdown was built before
