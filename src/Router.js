@@ -12,7 +12,7 @@ class Router
 					  "token/:type/:model/:selection": { as: "token.type.model.selection",
 									uses: (params) => { nephoSession.buildNephoVis("token",
 																				   params.type,
-																				   null,
+																				   params.selection,
 																				   params.model); }
 									},
 						":level/:type": { as: "level.type",
