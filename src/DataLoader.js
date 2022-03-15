@@ -5,6 +5,7 @@ class DataLoader {
 		this.typeDir = `${Constants.sourceDir}${this.type}/`;
 
 		this.includesFOC = false;
+		this.alternatives = null;
 	}
 
 	checkResponse(response, message)
