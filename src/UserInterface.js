@@ -67,18 +67,10 @@ class UserInterface {
         		   		// Why is Javascript like this...
 	}
 
-	static buildDropdown(targetElementName, dataset, level, clickCallback) {
+	static buildDropdown(targetElementName, dataset, clickCallback, textFunction = d => d) {
 		let className = targetElementName.slice(0, 3)
 
 		let valueFunction = d => d;
-		let textFunction = d => d;
-
-		switch (level) {
-			case "model":
-				textFunction = UserInterface.formatVariableName;
-				break;
-			// todo fix bold model
-		}
 
 		d3.select("#" + targetElementName)
           .selectAll("button")
