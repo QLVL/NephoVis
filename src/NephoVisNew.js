@@ -102,6 +102,10 @@ class NephoVis {
 	}
 
 	importSelection(encodedExport) {
+		if (this.selection == null) {
+			return;
+		}
+
 		if (this.preventImport) {
 			this.preventImport = false;
 			return;
