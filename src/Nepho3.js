@@ -23,7 +23,7 @@ class NephoVisLevel3 extends NephoVis {
 
 		this.contextVar = null; // todo: what is this?
 
-		this.buildButtons();
+		this.buildInterface();
 	}
 
 	buildTokenDataset() {
@@ -134,7 +134,7 @@ class NephoVisLevel3 extends NephoVis {
 		return subset;
 	}
 
-	buildButtons() {
+	buildInterface() {
 		// We build the dropdowns for the styles automatically
 		for (let dataPointStyleName in this.dataPointStyles)
 		{
@@ -169,6 +169,14 @@ class NephoVisLevel3 extends NephoVis {
 												   		   `<b>${truncatedModelName}</b>` :
 												   		   truncatedModelName); }
 									); // TODO: again, very hard-coded behaviour here...
+
+		// Populate the token ID dropdown
+		d3.select("#tokenIDs")
+		  .selectAll("option")
+    	  .data(this.dataLoader.datasets["tokens"].map(row => row["_id"]))
+    	  .enter()
+    	  .append("option")
+    	  .attr("value", row => row);
 	}
 
 	get chosenSolution() {
