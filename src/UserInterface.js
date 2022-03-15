@@ -77,6 +77,7 @@ class UserInterface {
 			case "model":
 				textFunction = UserInterface.formatVariableName;
 				break;
+			// todo fix bold model
 		}
 
 		d3.select("#" + targetElementName)
@@ -95,6 +96,35 @@ class UserInterface {
 		// Reset selection buttons
 		d3.selectAll("label[name='selectionByButtons']").classed("active", false);
 	}
+
+	/* Level 3 */
+
+	static buildModelSwitcher(targetElementName) {
+	}
+
+	// Set up the dropdown for alternative solutions
+	static buildSolutionSwitchDropdown(targetElementName, dataset) {
+		// Create the button group
+		let alternativeSolutionDropdown = d3.select(`#${targetElementName}`)
+											.append("div") 
+            								.attr("class", "btn-group");
+        
+        // Create the button itself
+        alternativeSolutionDropdown.append("button")
+            					   .attr("type", "button")
+            					   .attr("class", "btn shadow-sm btn-marigreen dropdown-toggle")
+            					   .attr("data-toggle", "dropdown")
+            					   .html("<i class='fas fa-list-ul'></i> Switch solution");
+        
+        // Make it a dropdown
+        alternativeSolutionDropdown.append("div")
+            					   .attr("class", "dropdown-menu")
+            					   .attr("id", "solutions");
+
+        UserInterface.buildDropdown("solutions", dataset, "token", () => { /* todo click callback */ });
+	}
+
+	/* General */
 
 	static formatVariableName(variableName) {
 		return UserInterface.kebabCase(variableName).replace(/^[f|s]oc-/i, "");
