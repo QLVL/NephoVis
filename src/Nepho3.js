@@ -11,6 +11,8 @@ class NephoVisLevel3 extends NephoVis {
 		// Build the switcher which allows you to switch between dimension reduction solutions
 		this.buildSolutionSwitchDropdown();
 
+		this.buildTokenDataset();
+
 		// Initialise all variables
 		this.initVars();
 
