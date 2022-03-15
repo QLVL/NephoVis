@@ -1,5 +1,5 @@
 class NephoVis {
-	constructor(level, type, selection=null) {
+	constructor(level, type, selection=null, model=null) {
 		console.log("building a new one", level, type);
 
 		this.level = level;
