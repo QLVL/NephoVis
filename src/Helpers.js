@@ -18,4 +18,32 @@ class Helpers {
 	static intersection(data) {
 		return data.reduce((a, b) => a.filter(c => b.includes(c)));
 	}
+
+	// https://stackoverflow.com/a/42429255
+	static mergeVariables(coordinates, variables) {
+		let m = new Map();
+		// Insert all entries keyed by ID into the Map, filling in placeholder
+		// properties since the original coordinates objects don't contain these:
+		coordinates.forEach((coordRow) => { 
+			for (let key in variables[0]) {
+				// Don't overwrite the _id
+				if (key == "_id") continue;
+				coordRow[key] = null;
+			}
+			m.set(coordRow["_id"], coordRow);
+		});
+
+		// For values in 'variables', insert them if missing, otherwise, update existing values:
+		variables.forEach((varRow) => {
+    		let existing = m.get(varRow._id);
+    		if (existing === undefined) {
+        		m.set(varRow._, varRow);
+        	} else {
+        		Object.assign(existing, varRow);
+        	}
+		});
+
+		// Extract resulting combined objects from the Map as an Array
+		return Array.from(m.values());
+	}
 }
