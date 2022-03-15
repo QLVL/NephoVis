@@ -8,13 +8,57 @@ class NephoVisLevel3 extends NephoVis {
 		// Set the current dimension reduction solution to simply be the first one
 		this._chosenSolution = this.dataLoader.alternatives[0];
 
+		// Build the switcher which allows you to switch between dimension reduction solutions
 		this.buildSolutionSwitchDropdown();
+
 		// Merge all different dimension reduction solutions into one dataset
 		this.dataLoader.datasets["tokens"] = this.mergeSolutions();
+
+		// Infuse the tokens dataset with variables information
+		this.dataLoader.datasets["tokens"] = Helpers.mergeVariables(this.dataLoader.datasets["tokens"],
+																	this.dataLoader.datasets["variables"]);
+
+		// Initialise all variables
+		this.initVars();
 
 		this.importSelection();
 
 		// todo: setup texts
+
+		this.contextVar = null; // todo: what is this?
+
+		this.initTailoredVars();
+	}
+
+	initTailoredVars() {
+		this.dataProcessor.tailoredContexts = this.dataProcessor.contexts
+			// TODO: I find this a very hacky solution, 
+			// because we don't prescribe what patterns model names should adhere to
+			.filter((context) => {
+				let firstDotIndex = context.indexOf(".");
+				return (context.split(".").length == 2 || this.model.includes(context.substring(firstDotIndex + 1)))
+			})
+			.map((context) => {
+				let splitContext = context.split(".");
+				return {
+					"key": splitContext.length == 2 ? splitContext[1] : "model",
+					"value": context
+				};
+			});
+
+		this.dataProcessor.tailoredNumerals = this.dataProcessor.numeralNames
+			.filter((context) => {
+				let firstDotIndex = context.indexOf(".");
+				return (!context.startsWith("_count") || this.model.includes(context.substring(firstDotIndex + 1)))
+			})
+			.map((context) => {
+				let splitContext = context.split(".");
+				return {
+					"key": context.startsWith("_count") ? "number of foc" : context,
+					"value": context
+				};
+			});
+		// These last lines are only if you use the "ctxt2" dropdown instead of "ctxt" (for tailored contexts, that is, matched to the cloud)
 	}
 
 	buildSolutionSwitchDropdown(update=false) {
