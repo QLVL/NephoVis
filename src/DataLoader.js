@@ -3,6 +3,8 @@ class DataLoader {
 		this.type = type;
 		this.requestedFiles = requestedFiles;
 		this.typeDir = `${Constants.sourceDir}${this.type}/`;
+
+		this.includesFOC = false;
 	}
 
 	checkResponse(response, message)
@@ -89,6 +91,8 @@ class DataLoader {
 		// to the list of files we want to load in
 		if (this.requestedFiles.includes("tokens"))
 		{
+			this.alternatives = Object.keys(this.solutions);
+
 			for (let dimensionReductionSolution in this.solutions) {
 				this.requestedFiles.push(dimensionReductionSolution);
 			}
@@ -102,6 +106,8 @@ class DataLoader {
 		// for all available dimension reduction techniques
 		if (this.requestedFiles.includes("focdists"))
 		{
+			this.includesFOC = true;
+
 			for (let dimensionReductionSolution in this.solutions) {
 				let contextWordsFilename = `${dimensionReductionSolution}cws`
 
