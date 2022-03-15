@@ -2,6 +2,8 @@ class NephoVis {
 	constructor(level, type, selection=null, model=null) {
 		console.log("building a new one", level, type);
 
+		UserInterface.setLevelUI(level);
+
 		this.level = level;
 		this.type = type;
 		this.requestedFiles = RequestedFilesMapper[level];

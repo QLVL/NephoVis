@@ -23,6 +23,24 @@
     h1 {
       color: #154360;
     }
+
+    path.lighter {
+      fill-opacity: .25;
+      stroke-opacity: .1;
+    }
+
+    /*div.tooltip {
+      position: absolute;
+      text-align: center;
+      width: 80px;
+      height: 38px;
+      padding: 3px;
+      font: 12px sans-serif;
+      background: lightsteelblue;
+      border: 0px;
+      border-radius: 8px;
+      pointer-events: none;
+    }*/
   </style>
 </head>
 
@@ -32,9 +50,11 @@
     <div class="vizPage">
       <header>
         <h1 id="nephoVisTitle"></h1>
+        <h3 id="modelName"></h3>
+        <h4 id="solutionName"></h4>
       </header>
       <main>
-        <div class="sidebar" id="sidebar">
+        <div class="sidebar shared model" id="sidebar">
           <div class="btn-group-vertical">
             <div class='btn-group'>
               <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select
@@ -80,15 +100,102 @@
                 <div id="finalrow">
                   <h5>Final tokens</h5>
                 </div> -->
+          </div> 
+        </div>
+        <div class="sidebar shared token">
+          <div class="btn-group-vertical">
+            <div class="btn-group">
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select
+                colour</button>
+              <div class="dropdown-menu" id="colour"></div>
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select
+                shape</button>
+              <div class="dropdown-menu" id="shape"></div>
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select
+                size</button>
+              <div class="dropdown-menu" id="size"></div>
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Tailored
+                contexts</button>
+              <div class="dropdown-menu" id="ctxt"></div>
+            </div>
+          </div>
+          <hr>
+          <div class="btn-group-vertical btn-group-toggle" id="selection" data-toggle="buttons">
+            <label class="btn btn-danger active">
+              <input type="radio" name="selection" value="click" autocomplete="off" checked> <i
+                class="fas fa-mouse-pointer"></i> Click
+            </label>
+            <label class="btn btn-danger">
+              <input type="radio" name="selection" value="brush" autocomplete="off"> <i class="fas fa-crop-alt"></i>
+              Select area
+            </label>
+          </div>
+          <hr>
+          <div class="btn-group-vertical">
+            <button type="button" class="btn shadow-sm btn-secondary" id="clearSelect"><i class="fas fa-eraser"></i> Clear
+              token selection</button>
+            <button type="button" class="btn shadow-sm btn-secondary" id="showTable"><i class="fas fa-sticky-note"></i>
+              Open frequency table</button>
+          </div>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" style="width:100px" id="findTokensByFeature"
+              placeholder="Features in model" aria-label="Features in model"
+              aria-describedby="search tokens with this feature">
+            <div class="input-group-append">
+              <button class="btn btn-secondary" type="button" id="findTokensFeatureBtn">Search</button>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" style="width:100px" id="findTokensByContext"
+              placeholder="Context word" aria-label="Context word"
+              aria-describedby="search tokens with this context word">
+            <div class="input-group-append">
+              <button class="btn btn-secondary" type="button" id="findTokensContextBtn">Search</button>
+            </div>
+          </div>
+          <div class="input-group mb-3" id="tokenTextInput">
+            <label for="tokenChoice"></label>
+            <input type="text" class="form-control" style="width:100px" list="tokenIDs" id="tokenChoice"
+              name="tokenChoice" placeholder="Token ID" value="" />
+            <datalist id="tokenIDs"></datalist>
+          </div>
+          <hr>
+          <div class="btn-group-vertical" id="moveAround">
+            <button type="button" class="btn shadow-sm btn-marigreen" id="modelSelect"><i
+                class="fas fa-arrow-alt-circle-up"></i> UP </button>
+            <div class="btn-group">
+              <button type="button" class="btn shadow-sm btn-marigreen dropdown-toggle" data-toggle="dropdown"><i
+                  class="fas fa-random"></i> Switch to model</button>
+              <div class="dropdown-menu" id="models"></div>
+            </div>
           </div>
         </div>
-        <div class="plotArea centered">
+        <div class="plotArea centered shared model">
           <div id="svgContainer"></div>
         </div>
-        <div class="legendBar">
+        <div class="plotArea resizable withConc shared token">
+          <div id="concordance"></div>
+          <div id="miniPlots">
+            <div class="largeSvg" id="svgContainer1"></div>
+            <div class="largeSvg" id="svgContainer2"></div>
+          </div>
+        </div>
+        <div class="legendBar shared model">
           <div id="colorLegendContainer"></div>
           <div id="shapeLegendContainer"></div>
           <div id="sizeLegendContainer"></div>
+        </div>
+        <div class="legendBar andTokens shared token">
+          <div id="colorLegendContainer"></div>
+          <div id="shapeLegendContainer"></div>
+          <div id="sizeLegendContainer"></div>
+          <div id="tokenCheckboxes"></div>
         </div>
       </main>
      
@@ -115,8 +222,14 @@
   <script src="js/d3-axis.min.js"></script>
   <!-- d3 component to generate legends -->
   <script src="js/d3-legend.min.js"></script>
+  <!-- d3 component for brush -->
+  <script src="js/d3-brush.min.js"></script>
   <!-- d3 component for zoom -->
   <script src="js/d3-zoom.min.js"></script>
+  <!-- d3 component for sequential color palettes -->
+  <script src="js/d3-scale-chromatic.v1.min.js"></script>
+  <!-- d3 component for animations -->
+  <script src="js/d3-transition.min.js"></script>
   <!-- d3 component for file handling -->
   <script src="js/d3-fetch.min.js"></script>
   <!-- lodash -->

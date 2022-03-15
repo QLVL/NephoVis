@@ -3,6 +3,13 @@ class UserInterface {
 
 	}
 
+	static setLevelUI(level) {
+		// Find all shared elements that do not belong to the current inspection level
+		let unusedElements = d3.selectAll(".shared").nodes().filter((node) => !node.classList.contains(level));
+
+		d3.selectAll(unusedElements).remove();
+	}
+
 	static prepareUI(level, type, modelCount)
 	{
 		// Update the page title
