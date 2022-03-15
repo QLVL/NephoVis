@@ -73,15 +73,19 @@ class UserInterface {
 		let valueFunction = d => d;
 
 		d3.select("#" + targetElementName)
+		  .html("") // Necessary to "reset" in case this dropdown was built before
           .selectAll("button")
-          .data(dataset).enter()
+          .data(dataset)
+          .enter()
           .append("button")
           .attr("class", `dropdown-item ${className}`)
           .attr("xlink:href", "#")
           .attr("value", valueFunction)
-          .html(textFunction).each( (propertyValue, dropdownIndex, dropdownDivs) => 
+          .html(textFunction)
+		  .each( (propertyValue, dropdownIndex, dropdownDivs) => 
         		   		{ dropdownDivs[dropdownIndex].onclick = () => 
         		   			{ clickCallback(propertyValue); }; } );
+        return;
 	}
 
 	static resetSelectionButtons() {
@@ -95,26 +99,28 @@ class UserInterface {
 	}
 
 	// Set up the dropdown for alternative solutions
-	static buildSolutionSwitchDropdown(targetElementName, dataset, textFunction) {
-		// Create the button group
-		let alternativeSolutionDropdown = d3.select(`#${targetElementName}`)
-											.append("div") 
-            								.attr("class", "btn-group");
-        
-        // Create the button itself
-        alternativeSolutionDropdown.append("button")
-            					   .attr("type", "button")
-            					   .attr("class", "btn shadow-sm btn-marigreen dropdown-toggle")
-            					   .attr("data-toggle", "dropdown")
-            					   .html("<i class='fas fa-list-ul'></i> Switch solution");
-        
-        // Make it a dropdown
-        alternativeSolutionDropdown.append("div")
-            					   .attr("class", "dropdown-menu")
-            					   .attr("id", "solutions");
+	static buildSolutionSwitchDropdown(targetElementName, dataset, textFunction, clickCallback, update=false) {
+		if (!update) {
+			// Create the button group
+			let alternativeSolutionDropdown = d3.select(`#${targetElementName}`)
+												.append("div") 
+        	    								.attr("class", "btn-group");
+        	
+        	// Create the button itself
+        	alternativeSolutionDropdown.append("button")
+        	    					   .attr("type", "button")
+        	    					   .attr("class", "btn shadow-sm btn-marigreen dropdown-toggle")
+        	    					   .attr("data-toggle", "dropdown")
+        	    					   .html("<i class='fas fa-list-ul'></i> Switch solution");
+        	
+        	// Make it a dropdown
+        	alternativeSolutionDropdown.append("div")
+        	    					   .attr("class", "dropdown-menu")
+        	    					   .attr("id", "solutions");
+		}
 
         UserInterface.buildDropdown("solutions", dataset,
-    								() => { /* todo click callback */ },
+    								clickCallback,
     								textFunction);
 	}
 
