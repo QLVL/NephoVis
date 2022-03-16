@@ -30,10 +30,12 @@ class Plot {
 		this.svg = this.targetElement.append("svg")
 					.attr("viewBox", `0 0 ${this.dimensions["height"]} ${this.dimensions["width"]}`) // set w & h
 					.attr("preserveAspectRatio", "xMinYMin meet")
-					.classed("svgPlot", true)
+					.classed("svgPlot", this.level == "model")
 					.append("g") // add SVG group
 					.call(d3.zoom().on('zoom', this.onZoom));
+	}
 
+	initPlot() {
 		// set tooltip and pointer events
 		// todo: this is different for level 2
 		this.setTooltip(this.targetElement);
@@ -71,8 +73,23 @@ class Plot {
 	setAxes() {
 		// Get a range of all possible model axis values
 		// We do this by combining all possible values for model x and model y coordinates
-		let modelRange = Helpers.getValues(this.dataset, "model.x")
-								.concat(Helpers.getValues(this.dataset, "model.y"));
+		// For the token plot, this range is defined by possible values for a solution
+		let coordinatesSource;
+		switch (this.level) {
+			case "model":
+				coordinatesSource = "model";
+				break;
+			case "token":
+				coordinatesSource = this.chosenSolution;
+				break;
+		}
+
+		// todo: error handling when this is undefined
+
+		this.coordinateColumns = { "x": `${coordinatesSource}.x`, "y": `${coordinatesSource}.y` };
+
+		let modelRange = Helpers.getValues(this.dataset, this.coordinateColumns["x"])
+								.concat(Helpers.getValues(this.dataset, this.coordinateColumns["y"]));
 		
 		// The range of possible values for both x and y axis
 		let axesRange = this.getRangeFromValues(modelRange);
@@ -109,6 +126,15 @@ class Plot {
 		// Pre-compute the point cloud coordinates
 		// This way, we can save them for later use
 		this.pointCloudCoordinates = this.dataset.map((row) => { return this.scaleDataPoint(row); });
+
+		// TODO: This should probably be pre-computed before being passed to the visualisation
+
+		if (this.level == "token") {
+			// "dataset" should only contain non-lost tokens
+			this.dataset = this.originalDataset.filter(row => Helpers.exists(row, this.coordinateColumns));
+			// lost tokens contains... lost tokens
+			this.lostTokens = this.originalDataset.filter(row => !Helpers.exists(row, this.coordinateColumns));
+		}
 
 		this.pointCloud = this.svg.append("g") // create another SVG group
 								   // give it the "dot" class
@@ -162,14 +188,14 @@ class Plot {
 
 		// We return the transformed coordinates as some sort of tuple
 		// Why? Because we can them encode them separately
-		return [ this.d3AxisScaler["x"](row['model.x']),
-				 this.d3AxisScaler["y"](row['model.y']) ];
+		return [ this.d3AxisScaler["x"](row[this.coordinateColumns["x"]]),
+				 this.d3AxisScaler["y"](row[this.coordinateColumns["y"]]) ];
 	}
 
 	translateDataPoint(row) {
 		// We get the x and y coordinates for this data point, and scale them
 		// todo: make this variable for other levels
-		return `translate(${this.d3AxisScaler["x"](row['model.x'])}, ${this.d3AxisScaler["y"](row['model.y'])})`
+		return `translate(${this.d3AxisScaler["x"](row[this.coordinateColumns["x"]])}, ${this.d3AxisScaler["y"](row[this.coordinateColumns["y"]])})`
 	}
 
 	codePoint(row, dataPointStyle) {

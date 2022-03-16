@@ -46,4 +46,11 @@ class Helpers {
 		// Extract resulting combined objects from the Map as an Array
 		return Array.from(m.values());
 	}
+
+	// Distinguishes lost and non-list tokens
+	static exists(row, coordinateColumns) {
+		// This is voodoo magic, don't ask me!
+		return (d3.format(".3r")(row[coordinateColumns["x"]]) !== "0.00" || 
+				d3.format(".3r")(row[coordinateColumns["x"]]) !== "0.00");
+	}
 }

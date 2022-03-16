@@ -47,7 +47,10 @@ class Legend {
              // on making text bold. Please have mercy.
             legendContainer.selectAll(`.${dataPointStyle.style}label`)
 			  			   .classed("selected", (variable) => { 
-			  					return this.variableSelection[dataPointStyle.variable].includes(variable);
+			  			   		if (this.level == "model")
+			  						return this.variableSelection[dataPointStyle.variable].includes(variable);
+			  					else if (this.level == "token")
+			  						return false // 🤷‍ TODO: I'll have a think about this...
 			 });
 		}
 	}

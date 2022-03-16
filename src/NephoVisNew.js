@@ -95,6 +95,9 @@ class NephoVis {
 			this.dataPointStyles[dataPointStyleName].assign(variable,
 							Helpers.getValues(this.dataLoader.datasets[this.centralDataset],
 							variable));
+
+			console.log(this.dataPointStyles[dataPointStyleName].variable,
+						this.dataPointStyles[dataPointStyleName].values);
 		}
 
 		// todo: re-implement local storage if deemed necessary

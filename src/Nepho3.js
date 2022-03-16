@@ -24,6 +24,8 @@ class NephoVisLevel3 extends NephoVis {
 		this.contextVar = null; // todo: what is this?
 
 		this.buildInterface();
+
+		this.drawPlot();
 	}
 
 	buildTokenDataset() {
@@ -210,5 +212,19 @@ class NephoVisLevel3 extends NephoVis {
 	set chosenSolution(solution) {
 		this._chosenSolution = solution;
 		this.buildSolutionSwitchDropdown(true);
+	}
+
+	drawPlot() {
+		this.plot = new TokenPlot(this.level,
+							 	  "svgContainer1",
+							 	  { "width": 600, "height": 600, "padding": 40 },
+							 	  this.dataLoader.datasets["tokens"],
+							 	  this.chosenSolution,
+							 	  this.dataPointStyles,
+							 	  this.modelSelection,
+							 	  this.variableSelection,
+							 	  () => { /* todo: mouse click function */ },
+							 	  () => { /* todo: selection by legend */ });
+		this.plot.initPlot();
 	}
 }

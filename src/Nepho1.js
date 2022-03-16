@@ -75,5 +75,6 @@ class NephoVisLevel1 extends NephoVis {
 							 this.variableSelection,
 							 mouseClickFunction,
 							 selectionByLegendFunction);
+		this.plot.initPlot();
 	}
 }
