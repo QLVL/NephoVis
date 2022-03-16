@@ -122,6 +122,40 @@ class UserInterface {
     								textFunction);
 	}
 
+	static buildTokenIdDropdown(targetElementName, dataset) {
+		// Populate the token ID dropdown
+		d3.select(`#${targetElementName}`)
+		  .selectAll("option")
+    	  .data(dataset.map(row => row["_id"]))
+    	  .enter()
+    	  .append("option")
+    	  .attr("value", row => row);
+	}
+
+	static buildTokenIdCheckboxes(tokenIds, onChangeCallback) {
+		d3.select("#tokenCheckboxes").html("");
+
+		tokenIds.forEach(tokenId => {
+			d3.select("#tokenCheckboxes")
+    		  .append("div")
+    		  .attr("class", "btn-group-toggle")
+    		  .attr("data-toggle", "buttons")
+    		  .append("label")
+    		  .attr("class", "btn btn-secondary")
+    		  .text(tokenId.split("/").splice(2).join("/")) // todo: hard-coded tokenId pattern !!!
+    		  .style("font-size", 5)
+    		  .on("click", () => { onChangeCallback(tokenId); })
+    		  .append("input")
+    		  .attr("type", "checkbox")
+    		  .attr("name", "chosenToken")
+    		  .attr("value", tokenId)
+    		  .attr("id", `chosenToken_${tokenId}`)
+    		  .attr("placeholder", "tokenID")
+    		  .property("checked", true)
+    		  .property("active", true);
+    	});
+	}
+
 	/* General */
 
 	static formatVariableName(variableName) {

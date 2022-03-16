@@ -35,6 +35,13 @@ class NephoVisLevel3 extends NephoVis {
 																	this.dataLoader.datasets["variables"]);
 	}
 
+	initVars() {
+		super.initVars();
+
+		let tokenSelectionUpdateCallback = this.buildTokenOverview.bind(this);
+		this.tokenSelection = new TokenSelection(tokenSelectionUpdateCallback);
+	}
+
 	initTailoredVars() {
 		this.dataProcessor.tailoredContexts = this.dataProcessor.contexts
 			// TODO: I find this a very hacky solution, 
@@ -170,13 +177,30 @@ class NephoVisLevel3 extends NephoVis {
 												   		   truncatedModelName); }
 									); // TODO: again, very hard-coded behaviour here...
 
-		// Populate the token ID dropdown
-		d3.select("#tokenIDs")
-		  .selectAll("option")
-    	  .data(this.dataLoader.datasets["tokens"].map(row => row["_id"]))
-    	  .enter()
-    	  .append("option")
-    	  .attr("value", row => row);
+		this.buildTokenChoice();
+	}
+
+	buildTokenChoice() {
+		UserInterface.buildTokenIdDropdown("tokenIDs", this.dataLoader.datasets["tokens"]);
+
+    	// Add token to token selection on change
+    	let tokenChoiceSelect = document.getElementById("tokenChoice");
+    	tokenChoiceSelect.onchange = () => {
+    		let tokenId = tokenChoiceSelect.value;
+    		this.tokenSelection.addIfNotIn(tokenId);
+	
+    		// Reset dropdown value
+    		tokenChoiceSelect.value = "";
+    	};
+	}
+
+	buildTokenOverview() {
+		UserInterface.buildTokenIdCheckboxes(this.tokenSelection.tokens,
+											(tokenId) => { this.handleTokenChange(tokenId); });
+	}
+
+	handleTokenChange(tokenId) {
+		this.tokenSelection.remove(tokenId);
 	}
 
 	get chosenSolution() {
