@@ -1,10 +1,14 @@
 class DataPointStyle {
-	constructor(style, candidates) {
+	constructor(level, style, candidates) {
+		this.level = level;
 		this.style = style;
 		this.candidates = candidates;
 		this.variable = null;
 		this.values = null;
 		this.format = input => input;
+
+		this.valueFunction = d => d;
+		this.textFunction = d => d;
 
 		// Attach d3 styles
 		switch (this.style) {
@@ -24,6 +28,12 @@ class DataPointStyle {
 									.shape("circle")
 									.labelOffset(15);
             	this.legendContainer = "#sizeLegendContainer";
+
+            	// Set text and value function for the token level
+            	if (this.level == "token") {
+            		this.valueFunction = d => d.value;
+            		this.textFunction = d => d.key;
+            	}
 				break;
 			case "colour":
 				this.schema = d3.scaleOrdinal(Constants.colourPalette);
