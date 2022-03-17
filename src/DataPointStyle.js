@@ -14,7 +14,7 @@ class DataPointStyle {
 		switch (this.style) {
 			case "shape":
 				this.schema = d3.scaleOrdinal(d3.symbols);
-				this.default_value = d3.symbolWye;
+				this.default_value = (this.level == "model" ? d3.symbolWye : d3.symbolCircle);
 				this.baseLegend = d3.legendSymbol();
 				this.legendContainer = "#shapeLegendContainer";
 				break;
