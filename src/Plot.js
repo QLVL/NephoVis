@@ -140,6 +140,8 @@ class Plot {
 
 		// Clicks and mouse over
 		this.applyEvents(this.pointCloud);
+
+		this.pointCloudElements = this.svg.selectAll(".dot").selectAll("path");
 	}
 
 	applyEvents(points) {

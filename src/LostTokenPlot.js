@@ -10,7 +10,7 @@ class LostTokenPlot extends TokenPlot {
 		super(level, targetElementName, {}, dataset, chosenSolution, contextVar,
 				tailoredContexts,
 				dataPointStyles, modelSelection, tokenSelection,
-				variableSelection, onDataPointClick, selectionByLegend, false)
+				variableSelection, onDataPointClick, null, selectionByLegend, false)
 
 		this.dimensions["width"] = parseInt(this.targetElement.style("width"));
 		this.dimensions["padding"] = 20;

@@ -2,13 +2,14 @@ class TokenPlot extends Plot {
 	constructor(level, targetElementName, dimensions, dataset, chosenSolution, contextVar,
 				tailoredContexts,
 				dataPointStyles, modelSelection, tokenSelection,
-				variableSelection, onDataPointClick, selectionByLegend, standalone=true) {
+				variableSelection, onDataPointClick, brushEndCallback, selectionByLegend, standalone=true) {
 		super(level, targetElementName, dimensions, dataset, dataPointStyles,
 				modelSelection, variableSelection, onDataPointClick, selectionByLegend);
 
 		if (standalone)
 			this.appendSvg();
 
+		this.brushEndCallback = brushEndCallback;
 		this.chosenSolution = chosenSolution;
 		this.originalDataset = this.dataset;
 		this.contextVar = contextVar;
@@ -72,5 +73,50 @@ class TokenPlot extends Plot {
 		  .style("border-color", "gray")
 		  .style("font-size", "0.8em")
 		  .html(tooltipTitle + tooltipInfo);
+	}
+
+	applyBrush(brush) {
+		brush = brush.on("start", () => { console.log("Brush start") })
+					 .on("brush", () => this.onBrush())
+					 .on("end", () => this.onBrushEnd());
+
+		this.svg.append("g")
+        		.attr("transform", `translate(${this.dimensions["padding"]}, ${this.dimensions["padding"]})`)
+        		.attr("class", "brush")
+        		.call(brush);
+	}
+
+	onBrush() {
+		let event = d3.event.selection;
+
+		if (event == null) {
+			return;
+		}
+
+		this.tokenSelection.clear(false);
+
+		this.pointCloudElements.classed("lighter", (row, index, pointElements) =>
+			{
+				let pointElement = d3.select(pointElements[index]);
+				let position = this.pointCloudCoordinates[+pointElement.attr("pointIndex")];
+
+				// Do not ask what this is. It works. It is perfect as it is. Do not question.
+				let inSelection = !((position[0] < event[0][0] + this.dimensions["padding"] ||
+						 			 position[0] > event[1][0] + this.dimensions["padding"] ||
+						 			 position[1] < event[0][1] + this.dimensions["padding"] ||
+						 			 position[1] > event[1][1] + this.dimensions["padding"]) &&
+						 			 Helpers.existsFromColumn(row, this.chosenSolution));
+
+				// If we can already create the selection on the fly, it's easier to return it on brush end
+				if (inSelection) {
+					this.tokenSelection.add(row["_id"], false);
+				}
+
+				return !inSelection;
+			});
+	}
+
+	onBrushEnd() {
+		this.brushEndCallback(this.tokenSelection.tokens);
 	}
 }

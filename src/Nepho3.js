@@ -3,6 +3,12 @@ class NephoVisLevel3 extends NephoVis {
 		super(level, type, selection);
 		this.model = model;
 		this.centralDataset = "tokens";
+		this.brush = null;
+		this.brushActive = false;
+
+		this.dimensions = { "width": 600,
+							"height": 600,
+							"padding": 40 };
 	}
 
 	execute() {
@@ -176,8 +182,6 @@ class NephoVisLevel3 extends NephoVis {
 											pair["key"],
 									d => d.value);
 
-		console.log(this.modelSelection.models);
-
 		// We build the model switcher as well
 		UserInterface.buildDropdown("models",
 									this.modelSelection.models,
@@ -193,6 +197,7 @@ class NephoVisLevel3 extends NephoVis {
 									); // TODO: again, very hard-coded behaviour here...
 
 		this.buildTokenChoice();
+		this.buildBrushOrClick();
 	}
 
 	buildTokenChoice() {
@@ -212,6 +217,19 @@ class NephoVisLevel3 extends NephoVis {
 	buildTokenOverview() {
 		UserInterface.buildTokenIdCheckboxes(this.tokenSelection.tokens,
 											(tokenId) => { this.handleTokenChange(tokenId); });
+	}
+
+	buildBrushOrClick() {
+		let brushOrClickSwitchers = document.querySelectorAll('input[name="selection"]');
+
+		brushOrClickSwitchers.forEach(brushOrClickSwitcher => {
+			brushOrClickSwitcher.onchange = (event) => {
+				// todo: brush on the second plot
+				let selectedFunction = event.target.value;
+				this.brushActive = selectedFunction == "brush";
+				this.drawPlot();
+			} 
+		});
 	}
 
 	handleTokenChange(tokenId) {
@@ -244,10 +262,11 @@ class NephoVisLevel3 extends NephoVis {
 
 	drawPlot() {
 		let mouseClickFunction = this.mouseClickPoint.bind(this);
+		let brushEndFunction = this.brushEnd.bind(this);
 
 		this.plot = new TokenPlot(this.level,
 							 	  "svgContainer1",
-							 	  { "width": 600, "height": 600, "padding": 40 },
+							 	  this.dimensions,
 							 	  this.dataLoader.datasets["nonLostTokens"],
 							 	  this.chosenSolution,
 							 	  this.contextVar,
@@ -257,7 +276,18 @@ class NephoVisLevel3 extends NephoVis {
 							 	  this.tokenSelection,
 							 	  this.variableSelection,
 							 	  mouseClickFunction,
+							 	  brushEndFunction,
 							 	  () => { /* todo: selection by legend */ });
+
+		if (this.brushActive)
+		{
+			this.brush = d3.brush()
+						   .extent([ [0, 0],
+						   		   	[ this.dimensions["width"],
+						   		   	  this.dimensions["height"] ] ]);
+
+			this.plot.applyBrush(this.brush);
+		}
 
 		if (this.dataLoader.datasets["lostTokens"].length == 0) {
 			console.log("no token for you");
@@ -273,5 +303,11 @@ class NephoVisLevel3 extends NephoVis {
 											   this.tokenSelection,
 											   this.variableSelection,
 											   mouseClickFunction);
+	}
+
+	brushEnd(tokens) {
+		this.tokenSelection.restore(tokens);
+		this.buildInterface();
+		this.buildTokenOverview();
 	}
 }
