@@ -102,7 +102,7 @@ class NephoVisLevel3 extends NephoVis {
 	buildSolutionSwitchDropdown(update=false) {
 		// Build solution switcher only if there are multiple solutions
 		if (this.dataLoader.alternatives != null) {
-			if (this.dataLoader.alternatives > 1) {
+			if (this.dataLoader.alternatives.length > 1) {
 				UserInterface.buildSolutionSwitchDropdown("moveAround", this.dataLoader.alternatives,
 													  (solution) => { return solution == this.chosenSolution ?
 													  				  		`<b>${solution}</b>` :
@@ -170,6 +170,11 @@ class NephoVisLevel3 extends NephoVis {
 										dataPointStyle.textFunction,
 										dataPointStyle.valueFunction);
 		}
+
+		UserInterface.setButton("clearSelect", () => 
+			{
+				this.tokenSelection.clear();
+			});
 
 		// We have to build the dropdown for the context words manually
 		UserInterface.buildDropdown("ctxt",
