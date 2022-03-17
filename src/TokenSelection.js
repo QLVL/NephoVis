@@ -5,9 +5,12 @@ class TokenSelection {
 		this.callback = callback;
 	}
 
-	add(token) {
+	add(token, callback=true) {
 		this.tokens.push(token);
-		this.callback();
+
+		if (callback) {
+			this.callback();
+		}
 	}
 
 	addIfNotIn(token) {
@@ -28,9 +31,12 @@ class TokenSelection {
 		this.tokens = tokens;
 	}
 
-	clear() {
+	clear(callback=true) {
 		this.models = [];
-		this.callback();
+
+		if (callback) {
+			this.callback();
+		}
 	}
 
 	get count() {
