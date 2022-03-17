@@ -176,6 +176,11 @@ class NephoVisLevel3 extends NephoVis {
 				this.tokenSelection.clear();
 			});
 
+		UserInterface.setButton("findTokensContextBtn", (event) => {
+			let needle = document.getElementById("findTokensByContext").value;
+			this.selectByContextSearch(needle);
+		});
+
 		// We have to build the dropdown for the context words manually
 		UserInterface.buildDropdown("ctxt",
 									this.dataProcessor.tailoredContexts,
@@ -265,6 +270,15 @@ class NephoVisLevel3 extends NephoVis {
 		this.drawPlot();
 	}
 
+	selectByContextSearch(needle) {
+		let matchingTokens = this.dataLoader.datasets["tokens"].filter(row => row[this.contextVar].includes(needle));
+		console.log(matchingTokens);
+		let tokenSelection = matchingTokens.map(row => row["_id"]);
+
+		this.tokenSelection.restore(tokenSelection);
+		this.drawPlot();
+	}
+
 	drawPlot() {
 		let mouseClickFunction = this.mouseClickPoint.bind(this);
 		let brushEndFunction = this.brushEnd.bind(this);
@@ -312,6 +326,10 @@ class NephoVisLevel3 extends NephoVis {
 
 	brushEnd(tokens) {
 		this.tokenSelection.restore(tokens);
+		this.afterTokenRestore();
+	}
+
+	afterTokenRestore() {
 		this.buildInterface();
 		this.buildTokenOverview();
 	}
