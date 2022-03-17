@@ -35,6 +35,14 @@ class NephoVisLevel3 extends NephoVis {
 		// Infuse the tokens dataset with variables information
 		this.dataLoader.datasets["tokens"] = Helpers.mergeVariables(this.dataLoader.datasets["tokens"],
 																	this.dataLoader.datasets["variables"]);
+
+		// Find lost tokens (and non lost tokens)
+		this.dataLoader.datasets["nonLostTokens"] = this.dataLoader.datasets["tokens"].filter(row =>
+			Helpers.existsFromColumn(row, this.chosenSolution));
+		this.dataLoader.datasets["lostTokens"] = this.dataLoader.datasets["tokens"].filter(row =>
+			!Helpers.existsFromColumn(row, this.chosenSolution));
+
+		console.log(this.dataLoader.datasets["lostTokens"]);
 	}
 
 	initVars() {
@@ -236,9 +244,8 @@ class NephoVisLevel3 extends NephoVis {
 		this.plot = new TokenPlot(this.level,
 							 	  "svgContainer1",
 							 	  { "width": 600, "height": 600, "padding": 40 },
-							 	  this.dataLoader.datasets["tokens"],
+							 	  this.dataLoader.datasets["nonLostTokens"],
 							 	  this.chosenSolution,
-							 	  "tokens",
 							 	  this.contextVar,
 							 	  this.dataProcessor.tailoredContexts,
 							 	  this.dataPointStyles,
@@ -247,5 +254,20 @@ class NephoVisLevel3 extends NephoVis {
 							 	  this.variableSelection,
 							 	  mouseClickFunction,
 							 	  () => { /* todo: selection by legend */ });
+
+		if (this.dataLoader.datasets["lostTokens"].length == 0) {
+			console.log("no token for you");
+			return;
+		}
+
+		this.lostTokenPlot = new LostTokenPlot(this.level,
+											   "losttokens",
+											   "tokens",
+											   this.dataLoader.datasets["lostTokens"],
+											   this.dataProcessor.tailoredContexts,
+											   this.dataPointStyles,
+											   this.tokenSelection,
+											   this.variableSelection,
+											   mouseClickFunction);
 	}
 }

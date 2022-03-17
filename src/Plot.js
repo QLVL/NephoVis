@@ -25,7 +25,9 @@ class Plot {
 
 		// Save the dimensions
 		this.dimensions = dimensions;
+	}
 
+	appendSvg() {
 		// Create a new SVG element
 		this.svg = this.targetElement.append("svg")
 					.attr("viewBox", `0 0 ${this.dimensions["height"]} ${this.dimensions["width"]}`) // set w & h
