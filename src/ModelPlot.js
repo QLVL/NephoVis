@@ -82,4 +82,14 @@ class ModelPlot extends Plot {
 
 		this.highlightPoint(pointElement);
 	}
+
+	mouseOut() {
+		super.mouseOut();
+
+		// Do the fade-out effect
+		this.tooltip.transition().duration(this.tooltipTimeoutDuration).style("opacity", 0);
+		// Completely set display to "none" after the set timeout
+		this.tooltipHideTimeout = setTimeout(
+			() => { this.tooltip.style("display", "none"); }, this.tooltipTimeoutDuration);
+	}
 }

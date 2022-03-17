@@ -223,18 +223,7 @@ class Plot {
 
 	mouseOut() {
 		// Remove selector rings
-		d3.selectAll(".selector").remove()
-
-		switch (this.level) {
-			case "model":
-				// Do the fade-out effect
-				this.tooltip.transition().duration(this.tooltipTimeoutDuration).style("opacity", 0);
-
-				// Completely set display to "none" after the set timeout
-				this.tooltipHideTimeout = setTimeout(
-				() => { this.tooltip.style("display", "none"); }, this.tooltipTimeoutDuration);
-				break;
-		}
+		d3.selectAll(".selector").remove();
 	}
 
 	updateSelection() {
