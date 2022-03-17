@@ -32,7 +32,7 @@ class TokenSelection {
 	}
 
 	clear(callback=true) {
-		this.models = [];
+		this.tokens = [];
 
 		if (callback) {
 			this.callback();
