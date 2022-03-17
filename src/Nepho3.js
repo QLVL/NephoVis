@@ -221,6 +221,8 @@ class NephoVisLevel3 extends NephoVis {
 							 	  this.dataLoader.datasets["tokens"],
 							 	  this.chosenSolution,
 							 	  "tokens",
+							 	  this.contextVar,
+							 	  this.dataProcessor.tailoredContexts,
 							 	  this.dataPointStyles,
 							 	  this.modelSelection,
 							 	  this.variableSelection,
