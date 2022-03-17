@@ -51,6 +51,6 @@ class Helpers {
 	static exists(row, coordinateColumns) {
 		// This is voodoo magic, don't ask me!
 		return (d3.format(".3r")(row[coordinateColumns["x"]]) !== "0.00" || 
-				d3.format(".3r")(row[coordinateColumns["x"]]) !== "0.00");
+				d3.format(".3r")(row[coordinateColumns["y"]]) !== "0.00");
 	}
 }
