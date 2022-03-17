@@ -38,7 +38,8 @@ class Plot {
 	initPlot() {
 		// set tooltip and pointer events
 		// todo: this is different for level 2
-		this.setTooltip(this.targetElement);
+		if (this.level == "model")
+			this.setTooltip(this.targetElement);
 		this.setPointerEvents();
 
 		// Initialise the plot axes
@@ -160,7 +161,18 @@ class Plot {
 									)
 									.style("fill", (row) => { return this.codePoint(row, this.dataPointStyles["colour"]); } )
 						.classed("lighter", (row) => { return !this.isPointSelected(row); })
-						.on("mouseover", (row, index, points) => {  this.mouseOverPoint(row, points[index]); })
+						.on("mouseover", (row, index, points) => {
+							let pointElement = points[index];
+							pointElement = d3.select(pointElement);
+							switch (this.level) {
+								case "model":
+									this.mouseOverPointModel(row, pointElement); 
+									break;
+								case "token":
+									this.mouseOverPointToken(row, pointElement);
+									break;
+							}
+						})
 						.on("mouseout", () => { this.mouseOut(); }) // todo implement mouseOut
 						.on("click", (row, index, points) => { this.onDataPointClick(row, points[index]); });
 	}
@@ -221,11 +233,10 @@ class Plot {
 		return true;
 	}
 
-	mouseOverPoint(row, pointElement) {
+	mouseOverPointModel(row, pointElement) {
 		// Update svg container reference
 		this.svgContainer = d3.select(".svgPlot");
 
-		pointElement = d3.select(pointElement);
 		// Reconstruct the coordinates from point inderx
 		let position = this.pointCloudCoordinates[+pointElement.attr("pointIndex")];
 
@@ -277,6 +288,14 @@ class Plot {
 		// Adjust the left coordinate
 		this.tooltip.style("left", tooltipLeftCoordinate);
 
+		this.highlightPoint(pointElement);
+	}
+
+	mouseOverPointToken(row, pointElement) {
+		this.highlightPoint(pointElement);
+	}
+
+	highlightPoint(pointElement) {
 		// -- HIGHLIGHT EFFECT --
 		this.svg.select(".dot")
 				.append("path")
@@ -292,12 +311,16 @@ class Plot {
 		// Remove selector rings
 		d3.selectAll(".selector").remove()
 
-		// Do the fade-out effect
-		this.tooltip.transition().duration(this.tooltipTimeoutDuration).style("opacity", 0);
+		switch (this.level) {
+			case "model":
+				// Do the fade-out effect
+				this.tooltip.transition().duration(this.tooltipTimeoutDuration).style("opacity", 0);
 
-		// Completely set display to "none" after the set timeout
-		this.tooltipHideTimeout = setTimeout(
-			() => { this.tooltip.style("display", "none"); }, this.tooltipTimeoutDuration);
+				// Completely set display to "none" after the set timeout
+				this.tooltipHideTimeout = setTimeout(
+				() => { this.tooltip.style("display", "none"); }, this.tooltipTimeoutDuration);
+				break;
+		}
 	}
 
 	updateSelection() {
