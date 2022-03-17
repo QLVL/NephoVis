@@ -6,6 +6,8 @@ class TokenPlot extends Plot {
 		this.chosenSolution = chosenSolution;
 		this.target = target;
 		this.originalDataset = this.dataset;
+
+		this.initPlot();
 	}
 
 	initPlot() {
@@ -15,6 +17,25 @@ class TokenPlot extends Plot {
 		super.initPlot();
 
 		this.generateLostTokens();
+	}
+
+	setAxes() {
+		this.coordinatesSource = this.chosenSolution;
+
+		super.setAxes();
+	}
+
+	generatePointCloud() {
+		// "dataset" should only contain non-lost tokens
+		this.dataset = this.originalDataset.filter(row => Helpers.exists(row, this.coordinateColumns));
+		// lost tokens contains... lost tokens
+		this.lostTokens = this.originalDataset.filter(row => !Helpers.exists(row, this.coordinateColumns));
+
+		super.generatePointCloud();
+	}
+
+	mouseOverPoint(row, pointElement) {
+		this.highlightPoint(pointElement);
 	}
 
 	generateLostTokens() {

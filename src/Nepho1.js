@@ -66,7 +66,7 @@ class NephoVisLevel1 extends NephoVis {
 													  	type: this.type,
 													  	selection: this.exportSelection() });
 
-		this.plot = new Plot(this.level,
+		this.plot = new ModelPlot(this.level,
 							 "svgContainer",
 							 { "width": 600, "height": 600, "padding": 40 },
 							 this.dataLoader.datasets["models"],
@@ -75,6 +75,5 @@ class NephoVisLevel1 extends NephoVis {
 							 this.variableSelection,
 							 mouseClickFunction,
 							 selectionByLegendFunction);
-		this.plot.initPlot();
 	}
 }

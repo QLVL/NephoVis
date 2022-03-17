@@ -36,10 +36,6 @@ class Plot {
 	}
 
 	initPlot() {
-		// set tooltip and pointer events
-		// todo: this is different for level 2
-		if (this.level == "model")
-			this.setTooltip(this.targetElement);
 		this.setPointerEvents();
 
 		// Initialise the plot axes
@@ -75,19 +71,10 @@ class Plot {
 		// Get a range of all possible model axis values
 		// We do this by combining all possible values for model x and model y coordinates
 		// For the token plot, this range is defined by possible values for a solution
-		let coordinatesSource;
-		switch (this.level) {
-			case "model":
-				coordinatesSource = "model";
-				break;
-			case "token":
-				coordinatesSource = this.chosenSolution;
-				break;
-		}
+		// this.coordinatesSource is defined in each child class
 
-		// todo: error handling when this is undefined
-
-		this.coordinateColumns = { "x": `${coordinatesSource}.x`, "y": `${coordinatesSource}.y` };
+		this.coordinateColumns = { "x": `${this.coordinatesSource}.x`,
+								   "y": `${this.coordinatesSource}.y` };
 
 		let modelRange = Helpers.getValues(this.dataset, this.coordinateColumns["x"])
 								.concat(Helpers.getValues(this.dataset, this.coordinateColumns["y"]));
@@ -128,15 +115,6 @@ class Plot {
 		// This way, we can save them for later use
 		this.pointCloudCoordinates = this.dataset.map((row) => { return this.scaleDataPoint(row); });
 
-		// TODO: This should probably be pre-computed before being passed to the visualisation
-
-		if (this.level == "token") {
-			// "dataset" should only contain non-lost tokens
-			this.dataset = this.originalDataset.filter(row => Helpers.exists(row, this.coordinateColumns));
-			// lost tokens contains... lost tokens
-			this.lostTokens = this.originalDataset.filter(row => !Helpers.exists(row, this.coordinateColumns));
-		}
-
 		this.pointCloud = this.svg.append("g") // create another SVG group
 								   // give it the "dot" class
 								  .attr("class", "dot") 
@@ -156,19 +134,12 @@ class Plot {
 
 		// Set data points style
 		this.stylePoints(this.pointCloud)
-						.classed("lighter", (row) => { return !this.isPointSelected(row); })
-						.on("mouseover", (row, index, points) => {
-							let pointElement = points[index];
-							pointElement = d3.select(pointElement);
-							switch (this.level) {
-								// would be better to just move this method to the TokenPlot class (todo sebiet)
-								case "model":
-									this.mouseOverPointModel(row, pointElement); 
-									break;
-								case "token":
-									this.mouseOverPointToken(row, pointElement);
-									break;
-							}
+						.classed("lighter", (row) => { return !this.isPointSelected(row); });
+
+		// Clicks and mouse over
+		this.pointCloud.on("mouseover", (row, index, points) => {
+							let pointElement = d3.select(points[index]);
+							this.mouseOverPoint(row, pointElement);
 						})
 						.on("mouseout", () => { this.mouseOut(); }) // todo implement mouseOut
 						.on("click", (row, index, points) => { this.onDataPointClick(row, points[index]); });
@@ -236,68 +207,6 @@ class Plot {
 		}
 
 		return true;
-	}
-
-	mouseOverPointModel(row, pointElement) {
-		// Update svg container reference
-		this.svgContainer = d3.select(".svgPlot");
-
-		// Reconstruct the coordinates from point inderx
-		let position = this.pointCloudCoordinates[+pointElement.attr("pointIndex")];
-
-		let svgDimensions = { "width": parseFloat(this.svgContainer.style("width")),
-							  "height": parseFloat(this.svgContainer.style("height")) };
-
-		// The plot is actually scaled depending on the screen size
-		// We compute the actual "real" absolute coordinates
-		let realCoordinates = [ svgDimensions["width"] / this.dimensions["width"] * position[0],
-								svgDimensions["height"] / this.dimensions["height"] * position[1] ];
-
-		// --- TOOLTIP ---
-
-		// Clear tooltip hide timeout
-		clearTimeout(this.tooltipHideTimeout);
-
-		// Show the tooltip
-		this.tooltip.transition()
-					.duration(200)
-					.style("opacity", 1)
-					.style("display", "block");
-
-		// Check for each data point style whether there is a variable attached to it
-		// If there is, generate the required tooltip text
-		let tooltipData = [];
-		for (let dataPointStyleName in this.dataPointStyles) {
-			let dataPointStyle = this.dataPointStyles[dataPointStyleName];
-			let tooltipRow = dataPointStyle.variable == null ? 
-							 "" :
-							 `<br><strong>${dataPointStyle.variable}: ${dataPointStyle.format(row[dataPointStyle.variable])}</strong>`;
-			tooltipData.push(tooltipRow);
-		}
-	
-		let tooltipContent = `<strong>${row["_model"]}</strong>` + tooltipData.join("");
-
-		// Create the tooltip first (we need its width to position it)
-		this.tooltip.html(tooltipContent)
-			 	    .style("top", realCoordinates[1] + "px");
-
-		// Determine the tooltip location
-		let tooltipLeftCoordinate = position[0];
-		let tooltipWidth = parseInt(this.tooltip.style("width"));
-		// If there isn't enough room to show the tooltip
-		if (svgDimensions["width"] - position[0] < tooltipWidth) {
-			// Adjust the tooltip position
-			tooltipLeftCoordinate = Math.max(0, (position[0] - tooltipWidth)) + "px";
-		}
-
-		// Adjust the left coordinate
-		this.tooltip.style("left", tooltipLeftCoordinate);
-
-		this.highlightPoint(pointElement);
-	}
-
-	mouseOverPointToken(row, pointElement) {
-		this.highlightPoint(pointElement);
 	}
 
 	highlightPoint(pointElement) {

@@ -220,11 +220,11 @@ class NephoVisLevel3 extends NephoVis {
 							 	  { "width": 600, "height": 600, "padding": 40 },
 							 	  this.dataLoader.datasets["tokens"],
 							 	  this.chosenSolution,
+							 	  "tokens",
 							 	  this.dataPointStyles,
 							 	  this.modelSelection,
 							 	  this.variableSelection,
 							 	  () => { /* todo: mouse click function */ },
 							 	  () => { /* todo: selection by legend */ });
-		this.plot.initPlot();
 	}
 }
