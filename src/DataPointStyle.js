@@ -36,7 +36,14 @@ class DataPointStyle {
             	}
 				break;
 			case "colour":
-				this.schema = d3.scaleOrdinal(Constants.colourPalette);
+				this.colourRange = d3.schemeSet3;
+				if (this.values != null) {
+					if (this.values.length > 8) {
+						this.colourRange = Constants.colourPalette;
+					}
+				}
+
+				this.schema = d3.scaleOrdinal(this.colourRange);
 				this.default_value = "#1f77b4"; // original colour
 				this.baseLegend = d3.legendColor()
             						.shape("path", d3.symbol()
@@ -63,11 +70,11 @@ class DataPointStyle {
 		switch (this.style) {
 			case "colour":
 				// TODO: won't this cause a desync between the point styles and the legend?
-				let colourRange = this.values.length <= 8 ? Constants.colourPalette : d3.schemeSet3;
-
+				// update: YES!!!
+				// update: I fixed it
 				this.scale = d3.scaleOrdinal()
 							   .domain(this.values)
-							   .range(colourRange);
+							   .range(this.colourRange);
 				break;
 			case "shape":
 				// TODO: again, what is this?
