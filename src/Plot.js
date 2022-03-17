@@ -155,16 +155,13 @@ class Plot {
 								  ;
 
 		// Set data points style
-		this.pointCloud.attr("d", d3.symbol()
-									.type((row) => { return this.codePoint(row, this.dataPointStyles["shape"]); } )
-									.size((row) => { return this.codePoint(row, this.dataPointStyles["size"]); } )
-									)
-									.style("fill", (row) => { return this.codePoint(row, this.dataPointStyles["colour"]); } )
+		this.stylePoints(this.pointCloud)
 						.classed("lighter", (row) => { return !this.isPointSelected(row); })
 						.on("mouseover", (row, index, points) => {
 							let pointElement = points[index];
 							pointElement = d3.select(pointElement);
 							switch (this.level) {
+								// would be better to just move this method to the TokenPlot class (todo sebiet)
 								case "model":
 									this.mouseOverPointModel(row, pointElement); 
 									break;
@@ -175,6 +172,14 @@ class Plot {
 						})
 						.on("mouseout", () => { this.mouseOut(); }) // todo implement mouseOut
 						.on("click", (row, index, points) => { this.onDataPointClick(row, points[index]); });
+	}
+
+	stylePoints(points) {
+		return points.attr("d", d3.symbol()
+								.type((row) => { return this.codePoint(row, this.dataPointStyles["shape"]); } )
+								.size((row) => { return this.codePoint(row, this.dataPointStyles["size"]); } )
+								)
+								.style("fill", (row) => { return this.codePoint(row, this.dataPointStyles["colour"]); } );
 	}
 
 	traceCenter(p, x1, x2, y1, y2) {

@@ -1,9 +1,67 @@
 class TokenPlot extends Plot {
-	constructor(level, targetElementName, dimensions, dataset, chosenSolution, dataPointStyles,
+	constructor(level, targetElementName, dimensions, dataset, chosenSolution, target, dataPointStyles,
 				modelSelection, variableSelection, onDataPointClick, selectionByLegend) {
 		super(level, targetElementName, dimensions, dataset, dataPointStyles,
 				modelSelection, variableSelection, onDataPointClick, selectionByLegend);
 		this.chosenSolution = chosenSolution;
+		this.target = target;
 		this.originalDataset = this.dataset;
+	}
+
+	initPlot() {
+		// Delete all lost token overviews
+		d3.selectAll(".lost").remove();
+
+		super.initPlot();
+
+		this.generateLostTokens();
+	}
+
+	generateLostTokens() {
+		// Don't draw any lost tokens if there aren't any
+		if (this.lostTokens.length == 0) {
+			return
+		}
+
+		// Ready the sidebar for lost tokens
+		let lostTokensSidebar = d3.select(".sidebar")
+								  .append("div")
+								  //.attr("id", `#lost${}`); ? ? ?
+								  .attr("id", "lost")
+								  .classed("lost", true);
+
+		let sidebarWidth = parseInt(lostTokensSidebar.style("width"));
+		// todo: dots per row doesn't scale when sidebar width is changed	
+	    let dotsPerRow = Math.floor((sidebarWidth - 20) / 10);
+	    let dotsColumns = Math.ceil(this.lostTokens.length / dotsPerRow);
+
+	    let lostItem = "TODO" // tokens or FOCs?
+
+	    // Add DOM elements
+	    lostTokensSidebar.append("hr");
+	    lostTokensSidebar.append("h5")
+	    	   			 .text(`Lost ${this.target}`);
+
+	   	// Add the lost tokens
+    	let tokens = lostTokensSidebar.append("svg")
+      					 .attr("width", sidebarWidth)
+      					 .attr("height", dotsColumns * 10 + this.dimensions["padding"] / 2)
+      					 .attr("transform", "translate(0,0)")
+      					 .append("g")
+      					 .attr("transform", `translate(${10},${10})`)
+      					 .attr("class", "dot")
+      					 .selectAll("path")
+      					 .data(this.lostTokens)
+      					 .enter()
+      					 .append("path")
+      					 .attr("class", "graph lost")
+      					 .attr("transform", (row) => {
+      		   				let j = Math.floor(this.lostTokens.indexOf(row) / dotsPerRow);
+        					let i = this.lostTokens.indexOf(row) - (j * dotsPerRow);
+        					return (`translate(${i * 10},${j * 10})`);
+      					 });
+      		   //.call(styleDot, settings, target);
+
+      	this.stylePoints(tokens);
 	}
 }
