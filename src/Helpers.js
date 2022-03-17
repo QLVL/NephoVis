@@ -53,4 +53,11 @@ class Helpers {
 		return (d3.format(".3r")(row[coordinateColumns["x"]]) !== "0.00" || 
 				d3.format(".3r")(row[coordinateColumns["y"]]) !== "0.00");
 	}
+
+	static existsFromColumn(row, column) {
+		let coordinateColumns = { "x": `${column}.x`,
+								  "y": `${column}.y` };
+								  
+		return Helpers.exists(row, coordinateColumns);
+	}
 }
