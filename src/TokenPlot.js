@@ -1,7 +1,8 @@
 class TokenPlot extends Plot {
 	constructor(level, targetElementName, dimensions, dataset, chosenSolution, target, contextVar,
 				tailoredContexts,
-				dataPointStyles, modelSelection, variableSelection, onDataPointClick, selectionByLegend) {
+				dataPointStyles, modelSelection, tokenSelection,
+				variableSelection, onDataPointClick, selectionByLegend) {
 		super(level, targetElementName, dimensions, dataset, dataPointStyles,
 				modelSelection, variableSelection, onDataPointClick, selectionByLegend);
 		this.chosenSolution = chosenSolution;
@@ -9,6 +10,10 @@ class TokenPlot extends Plot {
 		this.originalDataset = this.dataset;
 		this.contextVar = contextVar;
 		this.tailoredContexts = tailoredContexts;
+		this.tokenSelection = tokenSelection;
+
+		this.idColumn = "_id";
+		this.selection = this.tokenSelection;
 
 		this.initPlot();
 	}
@@ -38,6 +43,7 @@ class TokenPlot extends Plot {
 	}
 
 	mouseOverPoint(row, pointElement) {
+		d3.select("#concordance").html("")
 		this.highlightPoint(pointElement);
 
 		this.showContext(row, pointElement);
@@ -45,8 +51,16 @@ class TokenPlot extends Plot {
 
 	mouseOut() {
 		super.mouseOut();
-		d3.select("#concordance").select("p").remove();
-      	d3.selectAll(".selector").remove();
+		d3.select("#concordance").html("");
+	}
+
+	isPointSelected(row) {
+		if (this.tokenSelection.tokens.length > 0)
+		{
+			return this.tokenSelection.tokens.includes(row["_id"]);
+		}
+
+		return true;
 	}
 
 	showContext(row, pointElement) {
@@ -120,5 +134,6 @@ class TokenPlot extends Plot {
       		   //.call(styleDot, settings, target);
 
       	this.stylePoints(tokens);
+      	this.applyEvents(tokens);
 	}
 }

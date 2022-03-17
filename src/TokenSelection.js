@@ -36,4 +36,8 @@ class TokenSelection {
 	get count() {
 		return this.tokens.length;
 	}
+
+	get items() {
+		return this.tokens;
+	}
 }

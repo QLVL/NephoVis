@@ -40,7 +40,8 @@ class NephoVisLevel3 extends NephoVis {
 	initVars() {
 		super.initVars();
 
-		let tokenSelectionUpdateCallback = this.buildTokenOverview.bind(this);
+		let tokenSelectionUpdateCallback = () => { this.buildTokenOverview();
+												   this.drawPlot(); };
 		this.tokenSelection = new TokenSelection(tokenSelectionUpdateCallback);
 	}
 
@@ -214,7 +215,24 @@ class NephoVisLevel3 extends NephoVis {
 		this.buildSolutionSwitchDropdown(true);
 	}
 
+	mouseClickPoint(row, pointElement) {
+		// We manually add a token to the token selection
+		// Or, if it's already in the model selection, we remove it
+		if (!this.tokenSelection.tokens.includes(row["_id"])) {
+			this.tokenSelection.add(row["_id"]);
+		} else {
+			this.tokenSelection.remove(row["_id"]);
+		}
+
+		console.log(this.tokenSelection);
+
+		// Redraw the plot
+		this.drawPlot();
+	}
+
 	drawPlot() {
+		let mouseClickFunction = this.mouseClickPoint.bind(this);
+
 		this.plot = new TokenPlot(this.level,
 							 	  "svgContainer1",
 							 	  { "width": 600, "height": 600, "padding": 40 },
@@ -225,8 +243,9 @@ class NephoVisLevel3 extends NephoVis {
 							 	  this.dataProcessor.tailoredContexts,
 							 	  this.dataPointStyles,
 							 	  this.modelSelection,
+							 	  this.tokenSelection,
 							 	  this.variableSelection,
-							 	  () => { /* todo: mouse click function */ },
+							 	  mouseClickFunction,
 							 	  () => { /* todo: selection by legend */ });
 	}
 }

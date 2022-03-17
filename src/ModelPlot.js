@@ -3,6 +3,9 @@ class ModelPlot extends Plot {
 				modelSelection, variableSelection, onDataPointClick, selectionByLegend) {
 		super(level, targetElementName, dimensions, dataset, dataPointStyles,
 				modelSelection, variableSelection, onDataPointClick, selectionByLegend);
+		
+		this.idColumn = "_model";
+		this.selection = this.modelSelection;
 
 		this.initPlot();
 	}
@@ -91,5 +94,24 @@ class ModelPlot extends Plot {
 		// Completely set display to "none" after the set timeout
 		this.tooltipHideTimeout = setTimeout(
 			() => { this.tooltip.style("display", "none"); }, this.tooltipTimeoutDuration);
+	}
+
+	updateSelection() {
+		// Todo: check how something of "undefined" can end up here
+		// I'll just mirror its functionality for now
+		if (this.modelSelection.count > 0 && this.modelSelection.models.includes("undefined")) {
+			this.modelSelection = this.modelSelection.filter((model) => { model != "undefined" });
+		}
+
+		super.updateSelection();
+	}
+
+	isPointSelected(row) {
+		if (this.modelSelection.models.length > 0)
+		{
+			return this.modelSelection.models.includes(row["_model"]);
+		}
+
+		return true;
 	}
 }

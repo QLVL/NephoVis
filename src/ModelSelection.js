@@ -56,4 +56,8 @@ class ModelSelection {
 	get count() {
 		return this.models.length;
 	}
+
+	get items() {
+		return this.models;
+	}
 }

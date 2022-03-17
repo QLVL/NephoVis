@@ -137,12 +137,16 @@ class Plot {
 						.classed("lighter", (row) => { return !this.isPointSelected(row); });
 
 		// Clicks and mouse over
-		this.pointCloud.on("mouseover", (row, index, points) => {
+		this.applyEvents(this.pointCloud);
+	}
+
+	applyEvents(points) {
+		return points.on("mouseover", (row, index, points) => {
 							let pointElement = d3.select(points[index]);
 							this.mouseOverPoint(row, pointElement);
 						})
-						.on("mouseout", () => { this.mouseOut(); }) // todo implement mouseOut
-						.on("click", (row, index, points) => { this.onDataPointClick(row, points[index]); });
+					 .on("mouseout", () => { this.mouseOut(); })
+					 .on("click", (row, index, points) => { this.onDataPointClick(row, points[index]); });
 	}
 
 	stylePoints(points) {
@@ -200,15 +204,6 @@ class Plot {
 		}
 	}
 
-	isPointSelected(row) {
-		if (this.modelSelection.models.length > 0)
-		{
-			return this.modelSelection.models.includes(row["_model"]);
-		}
-
-		return true;
-	}
-
 	highlightPoint(pointElement) {
 		// -- HIGHLIGHT EFFECT --
 		this.svg.select(".dot")
@@ -227,25 +222,16 @@ class Plot {
 	}
 
 	updateSelection() {
-		// Todo: check how something of "undefined" can end up here
-		// I'll just mirror its functionality for now
-		if (this.modelSelection.count > 0 && this.modelSelection.models.includes("undefined")) {
-			this.modelSelection = this.modelSelection.filter((model) => { model != "undefined" });
-		}
-
 		for (let dataPointStyleName in this.dataPointStyles) {
-			// todo: implement "boldenLegend"
-
 			// If something is selected, everything else is translucent
 			d3.selectAll(".dot")
 			  .selectAll("path.graph")
 			  // If no models are selected, everything is translucent
 			  // Else, only selected models are fully opaque
-			  .style("opacity", this.modelSelection.count > 0 ? 1 : 0.7)
+			  .style("opacity", this.selection.count > 0 ? 1 : 0.7)
 			  .classed("lighter", (row) => 
-			  	{ let idColumn = (this.level == "model" ? "_model" : "_id");
-			  	  if (this.modelSelection.count > 0) {
-			  	  	return !this.modelSelection.models.includes(row[idColumn]);
+			  	{ if (this.selection.count > 0) {
+			  	  	return !this.selection.items.includes(row[this.idColumn]);
 			  	  } else {
 			  	  	return false;
 			  	  }

@@ -83,6 +83,7 @@ class NephoVis {
 		}
 
 		this.modelSelection.select(this.variableSelection);
+		// drawPlot callback is not necessary here because .select has it as a callback
 
 		// todo: re-implement local storage if deemed necessary
 	}
