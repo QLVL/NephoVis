@@ -109,19 +109,6 @@ class NephoVis {
 		// TODO updateLegend
 	}
 
-	mouseClickPoint(row, pointElement) {
-		// We manually add a model to the model selection
-		// Or, if it's already in the model selection, we remove it
-		if (!this.modelSelection.models.includes(row["_model"])) {
-			this.modelSelection.add(row["_model"]);
-		} else {
-			this.modelSelection.remove(row["_model"]);
-		}
-
-		// Redraw the plot
-		this.drawPlot();
-	}
-
 	selectionByLegend(variable, value) {
 		if (this.variableSelection[variable].includes(value)) {
 			let toDeleteIndex = this.variableSelection[variable].indexOf(value);

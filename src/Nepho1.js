@@ -52,6 +52,19 @@ class NephoVisLevel1 extends NephoVis {
 		this.drawPlot();
 	}
 
+	mouseClickPoint(row, pointElement) {
+		// We manually add a model to the model selection
+		// Or, if it's already in the model selection, we remove it
+		if (!this.modelSelection.models.includes(row["_model"])) {
+			this.modelSelection.add(row["_model"]);
+		} else {
+			this.modelSelection.remove(row["_model"]);
+		}
+
+		// Redraw the plot
+		this.drawPlot();
+	}
+
 	drawPlot() {
 		// If the plot has to redraw, surely some other update has happened
 		// So, we update the UI as well
