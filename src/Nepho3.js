@@ -21,7 +21,8 @@ class NephoVisLevel3 extends NephoVis {
 
 		// todo: setup texts
 
-		this.contextVar = null; // todo: what is this?
+		// The context variable dictates what context column should be consulted on hover
+		this.contextVar = "_ctxt.raw";
 
 		this.buildInterface();
 
@@ -167,9 +168,12 @@ class NephoVisLevel3 extends NephoVis {
 		// We have to build the dropdown for the context words manually
 		UserInterface.buildDropdown("ctxt",
 									this.dataProcessor.tailoredContexts,
-									(variable) => { this.contextVar = variable;
-													/* todo handle change */ },
-									d => d.key,
+									(pair) => { this.contextVar = pair["value"];
+												this.drawPlot();
+												this.buildInterface(); },
+									pair => this.contextVar == pair["value"] ?
+											`<b>${pair["key"]}</b>` :
+											pair["key"],
 									d => d.value);
 
 		console.log(this.modelSelection.models);

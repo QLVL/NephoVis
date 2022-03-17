@@ -55,17 +55,14 @@ class TokenPlot extends Plot {
 	showContext(row, pointElement) {
 		let tooltipColour = this.codePoint(row, this.dataPointStyles["colour"]);
 
-		// todo ? ? ? 
-		let contextVar = this.contextVar || "_ctxt.raw";
-
 		// ? ? ? ?
-		if (this.tailoredContexts.filter(context => context.value == contextVar).length == 0)
+		if (this.tailoredContexts.filter(context => context.value == this.contextVar).length == 0)
 		{
 			// todo, I don't know what this is or what it should do
 		}
 
 		let tooltipTitle = `<p><b>${row["_id"]}</b></p><p>`;
-		let tooltipInfo = row[contextVar].replace(/class=["']target["']/g,
+		let tooltipInfo = row[this.contextVar].replace(/class=["']target["']/g,
 							`style="color:${tooltipColour};font-weight:bold;"`) + "</p>";
 
 		d3.select("#concordance")
