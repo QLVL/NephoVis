@@ -275,8 +275,13 @@ class NephoVisLevel3 extends NephoVis {
 		console.log(matchingTokens);
 		let tokenSelection = matchingTokens.map(row => row["_id"]);
 
-		this.tokenSelection.restore(tokenSelection);
-		this.drawPlot();
+		if (tokenSelection.length > 0) {
+			this.tokenSelection.restore(tokenSelection);
+			this.drawPlot();	
+		}
+		else {
+			window.alert(`Sorry, "${needle}" is not present in a concordance in this model.`);
+		}
 	}
 
 	drawPlot() {
