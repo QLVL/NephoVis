@@ -343,11 +343,28 @@ class NephoVisLevel3 extends NephoVis {
 		}
 	}
 
+	selectionByLegend(variable, value) {
+		// Because my selection behaviour is a bit different than in the original version, this works differently too
+		// The idea is that we will only remove a selection if the entire "to select" is selected
+		let tokensToSelect = this.dataLoader.datasets["tokens"].filter(row => row[variable] == value).map(row => row["_id"]);
+		let allSelected = tokensToSelect.every(tokenId => this.tokenSelection.tokens.includes(tokenId));
+
+		if (!allSelected) {
+			tokensToSelect.forEach(token => this.tokenSelection.addIfNotIn(token, false));
+		} else {
+			tokensToSelect.forEach(token => this.tokenSelection.remove(token, false));
+		}
+
+		// Redraw the plot
+		this.afterTokenRestore();
+	}
+
 	drawPlot() {
 		console.log("I start from the scratch");
 
 		let mouseClickFunction = this.mouseClickPoint.bind(this);
 		let brushEndFunction = this.brushEnd.bind(this);
+		let selectionByLegendFunction = this.selectionByLegend.bind(this);
 
 		this.plot = new TokenPlot(this.level,
 							 	  "svgContainer1",
@@ -362,7 +379,7 @@ class NephoVisLevel3 extends NephoVis {
 							 	  this.variableSelection,
 							 	  mouseClickFunction,
 							 	  brushEndFunction,
-							 	  () => { /* todo: selection by legend */ });
+							 	  selectionByLegendFunction);
 		
 		let mouseClickFunctionContextWord = this.mouseClickPointContextWord.bind(this);
 		let brushEndFunctionContextWord = this.brushEndContextWord.bind(this);
