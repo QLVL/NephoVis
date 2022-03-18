@@ -80,7 +80,8 @@ class NephoVisLevel1 extends NephoVis {
 	}
 
 	drawUi() {
-		UserInterface.prepareUI(this.level, this.type, this.modelSelection.count);
+		UserInterface.prepareUI(this.level, this.type);
+		UserInterface.setModelCount(this.modelSelection.count);
 	}
 
 	selectionByLegend(variable, value) {

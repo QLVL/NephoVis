@@ -351,6 +351,9 @@ class NephoVisLevel3 extends NephoVis {
 	drawPlot() {
 		console.log("I start from the scratch");
 
+		UserInterface.prepareUI(this.level, this.type);
+		UserInterface.setLevel3Headers(this.model, this.chosenSolution);
+
 		let mouseClickFunction = this.mouseClickPoint.bind(this);
 		let brushEndFunction = this.brushEnd.bind(this);
 		let selectionByLegendFunction = this.selectionByLegend.bind(this);

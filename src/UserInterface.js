@@ -15,7 +15,28 @@ class UserInterface {
 		// Update the page title
 		// Template: Level X (type)
 		d3.select("#nephoVisTitle").html(`${level} level (<em>${type}</em>)`);
+		
+	}
+
+	static setModelCount(modelCount) {
 		d3.select("#numSelected").text(modelCount);
+	}
+
+	static setLevel3Headers(model, chosenSolution) {
+		d3.select("h3#modelName").html(model);
+		if (chosenSolution != null)
+		{
+    		let technique;
+
+    		if (chosenSolution.toLowerCase().includes("tsne")) {
+    			// todo: make this a parameter in the data files
+    			technique = "t-SNE, perplexity: " + chosenSolution.match("[0-9]+");
+    		} else {
+    			technique = chosenSolution.toUpperCase();
+    		}
+
+    		d3.select("h4#solutionName").text("Technique: " + technique);
+  		}
 	}
 
 	static setButton(targetElementName, onclickEvent, additionalD3=null) {
