@@ -178,7 +178,16 @@ class NephoVisLevel3 extends NephoVis {
 
 		UserInterface.setButton("findTokensContextBtn", (event) => {
 			let needle = document.getElementById("findTokensByContext").value;
-			this.selectByContextSearch(needle);
+			this.selectByContextSearch(needle, this.contextVar,
+				(needle) => `Sorry, "${needle}" is not present in a concordance in this model.`);
+		});
+
+		// For some reason, the context word column can be a list
+		// I don't know how that works as an index, but I'll just copy the implementation ...
+		UserInterface.setButton("findTokensFeatureBtn", (event) => {
+			let needle = document.getElementById("findTokensByFeature").value;
+			this.selectByContextSearch(needle, this.dataProcessor.contextWordsColumn,
+				(needle) => `Sorry, "${needle}" is not present as a feature in this model.`);
 		});
 
 		// We have to build the dropdown for the context words manually
@@ -270,8 +279,8 @@ class NephoVisLevel3 extends NephoVis {
 		this.drawPlot();
 	}
 
-	selectByContextSearch(needle) {
-		let matchingTokens = this.dataLoader.datasets["tokens"].filter(row => row[this.contextVar].includes(needle));
+	selectByContextSearch(needle, haystackColumn, generateError) {
+		let matchingTokens = this.dataLoader.datasets["tokens"].filter(row => row[haystackColumn].includes(needle));
 		console.log(matchingTokens);
 		let tokenSelection = matchingTokens.map(row => row["_id"]);
 
@@ -280,7 +289,7 @@ class NephoVisLevel3 extends NephoVis {
 			this.drawPlot();	
 		}
 		else {
-			window.alert(`Sorry, "${needle}" is not present in a concordance in this model.`);
+			window.alert(generateError(needle));
 		}
 	}
 
