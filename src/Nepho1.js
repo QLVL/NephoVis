@@ -61,24 +61,15 @@ class NephoVisLevel1 extends NephoVis {
 			this.modelSelection.remove(row["_model"]);
 		}
 
-		// Redraw the plot
-		this.plot.updateSelection(this.modelSelection);
-		//this.drawPlot();
+		// Update plot selection
+		this.updateSelection();
 	}
 
 	drawPlot() {
-		// If the plot has to redraw, surely some other update has happened
-		// So, we update the UI as well
-		UserInterface.prepareUI(this.level, this.type, this.modelSelection.count);
+		this.drawUi();
 
 		let mouseClickFunction = this.mouseClickPoint.bind(this);
 		let selectionByLegendFunction = this.selectionByLegend.bind(this);
-
-		this.preventImport = true;
-		window.location.href = router.router.generate("level.type.selection",
-													  { level: this.level,
-													  	type: this.type,
-													  	selection: this.exportSelection() });
 
 		this.plot = new ModelPlot(this.level,
 							 "svgContainer",
@@ -89,5 +80,17 @@ class NephoVisLevel1 extends NephoVis {
 							 this.variableSelection,
 							 mouseClickFunction,
 							 selectionByLegendFunction);
+	}
+
+	drawUi() {
+		UserInterface.prepareUI(this.level, this.type, this.modelSelection.count);
+	}
+
+	updateSelection() {
+		// If the selection has changed, surely some other update has happened
+		// So, we update the UI as well
+		this.drawUi();
+		this.updateUrl();
+		this.plot.updateSelection(this.modelSelection);
 	}
 }

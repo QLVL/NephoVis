@@ -29,7 +29,7 @@ class NephoVis {
 
 		// TODO: re-introduce LocalStorage if deemed necessary
 		this.modelSelection = new ModelSelection(modelSelectionDataset,
-												 () => { this.plot.updateSelection(this.modelSelection); });
+												 () => { this.updateSelection(); });
 
 		this.initVariableSelection();
 
@@ -83,7 +83,7 @@ class NephoVis {
 		}
 
 		this.modelSelection.select(this.variableSelection);
-		// drawPlot callback is not necessary here because .select has it as a callback
+		// update plot callback is not necessary here because .select has it as a callback
 
 		// todo: re-implement local storage if deemed necessary
 	}
@@ -105,10 +105,7 @@ class NephoVis {
 
 		// TODO: I don't really understand how the data structure works
 
-		//this.drawPlot();
 		this.plot.restyle(this.dataPointStyles);
-
-		// TODO updateLegend
 	}
 
 	selectionByLegend(variable, value) {
@@ -123,8 +120,7 @@ class NephoVis {
 		//this.modelSelection.toggle({});
 
 		// Redraw the plot
-		this.plot.updateSelection(this.modelSelection);
-		//this.drawPlot();
+		this.updateSelection();
 	}
 
 	// To export
@@ -170,5 +166,13 @@ class NephoVis {
 
 		this.modelSelection.restore(decodedExport["modelSelection"]);
 		this.variableSelection = decodedExport["variableSelection"];
+	}
+
+	updateUrl() {
+		this.preventImport = true;
+		window.location.href = router.router.generate("level.type.selection",
+													  { level: this.level,
+													  	type: this.type,
+													  	selection: this.exportSelection() });
 	}
 }
