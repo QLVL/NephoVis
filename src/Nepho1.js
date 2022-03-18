@@ -20,8 +20,7 @@ class NephoVisLevel1 extends NephoVis {
 		UserInterface.setButton("clearSelect", () => 
 			{
 				this.modelSelection.clear();
-				this.initVariableSelection();
-				UserInterface.resetSelectionButtons();
+				this.resetVariableSelection();
 			});
 
 		UserInterface.setButton("medoidsSelect", () =>
@@ -56,6 +55,8 @@ class NephoVisLevel1 extends NephoVis {
 	}
 
 	mouseClickPoint(row, pointElement) {
+		this.resetVariableSelection();
+
 		// We manually add a model to the model selection
 		// Or, if it's already in the model selection, we remove it
 		if (!this.modelSelection.models.includes(row["_model"])) {
@@ -92,6 +93,7 @@ class NephoVisLevel1 extends NephoVis {
 	selectionByLegend(variable, value) {
 		super.selectionByLegend(variable, value);
 
+		this.resetVariableSelection()
 		this.updateSelection();
 	}
 
@@ -103,5 +105,10 @@ class NephoVisLevel1 extends NephoVis {
 		this.drawUi();
 		this.updateUrl();
 		this.plot.updateSelection(this.modelSelection);
+	}
+
+	resetVariableSelection() {
+		this.initVariableSelection();
+		UserInterface.resetSelectionButtons();
 	}
 }
