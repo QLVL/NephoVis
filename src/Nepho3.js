@@ -59,9 +59,9 @@ class NephoVisLevel3 extends NephoVis {
 
 		// Find lost focdists (and non lost focdists)
 		this.dataLoader.datasets["nonLostFocdists"] = this.dataLoader.datasets["focdists"].filter(row =>
-			Helpers.existsFromColumn(row, this.chosenSolution));
+			Helpers.existsFromColumn(row, `${this.chosenSolution}cws`));
 		this.dataLoader.datasets["lostFocdists"] = this.dataLoader.datasets["focdists"].filter(row =>
-			!Helpers.existsFromColumn(row, this.chosenSolution));
+			!Helpers.existsFromColumn(row, `${this.chosenSolution}cws`));
 	}
 
 	initVars() {
@@ -70,6 +70,7 @@ class NephoVisLevel3 extends NephoVis {
 		let tokenSelectionUpdateCallback = () => { this.buildTokenOverview();
 												   this.drawPlot(); };
 		this.tokenSelection = new TokenSelection(tokenSelectionUpdateCallback);
+		this.contextWordSelection = new TokenSelection(() => {});
 	}
 
 	initTailoredVars() {
@@ -289,10 +290,44 @@ class NephoVisLevel3 extends NephoVis {
 			this.tokenSelection.remove(row["_id"]);
 		}
 
-		console.log(this.tokenSelection);
+		this.selectFromTokens();
 
 		// Redraw the plot
 		this.drawPlot();
+	}
+
+	mouseClickPointContextWord(row, pointElement) {
+		// We manually add a token to the token selection
+		// Or, if it's already in the model selection, we remove it
+		// TODO MOVE THIS LOGIC TO THE TOKEN SELECTION CLASS !!!
+		if (!this.contextWordSelection.tokens.includes(row["_id"])) {
+			this.contextWordSelection.add(row["_id"]);
+		} else {
+			this.contextWordSelection.remove(row["_id"]);
+		}
+
+		this.selectFromContextWords();
+
+		// Redraw the plot
+		this.drawPlot();
+	}
+
+	selectFromContextWords() {
+		let selectedTokens = this.contextWordSelection.tokens.flatMap(contextWord =>
+			this.dataLoader.datasets["tokens"].filter(row => {
+				return row[this.dataProcessor.contextWordsColumn].includes(contextWord); })
+											  .flatMap(row => row["_id"]));
+
+		this.tokenSelection.restore(selectedTokens);
+	}
+
+	selectFromTokens() {
+		let selectedTokens = this.dataLoader.datasets["tokens"]
+								 .filter(row => this.tokenSelection.tokens.includes(row["_id"]))
+								 .flatMap(row => row[this.dataProcessor.contextWordsColumn].split(";"));
+
+		this.contextWordSelection.restore(selectedTokens);
+
 	}
 
 	selectByContextSearch(needle, haystackColumn, generateError) {
@@ -327,6 +362,8 @@ class NephoVisLevel3 extends NephoVis {
 							 	  mouseClickFunction,
 							 	  brushEndFunction,
 							 	  () => { /* todo: selection by legend */ });
+		
+		let mouseClickFunctionContextWord = this.mouseClickPointContextWord.bind(this);
 
 		this.focPlot = new FocDistsPlot(this.level,
 										"svgContainer2",
@@ -337,9 +374,9 @@ class NephoVisLevel3 extends NephoVis {
 										this.dataProcessor.tailoredContexts,
 										this.dataPointStyles,
 										this.modelSelection,
-										this.tokenSelection,
+										this.contextWordSelection,
 										this.variableSelection,
-										() => {},
+										mouseClickFunctionContextWord,
 										() => {},
 										() => {});
 
@@ -364,7 +401,7 @@ class NephoVisLevel3 extends NephoVis {
 											   this.dataLoader.datasets["lostTokens"],
 											   this.dataProcessor.tailoredContexts,
 											   this.dataPointStyles,
-											   this.tokenSelection,
+											   this.contextWordSelection,
 											   this.variableSelection,
 											   mouseClickFunction);
 	}
@@ -375,6 +412,7 @@ class NephoVisLevel3 extends NephoVis {
 	}
 
 	afterTokenRestore() {
+		this.selectFromTokens();
 		this.buildInterface();
 		this.buildTokenOverview();
 	}
