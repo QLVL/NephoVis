@@ -127,4 +127,8 @@ class TokenPlot extends Plot {
 
 		super.updateSelection();
 	}
+
+	updateContextVar(contextVar) {
+		this.contextVar = contextVar;
+	}
 }

@@ -226,6 +226,13 @@ class Plot {
 		d3.selectAll(".selector").remove();
 	}
 
+	restyle(dataPointStyles) {
+		this.dataPointStyles = dataPointStyles;
+
+		// Restyle, maybe the data point styles have changed
+		this.stylePoints(this.pointCloud);
+	}
+
 	updateSelection() {
 		for (let dataPointStyleName in this.dataPointStyles) {
 			// If something is selected, everything else is translucent

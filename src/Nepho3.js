@@ -210,7 +210,7 @@ class NephoVisLevel3 extends NephoVis {
 		UserInterface.buildDropdown("ctxt",
 									this.dataProcessor.tailoredContexts,
 									(pair) => { this.contextVar = pair["value"];
-												this.drawPlot();
+												this.plot.updateContextVar(contextVar);
 												this.buildInterface(); },
 									pair => this.contextVar == pair["value"] ?
 											`<b>${pair["key"]}</b>` :
@@ -262,7 +262,8 @@ class NephoVisLevel3 extends NephoVis {
 				// todo: brush on the second plot
 				let selectedFunction = event.target.value;
 				this.brushActive = selectedFunction == "brush";
-				this.drawPlot();
+				this.brushToggle()
+				//this.drawPlot();
 			} 
 		});
 	}
@@ -291,8 +292,7 @@ class NephoVisLevel3 extends NephoVis {
 
 		this.selectFromTokens();
 
-		// Redraw the plot
-		this.drawPlot();
+		this.afterTokenRestore();
 	}
 
 	mouseClickPointContextWord(row, pointElement) {
@@ -307,8 +307,7 @@ class NephoVisLevel3 extends NephoVis {
 
 		this.selectFromContextWords();
 
-		// Redraw the plot
-		this.drawPlot();
+		this.afterTokenRestore();
 	}
 
 	selectFromContextWords() {
@@ -336,7 +335,7 @@ class NephoVisLevel3 extends NephoVis {
 
 		if (tokenSelection.length > 0) {
 			this.tokenSelection.restore(tokenSelection);
-			this.drawPlot();	
+			this.updateSelection(this.tokenSelection);	
 		}
 		else {
 			window.alert(generateError(needle));
@@ -344,6 +343,8 @@ class NephoVisLevel3 extends NephoVis {
 	}
 
 	drawPlot() {
+		console.log("I start from the scratch");
+
 		let mouseClickFunction = this.mouseClickPoint.bind(this);
 		let brushEndFunction = this.brushEnd.bind(this);
 
@@ -380,21 +381,6 @@ class NephoVisLevel3 extends NephoVis {
 										brushEndFunctionContextWord,
 										() => {});
 
-		if (this.brushActive)
-		{
-			let tokenBrush = d3.brush()
-						   	   .extent([ [0, 0],
-						   		   	[ this.dimensions["width"],
-						   		   	  this.dimensions["height"] ] ]);
-			this.plot.applyBrush(tokenBrush);
-
-			let focDistsBrush = d3.brush()
-						   	      .extent([ [0, 0],
-						   		   	  [ this.dimensions["width"],
-						   		   	  	this.dimensions["height"] ] ]);
-			this.focPlot.applyBrush(focDistsBrush);
-		}
-
 		if (this.dataLoader.datasets["lostTokens"].length == 0) {
 			console.log("no token for you");
 			return;
@@ -409,6 +395,25 @@ class NephoVisLevel3 extends NephoVis {
 											   this.contextWordSelection,
 											   this.variableSelection,
 											   mouseClickFunction);
+	}
+
+	brushToggle() {
+		if (this.brushActive)
+		{
+			let tokenBrush = d3.brush()
+						   	   .extent([ [0, 0],
+						   		   	[ this.dimensions["width"],
+						   		   	  this.dimensions["height"] ] ]);
+			this.plot.applyBrush(tokenBrush);
+
+			let focDistsBrush = d3.brush()
+						   	      .extent([ [0, 0],
+						   		   	  [ this.dimensions["width"],
+						   		   	  	this.dimensions["height"] ] ]);
+			this.focPlot.applyBrush(focDistsBrush);
+		} else {
+			d3.selectAll(".brush").remove();
+		}
 	}
 
 	brushEnd(tokens) {
