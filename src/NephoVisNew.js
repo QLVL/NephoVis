@@ -29,7 +29,7 @@ class NephoVis {
 
 		// TODO: re-introduce LocalStorage if deemed necessary
 		this.modelSelection = new ModelSelection(modelSelectionDataset,
-												 () => { this.drawPlot(); });
+												 () => { this.plot.updateSelection(this.modelSelection); });
 
 		this.initVariableSelection();
 
@@ -105,7 +105,8 @@ class NephoVis {
 
 		// TODO: I don't really understand how the data structure works
 
-		this.drawPlot();
+		//this.drawPlot();
+		this.plot.restyle(this.dataPointStyles);
 
 		// TODO updateLegend
 	}
@@ -122,7 +123,8 @@ class NephoVis {
 		//this.modelSelection.toggle({});
 
 		// Redraw the plot
-		this.drawPlot();
+		this.plot.updateSelection(this.modelSelection);
+		//this.drawPlot();
 	}
 
 	// To export
