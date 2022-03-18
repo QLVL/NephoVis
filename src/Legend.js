@@ -40,17 +40,25 @@ class Legend {
               .attr("class", "legend")
               .attr("transform", "translate(" + 0 + ", " + this.padding / 2 + ")")
               .call(legend);
-
+      
              // Apply bold
              // Yes, there is no other way to do this. You have to manipulate the DOM.
              // I even tried to adjust d3-legend.js, but it's a mess as well
              // This is the cleanest solution I could think of, after having spent three hours
              // on making text bold. Please have mercy.
             legendContainer.selectAll(`.${dataPointStyle.style}label`)
-			  			   .classed("selected", (variable) => 
-			  			   		this.dataset.filter(row => row[dataPointStyle.variable] == variable)
-			  			   					.map(row => row[this.idColumn])
-			  			   					.every(itemId => this.itemSelection.items.includes(itemId)));
+			  			   .classed("selected", (variable) => {
+
+			  	// I wish this were neater, but it must be like this...
+			  	// First, check out which items adhere to this variable
+				let filteredItemIds = this.dataset.filter(row => row[dataPointStyle.variable] == variable)
+			  	 			   					  .map(row => row[this.idColumn]);
+
+			  	// If there are no items, return false, else check whether all items are in the current selection
+			  	return filteredItemIds.length > 0 ?
+			  		   filteredItemIds.every(itemId => this.itemSelection.items.includes(itemId)) :
+			  		   false;
+			  	});
 		}
 	}
 }
