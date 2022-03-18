@@ -86,6 +86,15 @@ class NephoVisLevel1 extends NephoVis {
 		UserInterface.prepareUI(this.level, this.type, this.modelSelection.count);
 	}
 
+	selectionByLegend(variable, value) {
+		super.selectionByLegend(variable, value);
+
+		this.modelSelection.select(this.variableSelection);
+
+		// Redraw the plot
+		this.updateSelection();
+	}
+
 	updateSelection() {
 		// If the selection has changed, surely some other update has happened
 		// So, we update the UI as well

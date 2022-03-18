@@ -115,12 +115,6 @@ class NephoVis {
 		} else {
 			this.variableSelection[variable].push(value);
 		}
-
-		this.modelSelection.select(this.variableSelection);
-		//this.modelSelection.toggle({});
-
-		// Redraw the plot
-		this.updateSelection();
 	}
 
 	// To export
