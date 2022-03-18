@@ -71,7 +71,7 @@ class NephoVisLevel3 extends NephoVis {
 
 		let tokenSelectionUpdateCallback = () => { this.afterTokenRestore(); };
 		this.tokenSelection = new TokenSelection(tokenSelectionUpdateCallback);
-		this.contextWordSelection = new TokenSelection(() => {});
+		this.contextWordSelection = new TokenSelection(tokenSelectionUpdateCallback);
 	}
 
 	initTailoredVars() {
