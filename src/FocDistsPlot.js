@@ -23,4 +23,10 @@ class FocDistsPlot extends TokenPlot {
 			return super.codePoint(row, dataPointStyle);
 		}
 	}
+
+	mouseOverPoint(row, pointElement) {
+	}
+
+	mouseOut() {
+	}
 }
