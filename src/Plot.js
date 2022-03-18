@@ -158,7 +158,8 @@ class Plot {
 								.type((row) => { return this.codePoint(row, this.dataPointStyles["shape"]); } )
 								.size((row) => { return this.codePoint(row, this.dataPointStyles["size"]); } )
 								)
-								.style("fill", (row) => { return this.codePoint(row, this.dataPointStyles["colour"]); } );
+								.style("fill", (row) => { return this.codePoint(row, this.dataPointStyles["colour"]); } )
+								.style("stroke", "grey");
 	}
 
 	traceCenter(p, x1, x2, y1, y2) {
