@@ -13,18 +13,21 @@ class TokenSelection {
 		}
 	}
 
-	addIfNotIn(token) {
+	addIfNotIn(token, callback=true) {
 		if (!this.tokens.includes(token)) {
-			this.add(token);
+			this.add(token, callback);
 		}
 	}
 
-	remove(token) {
+	remove(token, callback=true) {
 		let index = this.tokens.indexOf(token);
 		if (index !== -1) {
 		  this.tokens.splice(index, 1);
 		}
-		this.callback();
+
+		if (callback) {
+			this.callback();
+		}
 	}
 
 	restore(tokens) {
