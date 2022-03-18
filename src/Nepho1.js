@@ -103,4 +103,12 @@ class NephoVisLevel1 extends NephoVis {
 		this.initVariableSelection();
 		UserInterface.resetSelectionButtons();
 	}
+
+	updateUrl() {
+		super.updateUrl();
+		window.location.href = router.router.generate("level.type.selection",
+													  { level: this.level,
+													  	type: this.type,
+													  	selection: this.exportSelection() });
+	}
 }

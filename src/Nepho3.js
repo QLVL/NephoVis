@@ -351,6 +351,9 @@ class NephoVisLevel3 extends NephoVis {
 	drawPlot() {
 		console.log("I start from the scratch");
 
+		// In case we import from base64 selection
+		this.selectFromTokens();
+
 		UserInterface.prepareUI(this.level, this.type);
 		UserInterface.setLevel3Headers(this.model, this.chosenSolution);
 
@@ -453,10 +456,31 @@ class NephoVisLevel3 extends NephoVis {
 	}
 
 	afterTokenRestore() {
+		this.updateUrl();
 		this.plot.updateSelection(this.tokenSelection);
 		this.focPlot.updateSelection(this.contextWordSelection);
 
 		this.buildInterface();
 		this.buildTokenOverview();
+	}
+
+	importSelection() {
+		let decodedExport = super.importSelection();
+
+		if (decodedExport == null) {
+			return;
+		}
+
+		if ("tokenSelection" in decodedExport) {
+			this.tokenSelection.restore(decodedExport["tokenSelection"]);
+		}
+	}
+
+	updateUrl() {
+		super.updateUrl();
+		window.location.href = router.router.generate("token.type.model.selection",
+													  { model: this.model,
+													  	type: this.type,
+													  	selection: this.exportSelection() });
 	}
 }

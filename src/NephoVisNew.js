@@ -143,6 +143,10 @@ class NephoVis {
 						 "variableSelection": this.variableSelection,
 						 "dataPointStyles": dataPointStylesSerialised };
 
+		if (this.level == "token") {
+			toExport["tokenSelection"] = this.tokenSelection.tokens;
+		}
+
 		// Base64 encode our selection
 		let json = JSON.stringify(toExport);
 		let encodedExport = btoa(json);
@@ -155,12 +159,12 @@ class NephoVis {
 
 	importSelection() {
 		if (this.selection == null) {
-			return;
+			return null;
 		}
 
 		if (this.preventImport) {
 			this.preventImport = false;
-			return;
+			return null;
 		}
 
 		let decodedExport = ""
@@ -191,13 +195,11 @@ class NephoVis {
 			this.dataPointStyles[dataPointStyleName].assign(dataPointStyle["variable"],
 															dataPointStyle["values"]);		
 		}
+
+		return decodedExport;
 	}
 
 	updateUrl() {
 		this.preventImport = true;
-		window.location.href = router.router.generate("level.type.selection",
-													  { level: this.level,
-													  	type: this.type,
-													  	selection: this.exportSelection() });
 	}
 }
