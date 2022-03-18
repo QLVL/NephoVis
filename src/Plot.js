@@ -229,7 +229,7 @@ class Plot {
 	updateSelection() {
 		for (let dataPointStyleName in this.dataPointStyles) {
 			// If something is selected, everything else is translucent
-			d3.selectAll(".dot")
+			this.svg.selectAll(".dot")
 			  .selectAll("path.graph")
 			  // If no models are selected, everything is translucent
 			  // Else, only selected models are fully opaque
