@@ -108,15 +108,6 @@ class NephoVis {
 		this.plot.restyle(this.dataPointStyles);
 	}
 
-	selectionByLegend(variable, value) {
-		if (this.variableSelection[variable].includes(value)) {
-			let toDeleteIndex = this.variableSelection[variable].indexOf(value);
-			this.variableSelection[variable].splice(toDeleteIndex, 1); 
-		} else {
-			this.variableSelection[variable].push(value);
-		}
-	}
-
 	// To export
 	exportSelection() {
 		let toExport = { "level": this.level,

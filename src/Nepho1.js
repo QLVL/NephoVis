@@ -87,7 +87,12 @@ class NephoVisLevel1 extends NephoVis {
 	}
 
 	selectionByLegend(variable, value) {
-		super.selectionByLegend(variable, value);
+		if (this.variableSelection[variable].includes(value)) {
+			let toDeleteIndex = this.variableSelection[variable].indexOf(value);
+			this.variableSelection[variable].splice(toDeleteIndex, 1); 
+		} else {
+			this.variableSelection[variable].push(value);
+		}
 
 		this.modelSelection.select(this.variableSelection);
 
