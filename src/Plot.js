@@ -53,7 +53,7 @@ class Plot {
 	}
 
 	drawLegend() {
-		this.legend = new Legend(this.dataset, this.level, this.type, this.variableSelection,
+		this.legend = new Legend(this.dataset, this.level, this.type, this.selection, this.idColumn,
 								 this.dataPointStyles, this.dimensions["padding"], this.selectionByLegend);
 	}
 

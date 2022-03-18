@@ -1,12 +1,13 @@
 class Legend {
-	constructor(dataset, level, type, variableSelection, dataPointStyles, padding, selectionByLegend) {
+	constructor(dataset, level, type, itemSelection, idColumn, dataPointStyles, padding, selectionByLegend) {
 		// Remove everything already in the legend bar
 		d3.select(".legendBar").selectAll("svg").remove();
 
 		this.dataset = dataset;
 		this.level = level;
 		this.type = type;
-		this.variableSelection = variableSelection;
+		this.itemSelection = itemSelection;
+		this.idColumn = idColumn;
 		this.dataPointStyles = dataPointStyles;
 		this.padding = padding;
 		this.selectionByLegend = selectionByLegend;
@@ -46,12 +47,10 @@ class Legend {
              // This is the cleanest solution I could think of, after having spent three hours
              // on making text bold. Please have mercy.
             legendContainer.selectAll(`.${dataPointStyle.style}label`)
-			  			   .classed("selected", (variable) => { 
-			  			   		if (this.level == "model")
-			  						return this.variableSelection[dataPointStyle.variable].includes(variable);
-			  					else if (this.level == "token")
-			  						return false // 🤷‍ TODO: I'll have a think about this...
-			 });
+			  			   .classed("selected", (variable) => 
+			  			   		this.dataset.filter(row => row[dataPointStyle.variable] == variable)
+			  			   					.map(row => row[this.idColumn])
+			  			   					.every(itemId => this.itemSelection.items.includes(itemId)));
 		}
 	}
 }
