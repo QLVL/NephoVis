@@ -109,6 +109,7 @@ class NephoVis {
 		// TODO: I don't really understand how the data structure works
 
 		this.plot.restyle(this.dataPointStyles);
+		this.updateUrl();
 	}
 
 	selectionByLegend(variable, value) {
@@ -127,10 +128,21 @@ class NephoVis {
 
 	// To export
 	exportSelection() {
+		// Data point style is an object, so it's easiest to just save the necessary values in a dict
+		let dataPointStylesSerialised = {};
+		for (let dataPointStyleName in this.dataPointStyles) {
+			let dataPointStyle = this.dataPointStyles[dataPointStyleName];
+			dataPointStylesSerialised[dataPointStyle.style] =
+				{ "variable": dataPointStyle.variable,
+				  "values": dataPointStyle.values };
+		}
+
 		let toExport = { "level": this.level,
 						 "type": this.type,
 						 "modelSelection": this.modelSelection.models,
-						 "variableSelection": this.variableSelection };
+						 "variableSelection": this.variableSelection,
+						 "dataPointStyles": dataPointStylesSerialised };
+
 		// Base64 encode our selection
 		let json = JSON.stringify(toExport);
 		let encodedExport = btoa(json);
@@ -168,6 +180,17 @@ class NephoVis {
 
 		this.modelSelection.restore(decodedExport["modelSelection"]);
 		this.variableSelection = decodedExport["variableSelection"];
+
+		for (let dataPointStyleName in decodedExport["dataPointStyles"]) {
+			let dataPointStyle = decodedExport["dataPointStyles"][dataPointStyleName];
+
+			if (dataPointStyle["variable"] == null) {
+				continue;
+			}
+
+			this.dataPointStyles[dataPointStyleName].assign(dataPointStyle["variable"],
+															dataPointStyle["values"]);		
+		}
 	}
 
 	updateUrl() {
