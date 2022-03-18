@@ -13,6 +13,8 @@ class NephoVisLevel1 extends NephoVis {
 
 		this.initVars();
 
+		this.itemSelection = this.modelSelection;
+
 		this.importSelection();
 
 		UserInterface.setButton("clearSelect", () => 
@@ -87,20 +89,14 @@ class NephoVisLevel1 extends NephoVis {
 	}
 
 	selectionByLegend(variable, value) {
-		if (this.variableSelection[variable].includes(value)) {
-			let toDeleteIndex = this.variableSelection[variable].indexOf(value);
-			this.variableSelection[variable].splice(toDeleteIndex, 1); 
-		} else {
-			this.variableSelection[variable].push(value);
-		}
+		super.selectionByLegend(variable, value);
 
-		this.modelSelection.select(this.variableSelection);
-
-		// Redraw the plot
 		this.updateSelection();
 	}
 
 	updateSelection() {
+		console.log("updating selection");
+
 		// If the selection has changed, surely some other update has happened
 		// So, we update the UI as well
 		this.drawUi();

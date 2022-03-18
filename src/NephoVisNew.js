@@ -13,6 +13,9 @@ class NephoVis {
 
 		// Disable importing from selection hash
 		this.preventImport = false;
+
+		// This could be better but it'll have to make do for now
+		this.centralColumn = this.level == "model" ? "_model" : "_id";
 	}
 
 	initVars() {
@@ -106,6 +109,20 @@ class NephoVis {
 		// TODO: I don't really understand how the data structure works
 
 		this.plot.restyle(this.dataPointStyles);
+	}
+
+	selectionByLegend(variable, value) {
+		// Because my selection behaviour is a bit different than in the original version, this works differently too
+		// The idea is that we will only remove a selection if the entire "to select" is selected
+		let itemsToSelect = this.dataLoader.datasets[this.centralDataset].filter(
+			row => row[variable] == value).map(row => row[this.centralColumn]);
+		let allSelected = itemsToSelect.every(tokenId => this.itemSelection.items.includes(tokenId));
+
+		if (!allSelected) {
+			itemsToSelect.forEach(item => this.itemSelection.addIfNotIn(item, false));
+		} else {
+			itemsToSelect.forEach(item => this.itemSelection.remove(item, false));
+		}
 	}
 
 	// To export

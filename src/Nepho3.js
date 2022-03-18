@@ -25,6 +25,8 @@ class NephoVisLevel3 extends NephoVis {
 
 		this.importSelection();
 
+		this.itemSelection = this.tokenSelection;
+
 		// todo: setup texts
 
 		// The context variable dictates what context column should be consulted on hover
@@ -344,16 +346,7 @@ class NephoVisLevel3 extends NephoVis {
 	}
 
 	selectionByLegend(variable, value) {
-		// Because my selection behaviour is a bit different than in the original version, this works differently too
-		// The idea is that we will only remove a selection if the entire "to select" is selected
-		let tokensToSelect = this.dataLoader.datasets["tokens"].filter(row => row[variable] == value).map(row => row["_id"]);
-		let allSelected = tokensToSelect.every(tokenId => this.tokenSelection.tokens.includes(tokenId));
-
-		if (!allSelected) {
-			tokensToSelect.forEach(token => this.tokenSelection.addIfNotIn(token, false));
-		} else {
-			tokensToSelect.forEach(token => this.tokenSelection.remove(token, false));
-		}
+		super.selectionByLegend(variable, value);
 
 		// Redraw the plot
 		this.afterTokenRestore();

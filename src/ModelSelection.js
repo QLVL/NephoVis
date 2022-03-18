@@ -1,29 +1,7 @@
-class ModelSelection {
+class ModelSelection extends ItemSelection {
 	constructor(dataset, callback) {
-		this.models = []
+		super(callback);
 		this.dataset = dataset;
-		// Will be executed every time a new model selection is made
-		this.callback = callback;
-	}
-
-	add(model) {
-		this.models.push(model);
-	}
-
-	remove(model) {
-		let index = this.models.indexOf(model);
-		if (index !== -1) {
-		  this.models.splice(index, 1);
-		}
-	}
-
-	restore(models) {
-		this.models = models;
-	}
-
-	fromMedoids(medoids) {
-		this.models = medoids;
-		this.callback();
 	}
 
 	select(variableSelection) {
@@ -40,24 +18,15 @@ class ModelSelection {
 		selectedModels = selectedModels.filter(selectedModel => selectedModel.length > 0);
 
 		if (selectedModels.length == 0) {
-			this.models = [];
+			this.items = [];
 		} else {
-			this.models = Helpers.intersection(selectedModels);
+			this.items = Helpers.intersection(selectedModels);
 		}
 
 		this.callback();
 	}
 
-	clear() {
-		this.models = []
-		this.callback();
-	}
-
-	get count() {
-		return this.models.length;
-	}
-
-	get items() {
-		return this.models;
+	get models() {
+		return this.items;
 	}
 }
