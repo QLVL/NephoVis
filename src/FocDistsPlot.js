@@ -27,4 +27,8 @@ class FocDistsPlot extends TokenPlot {
 	mouseOverPoint(row, pointElement) {
 		this.highlightPoint(pointElement);
 	}
+
+	drawLegend() {
+		return;
+	}
 }
