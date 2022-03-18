@@ -1,11 +1,10 @@
 class LostTokenPlot extends TokenPlot {
-	constructor(level, targetElementName, target, dataset, tailoredContexts,
+	constructor(level, targetElementName, target, dataset, contextVar, tailoredContexts,
 				dataPointStyles,
 				tokenSelection, variableSelection, onDataPointClick) {
 		let modelSelection = null;
 		let selectionByLegend = null;
 		let chosenSolution = null;
-		let contextVar = null;
 
 		super(level, targetElementName, {}, dataset, chosenSolution, contextVar,
 				tailoredContexts,
