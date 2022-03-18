@@ -119,4 +119,12 @@ class TokenPlot extends Plot {
 	onBrushEnd() {
 		this.brushEndCallback(this.tokenSelection.tokens);
 	}
+
+	updateSelection(tokens) {
+		if (typeof tokens != "undefined") {
+			this.selection = tokens;
+		}
+
+		super.updateSelection();
+	}
 }

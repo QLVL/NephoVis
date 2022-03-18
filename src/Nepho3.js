@@ -364,6 +364,7 @@ class NephoVisLevel3 extends NephoVis {
 							 	  () => { /* todo: selection by legend */ });
 		
 		let mouseClickFunctionContextWord = this.mouseClickPointContextWord.bind(this);
+		let brushEndFunctionContextWord = this.brushEndContextWord.bind(this);
 
 		this.focPlot = new FocDistsPlot(this.level,
 										"svgContainer2",
@@ -377,17 +378,22 @@ class NephoVisLevel3 extends NephoVis {
 										this.contextWordSelection,
 										this.variableSelection,
 										mouseClickFunctionContextWord,
-										() => {},
+										brushEndFunctionContextWord,
 										() => {});
 
 		if (this.brushActive)
 		{
-			this.brush = d3.brush()
-						   .extent([ [0, 0],
+			let tokenBrush = d3.brush()
+						   	   .extent([ [0, 0],
 						   		   	[ this.dimensions["width"],
 						   		   	  this.dimensions["height"] ] ]);
+			this.plot.applyBrush(tokenBrush);
 
-			this.plot.applyBrush(this.brush);
+			let focDistsBrush = d3.brush()
+						   	      .extent([ [0, 0],
+						   		   	  [ this.dimensions["width"],
+						   		   	  	this.dimensions["height"] ] ]);
+			this.focPlot.applyBrush(focDistsBrush);
 		}
 
 		if (this.dataLoader.datasets["lostTokens"].length == 0) {
@@ -408,11 +414,20 @@ class NephoVisLevel3 extends NephoVis {
 
 	brushEnd(tokens) {
 		this.tokenSelection.restore(tokens);
+		this.selectFromTokens();
+		this.afterTokenRestore();
+	}
+
+	brushEndContextWord(tokens) {
+		this.contextWordSelection.restore(tokens);
+		this.selectFromContextWords();
 		this.afterTokenRestore();
 	}
 
 	afterTokenRestore() {
-		this.selectFromTokens();
+		this.plot.updateSelection(this.tokenSelection);
+		this.focPlot.updateSelection(this.contextWordSelection);
+
 		this.buildInterface();
 		this.buildTokenOverview();
 	}
