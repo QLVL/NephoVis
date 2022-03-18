@@ -211,7 +211,7 @@ class NephoVisLevel3 extends NephoVis {
 		UserInterface.buildDropdown("ctxt",
 									this.dataProcessor.tailoredContexts,
 									(pair) => { this.contextVar = pair["value"];
-												this.plot.updateContextVar(contextVar);
+												this.plot.updateContextVar(this.contextVar);
 												this.buildInterface(); },
 									pair => this.contextVar == pair["value"] ?
 											`<b>${pair["key"]}</b>` :
