@@ -36,6 +36,14 @@ class NephoVisLevel3 extends NephoVis {
 	}
 
 	buildTokenDataset() {
+		// We first have to build the focdists, because there is a check for tokens in this method
+		// It will fail if we do focdists second. Don't worry about it, it's an implementation thing.
+		if (this.dataLoader.includesFOC) {
+			// Merge all different dimension reduction solutions into one dataset (context words)
+			this.dataLoader.datasets["focdists"] = this.mergeSolutions(true);
+			// We DON'T infuse the focdists dataset with variables information
+		}
+
 		// Merge all different dimension reduction solutions into one dataset
 		this.dataLoader.datasets["tokens"] = this.mergeSolutions();
 
@@ -49,7 +57,11 @@ class NephoVisLevel3 extends NephoVis {
 		this.dataLoader.datasets["lostTokens"] = this.dataLoader.datasets["tokens"].filter(row =>
 			!Helpers.existsFromColumn(row, this.chosenSolution));
 
-		console.log(this.dataLoader.datasets["lostTokens"]);
+		// Find lost focdists (and non lost focdists)
+		this.dataLoader.datasets["nonLostFocdists"] = this.dataLoader.datasets["focdists"].filter(row =>
+			Helpers.existsFromColumn(row, this.chosenSolution));
+		this.dataLoader.datasets["lostFocdists"] = this.dataLoader.datasets["focdists"].filter(row =>
+			!Helpers.existsFromColumn(row, this.chosenSolution));
 	}
 
 	initVars() {
@@ -113,27 +125,31 @@ class NephoVisLevel3 extends NephoVis {
 		}
 	}
 
-	mergeSolutions() {
+	mergeSolutions(contextWords=false) {
 		// TODO: how can tokens be in the datasets if we always remove it if it's there?
 		if (!("tokens" in this.dataLoader.datasets) && this.dataLoader.alternatives != null) {
 
 			// todo: I think this needs to be chosen solution?
-			let coordinates = this.subsetCoordinates(this.dataLoader.alternatives[0]);
+			let coordinates = this.subsetCoordinates(this.dataLoader.alternatives[0], contextWords);
 
 			for (let i = 1; i < this.dataLoader.alternatives.length; i++) {
-				let alternativeCoordinates = this.subsetCoordinates(this.dataLoader.alternatives[i]);
+				let alternativeCoordinates = this.subsetCoordinates(this.dataLoader.alternatives[i], contextWords);
 				coordinates = Helpers.mergeVariables(coordinates, alternativeCoordinates);
 			}
 
 			return coordinates;
 		// Old dataset layout?
 		} else {
-			return this.subsetCoordinates("tokens");
+			return this.subsetCoordinates("tokens", contextWords);
 		}
 	}
 
 	// For level 2 & 3: offer different solutions if they exist
-	subsetCoordinates(solution) {
+	subsetCoordinates(solution, contextWords=false) {
+		solution = !contextWords ? solution : `${solution}cws`;
+
+		console.log(solution);
+
 		// Pick the data specific to this solution
 		let data = this.dataLoader.datasets[solution];
 
@@ -311,6 +327,21 @@ class NephoVisLevel3 extends NephoVis {
 							 	  mouseClickFunction,
 							 	  brushEndFunction,
 							 	  () => { /* todo: selection by legend */ });
+
+		this.focPlot = new FocDistsPlot(this.level,
+										"svgContainer2",
+										this.dimensions,
+										this.dataLoader.datasets["nonLostFocdists"],
+										this.chosenSolution,
+										this.contextVar,
+										this.dataProcessor.tailoredContexts,
+										this.dataPointStyles,
+										this.modelSelection,
+										this.tokenSelection,
+										this.variableSelection,
+										() => {},
+										() => {},
+										() => {});
 
 		if (this.brushActive)
 		{

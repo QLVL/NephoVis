@@ -19,6 +19,8 @@ class TokenPlot extends Plot {
 		this.idColumn = "_id";
 		this.selection = this.tokenSelection;
 
+		this.coordinatesSource = this.chosenSolution;
+
 		this.initPlot();
 	}
 
@@ -27,8 +29,6 @@ class TokenPlot extends Plot {
 	}
 
 	setAxes() {
-		this.coordinatesSource = this.chosenSolution;
-
 		super.setAxes();
 	}
 
