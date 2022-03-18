@@ -239,7 +239,11 @@ class Plot {
 		this.drawLegend();
 	}
 
-	updateSelection() {
+	updateSelection(items) {
+		if (typeof items != "undefined") {
+			this.selection = items;
+		}
+
 		for (let dataPointStyleName in this.dataPointStyles) {
 			// If something is selected, everything else is translucent
 			this.svg.selectAll(".dot")
