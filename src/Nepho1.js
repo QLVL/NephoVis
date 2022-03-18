@@ -20,6 +20,7 @@ class NephoVisLevel1 extends NephoVis {
 		UserInterface.setButton("clearSelect", () => 
 			{
 				this.modelSelection.clear();
+				this.initVariableSelection();
 				UserInterface.resetSelectionButtons();
 			});
 
