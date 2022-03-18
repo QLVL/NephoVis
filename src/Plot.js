@@ -49,6 +49,10 @@ class Plot {
 
 		this.updateSelection();
 
+		this.drawLegend();
+	}
+
+	drawLegend() {
 		this.legend = new Legend(this.dataset, this.level, this.type, this.variableSelection,
 								 this.dataPointStyles, this.dimensions["padding"], this.selectionByLegend);
 	}
@@ -231,6 +235,8 @@ class Plot {
 
 		// Restyle, maybe the data point styles have changed
 		this.stylePoints(this.pointCloud);
+
+		this.drawLegend();
 	}
 
 	updateSelection() {
