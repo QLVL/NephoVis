@@ -62,4 +62,8 @@ class LostTokenPlot extends TokenPlot {
       	this.stylePoints(this.pointCloud);
       	this.applyEvents(this.pointCloud);
 	}
+
+	drawLegend() {
+		return;
+	}
 }
