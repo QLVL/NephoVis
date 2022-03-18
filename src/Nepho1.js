@@ -62,7 +62,8 @@ class NephoVisLevel1 extends NephoVis {
 		}
 
 		// Redraw the plot
-		this.drawPlot();
+		this.plot.updateSelection(this.modelSelection);
+		//this.drawPlot();
 	}
 
 	drawPlot() {
