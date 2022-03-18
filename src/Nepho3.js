@@ -190,6 +190,7 @@ class NephoVisLevel3 extends NephoVis {
 		UserInterface.setButton("clearSelect", () => 
 			{
 				this.tokenSelection.clear();
+				this.contextWordSelection.clear();
 			});
 
 		UserInterface.setButton("findTokensContextBtn", (event) => {
