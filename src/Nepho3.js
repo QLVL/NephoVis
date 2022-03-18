@@ -67,8 +67,7 @@ class NephoVisLevel3 extends NephoVis {
 	initVars() {
 		super.initVars();
 
-		let tokenSelectionUpdateCallback = () => { this.buildTokenOverview();
-												   this.drawPlot(); };
+		let tokenSelectionUpdateCallback = () => { this.afterTokenRestore(); };
 		this.tokenSelection = new TokenSelection(tokenSelectionUpdateCallback);
 		this.contextWordSelection = new TokenSelection(() => {});
 	}
