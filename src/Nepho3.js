@@ -69,9 +69,13 @@ class NephoVisLevel3 extends NephoVis {
 	initVars() {
 		super.initVars();
 
-		let tokenSelectionUpdateCallback = () => { this.afterTokenRestore(); };
+		let tokenSelectionUpdateCallback = () => { this.selectFromTokens(); 
+												   this.afterTokenRestore(); };
+		let contextWordSelectionUpdateCallback = () => { this.selectFromContextWords();
+														 this.afterTokenRestore(); };
+
 		this.tokenSelection = new TokenSelection(tokenSelectionUpdateCallback);
-		this.contextWordSelection = new TokenSelection(tokenSelectionUpdateCallback);
+		this.contextWordSelection = new TokenSelection(contextWordSelectionUpdateCallback);
 	}
 
 	initTailoredVars() {
@@ -296,30 +300,13 @@ class NephoVisLevel3 extends NephoVis {
 	mouseClickPoint(row, pointElement) {
 		// We manually add a token to the token selection
 		// Or, if it's already in the model selection, we remove it
-		if (!this.tokenSelection.tokens.includes(row["_id"])) {
-			this.tokenSelection.add(row["_id"]);
-		} else {
-			this.tokenSelection.remove(row["_id"]);
-		}
-
-		this.selectFromTokens();
-
-		this.afterTokenRestore();
+		this.tokenSelection.toggle(row["_id"]);
 	}
 
 	mouseClickPointContextWord(row, pointElement) {
 		// We manually add a token to the token selection
 		// Or, if it's already in the model selection, we remove it
-		// TODO MOVE THIS LOGIC TO THE TOKEN SELECTION CLASS !!!
-		if (!this.contextWordSelection.tokens.includes(row["_id"])) {
-			this.contextWordSelection.add(row["_id"]);
-		} else {
-			this.contextWordSelection.remove(row["_id"]);
-		}
-
-		this.selectFromContextWords();
-
-		this.afterTokenRestore();
+		this.contextWordSelection.toggle(row["_id"]);
 	}
 
 	selectFromContextWords() {

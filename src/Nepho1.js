@@ -59,14 +59,7 @@ class NephoVisLevel1 extends NephoVis {
 
 		// We manually add a model to the model selection
 		// Or, if it's already in the model selection, we remove it
-		if (!this.modelSelection.models.includes(row["_model"])) {
-			this.modelSelection.add(row["_model"]);
-		} else {
-			this.modelSelection.remove(row["_model"]);
-		}
-
-		// Update plot selection
-		this.updateSelection();
+		this.modelSelection.toggle(row["_model"]);
 	}
 
 	drawPlot() {
@@ -98,8 +91,6 @@ class NephoVisLevel1 extends NephoVis {
 	}
 
 	updateSelection() {
-		console.log("updating selection");
-
 		// If the selection has changed, surely some other update has happened
 		// So, we update the UI as well
 		this.drawUi();

@@ -30,6 +30,14 @@ class ItemSelection {
 		}
 	}
 
+	toggle(item) {
+		if (!this.items.includes(item)) {
+			this.add(item);
+		} else {
+			this.remove(item);
+		}
+	}
+
 	restore(items) {
 		this.items = items;
 	}
