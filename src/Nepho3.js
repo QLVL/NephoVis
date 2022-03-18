@@ -275,6 +275,15 @@ class NephoVisLevel3 extends NephoVis {
 		this.tokenSelection.remove(tokenId);
 	}
 
+	handleDropdownChange(dataPointStyleName, variable) {
+		// Do regular dropdown change, but also update lost token plots if they're available
+		super.handleDropdownChange(dataPointStyleName, variable);
+
+		if (this.lostTokenPlot != null) {
+			this.lostTokenPlot.restyle(this.dataPointStyles);
+		}
+	}
+
 	get chosenSolution() {
 		return this._chosenSolution;
 	}
@@ -392,20 +401,32 @@ class NephoVisLevel3 extends NephoVis {
 										brushEndFunctionContextWord,
 										() => {});
 
-		if (this.dataLoader.datasets["lostTokens"].length == 0) {
-			console.log("no token for you");
-			return;
+		// Set null value so we can check for lost token plot even if it's not there
+		this.lostTokenPlot = null;
+
+		if (this.dataLoader.datasets["lostTokens"].length > 0) {
+			this.lostTokenPlot = new LostTokenPlot(this.level,
+												   "losttokens",
+												   "tokens",
+												   this.dataLoader.datasets["lostTokens"],
+												   this.dataProcessor.tailoredContexts,
+												   this.dataPointStyles,
+												   this.tokenSelection,
+												   this.variableSelection,
+												   mouseClickFunction);
 		}
 
-		this.lostTokenPlot = new LostTokenPlot(this.level,
-											   "losttokens",
-											   "tokens",
-											   this.dataLoader.datasets["lostTokens"],
-											   this.dataProcessor.tailoredContexts,
-											   this.dataPointStyles,
-											   this.contextWordSelection,
-											   this.variableSelection,
-											   mouseClickFunction);
+		if (this.dataLoader.datasets["lostFocdists"].length > 0) {
+			this.lostFocdistsPlot = new LostFocDistsPlot(this.level,
+												   		"lostfocdists",
+												   		"FOCs",
+												   		this.dataLoader.datasets["lostFocdists"],
+												   		this.dataProcessor.tailoredContexts,
+												   		this.dataPointStyles,
+												   		this.contextWordSelection,
+												   		this.variableSelection,
+												   		mouseClickFunctionContextWord);
+		}
 	}
 
 	brushToggle() {

@@ -28,9 +28,6 @@ class LostTokenPlot extends TokenPlot {
 	}
 
 	generateLostTokens() {
-		// Delete all lost token overviews
-		d3.selectAll(".lost").remove();
-
 		// todo: dots per row doesn't scale when sidebar width is changed	
 	    let dotsPerRow = Math.floor((this.dimensions["width"] - this.dimensions["padding"]) / 10);
 	    let dotsColumns = Math.ceil(this.dataset.length / dotsPerRow);
@@ -48,7 +45,7 @@ class LostTokenPlot extends TokenPlot {
       					 .attr("height", dotsColumns * 10 + this.dimensions["padding"] / 2)
       					 .attr("transform", "translate(0,0)")
       					 
-      	let tokens = this.svg.append("g")
+      	this.pointCloud = this.svg.append("g")
       					 	 .attr("transform", `translate(${10},${10})`)
       					 	 .attr("class", "dot")
       					 	 .selectAll("path")
@@ -63,7 +60,7 @@ class LostTokenPlot extends TokenPlot {
       					 });
       		   //.call(styleDot, settings, target);
 
-      	this.stylePoints(tokens);
-      	this.applyEvents(tokens);
+      	this.stylePoints(this.pointCloud);
+      	this.applyEvents(this.pointCloud);
 	}
 }
