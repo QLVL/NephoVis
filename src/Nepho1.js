@@ -93,7 +93,7 @@ class NephoVisLevel1 extends NephoVis {
 	selectionByLegend(variable, value) {
 		super.selectionByLegend(variable, value);
 
-		this.resetVariableSelection()
+		this.resetVariableSelection();
 		this.updateSelection();
 	}
 
