@@ -259,6 +259,8 @@ class Plot {
 			  	  }
 			  	  } );
 		}
+
+		this.drawLegend();
 	}
 
 	generateComplementaryColour(colour) {
