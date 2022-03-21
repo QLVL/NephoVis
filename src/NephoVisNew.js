@@ -145,6 +145,7 @@ class NephoVis {
 
 		if (this.level == "token") {
 			toExport["tokenSelection"] = this.tokenSelection.tokens;
+			toExport["chosenSolution"] = this.chosenSolution;
 		}
 
 		// Base64 encode our selection

@@ -15,15 +15,15 @@ class NephoVisLevel3 extends NephoVis {
 		// Set the current dimension reduction solution to simply be the first one
 		this._chosenSolution = this.dataLoader.alternatives[0];
 
-		// Build the switcher which allows you to switch between dimension reduction solutions
-		this.buildSolutionSwitchDropdown();
-
 		this.buildTokenDataset();
 
 		// Initialise all variables
 		this.initVars();
 
 		this.importSelection();
+
+		// Build the switcher which allows you to switch between dimension reduction solutions
+		this.buildSolutionSwitchDropdown();
 
 		this.itemSelection = this.tokenSelection;
 
@@ -296,6 +296,11 @@ class NephoVisLevel3 extends NephoVis {
 		this._chosenSolution = solution;
 		this.buildSolutionSwitchDropdown(true);
 		this.switchSolution();
+		this.updateUrl();
+	}
+
+	restoreChosenSolution(chosenSolution) {
+		this._chosenSolution = chosenSolution;
 	}
 
 	mouseClickPoint(row, pointElement) {
@@ -484,6 +489,10 @@ class NephoVisLevel3 extends NephoVis {
 
 		if ("tokenSelection" in decodedExport) {
 			this.tokenSelection.restore(decodedExport["tokenSelection"]);
+		}
+
+		if ("chosenSolution" in decodedExport) {
+			this.restoreChosenSolution(decodedExport["chosenSolution"]);
 		}
 	}
 
