@@ -8,8 +8,16 @@ class NephoSession {
 		if (this.nephoVis != null) {
 			// If the type and level haven't changed, update the selection
 			if (this.nephoVis.type == type && this.nephoVis.level == level) {
-				this.nephoVis.importSelection(selection);
-				return;
+				// If we're on the token level, there is the possibility that the model has changed
+				if (this.nephoVis.level == "token") {
+					// If the model has changed
+					if (this.nephoVis.model != model) {
+						window.location.reload();
+					}
+				} else {
+					this.nephoVis.importSelection(selection);
+					return;
+				}
 			}
 			else {
 				window.location.reload();
