@@ -14,6 +14,8 @@ class NephoSession {
 					if (this.nephoVis.model != model) {
 						window.location.reload();
 					}
+
+					return;
 				} else {
 					this.nephoVis.importSelection(selection);
 					return;
