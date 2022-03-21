@@ -70,7 +70,7 @@ class Plot {
 	setPointerEvents() {
 		this.svgContainer = this.svg.append("rect")
         		.attr("viewBox", `0 0 ${this.dimensions["height"]} ${this.dimensions["width"]}`)
-        		.classed("svgPlot", true)
+        		.classed("svgContainer", true)
         		.style("pointer-events", "all")
         		.style("fill", "none");
 	}
@@ -265,6 +265,56 @@ class Plot {
 				.style("fill", "none")
 				.style("stroke", this.generateComplementaryColour(pointElement.style("fill")))
 				.style("stroke-width", 2);
+	}
+
+	showTooltip(row, pointElement) {
+		// Reconstruct the coordinates from point index
+		let position = this.pointCloudCoordinates[+pointElement.attr("pointIndex")];
+
+		let svgDimensions = { "width": parseFloat(this.targetElement.style("width")),
+							  "height": parseFloat(this.targetElement.style("height")) };
+
+		// The plot is actually scaled depending on the screen size
+		// We compute the actual "real" absolute coordinates
+		let realCoordinates = [ svgDimensions["width"] / this.dimensions["width"] * position[0],
+								svgDimensions["height"] / this.dimensions["height"] * position[1] ];
+
+		// --- TOOLTIP ---
+
+		// Clear tooltip hide timeout
+		clearTimeout(this.tooltipHideTimeout);
+
+		// Show the tooltip
+		this.tooltip.transition()
+					.duration(200)
+					.style("opacity", 1)
+					.style("display", "block");
+
+		let tooltipContent = this.generateTooltipContent(row);
+
+		// Create the tooltip first (we need its width to position it)
+		this.tooltip.html(tooltipContent)
+			 	    .style("top", realCoordinates[1] + "px");
+
+		// Determine the tooltip location
+		let tooltipLeftCoordinate = position[0];
+		let tooltipWidth = parseInt(this.tooltip.style("width"));
+		// If there isn't enough room to show the tooltip
+		if (svgDimensions["width"] - position[0] < tooltipWidth) {
+			// Adjust the tooltip position
+			tooltipLeftCoordinate = Math.max(0, (position[0] - tooltipWidth)) + "px";
+		}
+
+		// Adjust the left coordinate
+		this.tooltip.style("left", tooltipLeftCoordinate);
+	}
+
+	hideTooltip() {
+		// Do the fade-out effect
+		this.tooltip.transition().duration(this.tooltipTimeoutDuration).style("opacity", 0);
+		// Completely set display to "none" after the set timeout
+		this.tooltipHideTimeout = setTimeout(
+			() => { this.tooltip.style("display", "none"); }, this.tooltipTimeoutDuration);
 	}
 
 	mouseOut() {

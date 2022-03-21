@@ -1,12 +1,23 @@
 class FocDistsPlot extends TokenPlot {
-	constructor(level, targetElementName, dimensions, dataset, chosenSolution, contextVar,
-				tailoredContexts,
+	constructor(level, targetElementName, dimensions, dataset, tokenDataset, chosenSolution, contextVar,
+				contextWordsColumn, tailoredContexts,
 				dataPointStyles, modelSelection, tokenSelection,
 				variableSelection, onDataPointClick, brushEndCallback, selectionByLegend) {
 		super(level, targetElementName, dimensions, dataset, chosenSolution, contextVar,
 				tailoredContexts,
 				dataPointStyles, modelSelection, tokenSelection,
 				variableSelection, onDataPointClick, brushEndCallback, selectionByLegend);
+
+		this.contextWordsColumn = contextWordsColumn;
+		this.tokenDataset = tokenDataset;
+
+		this.tooltipGenerator = new FocDistsTooltipGenerator(this.tokenDataset,
+															 this.contextWordsColumn);
+	}
+
+	initPlot() {
+		super.initPlot();
+		this.setTooltip(this.targetElement);
 	}
 
 	setAxes(doTraceCenter=true) {
@@ -25,7 +36,17 @@ class FocDistsPlot extends TokenPlot {
 	}
 
 	mouseOverPoint(row, pointElement) {
+		this.showTooltip(row, pointElement);
 		this.highlightPoint(pointElement);
+	}
+
+	mouseOut() {
+		super.mouseOut();
+		this.hideTooltip();
+	}
+
+	generateTooltipContent(row) {
+		return this.tooltipGenerator.generate(row);
 	}
 
 	drawLegend() {
