@@ -125,8 +125,7 @@ class NephoVisLevel3 extends NephoVis {
 													  (solution) => { return solution == this.chosenSolution ?
 													  				  		`<b>${solution}</b>` :
 													  				  		solution },
-													  (solution) => { this.chosenSolution = solution;
-													  				  this.switchSolution(); },
+													  (solution) => { this.chosenSolution = solution; },
 													  update);
 			}
 		}
@@ -296,6 +295,7 @@ class NephoVisLevel3 extends NephoVis {
 	set chosenSolution(solution) {
 		this._chosenSolution = solution;
 		this.buildSolutionSwitchDropdown(true);
+		this.switchSolution();
 	}
 
 	mouseClickPoint(row, pointElement) {
