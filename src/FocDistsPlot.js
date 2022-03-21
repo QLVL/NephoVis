@@ -9,10 +9,10 @@ class FocDistsPlot extends TokenPlot {
 				variableSelection, onDataPointClick, brushEndCallback, selectionByLegend);
 	}
 
-	setAxes() {
+	setAxes(doTraceCenter=true) {
 		this.coordinatesSource = `${this.chosenSolution}cws`;
 
-		super.setAxes();
+		super.setAxes(doTraceCenter);
 	}
 
 	codePoint(row, dataPointStyle) {
