@@ -31,12 +31,13 @@ class Plot {
 
 	appendSvg() {
 		// Create a new SVG element
-		this.svg = this.targetElement.append("svg")
+		this.svgPlot = this.targetElement.append("svg")
 					.attr("viewBox", `0 0 ${this.dimensions["height"]} ${this.dimensions["width"]}`) // set w & h
 					.attr("preserveAspectRatio", "xMinYMin meet")
 					.classed("svgPlot", this.level == "model")
-					.append("g") // add SVG group
-					.call(d3.zoom().on('zoom', this.onZoom));
+
+		this.svg = this.svgPlot.append("g") // add SVG group
+							   .call(d3.zoom().on('zoom', this.onZoom));
 	}
 
 	initPlot() {
@@ -271,8 +272,8 @@ class Plot {
 		// Reconstruct the coordinates from point index
 		let position = this.pointCloudCoordinates[+pointElement.attr("pointIndex")];
 
-		let svgDimensions = { "width": parseFloat(this.targetElement.style("width")),
-							  "height": parseFloat(this.targetElement.style("height")) };
+		let svgDimensions = { "width": parseFloat(this.svgPlot.style("width")),
+							  "height": parseFloat(this.svgPlot.style("height")) };
 
 		// The plot is actually scaled depending on the screen size
 		// We compute the actual "real" absolute coordinates
@@ -285,8 +286,8 @@ class Plot {
 		clearTimeout(this.tooltipHideTimeout);
 
 		// Show the tooltip
-		this.tooltip.transition()
-					.duration(200)
+		this.tooltip//.transition()
+					//.duration(200)
 					.style("opacity", 1)
 					.style("display", "block");
 
@@ -294,16 +295,18 @@ class Plot {
 
 		// Create the tooltip first (we need its width to position it)
 		this.tooltip.html(tooltipContent)
-			 	    .style("top", realCoordinates[1] + "px");
+			 	    .style("top", (realCoordinates[1] + 10) + "px");
+
+		// tooltip.style("left", svgWidth-xcoord > parseInt(tooltipWidth) ? xcoord + "px" : Math.max(0, (xcoord-tooltipWidth)) + "px");
 
 		// Determine the tooltip location
-		let tooltipLeftCoordinate = position[0];
 		let tooltipWidth = parseInt(this.tooltip.style("width"));
-		// If there isn't enough room to show the tooltip
-		if (svgDimensions["width"] - position[0] < tooltipWidth) {
-			// Adjust the tooltip position
-			tooltipLeftCoordinate = Math.max(0, (position[0] - tooltipWidth)) + "px";
-		}
+		console.log(tooltipWidth);
+		let tooltipLeftCoordinate = svgDimensions["width"] - realCoordinates[0] > tooltipWidth ?
+									`${realCoordinates[0]}px` :
+									`${Math.max(0, (realCoordinates[0] - tooltipWidth))}px`;
+
+		console.log(realCoordinates[1] + "px", tooltipLeftCoordinate)
 
 		// Adjust the left coordinate
 		this.tooltip.style("left", tooltipLeftCoordinate);
@@ -311,10 +314,12 @@ class Plot {
 
 	hideTooltip() {
 		// Do the fade-out effect
-		this.tooltip.transition().duration(this.tooltipTimeoutDuration).style("opacity", 0);
+		//this.tooltip.transition().duration(this.tooltipTimeoutDuration).style("opacity", 0);
 		// Completely set display to "none" after the set timeout
-		this.tooltipHideTimeout = setTimeout(
-			() => { this.tooltip.style("display", "none"); }, this.tooltipTimeoutDuration);
+		//this.tooltipHideTimeout = setTimeout(
+		//	() => { this.tooltip.style("display", "none"); }, this.tooltipTimeoutDuration);
+
+		this.tooltip.style("display", "none");
 	}
 
 	mouseOut() {
