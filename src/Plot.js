@@ -25,6 +25,8 @@ class Plot {
 
 		// Save the dimensions
 		this.dimensions = dimensions;
+
+		this.animationDuration = 1000;
 	}
 
 	appendSvg() {
@@ -73,7 +75,7 @@ class Plot {
         		.style("fill", "none");
 	}
 
-	setAxes() {
+	setAxes(doTraceCenter=true) {
 		// Get a range of all possible model axis values
 		// We do this by combining all possible values for model x and model y coordinates
 		// For the token plot, this range is defined by possible values for a solution
@@ -103,6 +105,14 @@ class Plot {
     					   		   .domain(axesRange)
     					   		   .range(pixelRange["y"]) };
 
+    	// If the plot is being updated, we don't need to redraw the axes
+    	// The axes will be animated into a new position (see below)
+    	if (!doTraceCenter) {
+    		return;
+    	}
+
+    	// If the plot is new, however, we trace the axes
+
     	this.x_center = this.traceCenter(this.svg,
     									 this.d3AxisScaler["x"](0),
     									 this.d3AxisScaler["x"](0),
@@ -116,10 +126,14 @@ class Plot {
     									 this.d3AxisScaler["y"](0));
 	}
 
-	generatePointCloud() {
+	generatePointCloudCoordinates() {
 		// Pre-compute the point cloud coordinates
 		// This way, we can save them for later use
-		this.pointCloudCoordinates = this.dataset.map((row) => { return this.scaleDataPoint(row); });
+		this.pointCloudCoordinates = this.dataset.map(row => this.scaleDataPoint(row));
+	}
+
+	generatePointCloud() {
+		this.generatePointCloudCoordinates();
 
 		this.pointCloud = this.svg.append("g") // create another SVG group
 								   // give it the "dot" class
@@ -133,8 +147,7 @@ class Plot {
 								   // give the SVG path a scaled transform
 								   // this will effectively absolutely position the token
 								  .attr("transform",
-								   (row, index) => 
-								   `translate(${this.pointCloudCoordinates[index][0]}, ${this.pointCloudCoordinates[index][1]})`)
+								   (row, index) => this.generatePointCloudElementTransform(index))
 								  .attr("pointIndex", (row, index) => index)
 								  ;
 
@@ -146,6 +159,35 @@ class Plot {
 		this.applyEvents(this.pointCloud);
 
 		this.pointCloudElements = this.svg.selectAll(".dot").selectAll("path");
+	}
+
+	generatePointCloudElementTransform(index) {
+		return `translate(${this.pointCloudCoordinates[index][0]}, ${this.pointCloudCoordinates[index][1]})`;
+	}
+
+	updatePointCloud() {
+		// Update the axes ("ranges") for the new solution
+		this.setAxes(false);
+
+		// From these new axes, generate new coordinates
+		this.generatePointCloudCoordinates();
+
+		// Update the coordinates for the existing data points
+		this.pointCloudElements.transition()
+					   		   .duration(this.animationDuration)
+					   		   .attr("transform", (row, index) =>
+					   		   		this.generatePointCloudElementTransform(index));
+
+		// Move the axes
+		this.x_center.transition()
+					 .duration(this.animationDuration)
+					 .attr("x1", this.d3AxisScaler["x"](0))
+					 .attr("x2", this.d3AxisScaler["x"](0));
+		
+		this.y_center.transition()
+					 .duration(this.animationDuration)
+					 .attr("y1", this.d3AxisScaler["y"](0))
+					 .attr("y2", this.d3AxisScaler["y"](0));
 	}
 
 	applyEvents(points) {

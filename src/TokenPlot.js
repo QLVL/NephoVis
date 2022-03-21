@@ -19,17 +19,21 @@ class TokenPlot extends Plot {
 		this.idColumn = "_id";
 		this.selection = this.tokenSelection;
 
-		this.coordinatesSource = this.chosenSolution;
-
 		this.initPlot();
+	}
+
+	// Automatically set coordinates source to the chosen solution when chosen solution changes
+	set chosenSolution(chosenSolution) {
+		this._chosenSolution = chosenSolution;
+		this.coordinatesSource = this.chosenSolution;
+	}
+
+	get chosenSolution() {
+		return this._chosenSolution;
 	}
 
 	initPlot() {
 		super.initPlot();
-	}
-
-	setAxes() {
-		super.setAxes();
 	}
 
 	mouseOverPoint(row, pointElement) {
@@ -122,5 +126,11 @@ class TokenPlot extends Plot {
 
 	updateContextVar(contextVar) {
 		this.contextVar = contextVar;
+	}
+
+	switchSolution(chosenSolution) {
+		this.chosenSolution = chosenSolution;
+
+		this.updatePointCloud();
 	}
 }

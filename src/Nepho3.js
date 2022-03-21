@@ -125,7 +125,8 @@ class NephoVisLevel3 extends NephoVis {
 													  (solution) => { return solution == this.chosenSolution ?
 													  				  		`<b>${solution}</b>` :
 													  				  		solution },
-													  (solution) => { this.chosenSolution = solution; },
+													  (solution) => { this.chosenSolution = solution;
+													  				  this.switchSolution(); },
 													  update);
 			}
 		}
@@ -379,6 +380,7 @@ class NephoVisLevel3 extends NephoVis {
 		let mouseClickFunctionContextWord = this.mouseClickPointContextWord.bind(this);
 		let brushEndFunctionContextWord = this.brushEndContextWord.bind(this);
 
+		// todo build check for whether foc dist plot should be rendered
 		this.focPlot = new FocDistsPlot(this.level,
 										"svgContainer2",
 										this.dimensions,
@@ -422,6 +424,15 @@ class NephoVisLevel3 extends NephoVis {
 												   		this.variableSelection,
 												   		mouseClickFunctionContextWord);
 		}
+	}
+
+	switchSolution() {
+		this.brushActive = false;
+		this.brushToggle();
+
+		this.plot.switchSolution(this.chosenSolution);
+		// TODO: check if foc dist plot exists
+		this.focPlot.switchSolution(this.chosenSolution);
 	}
 
 	brushToggle() {
