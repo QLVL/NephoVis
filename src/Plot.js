@@ -27,6 +27,7 @@ class Plot {
 		this.dimensions = dimensions;
 
 		this.animationDuration = 1000;
+		this.tooltipOffset = 10;
 	}
 
 	appendSvg() {
@@ -295,7 +296,7 @@ class Plot {
 
 		// Create the tooltip first (we need its width to position it)
 		this.tooltip.html(tooltipContent)
-			 	    .style("top", (realCoordinates[1] + 10) + "px");
+			 	    .style("top", (realCoordinates[1] + this.tooltipOffset) + "px");
 
 		// tooltip.style("left", svgWidth-xcoord > parseInt(tooltipWidth) ? xcoord + "px" : Math.max(0, (xcoord-tooltipWidth)) + "px");
 

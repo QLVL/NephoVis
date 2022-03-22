@@ -12,6 +12,8 @@ class LostFocDistsPlot extends LostTokenPlot {
 		this.tooltipGenerator = new FocDistsTooltipGenerator(this.tokenDataset,
 															 this.contextWordsColumn);
 
+		this.tooltipOffset = 20;
+
 		this.setTooltip(this.targetElement);
 	}
 
