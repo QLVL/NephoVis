@@ -266,7 +266,6 @@ class NephoVisLevel3 extends NephoVis {
 			brushOrClickSwitcher.onchange = (event) => {
 				let selectedFunction = event.target.value;
 				this.brushActive = selectedFunction == "brush";
-				this.brushToggle()
 			} 
 		});
 	}
@@ -433,13 +432,21 @@ class NephoVisLevel3 extends NephoVis {
 
 	switchSolution() {
 		this.brushActive = false;
-		this.brushToggle();
 
 		this.plot.switchSolution(this.chosenSolution);
 		
 		if (this.dataLoader.includesFOC) {
 			this.focPlot.switchSolution(this.chosenSolution);
 		}
+	}
+
+	get brushActive() {
+		return this._brushActive;
+	}
+
+	set brushActive(brushActive) {
+		this._brushActive = brushActive;
+		this.brushToggle();
 	}
 
 	brushToggle() {
