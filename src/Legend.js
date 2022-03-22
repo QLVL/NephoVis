@@ -24,11 +24,19 @@ class Legend {
 				continue;
 			}
 
+			let legend = dataPointStyle.legend;
+
 			// When this legend cell is clicked, we toggle the selection for all elements
 			// which adhere to this legend style
-			let legend = dataPointStyle.legend.on("cellclick", (variable) => {
-				this.selectionByLegend(dataPointStyle.variable, variable);
-			 });
+			
+			// Size is a continuous variable, for which clicking doesn't make sense
+			// We disable clicking for size
+			if (dataPointStyle.style != "size")
+			{
+				legend = legend.on("cellclick", (variable) => {
+					this.selectionByLegend(dataPointStyle.variable, variable);
+				 });
+			}
 
 			let legendContainer = d3.select(dataPointStyle.legendContainer)
 			  .append("svg")
@@ -39,6 +47,8 @@ class Legend {
               .append("g")
               .attr("class", "legend")
               .attr("transform", "translate(" + 0 + ", " + this.padding / 2 + ")")
+
+
               .call(legend);
       
              // Apply bold
