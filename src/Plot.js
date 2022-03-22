@@ -23,6 +23,11 @@ class Plot {
 		// Clear target element contents
 		this.targetElement.html("");
 
+		// Make the target element have position: relative!
+		// Needs to be relative for position: absolute of tooltips to make sense
+		// Position: absolute = relative to first relative parent
+		this.targetElement.style("position", "relative");
+
 		// Save the dimensions
 		this.dimensions = dimensions;
 
