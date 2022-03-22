@@ -211,6 +211,16 @@ class NephoVisLevel3 extends NephoVis {
 				(needle) => `Sorry, "${needle}" is not present as a feature in this model.`);
 		});
 
+		UserInterface.setButton("showTable", (event) => { 
+			let params = "width=700,height=700,menubar=no,toolbar=no,location=no,status=no";
+			window.open(router.router.generate("frequency.type.contextwordscolumn.selection", 
+												{ type: this.type,
+												  contextWordsColumn: this.dataProcessor.contextWordsColumn,
+												  selection: this.selection }),
+						"freqtable",
+						params);
+		});
+
 		// We have to build the dropdown for the context words manually
 		UserInterface.buildDropdown("ctxt",
 									this.dataProcessor.tailoredContexts,

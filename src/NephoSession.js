@@ -37,6 +37,10 @@ class NephoSession {
 		}
 		
 	}
+
+	buildFrequencyTable(type, contextWordsColumn, selection) {
+		this.nephoVis = new FrequencyTable(type, contextWordsColumn, selection);
+	}
 }
 
 nephoSession = new NephoSession();

@@ -36,6 +36,11 @@ class NephoVis {
 
 		this.initVariableSelection();
 
+		// Frequency doesn't need any of this, so begone!!!
+		if (this.level == "frequency") {
+			return;
+		}
+
 		let dataOptionsTable;
 		switch (this.level) {
 			case "model":
