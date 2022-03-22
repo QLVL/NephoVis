@@ -329,7 +329,7 @@ class NephoVisLevel3 extends NephoVis {
 	}
 
 	selectByContextSearch(needle, haystackColumn, generateError) {
-		let matchingTokens = this.dataLoader.datasets["tokens"].filter(row => row[haystackColumn].includes(needle));
+		let matchingTokens = this.dataLoader.datasets["tokens"].filter(row => row[haystackColumn].search(needle) !== -1);
 		console.log(matchingTokens);
 		let tokenSelection = matchingTokens.map(row => row["_id"]);
 
