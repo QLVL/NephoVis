@@ -27,8 +27,6 @@ class NephoVisLevel3 extends NephoVis {
 
 		this.itemSelection = this.tokenSelection;
 
-		// todo: setup texts
-
 		// The context variable dictates what context column should be consulted on hover
 		this.contextVar = "_ctxt.raw";
 
@@ -266,11 +264,9 @@ class NephoVisLevel3 extends NephoVis {
 
 		brushOrClickSwitchers.forEach(brushOrClickSwitcher => {
 			brushOrClickSwitcher.onchange = (event) => {
-				// todo: brush on the second plot
 				let selectedFunction = event.target.value;
 				this.brushActive = selectedFunction == "brush";
 				this.brushToggle()
-				//this.drawPlot();
 			} 
 		});
 	}
@@ -381,28 +377,7 @@ class NephoVisLevel3 extends NephoVis {
 							 	  mouseClickFunction,
 							 	  brushEndFunction,
 							 	  selectionByLegendFunction);
-		
-		let mouseClickFunctionContextWord = this.mouseClickPointContextWord.bind(this);
-		let brushEndFunctionContextWord = this.brushEndContextWord.bind(this);
-
-		// todo build check for whether foc dist plot should be rendered
-		this.focPlot = new FocDistsPlot(this.level,
-										"svgContainer2",
-										this.dimensions,
-										this.dataLoader.datasets["nonLostFocdists"],
-										this.dataLoader.datasets["nonLostTokens"],
-										this.chosenSolution,
-										this.contextVar,
-										this.dataProcessor.contextWordsColumn,
-										this.dataProcessor.tailoredContexts,
-										this.dataPointStyles,
-										this.modelSelection,
-										this.contextWordSelection,
-										this.variableSelection,
-										mouseClickFunctionContextWord,
-										brushEndFunctionContextWord,
-										() => {});
-
+	
 		// Set null value so we can check for lost token plot even if it's not there
 		this.lostTokenPlot = null;
 
@@ -419,18 +394,40 @@ class NephoVisLevel3 extends NephoVis {
 												   mouseClickFunction);
 		}
 
-		if (this.dataLoader.datasets["lostFocdists"].length > 0) {
-			this.lostFocdistsPlot = new LostFocDistsPlot(this.level,
-												   		"lostfocdists",
-												   		"FOCs",
-												   		this.dataLoader.datasets["lostFocdists"],
-												   		this.dataLoader.datasets["nonLostTokens"],
-							 	  						this.dataProcessor.contextWordsColumn,
-												   		this.dataProcessor.tailoredContexts,
-												   		this.dataPointStyles,
-												   		this.contextWordSelection,
-												   		this.variableSelection,
-												   		mouseClickFunctionContextWord);
+		if (this.dataLoader.includesFOC) {
+			let mouseClickFunctionContextWord = this.mouseClickPointContextWord.bind(this);
+			let brushEndFunctionContextWord = this.brushEndContextWord.bind(this);
+
+			this.focPlot = new FocDistsPlot(this.level,
+											"svgContainer2",
+											this.dimensions,
+											this.dataLoader.datasets["nonLostFocdists"],
+											this.dataLoader.datasets["nonLostTokens"],
+											this.chosenSolution,
+											this.contextVar,
+											this.dataProcessor.contextWordsColumn,
+											this.dataProcessor.tailoredContexts,
+											this.dataPointStyles,
+											this.modelSelection,
+											this.contextWordSelection,
+											this.variableSelection,
+											mouseClickFunctionContextWord,
+											brushEndFunctionContextWord,
+											() => {});
+
+			if (this.dataLoader.datasets["lostFocdists"].length > 0) {
+				this.lostFocdistsPlot = new LostFocDistsPlot(this.level,
+										   					 "lostfocdists",
+										   					 "FOCs",
+										   					 this.dataLoader.datasets["lostFocdists"],
+										   					 this.dataLoader.datasets["nonLostTokens"],
+					 	  									 this.dataProcessor.contextWordsColumn,
+										   					 this.dataProcessor.tailoredContexts,
+										   					 this.dataPointStyles,
+										   					 this.contextWordSelection,
+										   					 this.variableSelection,
+										   					 mouseClickFunctionContextWord);
+			}
 		}
 	}
 
@@ -439,8 +436,10 @@ class NephoVisLevel3 extends NephoVis {
 		this.brushToggle();
 
 		this.plot.switchSolution(this.chosenSolution);
-		// TODO: check if foc dist plot exists
-		this.focPlot.switchSolution(this.chosenSolution);
+		
+		if (this.dataLoader.includesFOC) {
+			this.focPlot.switchSolution(this.chosenSolution);
+		}
 	}
 
 	brushToggle() {
