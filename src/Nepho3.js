@@ -517,9 +517,10 @@ class NephoVisLevel3 extends NephoVis {
 
 	updateUrl() {
 		super.updateUrl();
+		this.selection = this.exportSelection();
 		window.location.href = router.router.generate("token.type.model.selection",
 													  { model: this.model,
 													  	type: this.type,
-													  	selection: this.exportSelection() });
+													  	selection: this.selection });
 	}
 }

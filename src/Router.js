@@ -3,13 +3,18 @@ class Router
 	constructor()
 	{
 		this.router = new Navigo("/nephovis/", true);
-		this.routes = { "token/:type/:model": { as: "token.type.model",
+		this.routes = { "frequency/:type/:contextWordsColumn/:selection": { 
+					  				as: "frequency.type.contextwordscolumn.selection",
+									uses: (params) => { nephoSession.buildFrequencyTable(params.type,
+																				   params.contextWordsColumn,
+																				   params.selection); }
+									},"token/:type/:model": { as: "token.type.model",
 									uses: (params) => { nephoSession.buildNephoVis("token",
 																				   params.type,
 																				   null,
 																				   params.model); }
 									},
-					  "token/:type/:model/:selection": { as: "token.type.model.selection",
+					  	"token/:type/:model/:selection": { as: "token.type.model.selection",
 									uses: (params) => { nephoSession.buildNephoVis("token",
 																				   params.type,
 																				   params.selection,
