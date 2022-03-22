@@ -307,12 +307,9 @@ class Plot {
 
 		// Determine the tooltip location
 		let tooltipWidth = parseInt(this.tooltip.style("width"));
-		console.log(tooltipWidth);
 		let tooltipLeftCoordinate = svgDimensions["width"] - realCoordinates[0] > tooltipWidth ?
 									`${realCoordinates[0]}px` :
 									`${Math.max(0, (realCoordinates[0] - tooltipWidth))}px`;
-
-		console.log(realCoordinates[1] + "px", tooltipLeftCoordinate)
 
 		// Adjust the left coordinate
 		this.tooltip.style("left", tooltipLeftCoordinate);
