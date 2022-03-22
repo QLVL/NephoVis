@@ -9866,7 +9866,7 @@ main {
 
 .plotArea {
   width : 80vh;
-  overflow : auto;
+  /*overflow : auto; will cause Darude Sandstorm if removed*/ 
 }
 
 #svgContainer {
