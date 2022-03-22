@@ -335,7 +335,7 @@ class NephoVisLevel3 extends NephoVis {
 
 		if (tokenSelection.length > 0) {
 			this.tokenSelection.restore(tokenSelection);
-			this.updateSelection(this.tokenSelection);	
+			this.afterTokenRestore();
 		}
 		else {
 			window.alert(generateError(needle));
