@@ -317,7 +317,7 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 	}
 
 	switchSolution() {
-		this.brushActive = false;
+		super.switchSolution();
 
 		this.plot.switchSolution(this.chosenSolution);
 		

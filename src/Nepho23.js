@@ -165,4 +165,9 @@ class NephoVisLevel23Common extends NephoVis {
 		this.switchSolution();
 		this.updateUrl();
 	}
+
+	/* -- OTHER -- */
+	switchSolution() {
+		this.brushActive = false;
+	}
 }
