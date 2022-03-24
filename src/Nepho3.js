@@ -19,13 +19,7 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 
 		this.importSelection();
 
-		// Build the switcher which allows you to switch between dimension reduction solutions
-		this.buildSolutionSwitchDropdown();
-
 		this.itemSelection = this.tokenSelection;
-
-		// The context variable dictates what context column should be consulted on hover
-		this.contextVar = "_ctxt.raw";
 
 		this.buildInterface();
 
@@ -35,40 +29,52 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 	initVars() {
 		super.initVars();
 
-		let tokenSelectionUpdateCallback = () => { this.selectFromTokens(); 
-												   this.afterTokenRestore(); };
 		let contextWordSelectionUpdateCallback = () => { this.selectFromContextWords();
 														 this.afterTokenRestore(); };
-
-		this.tokenSelection = new TokenSelection(tokenSelectionUpdateCallback);
 		this.contextWordSelection = new TokenSelection(contextWordSelectionUpdateCallback);
 	}
 
-	buildSolutionSwitchDropdown(update=false) {
-		// Build solution switcher only if there are multiple solutions
-		if (this.dataLoader.alternatives != null) {
-			if (this.dataLoader.alternatives.length > 1) {
-				UserInterface.buildSolutionSwitchDropdown("moveAround", this.dataLoader.alternatives,
-													  (solution) => { return solution == this.chosenSolution ?
-													  				  		`<b>${solution}</b>` :
-													  				  		solution },
-													  (solution) => { this.chosenSolution = solution; },
-													  update);
-			}
-		}
+	initTailoredVars() {
+		this.dataProcessor.tailoredContexts = this.dataProcessor.contexts
+			// TODO: I find this a very hacky solution, 
+			// because we don't prescribe what patterns model names should adhere to
+			.filter((context) => {
+				let firstDotIndex = context.indexOf(".");
+				return (context.split(".").length == 2 || this.model.includes(context.substring(firstDotIndex + 1)))
+			})
+			.map((context) => {
+				let splitContext = context.split(".");
+				return {
+					"key": splitContext.length == 2 ? splitContext[1] : "model",
+					"value": context
+				};
+			});
+
+		this.dataProcessor.tailoredNumerals = this.dataProcessor.numeralNames
+			.filter((context) => {
+				let firstDotIndex = context.indexOf(".");
+				return (!context.startsWith("_count") || this.model.includes(context.substring(firstDotIndex + 1)))
+			})
+			.map((context) => {
+				let splitContext = context.split(".");
+				return {
+					"key": context.startsWith("_count") ? "number of foc" : context,
+					"value": context
+				};
+			});
+
+		// These last lines are only if you use the "ctxt2" dropdown instead of "ctxt" (for tailored contexts, that is, matched to the cloud)
+	}
+
+	initContextWordsColumn() {
+		this.dataProcessor.contextWordsColumn = this.dataProcessor.columnNames.filter((columnName) => {
+			// TODO: WHAT is this magic number???
+			return (columnName.startsWith("_cws") && this.model.includes(columnName.slice(5)));
+		});
 	}
 
 	buildInterface() {
-		// We build the dropdowns for the styles automatically
-		for (let dataPointStyleName in this.dataPointStyles)
-		{
-			let dataPointStyle = this.dataPointStyles[dataPointStyleName];
-			UserInterface.buildDropdown(dataPointStyleName, dataPointStyle.candidates,
-										(variable) => 
-										{ this.handleDropdownChange(dataPointStyleName, variable); },
-										dataPointStyle.textFunction,
-										dataPointStyle.valueFunction);
-		}
+		super.buildInterface();
 
 		UserInterface.setButton("clearSelect", () => 
 			{
@@ -170,17 +176,6 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 		if (this.lostTokenPlot != null) {
 			this.lostTokenPlot.restyle(this.dataPointStyles);
 		}
-	}
-
-	get chosenSolution() {
-		return this._chosenSolution;
-	}
-
-	set chosenSolution(solution) {
-		this._chosenSolution = solution;
-		this.buildSolutionSwitchDropdown(true);
-		this.switchSolution();
-		this.updateUrl();
 	}
 
 	restoreChosenSolution(chosenSolution) {

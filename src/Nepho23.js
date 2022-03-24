@@ -7,7 +7,21 @@ class NephoVisLevel23Common extends NephoVis {
 		// Set the current dimension reduction solution to simply be the first one
 		this._chosenSolution = this.dataLoader.alternatives[0];
 
+		// The context variable dictates what context column should be consulted on hover
+		this.contextVar = "_ctxt.raw";
+
 		this.buildTokenDataset();
+	}
+
+	// Second part of the variable initialisation
+
+	initVarsContinued() {
+		super.initVarsContinued();
+
+		let tokenSelectionUpdateCallback = () => { this.selectFromTokens(); 
+												   this.afterTokenRestore(); };
+
+		this.tokenSelection = new TokenSelection(tokenSelectionUpdateCallback);
 	}
 
 	buildTokenDataset() {
@@ -32,11 +46,20 @@ class NephoVisLevel23Common extends NephoVis {
 		this.dataLoader.datasets["tokens"] = Helpers.mergeVariables(this.dataLoader.datasets["tokens"],
 																	this.dataLoader.datasets["variables"]);
 
-		// Find lost tokens (and non lost tokens)
-		this.dataLoader.datasets["nonLostTokens"] = this.dataLoader.datasets["tokens"].filter(row =>
-			Helpers.existsFromColumn(row, this.chosenSolution));
-		this.dataLoader.datasets["lostTokens"] = this.dataLoader.datasets["tokens"].filter(row =>
-			!Helpers.existsFromColumn(row, this.chosenSolution));
+		if (this.level == "token") {
+			let lostTokenObject = this.getLostNonLostTokens(this.chosenSolution);
+
+			// Find lost tokens (and non lost tokens)
+			this.dataLoader.datasets["nonLostTokens"] = lostTokenObject["nonLostTokens"];
+			this.dataLoader.datasets["lostTokens"] = lostTokenObject["lostTokens"];
+		}
+	}
+
+	getLostNonLostTokens(column) {
+		return { "lostTokens": this.dataLoader.datasets["tokens"].filter(row =>
+					!Helpers.existsFromColumn(row, column)),
+				 "nonLostTokens": this.dataLoader.datasets["tokens"].filter(row =>
+					Helpers.existsFromColumn(row, column)) };
 	}
 
 	mergeSolutions(contextWords=false) {
@@ -96,42 +119,51 @@ class NephoVisLevel23Common extends NephoVis {
 		return subset;
 	}
 
-	initTailoredVars() {
-		this.dataProcessor.tailoredContexts = this.dataProcessor.contexts
-			// TODO: I find this a very hacky solution, 
-			// because we don't prescribe what patterns model names should adhere to
-			.filter((context) => {
-				let firstDotIndex = context.indexOf(".");
-				return (context.split(".").length == 2 || this.model.includes(context.substring(firstDotIndex + 1)))
-			})
-			.map((context) => {
-				let splitContext = context.split(".");
-				return {
-					"key": splitContext.length == 2 ? splitContext[1] : "model",
-					"value": context
-				};
-			});
-
-		this.dataProcessor.tailoredNumerals = this.dataProcessor.numeralNames
-			.filter((context) => {
-				let firstDotIndex = context.indexOf(".");
-				return (!context.startsWith("_count") || this.model.includes(context.substring(firstDotIndex + 1)))
-			})
-			.map((context) => {
-				let splitContext = context.split(".");
-				return {
-					"key": context.startsWith("_count") ? "number of foc" : context,
-					"value": context
-				};
-			});
-
-		// These last lines are only if you use the "ctxt2" dropdown instead of "ctxt" (for tailored contexts, that is, matched to the cloud)
+	buildInterface() {
+		this.buildStyleDropdowns();
+		this.buildSolutionSwitchDropdown();
 	}
 
-	initContextWordsColumn() {
-		this.dataProcessor.contextWordsColumn = this.dataProcessor.columnNames.filter((columnName) => {
-			// TODO: WHAT is this magic number???
-			return (columnName.startsWith("_cws") && this.model.includes(columnName.slice(5)));
-		});
+	/* Build the data style switcher dropdowns */
+	buildStyleDropdowns() {
+		// We build the dropdowns for the styles automatically
+		for (let dataPointStyleName in this.dataPointStyles)
+		{
+			let dataPointStyle = this.dataPointStyles[dataPointStyleName];
+			UserInterface.buildDropdown(dataPointStyleName, dataPointStyle.candidates,
+										(variable) => 
+										{ this.handleDropdownChange(dataPointStyleName, variable); },
+										dataPointStyle.textFunction,
+										dataPointStyle.valueFunction);
+		}
+	}
+
+	/* -- USER INTERFACE -- */
+
+	// Build the switcher which allows you to switch between dimension reduction solutions
+	buildSolutionSwitchDropdown(update=false) {
+		// Build solution switcher only if there are multiple solutions
+		if (this.dataLoader.alternatives != null) {
+			if (this.dataLoader.alternatives.length > 1) {
+				UserInterface.buildSolutionSwitchDropdown("moveAround", this.dataLoader.alternatives,
+													  (solution) => { return solution == this.chosenSolution ?
+													  				  		`<b>${solution}</b>` :
+													  				  		solution },
+													  (solution) => { this.chosenSolution = solution; },
+													  update);
+			}
+		}
+	}
+
+	/* -- GETTERS AND SETTERS -- */
+	get chosenSolution() {
+		return this._chosenSolution;
+	}
+
+	set chosenSolution(solution) {
+		this._chosenSolution = solution;
+		this.buildSolutionSwitchDropdown(true);
+		this.switchSolution();
+		this.updateUrl();
 	}
 }

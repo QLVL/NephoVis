@@ -1,6 +1,7 @@
 class Plot {
 	constructor(level, targetElementName, dimensions, dataset, dataPointStyles,
-				modelSelection, variableSelection, onDataPointClick, selectionByLegend) {
+				modelSelection, variableSelection, onDataPointClick, selectionByLegend,
+				viewBoxPadding=0) {
 		this.level = level;
 
 		// Save the correct dataset
@@ -18,6 +19,8 @@ class Plot {
 		// Time-out for the tooltip
 		this.tooltipTimeoutDuration = 200;
 
+		console.log(targetElementName);
+
 		// Find the svg element which we will plot to
 		this.targetElement = d3.select(`#${targetElementName}`);
 		// Clear target element contents
@@ -33,12 +36,15 @@ class Plot {
 
 		this.animationDuration = 1000;
 		this.tooltipOffset = 10;
+
+		this.viewBoxPadding = viewBoxPadding;
 	}
 
 	appendSvg() {
 		// Create a new SVG element
 		this.svgPlot = this.targetElement.append("svg")
-					.attr("viewBox", `0 0 ${this.dimensions["height"]} ${this.dimensions["width"]}`) // set w & h
+					.attr("viewBox", `0 0 ${this.dimensions["height"] + this.viewBoxPadding} 
+										  ${this.dimensions["width"] + this.viewBoxPadding}`) // set w & h
 					.attr("preserveAspectRatio", "xMinYMin meet")
 					.classed("svgPlot", this.level == "model")
 
@@ -91,6 +97,8 @@ class Plot {
 		this.coordinateColumns = { "x": `${this.coordinatesSource}.x`,
 								   "y": `${this.coordinatesSource}.y` };
 
+		console.log(this.coordinateColumns);
+
 		let modelRange = Helpers.getValues(this.dataset, this.coordinateColumns["x"])
 								.concat(Helpers.getValues(this.dataset, this.coordinateColumns["y"]));
 		
@@ -102,6 +110,12 @@ class Plot {
     						 	 this.dimensions["width"] - this.dimensions["padding"]],
     					   "y": [this.dimensions["height"] - this.dimensions["padding"],
     					   		 this.dimensions["padding"]] };
+
+    	// Miniplot ranges are different
+    	if (this.level == "aggregate") {
+    		pixelRange["x"][1] = this.dimensions["width"];
+    		pixelRange["y"][0] = this.dimensions["height"];
+    	}
 
 		// Create an axis scaler for both x and y axes
 		// can be used by calling this.d3AxisScaler["x"]() or this.d3AxisScaler["y"]()

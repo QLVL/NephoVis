@@ -49,12 +49,12 @@ class NephoVis {
 		let dataOptionsTable;
 		switch (this.level) {
 			case "model":
+			case "aggregate":
 				dataOptionsTable = { "colour": this.dataProcessor.nominalNames,
 							 	 	 "shape": this.dataProcessor.nominalNames,
 							 	 	 "size": this.dataProcessor.numeralNames };
 				break;
 			case "token":
-			case "aggregate":
 				this.initTailoredVars();
 				this.initContextWordsColumn();
 
