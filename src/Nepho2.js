@@ -48,6 +48,8 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 		/* Create another data processor for the "models" dataset */
 		this.dataProcessorModels = new DataProcessor(this.dataLoader.datasets, "models");
 
+		this.buildSolutionSwitchDropdown();
+
 		this.buildInterface();
 		this.drawPlot();
 	}
