@@ -124,7 +124,11 @@ class NephoVis {
 
 		// TODO: I don't really understand how the data structure works
 
-		this.plot.restyle(this.dataPointStyles);
+		if (this.level != "aggregate") {
+			this.plot.restyle(this.dataPointStyles);
+		} else {
+			this.plots.forEach(plot => plot.restyle(this.dataPointStyles));
+		}
 		this.updateUrl();
 	}
 
