@@ -1,12 +1,49 @@
-class MiniPlot extends TokenPlot {
-	constructor(level, targetElementName, model, dimensions, dataset, chosenSolution, contextVar,
-				dataPointStyles, modelSelection, tokenSelection,
-				variableSelection, onDataPointClick, brushEndCallback, selectionByLegend, standalone=true) {
-		super(level, targetElementName, dimensions, dataset, chosenSolution, contextVar,
-				null,
-				dataPointStyles, modelSelection, tokenSelection,
-				variableSelection, onDataPointClick, brushEndCallback, selectionByLegend,
-				standalone, model, dimensions["padding"]);
+class MiniPlot extends CommonTokenPlot {
+	constructor(level,
+				targetElementName,
+				model,
+				dimensions,
+				dataset,
+				chosenSolution,
+				contextVar,
+				dataPointStyles,
+				modelSelection,
+				tokenSelection,
+				variableSelection,
+				onDataPointClick,
+				brushEndCallback,
+				selectionByLegend) {
+
+		// Unused
+		let tailoredContexts = null;
+
+		super(level,
+			  targetElementName,
+			  dimensions,
+			  dataset,
+			  chosenSolution,
+			  contextVar,
+			  tailoredContexts,
+			  dataPointStyles,
+			  modelSelection,
+			  tokenSelection,
+			  variableSelection,
+			  onDataPointClick,
+			  brushEndCallback,
+			  selectionByLegend);
+
+		this.viewBoxPadding = this.dimensions["padding"];
+		this.model = model;
+
+		// We have to re-do this, because the chosenSolution setter (which is called in the parent class)
+		// will not have had access to this.model information, so we need to set this property again.
+		this.chosenSolution = chosenSolution;
+
+		// We also have to append an extra SVG for this type of plot
+		this.appendSvg();
+
+		// Now, we can initialise the mini plot
+		this.initPlot();
 	}
 
 	// Automatically set coordinates source to the chosen solution when chosen solution changes

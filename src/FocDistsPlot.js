@@ -1,12 +1,21 @@
 class FocDistsPlot extends TokenPlot {
 	constructor(level, targetElementName, dimensions, dataset, tokenDataset, chosenSolution, contextVar,
-				contextWordsColumn, tailoredContexts,
-				dataPointStyles, modelSelection, tokenSelection,
+				contextWordsColumn, tailoredContexts, dataPointStyles, modelSelection, tokenSelection,
 				variableSelection, onDataPointClick, brushEndCallback, selectionByLegend) {
-		super(level, targetElementName, dimensions, dataset, chosenSolution, contextVar,
-				tailoredContexts,
-				dataPointStyles, modelSelection, tokenSelection,
-				variableSelection, onDataPointClick, brushEndCallback, selectionByLegend);
+		super(level,
+			  targetElementName,
+			  dimensions,
+			  dataset,
+			  chosenSolution,
+			  contextVar,
+			  tailoredContexts,
+			  dataPointStyles,
+			  modelSelection,
+			  tokenSelection,
+			  variableSelection,
+			  onDataPointClick,
+			  brushEndCallback,
+			  selectionByLegend);
 
 		this.contextWordsColumn = contextWordsColumn;
 		this.tokenDataset = tokenDataset;

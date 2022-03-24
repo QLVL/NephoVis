@@ -1,7 +1,14 @@
 class Plot {
-	constructor(level, targetElementName, dimensions, dataset, dataPointStyles,
-				modelSelection, variableSelection, onDataPointClick, selectionByLegend,
-				viewBoxPadding=0) {
+	constructor(level,
+				targetElementName,
+				dimensions,
+				dataset,
+				dataPointStyles,
+				modelSelection,
+				variableSelection,
+				onDataPointClick,
+				selectionByLegend) {
+		
 		this.level = level;
 
 		// Save the correct dataset
@@ -37,10 +44,12 @@ class Plot {
 		this.animationDuration = 1000;
 		this.tooltipOffset = 10;
 
-		this.viewBoxPadding = viewBoxPadding;
+		this.viewBoxPadding = 0;
 	}
 
 	appendSvg() {
+		console.log(this.dimensions["height"], this.viewBoxPadding);
+
 		// Create a new SVG element
 		this.svgPlot = this.targetElement.append("svg")
 					.attr("viewBox", `0 0 ${this.dimensions["height"] + this.viewBoxPadding} 
