@@ -53,4 +53,8 @@ class ItemSelection {
 	get count() {
 		return this.items.length;
 	}
+
+	truncate(n) {
+		this.items = this.items.slice(0, n);
+	}
 }

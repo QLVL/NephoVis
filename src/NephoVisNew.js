@@ -18,7 +18,10 @@ class NephoVis {
 		this.centralColumn = this.level == "model" ? "_model" : "_id";
 	}
 
-	initVars() {
+	// This method needs to be called separately by level 2 because we need information from
+	// the selection before we can initalise all the variables
+	// It's really annoying, but it's the only way...
+	initVarsSimple() {
 		let modelSelectionDataset;
 
 		if (this.level == "model") {
@@ -28,12 +31,14 @@ class NephoVis {
 			modelSelectionDataset = [];
 		}
 
-		this.dataProcessor = new DataProcessor(this.dataLoader.datasets, this.centralDataset);
-
 		// TODO: re-introduce LocalStorage if deemed necessary
 		this.modelSelection = new ModelSelection(modelSelectionDataset,
 												 () => { this.updateSelection(); });
+	}
 
+	initVarsContinued() {
+		this.dataProcessor = new DataProcessor(this.dataLoader.datasets, this.centralDataset);
+		
 		this.initVariableSelection();
 
 		// Frequency doesn't need any of this, so begone!!!
@@ -49,6 +54,7 @@ class NephoVis {
 							 	 	 "size": this.dataProcessor.numeralNames };
 				break;
 			case "token":
+			case "aggregate":
 				this.initTailoredVars();
 				this.initContextWordsColumn();
 
@@ -70,6 +76,11 @@ class NephoVis {
 														dataPointStyleName,
 													    dataOptionsTable[dataPointStyleName]);
 		}
+	}
+
+	initVars() {
+		this.initVarsSimple();
+		this.initVarsContinued();
 	}
 
 	initVariableSelection() {
@@ -163,7 +174,7 @@ class NephoVis {
 		return encodedExport;
 	}
 
-	importSelection() {
+	importSelection(simple=false) {
 		if (this.selection == null) {
 			return null;
 		}
@@ -189,6 +200,14 @@ class NephoVis {
 		}
 
 		this.modelSelection.restore(decodedExport["modelSelection"]);
+
+		// There's an issue with level 2 where we need the model selection for building the
+		// tokens dataset, which we need to initalise variables. I know this isn't elegant,
+		// but I don't see any other solution at this point unfortunately :(
+		if (simple) {
+			return null;
+		}
+
 		this.variableSelection = decodedExport["variableSelection"];
 
 		for (let dataPointStyleName in decodedExport["dataPointStyles"]) {
