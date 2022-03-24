@@ -1,8 +1,24 @@
 class ModelPlot extends Plot {
-	constructor(level, targetElementName, dimensions, dataset, dataPointStyles,
-				modelSelection, variableSelection, onDataPointClick, selectionByLegend) {
-		super(level, targetElementName, dimensions, dataset, dataPointStyles,
-				modelSelection, variableSelection, onDataPointClick, selectionByLegend);
+	constructor(level,
+				targetElementName,
+				dimensions,
+				dataset,
+				dataPointStyles,
+				modelSelection,
+				variableSelection,
+				onDataPointClick,
+				selectionByLegend) {
+
+		super(level,
+			  targetElementName,
+			  dimensions,
+			  dataset,
+			  dataPointStyles,
+			  modelSelection,
+			  variableSelection,
+			  onDataPointClick,
+			  selectionByLegend);
+
 		this.appendSvg();
 		
 		this.idColumn = "_model";
