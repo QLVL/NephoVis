@@ -121,7 +121,6 @@ class NephoVisLevel23Common extends NephoVis {
 
 	buildInterface() {
 		this.buildStyleDropdowns();
-		this.buildSolutionSwitchDropdown();
 	}
 
 	/* Build the data style switcher dropdowns */

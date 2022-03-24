@@ -19,6 +19,8 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 
 		this.importSelection();
 
+		this.buildSolutionSwitchDropdown();
+
 		this.itemSelection = this.tokenSelection;
 
 		this.buildInterface();
