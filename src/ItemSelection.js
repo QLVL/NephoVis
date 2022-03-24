@@ -55,6 +55,6 @@ class ItemSelection {
 	}
 
 	truncate(n) {
-		this.items = this.items.slice(0, n);
+		this.restore(this.items.slice(0, n));
 	}
 }
