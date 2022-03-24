@@ -41,13 +41,17 @@
       border-radius: 8px;
       pointer-events: none;
     }*/
+
+    /*.axis line {
+      stroke: "none";
+    } */ /* do we need this? */
   </style>
 </head>
 
 <body>
 
   <div class="container-fluid" style="background-color:white;">
-    <div class="vizPage shared model token">
+    <div class="vizPage shared model token aggregate">
       <header>
         <h1 id="nephoVisTitle"></h1>
         <h3 id="modelName"></h3>
@@ -181,6 +185,61 @@
 
           </div>
         </div>
+        <div class="sidebar shared aggregate" id="sidebar">
+          <div class="btn-group">
+            <button type="button" class="btn shadow-sm btn-marigreen dropdown-toggle" data-toggle="dropdown">Color
+              models</button>
+            <div class="dropdown-menu" id="modelColour"></div>
+          </div>
+          <hr>
+          <div class="btn-group-vertical">
+            <div class="btn-group">
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select
+                color</button>
+              <div class="dropdown-menu" id="colour"></div>
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select
+                shape</button>
+              <div class="dropdown-menu" id="shape"></div>
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select
+                size</button>
+              <div class="dropdown-menu" id="size"></div>
+            </div>
+          </div>
+          <hr>
+          <div class="btn-group-vertical btn-group-toggle" id="selection" data-toggle="buttons">
+            <label class="btn btn-danger active">
+              <input type="radio" name="selection" value="click" autocomplete="off" checked> <i
+                class="fas fa-mouse-pointer"></i> Click
+            </label>
+            <label class="btn btn-danger">
+              <input type="radio" name="selection" value="brush" autocomplete="off"> <i class="fas fa-crop-alt"></i>
+              Select area
+            </label>
+          </div>
+          <hr>
+          <div class="btn-group-vertical">
+            <button type="button" class="btn shadow-sm btn-secondary" id="clearSelect"><i class="fas fa-eraser"></i> Clear
+              selection</button>
+            <button type="button" class="btn shadow-sm btn-secondary" id="showMatrix"><i class="fas fa-sticky-note"></i>
+              Distance matrix </button>
+            <button type="button" class="btn shadow-sm btn-secondary" id="showTable"><i class="fas fa-sticky-note"></i>
+              Frequency table</button>
+          </div>
+          <hr>
+          <div class="btn-group-vertical" id="moveAround">
+            <button type="button" class="btn shadow-sm btn-marigreen" id="toLevel1"><i
+                class="fas fa-arrow-alt-circle-up"></i> LEVEL 1</button>
+            <div class="btn-group">
+              <button type="button" class="btn shadow-sm btn-marigreen dropdown-toggle" data-toggle="dropdown"><i
+                  class="fas fa-arrow-alt-circle-down"></i> Go to model</button>
+              <div class="dropdown-menu" id="models"></div>
+            </div>
+          </div>
+        </div>
         <div class="plotArea centered shared model">
           <div id="svgContainer"></div>
         </div>
@@ -191,7 +250,11 @@
             <div class="largeSvg" id="svgContainer2"></div>
           </div>
         </div>
-        <div class="legendBar shared model">
+        <div class="plotArea withConc resizable shared aggregate">
+          <div id="concordance"></div>
+          <div id="miniPlots"></div>
+        </div>
+        <div class="legendBar shared model aggregate">
           <div id="colorLegendContainer"></div>
           <div id="shapeLegendContainer"></div>
           <div id="sizeLegendContainer"></div>
@@ -268,6 +331,7 @@
   <script src="src/DataProcessor.js"></script>
   <script src="src/NephoVisNew.js"></script>
   <script src="src/Nepho1.js"></script>
+  <script src="src/Nepho2.js"></script>
   <script src="src/Nepho3.js"></script>
   <script src="src/FrequencyTable_.js"></script>
   <script src="src/NephoSession.js"></script>

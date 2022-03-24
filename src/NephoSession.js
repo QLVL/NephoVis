@@ -31,6 +31,9 @@ class NephoSession {
 			case "model":
 				this.nephoVis = new NephoVisLevel1(level, type, selection);
 				break;
+			case "aggregate":
+				this.nephoVis = new NephoVisLevel2(level, type, selection);
+				break;
 			case "token":
 				this.nephoVis = new NephoVisLevel3(level, type, model, selection);
 				break;

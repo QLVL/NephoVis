@@ -20,6 +20,11 @@ class Router
 																				   params.selection,
 																				   params.model); }
 									},
+					  	"aggregate/:type/:selection": { as: "aggregate.type.selection",
+									uses: (params) => { nephoSession.buildNephoVis("aggregate",
+																				   params.type,
+																				   params.selection); }
+									},
 						":level/:type": { as: "level.type",
 									uses: (params) => { nephoSession.buildNephoVis(params.level,
 																				   params.type,
