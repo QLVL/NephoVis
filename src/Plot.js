@@ -8,7 +8,7 @@ class Plot {
 				variableSelection,
 				onDataPointClick,
 				selectionByLegend) {
-		
+
 		this.level = level;
 
 		// Save the correct dataset
@@ -58,6 +58,7 @@ class Plot {
 					.classed("svgPlot", this.level == "model")
 
 		this.svg = this.svgPlot.append("g") // add SVG group
+							   .attr("transform", "translate(0, 0)")
 							   .call(d3.zoom().on('zoom', this.onZoom));
 	}
 
@@ -168,6 +169,7 @@ class Plot {
 		this.pointCloud = this.svg.append("g") // create another SVG group
 								   // give it the "dot" class
 								  .attr("class", "dot") 
+								  .attr("transform", "translate(0, 0)")
 								  .selectAll("path")
 								  .data(this.dataset)
 								  .enter()
@@ -373,7 +375,7 @@ class Plot {
 			  .selectAll("path.graph")
 			  // If no models are selected, everything is translucent
 			  // Else, only selected models are fully opaque
-			  .style("opacity", this.selection.count > 0 ? 1 : 0.7)
+			  .style("opacity", this.getOpacity())
 			  .classed("lighter", (row) => 
 			  	{ if (this.selection.count > 0) {
 			  	  	return !this.selection.items.includes(row[this.idColumn]);
@@ -384,6 +386,16 @@ class Plot {
 		}
 
 		this.drawLegend();
+	}
+
+	// If we have a bunch of miniplots with opacity, there will be MASSIVE LAG !!!
+	// So, for the aggregate level, the opacity is always simply 1
+	getOpacity() {
+		if (this.level == "aggregate") {
+			return 1;
+		} else {
+			return this.selection.count > 0 ? 1 : 0.7;
+		}
 	}
 
 	generateComplementaryColour(colour) {
