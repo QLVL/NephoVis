@@ -208,17 +208,19 @@ class NephoVis {
 			return null;
 		}
 
-		this.variableSelection = decodedExport["variableSelection"];
-
-		for (let dataPointStyleName in decodedExport["dataPointStyles"]) {
-			let dataPointStyle = decodedExport["dataPointStyles"][dataPointStyleName];
-
-			if (dataPointStyle["variable"] == null) {
-				continue;
+		if (!this.level == "frequency") {
+			this.variableSelection = decodedExport["variableSelection"];
+	
+			for (let dataPointStyleName in decodedExport["dataPointStyles"]) {
+				let dataPointStyle = decodedExport["dataPointStyles"][dataPointStyleName];
+	
+				if (dataPointStyle["variable"] == null) {
+					continue;
+				}
+	
+				this.dataPointStyles[dataPointStyleName].assign(dataPointStyle["variable"],
+																dataPointStyle["values"]);		
 			}
-
-			this.dataPointStyles[dataPointStyleName].assign(dataPointStyle["variable"],
-															dataPointStyle["values"]);		
 		}
 
 		return decodedExport;
