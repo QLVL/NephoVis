@@ -124,6 +124,7 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 
 			let lostTokenObject = this.getLostNonLostTokens(`${model}-${this.chosenSolution}`);
 
+			let onBrushFunction = this.onBrush.bind(this);
 			let brushEndFunction = this.brushEnd.bind(this);
 
 			let miniPlot = new MiniPlot(this.level,
@@ -139,6 +140,7 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 										this.tokenSelection,
 										this.variableSelection,
 										() => { }, // todo datapointclick 
+										onBrushFunction, // todo datapointclick 
 										brushEndFunction, // todo brushEndCallback
 										() => { }); // todo selectionByLegend
 			this.plots.push(miniPlot);
@@ -146,6 +148,11 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 
 		// todo: miniSvg remove (is this necessary?)
 		// todo: brush and brush toggle
+	}
+
+	onBrush(tokens) {
+		this.tokenSelection.restore(tokens);
+		this.afterTokenRestore(false);
 	}
 
 	brushEnd(tokens) {

@@ -12,6 +12,7 @@ class MiniPlot extends CommonTokenPlot {
 				tokenSelection,
 				variableSelection,
 				onDataPointClick,
+				onBrushCallback,
 				brushEndCallback,
 				selectionByLegend) {
 
@@ -36,6 +37,10 @@ class MiniPlot extends CommonTokenPlot {
 		this.viewBoxPadding = this.dimensions["padding"];
 		this.model = model;
 		this.modelDataset = modelDataset;
+
+		// We need a separate onBrush callback for the miniplots, since token selection needs to update immediately
+		// in the other plots as well
+		this.onBrushCallback = onBrushCallback;
 
 		// We have to re-do this, because the chosenSolution setter (which is called in the parent class)
 		// will not have had access to this.model information, so we need to set this property again.
@@ -114,6 +119,12 @@ class MiniPlot extends CommonTokenPlot {
       										 .attr("height", this.dimensions["height"] - this.dimensions["padding"])
 											 .style("stroke", "gray")
 											 .style("stroke-width", 0.6);
+	}
+
+	onBrush() {
+		super.onBrush();
+
+		this.onBrushCallback(this.tokenSelection.tokens);
 	}
 
 	mouseOverEmblem() {
