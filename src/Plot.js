@@ -369,21 +369,19 @@ class Plot {
 			this.selection = items;
 		}
 
-		for (let dataPointStyleName in this.dataPointStyles) {
-			// If something is selected, everything else is translucent
-			this.svg.selectAll(".dot")
-			  .selectAll("path.graph")
-			  // If no models are selected, everything is translucent
-			  // Else, only selected models are fully opaque
-			  .style("opacity", this.getOpacity())
-			  .classed("lighter", (row) => 
-			  	{ if (this.selection.count > 0) {
-			  	  	return !this.selection.items.includes(row[this.idColumn]);
-			  	  } else {
-			  	  	return false;
-			  	  }
-			  	  } );
-		}
+		// If something is selected, everything else is translucent
+		this.svg.selectAll(".dot")
+		  .selectAll("path.graph")
+		  // If no models are selected, everything is translucent
+		  // Else, only selected models are fully opaque
+		  .style("opacity", this.getOpacity())
+		  .classed("lighter", (row) => 
+		  	{ if (this.selection.count > 0) {
+		  	  	return !this.selection.items.includes(row[this.idColumn]);
+		  	  } else {
+		  	  	return false;
+		  	  }
+		  	  } );
 
 		this.drawLegend();
 	}
