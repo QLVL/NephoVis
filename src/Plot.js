@@ -299,9 +299,8 @@ class Plot {
 				.style("stroke-width", 2);
 	}
 
-	highlightPointFromPointIndex(pointIndex) {
-		let pointElement = this.pointCloud.nodes()[pointIndex];
-		pointElement = d3.select(pointElement);
+	highlightPointFromPointIndex(itemId) {
+		let pointElement = this.pointCloud.filter(row => row[this.idColumn] == itemId);
 		this.highlightPoint(pointElement);
 	}
 

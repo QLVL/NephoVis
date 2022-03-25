@@ -139,7 +139,7 @@ class MiniPlot extends CommonTokenPlot {
 
 		// We give the point index to the callback, so it can find the corresponding point element
 		// in the other plots
-		this.onDataPointMouseOverCallback(pointElement.attr("pointIndex"));
+		this.onDataPointMouseOverCallback(row[this.idColumn]);
 	}
 
 	mouseOut(doCallback=true) {

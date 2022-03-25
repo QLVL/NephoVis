@@ -196,8 +196,8 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 		}
 	}
 
-	mouseOver(pointIndex) {
-		this.plots.forEach(plot => plot.highlightPointFromPointIndex(pointIndex));
+	mouseOver(tokenId) {
+		this.plots.forEach(plot => plot.highlightPointFromPointIndex(tokenId));
 	}
 
 	mouseOut() {
