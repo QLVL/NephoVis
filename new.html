@@ -10,6 +10,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="custom.css">
+  <link rel="stylesheet" href="distance.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
   <title>NephoVis New</title>
@@ -46,7 +47,7 @@
       stroke: "none";
     } */ /* do we need this? */
 
-    
+
     .plus {
       background-color: #c2e7ad;
     }
@@ -283,6 +284,7 @@
       </div>
       <div id='cwsFreq'></div>
     </div>
+    <div id="distMatrix" class="shared distance"></div>
   </div>
 
   <!-- Optional JavaScript -->
@@ -353,6 +355,7 @@
   <script src="src/ModelContingencyTable.js"></script>
   <script src="src/FrequencyFunctions.js"></script>
   <script src="src/FrequencyTable_.js"></script>
+  <script src="src/DistanceMatrix_.js"></script>
   <script src="src/ContextWordsTable.js"></script>
   <script src="src/NephoSession.js"></script>
   <script src="src/Router.js"></script>

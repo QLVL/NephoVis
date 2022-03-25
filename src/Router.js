@@ -14,6 +14,11 @@ class Router
 									uses: (params) => { nephoSession.buildContextWordsTable(params.type,
 																				   params.selection); }
 									},
+					    "distance/:type/:selection": { 
+					  				as: "distance.type.selection",
+									uses: (params) => { nephoSession.buildDistanceMatrix(params.type,
+																				   params.selection); }
+									},
 						"token/:type/:model": { as: "token.type.model",
 									uses: (params) => { nephoSession.buildNephoVis("token",
 																				   params.type,

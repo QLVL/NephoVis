@@ -1,0 +1,17 @@
+.distance table {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+.distance table th,
+.distance table td {
+	padding: 1em 1em 1em 1em;
+}
+
+.distance table thead th {
+}
+
+
+.distance table td.header {
+	font-weight: bold;
+}

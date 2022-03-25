@@ -4,6 +4,7 @@ const RequestedFilesMapper = {
 	aggregate: ["models", "modelsdist", "tokens", "variables"],
 	token: ["tokens", "variables", "focdists"],
 	frequency: ['variables', 'ppmi'],
-	cws: ['variables']
+	cws: ['variables'],
+	distance: ["modelsdist"]
 	// TODO add other levels files and other things
 };

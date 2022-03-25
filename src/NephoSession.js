@@ -48,6 +48,10 @@ class NephoSession {
 	buildContextWordsTable(type, selection) {
 		this.nephoVis = new ContextWordsTable(type, selection);
 	}
+
+	buildDistanceMatrix(type, selection) {
+		this.nephoVis = new DistanceMatrix(type, selection);
+	}
 }
 
 nephoSession = new NephoSession();
