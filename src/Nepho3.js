@@ -173,10 +173,6 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 		}
 	}
 
-	restoreChosenSolution(chosenSolution) {
-		this._chosenSolution = chosenSolution;
-	}
-
 	mouseClickPoint(row, pointElement) {
 		// We manually add a token to the token selection
 		// Or, if it's already in the model selection, we remove it
