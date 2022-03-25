@@ -211,13 +211,6 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 		}
 	}
 
-	selectionByLegend(variable, value) {
-		super.selectionByLegend(variable, value);
-
-		// Redraw the plot
-		this.afterTokenRestore();
-	}
-
 	drawPlot() {
 		console.log("I start from the scratch");
 

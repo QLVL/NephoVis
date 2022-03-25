@@ -53,6 +53,8 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 			this.modelSelection.truncate(this.truncateUpperBound);
 		}
 
+		this.itemSelection = this.tokenSelection;
+
 		this.buildSolutionSwitchDropdown();
 
 		this.buildInterface();
@@ -127,6 +129,7 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 			let mouseClickFunction = this.mouseClickPoint.bind(this);
 			let onBrushFunction = this.onBrush.bind(this);
 			let brushEndFunction = this.brushEnd.bind(this);
+			let selectionByLegendFunction = this.selectionByLegend.bind(this);
 
 			let miniPlot = new MiniPlot(this.level,
 										miniPlotId,
@@ -143,7 +146,7 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 										mouseClickFunction, // todo datapointclick 
 										onBrushFunction, // todo datapointclick 
 										brushEndFunction, // todo brushEndCallback
-										() => { }); // todo selectionByLegend
+										selectionByLegendFunction); // todo selectionByLegend
 			this.plots.push(miniPlot);
 		});
 

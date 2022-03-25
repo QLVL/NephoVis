@@ -208,6 +208,13 @@ class NephoVisLevel23Common extends NephoVis {
 		this.tokenSelection.toggle(row["_id"]);
 	}
 
+	selectionByLegend(variable, value) {
+		super.selectionByLegend(variable, value);
+
+		// Redraw the plot
+		this.afterTokenRestore();
+	}
+
 	restoreChosenSolution(chosenSolution) {
 		this._chosenSolution = chosenSolution;
 	}
