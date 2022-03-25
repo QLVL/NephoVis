@@ -13,17 +13,6 @@ class NephoVisLevel23Common extends NephoVis {
 		this.buildTokenDataset();
 	}
 
-	// Second part of the variable initialisation
-
-	initVarsContinued() {
-		super.initVarsContinued();
-
-		let tokenSelectionUpdateCallback = () => { this.selectFromTokens(); 
-												   this.afterTokenRestore(); };
-
-		this.tokenSelection = new TokenSelection(tokenSelectionUpdateCallback);
-	}
-
 	buildTokenDataset() {
 		// We first have to build the focdists, because there is a check for tokens in this method
 		// It will fail if we do focdists second. Don't worry about it, it's an implementation thing.
@@ -119,8 +108,11 @@ class NephoVisLevel23Common extends NephoVis {
 		return subset;
 	}
 
+	/* -- USER INTERFACE -- */
+
 	buildInterface() {
 		this.buildStyleDropdowns();
+		this.buildBrushOrClick();
 	}
 
 	/* Build the data style switcher dropdowns */
@@ -137,8 +129,6 @@ class NephoVisLevel23Common extends NephoVis {
 		}
 	}
 
-	/* -- USER INTERFACE -- */
-
 	// Build the switcher which allows you to switch between dimension reduction solutions
 	buildSolutionSwitchDropdown(update=false) {
 		// Build solution switcher only if there are multiple solutions
@@ -154,7 +144,21 @@ class NephoVisLevel23Common extends NephoVis {
 		}
 	}
 
+	buildBrushOrClick() {
+		let brushOrClickSwitchers = document.querySelectorAll('input[name="selection"]');
+
+		brushOrClickSwitchers.forEach(brushOrClickSwitcher => {
+			brushOrClickSwitcher.onchange = (event) => {
+				let selectedFunction = event.target.value;
+				this.brushActive = selectedFunction == "brush";
+			} 
+		});
+	}
+
 	/* -- GETTERS AND SETTERS -- */
+
+	// .chosenSolution
+
 	get chosenSolution() {
 		return this._chosenSolution;
 	}
@@ -166,8 +170,44 @@ class NephoVisLevel23Common extends NephoVis {
 		this.updateUrl();
 	}
 
+	// .brushActive
+
+	get brushActive() {
+		return this._brushActive;
+	}
+
+	set brushActive(brushActive) {
+		this._brushActive = brushActive;
+		this.brushToggle();
+	}
+
 	/* -- OTHER -- */
 	switchSolution() {
 		this.brushActive = false;
+	}
+
+	importSelection(simple=false) {
+		let decodedExport = super.importSelection(simple);
+
+		if (decodedExport == null) {
+			return;
+		}
+
+		if ("tokenSelection" in decodedExport) {
+			this.tokenSelection.restore(decodedExport["tokenSelection"]);
+		}
+
+		if ("chosenSolution" in decodedExport) {
+			this.restoreChosenSolution(decodedExport["chosenSolution"]);
+		}
+	}
+
+	restoreChosenSolution(chosenSolution) {
+		this._chosenSolution = chosenSolution;
+	}
+
+	updateUrl() {
+		super.updateUrl();
+		this.selection = this.exportSelection();
 	}
 }

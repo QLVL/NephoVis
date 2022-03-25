@@ -31,6 +31,11 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 	initVars() {
 		super.initVars();
 
+		let tokenSelectionUpdateCallback = () => { this.selectFromTokens(); 
+												   this.afterTokenRestore(); };
+
+		this.tokenSelection = new TokenSelection(tokenSelectionUpdateCallback);
+
 		let contextWordSelectionUpdateCallback = () => { this.selectFromContextWords();
 														 this.afterTokenRestore(); };
 		this.contextWordSelection = new TokenSelection(contextWordSelectionUpdateCallback);
@@ -134,7 +139,6 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 									); // TODO: again, very hard-coded behaviour here...
 
 		this.buildTokenChoice();
-		this.buildBrushOrClick();
 	}
 
 	buildTokenChoice() {
@@ -154,17 +158,6 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 	buildTokenOverview() {
 		UserInterface.buildTokenIdCheckboxes(this.tokenSelection.tokens,
 											(tokenId) => { this.handleTokenChange(tokenId); });
-	}
-
-	buildBrushOrClick() {
-		let brushOrClickSwitchers = document.querySelectorAll('input[name="selection"]');
-
-		brushOrClickSwitchers.forEach(brushOrClickSwitcher => {
-			brushOrClickSwitcher.onchange = (event) => {
-				let selectedFunction = event.target.value;
-				this.brushActive = selectedFunction == "brush";
-			} 
-		});
 	}
 
 	handleTokenChange(tokenId) {
@@ -326,15 +319,6 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 		}
 	}
 
-	get brushActive() {
-		return this._brushActive;
-	}
-
-	set brushActive(brushActive) {
-		this._brushActive = brushActive;
-		this.brushToggle();
-	}
-
 	brushToggle() {
 		if (this.brushActive)
 		{
@@ -375,25 +359,8 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 		this.buildTokenOverview();
 	}
 
-	importSelection(simple=false) {
-		let decodedExport = super.importSelection(simple);
-
-		if (decodedExport == null) {
-			return;
-		}
-
-		if ("tokenSelection" in decodedExport) {
-			this.tokenSelection.restore(decodedExport["tokenSelection"]);
-		}
-
-		if ("chosenSolution" in decodedExport) {
-			this.restoreChosenSolution(decodedExport["chosenSolution"]);
-		}
-	}
-
 	updateUrl() {
 		super.updateUrl();
-		this.selection = this.exportSelection();
 		window.location.href = router.router.generate("token.type.model.selection",
 													  { model: this.model,
 													  	type: this.type,

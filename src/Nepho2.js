@@ -59,6 +59,14 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 		this.drawPlot();
 	}
 
+	initVarsContinued() {
+		super.initVarsContinued();
+
+		let tokenSelectionUpdateCallback = () => { this.afterTokenRestore(); };
+
+		this.tokenSelection = new TokenSelection(tokenSelectionUpdateCallback);
+	}
+
 	buildInterface() {
 		super.buildInterface();
 
@@ -116,6 +124,8 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 
 			let lostTokenObject = this.getLostNonLostTokens(`${model}-${this.chosenSolution}`);
 
+			let brushEndFunction = this.brushEnd.bind(this);
+
 			let miniPlot = new MiniPlot(this.level,
 										miniPlotId,
 										model,
@@ -129,12 +139,52 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 										this.tokenSelection,
 										this.variableSelection,
 										() => { }, // todo datapointclick 
-										() => { }, // todo brushEndCallback
+										brushEndFunction, // todo brushEndCallback
 										() => { }); // todo selectionByLegend
 			this.plots.push(miniPlot);
 		});
 
 		// todo: miniSvg remove (is this necessary?)
 		// todo: brush and brush toggle
+	}
+
+	brushEnd(tokens) {
+		this.tokenSelection.restore(tokens);
+		this.afterTokenRestore();
+	}
+
+	afterTokenRestore(doUpdateUrl=true) {
+		this.plots.forEach(plot => {
+			plot.updateSelection(this.tokenSelection);
+		});
+
+		if (doUpdateUrl) {
+			this.updateUrl();
+		}
+	}
+
+	brushToggle() {
+		if (this.brushActive)
+		{
+			this.plots.forEach(plot => {
+				let tokenBrush = d3.brush()
+							   	   .extent([ [0, 0],
+							  	   		   	 [ this.dimensions["width"],
+						   		   	           this.dimensions["height"] ] ]);
+
+				plot.applyBrush(tokenBrush);
+			});
+
+			
+		} else {
+			d3.selectAll(".brush").remove();
+		}
+	}
+
+	updateUrl() {
+		super.updateUrl();
+		window.location.href = router.router.generate("aggregate.type.selection",
+													  { type: this.type,
+													  	selection: this.selection });
 	}
 }

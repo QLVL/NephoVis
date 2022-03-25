@@ -169,7 +169,9 @@ class NephoVis {
 						 "variableSelection": this.variableSelection,
 						 "dataPointStyles": dataPointStylesSerialised };
 
-		if (this.level == "token") {
+		// Token selection and chosen solution are only relevant for the
+		// aggregate and token levels
+		if (["aggregate", "token"].includes(this.level)) {
 			toExport["tokenSelection"] = this.tokenSelection.tokens;
 			toExport["chosenSolution"] = this.chosenSolution;
 		}
@@ -220,14 +222,14 @@ class NephoVis {
 
 		if (!this.level == "frequency") {
 			this.variableSelection = decodedExport["variableSelection"];
-	
+
 			for (let dataPointStyleName in decodedExport["dataPointStyles"]) {
 				let dataPointStyle = decodedExport["dataPointStyles"][dataPointStyleName];
 	
 				if (dataPointStyle["variable"] == null) {
 					continue;
 				}
-	
+
 				this.dataPointStyles[dataPointStyleName].assign(dataPointStyle["variable"],
 																dataPointStyle["values"]);		
 			}
