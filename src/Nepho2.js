@@ -72,6 +72,11 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 	buildInterface() {
 		super.buildInterface();
 
+		UserInterface.setButton("clearSelect", () => 
+			{
+				this.tokenSelection.clear();
+			});
+
 		// Build the model colour dropdown
 		// This is the dropdown which gives all the emblems
 		// in the leftmost corner their colours
