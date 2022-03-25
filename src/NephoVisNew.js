@@ -220,7 +220,7 @@ class NephoVis {
 			return null;
 		}
 
-		if (!this.level == "frequency") {
+		if (this.level != "frequency") {
 			this.variableSelection = decodedExport["variableSelection"];
 
 			for (let dataPointStyleName in decodedExport["dataPointStyles"]) {
