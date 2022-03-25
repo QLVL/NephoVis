@@ -8,7 +8,13 @@ class Router
 									uses: (params) => { nephoSession.buildFrequencyTable(params.type,
 																				   params.contextWordsColumn,
 																				   params.selection); }
-									},"token/:type/:model": { as: "token.type.model",
+									},
+					    "cws/:type/:selection": { 
+					  				as: "frequency.type.selection",
+									uses: (params) => { nephoSession.buildContextWordsTable(params.type,
+																				   params.selection); }
+									},
+						"token/:type/:model": { as: "token.type.model",
 									uses: (params) => { nephoSession.buildNephoVis("token",
 																				   params.type,
 																				   null,

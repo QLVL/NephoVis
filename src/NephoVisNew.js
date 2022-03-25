@@ -16,6 +16,8 @@ class NephoVis {
 
 		// This could be better but it'll have to make do for now
 		this.centralColumn = this.level == "model" ? "_model" : "_id";
+
+		this.popoutWindow = false;
 	}
 
 	// This method needs to be called separately by level 2 because we need information from
@@ -42,7 +44,7 @@ class NephoVis {
 		this.initVariableSelection();
 
 		// Frequency doesn't need any of this, so begone!!!
-		if (this.level == "frequency") {
+		if (this.popoutWindow) {
 			return;
 		}
 
@@ -220,7 +222,7 @@ class NephoVis {
 			return null;
 		}
 
-		if (this.level != "frequency") {
+		if (!this.popoutWindow) {
 			this.variableSelection = decodedExport["variableSelection"];
 
 			for (let dataPointStyleName in decodedExport["dataPointStyles"]) {
