@@ -74,10 +74,9 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 	}
 
 	initContextWordsColumn() {
-		this.dataProcessor.contextWordsColumn = this.dataProcessor.columnNames.filter((columnName) => {
-			// TODO: WHAT is this magic number???
-			return (columnName.startsWith("_cws") && this.model.includes(columnName.slice(5)));
-		});
+		this.dataProcessor.contextWordsColumn = 
+			Helpers.findContextWordsColumn(this.dataProcessor.columnNames,
+								   		   this.model);
 	}
 
 	buildInterface() {

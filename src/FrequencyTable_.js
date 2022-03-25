@@ -4,6 +4,8 @@ class FrequencyTable extends NephoVisLevel3 {
 
 		this.contextWordsColumn = contextWordsColumn;
 		this.centralDataset = "ppmi";
+
+		this.popoutWindow = true;
 	}
 
 	execute() {

@@ -1,4 +1,8 @@
 class Helpers {
+	static unique(array) {
+		return Array.from(new Set(array));
+	}
+
 	static uniqueValues(array, columnName) {
 		return [...new Set( array.map(obj => obj[columnName])) ];
 	}
@@ -59,5 +63,12 @@ class Helpers {
 								  "y": `${column}.y` };
 								  
 		return Helpers.exists(row, coordinateColumns);
+	}
+
+	static findContextWordsColumn(dataset, model) {
+		return dataset.filter(columnName => {
+			// TODO: WHAT is this magic number???
+			return (columnName.startsWith("_cws") && model.includes(columnName.slice(5)));
+		})[0];
 	}
 }

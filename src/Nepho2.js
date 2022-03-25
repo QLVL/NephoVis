@@ -86,6 +86,17 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 										{ this.handleDropdownChange("emblem", variable); },
 									UserInterface.formatVariableName);
 
+		UserInterface.setButton("showTable", (event) => {
+			let windowWidth = this.modelSelection.models.count * 100 + 400;
+
+			let params = `width=${windowWidth},height=700,menubar=no,toolbar=no,location=no,status=no`;
+			window.open(router.router.generate("cws.type.selection", 
+												{ type: this.type,
+												  selection: this.selection }),
+						"cws",
+						params);
+		});
+
 		// TODO: build model switcher
 	}
 

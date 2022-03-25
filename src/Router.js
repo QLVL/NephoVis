@@ -10,7 +10,7 @@ class Router
 																				   params.selection); }
 									},
 					    "cws/:type/:selection": { 
-					  				as: "frequency.type.selection",
+					  				as: "cws.type.selection",
 									uses: (params) => { nephoSession.buildContextWordsTable(params.type,
 																				   params.selection); }
 									},

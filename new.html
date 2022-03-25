@@ -45,6 +45,11 @@
     /*.axis line {
       stroke: "none";
     } */ /* do we need this? */
+
+    
+    .plus {
+      background-color: #c2e7ad;
+    }
   </style>
 </head>
 
@@ -270,6 +275,14 @@
       <footer><p style="text-align:center;">Like this page? Send me <s>chocolate</s> your bank account details on this sketchy site!</p></footer>
     </div>
     <div id='cwsFreq' class="shared frequency"></div>
+    <div class="shared cws">
+      <h2 id="report"></h2>
+      <div class='btn-group'>
+        <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select information</button>
+        <div class="dropdown-menu" id="info"></div>
+      </div>
+      <div id='cwsFreq'></div>
+    </div>
   </div>
 
   <!-- Optional JavaScript -->
@@ -336,6 +349,9 @@
   <script src="src/Nepho1.js"></script>
   <script src="src/Nepho2.js"></script>
   <script src="src/Nepho3.js"></script>
+  <script src="src/ContingencyTable.js"></script>
+  <script src="src/ModelContingencyTable.js"></script>
+  <script src="src/FrequencyFunctions.js"></script>
   <script src="src/FrequencyTable_.js"></script>
   <script src="src/ContextWordsTable.js"></script>
   <script src="src/NephoSession.js"></script>

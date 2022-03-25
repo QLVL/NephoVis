@@ -10,4 +10,25 @@ class Constants {
     									   "#D55E00",
     									   "#CC79A7",
     									   "#999999"] }
+    static get cwsInfoOptions() {
+    	return [ { "name" : "Selected and non selected",
+        	  	   "value" : "both", 
+        	       "suffix" : "-"},
+        		 { "name" : "Cue validity",
+        	  	   "value" :"cue",
+        	   	   "suffix" : "-cv"},
+        		 { "name" : "Log Fisher Exact p-value",
+        		   "value" : "fisher", 
+        		   "suffix" : "-F"},
+        		 { "name" : "(Smoothed) odds ratio",
+        		   "value" : "odds", 
+        		   "suffix" : "-OR"},
+        		 { "name" : "&Delta;P",
+        		   "value" : "dp", 
+        		   "suffix" : "-dp"},
+        		 { "name" : "Absolute frequency", 
+        		   "value" : "raw", 
+        		   "suffix" : "raw"}
+    		   ];
+    }
 }
