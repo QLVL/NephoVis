@@ -12,6 +12,8 @@ class MiniPlot extends CommonTokenPlot {
 				tokenSelection,
 				variableSelection,
 				onDataPointClick,
+				onDataPointMouseOver,
+				onDataPointMouseOut,
 				onBrushCallback,
 				brushEndCallback,
 				selectionByLegend) {
@@ -41,6 +43,11 @@ class MiniPlot extends CommonTokenPlot {
 		// We need a separate onBrush callback for the miniplots, since token selection needs to update immediately
 		// in the other plots as well
 		this.onBrushCallback = onBrushCallback;
+
+		// When we hover over a data point, we want to also highlight that same point in all other plots
+		// For this, we need more callbacks
+		this.onDataPointMouseOverCallback = onDataPointMouseOver;
+		this.onDataPointMouseOutCallback = onDataPointMouseOut;
 
 		// We have to re-do this, because the chosenSolution setter (which is called in the parent class)
 		// will not have had access to this.model information, so we need to set this property again.
@@ -125,6 +132,22 @@ class MiniPlot extends CommonTokenPlot {
 		super.onBrush();
 
 		this.onBrushCallback(this.tokenSelection.tokens);
+	}
+
+	mouseOverPoint(row, pointElement) {
+		super.mouseOverPoint(row, pointElement);
+
+		// We give the point index to the callback, so it can find the corresponding point element
+		// in the other plots
+		this.onDataPointMouseOverCallback(pointElement.attr("pointIndex"));
+	}
+
+	mouseOut(doCallback=true) {
+		super.mouseOut();
+
+		if (doCallback) {
+			this.onDataPointMouseOutCallback();
+		}
 	}
 
 	mouseOverEmblem() {

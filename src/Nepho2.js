@@ -127,6 +127,8 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 			let lostTokenObject = this.getLostNonLostTokens(`${model}-${this.chosenSolution}`);
 
 			let mouseClickFunction = this.mouseClickPoint.bind(this);
+			let mouseOverFunction = this.mouseOver.bind(this);
+			let mouseOutFunction = this.mouseOut.bind(this);
 			let onBrushFunction = this.onBrush.bind(this);
 			let brushEndFunction = this.brushEnd.bind(this);
 			let selectionByLegendFunction = this.selectionByLegend.bind(this);
@@ -144,6 +146,8 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 										this.tokenSelection,
 										this.variableSelection,
 										mouseClickFunction, // todo datapointclick 
+										mouseOverFunction, 
+										mouseOutFunction,
 										onBrushFunction, // todo datapointclick 
 										brushEndFunction, // todo brushEndCallback
 										selectionByLegendFunction); // todo selectionByLegend
@@ -190,6 +194,14 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 		} else {
 			d3.selectAll(".brush").remove();
 		}
+	}
+
+	mouseOver(pointIndex) {
+		this.plots.forEach(plot => plot.highlightPointFromPointIndex(pointIndex));
+	}
+
+	mouseOut() {
+		this.plots.forEach(plot => plot.mouseOut(false));
 	}
 
 	updateUrl() {

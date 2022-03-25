@@ -299,6 +299,12 @@ class Plot {
 				.style("stroke-width", 2);
 	}
 
+	highlightPointFromPointIndex(pointIndex) {
+		let pointElement = this.pointCloud.nodes()[pointIndex];
+		pointElement = d3.select(pointElement);
+		this.highlightPoint(pointElement);
+	}
+
 	showTooltip(row, pointElement) {
 		// Reconstruct the coordinates from point index
 		let position = this.pointCloudCoordinates[+pointElement.attr("pointIndex")];
