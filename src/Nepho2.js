@@ -124,6 +124,7 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 
 			let lostTokenObject = this.getLostNonLostTokens(`${model}-${this.chosenSolution}`);
 
+			let mouseClickFunction = this.mouseClickPoint.bind(this);
 			let onBrushFunction = this.onBrush.bind(this);
 			let brushEndFunction = this.brushEnd.bind(this);
 
@@ -139,7 +140,7 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 										this.modelSelection,
 										this.tokenSelection,
 										this.variableSelection,
-										() => { }, // todo datapointclick 
+										mouseClickFunction, // todo datapointclick 
 										onBrushFunction, // todo datapointclick 
 										brushEndFunction, // todo brushEndCallback
 										() => { }); // todo selectionByLegend

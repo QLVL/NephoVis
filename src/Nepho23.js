@@ -202,6 +202,12 @@ class NephoVisLevel23Common extends NephoVis {
 		}
 	}
 
+	mouseClickPoint(row, pointElement) {
+		// We manually add a token to the token selection
+		// Or, if it's already in the model selection, we remove it
+		this.tokenSelection.toggle(row["_id"]);
+	}
+
 	restoreChosenSolution(chosenSolution) {
 		this._chosenSolution = chosenSolution;
 	}
