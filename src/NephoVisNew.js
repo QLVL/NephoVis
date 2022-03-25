@@ -108,12 +108,18 @@ class NephoVis {
 	}
 
 	handleDropdownChange(dataPointStyleName, variable) {
+		// The central dataset is the only dataset we need, except when the data point style
+		// is the "emblem" style. For this, we specifically need the "models" dataset.
+		let lookupColumn = dataPointStyleName == "emblem" ?
+						   "models" :
+						   this.centralDataset;
+
 		if (variable == "Reset") {
 			this.dataPointStyles[dataPointStyleName].clear();
 		}
 		else {
 			this.dataPointStyles[dataPointStyleName].assign(variable,
-							Helpers.getValues(this.dataLoader.datasets[this.centralDataset],
+							Helpers.getValues(this.dataLoader.datasets[lookupColumn],
 							variable));
 
 			console.log(this.dataPointStyles[dataPointStyleName].variable,

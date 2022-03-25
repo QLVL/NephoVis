@@ -29,6 +29,14 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 		// Now, we can continue variable initialisation
 		this.initVarsContinued();
 
+		/* Create another data processor for the "models" dataset */
+		this.dataProcessorModels = new DataProcessor(this.dataLoader.datasets, "models");
+
+		// To colour the emblems, we need to define a new datapoint style
+		this.dataPointStyles["emblem"] = new DataPointStyle(this.level,
+															"emblem",
+															this.dataProcessorModels.nominalNames);
+
 		this.importSelection();
 
 		/* No models in model selection */
@@ -45,9 +53,6 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 			this.modelSelection.truncate(this.truncateUpperBound);
 		}
 
-		/* Create another data processor for the "models" dataset */
-		this.dataProcessorModels = new DataProcessor(this.dataLoader.datasets, "models");
-
 		this.buildSolutionSwitchDropdown();
 
 		this.buildInterface();
@@ -62,7 +67,8 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 		// in the leftmost corner their colours
 		UserInterface.buildDropdown("modelColour",
 									this.dataProcessorModels.nominalNames,
-									() => { this.handleModelColourChange(); },
+									variable => 
+										{ this.handleDropdownChange("emblem", variable); },
 									UserInterface.formatVariableName);
 
 		// TODO: build model switcher
@@ -115,6 +121,7 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 										model,
 										this.dimensions,
 										lostTokenObject["nonLostTokens"],
+										this.dataProcessor.datasets["models"],
 										this.chosenSolution,
 										this.contextVar,
 										this.dataPointStyles,

@@ -4,6 +4,7 @@ class MiniPlot extends CommonTokenPlot {
 				model,
 				dimensions,
 				dataset,
+				modelDataset,
 				chosenSolution,
 				contextVar,
 				dataPointStyles,
@@ -34,6 +35,7 @@ class MiniPlot extends CommonTokenPlot {
 
 		this.viewBoxPadding = this.dimensions["padding"];
 		this.model = model;
+		this.modelDataset = modelDataset;
 
 		// We have to re-do this, because the chosenSolution setter (which is called in the parent class)
 		// will not have had access to this.model information, so we need to set this property again.
@@ -55,7 +57,8 @@ class MiniPlot extends CommonTokenPlot {
 	initPlot() {
 		super.initPlot();
 		this.setTitle();
-		this.setNumberEmblem()
+		this.setNumberEmblem();
+		this.colourEmblem();
 	}
 
 	setTitle() {
@@ -89,6 +92,18 @@ class MiniPlot extends CommonTokenPlot {
     	  		.style("fill", "white")
     	  		.style("font-weight", "bold")
     	  		.style("font-size", "0.8em");
+	}
+
+	restyle(dataPointStyles) {
+		super.restyle(dataPointStyles);
+		this.colourEmblem();
+	}
+
+	colourEmblem() {
+		// Find the row corresponding to the model of this plot
+		let row = this.modelDataset.filter(row => row["_model"] == this.model)[0];
+		// Code the element using the emblem datapoint style
+		this.emblem.style("fill", this.codePoint(row, this.dataPointStyles["emblem"]));
 	}
 
 	setPointerEvents() {

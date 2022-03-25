@@ -19,6 +19,12 @@ class Legend {
 		for (let dataPointStyleName in this.dataPointStyles) {
 			let dataPointStyle = this.dataPointStyles[dataPointStyleName];
 
+			// If this data point style does not warrant a legend, skip it
+			// (e.g. "emblem" style)
+			if (dataPointStyle.noLegend) {
+				continue;
+			}
+
 			// If no styling is applied for this style, go to the next style
 			if (dataPointStyle.values == null) {
 				continue;
