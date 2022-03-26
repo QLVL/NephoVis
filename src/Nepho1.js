@@ -17,6 +17,10 @@ class NephoVisLevel1 extends NephoVis {
 
 		this.importSelection();
 
+		UserInterface.setButton("go2index", (event) => {
+			window.location.href = "./";
+		});
+
 		UserInterface.setButton("clearSelect", () => 
 			{
 				this.modelSelection.clear();
