@@ -73,7 +73,6 @@ class DistanceMatrix extends NephoVisLevel1 {
 			.enter()
 			.append("td")
 			.text(value => d3.format('.2f')(value))
-			.classed("header", (_, index) => index == 0)
 			.style("background-color", value => colourScaler(value))
 			// Set text colour to black or white depending on how strong the background is
 			.style('color', value => {
