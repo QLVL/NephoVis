@@ -250,5 +250,6 @@ class NephoVis {
 
 	updateUrl() {
 		this.preventImport = true;
+		this.selection = this.exportSelection();
 	}
 }

@@ -221,6 +221,5 @@ class NephoVisLevel23Common extends NephoVis {
 
 	updateUrl() {
 		super.updateUrl();
-		this.selection = this.exportSelection();
 	}
 }

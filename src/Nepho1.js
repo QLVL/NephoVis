@@ -120,6 +120,6 @@ class NephoVisLevel1 extends NephoVis {
 		window.location.href = router.router.generate("level.type.selection",
 													  { level: this.level,
 													  	type: this.type,
-													  	selection: this.exportSelection() });
+													  	selection: this.selection });
 	}
 }
