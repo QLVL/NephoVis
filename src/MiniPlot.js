@@ -17,7 +17,8 @@ class MiniPlot extends CommonTokenPlot {
 				onDataPointMouseOut,
 				onBrushCallback,
 				brushEndCallback,
-				selectionByLegend) {
+				selectionByLegend,
+				modelClickCallback) {
 
 		// Unused
 		let tailoredContexts = null;
@@ -50,6 +51,9 @@ class MiniPlot extends CommonTokenPlot {
 		// For this, we need more callbacks
 		this.onDataPointMouseOverCallback = onDataPointMouseOver;
 		this.onDataPointMouseOutCallback = onDataPointMouseOut;
+
+		// The URL is generated at the application level
+		this.modelClickCallback = modelClickCallback;
 
 		// We have to re-do this, because the chosenSolution setter (which is called in the parent class)
 		// will not have had access to this.model information, so we need to set this property again.
@@ -85,7 +89,7 @@ class MiniPlot extends CommonTokenPlot {
       			.text(this.model.length > 40 ?
       				  this.model.substring(0, 37) + "..." :
       				  this.model)
-      			.on("click", d => { console.log("TODO open level 3"); });
+      			.on("click", () => { this.modelClickCallback(this.model); });
 	}
 
 	setNumberEmblem() {
