@@ -10,7 +10,7 @@ class UserInterface {
 		d3.selectAll(unusedElements).remove();
 	}
 
-	static prepareUI(level, type, modelCount)
+	static prepareUI(level, type)
 	{
 		// Update the page title
 		// Template: Level X (type)
@@ -22,8 +22,7 @@ class UserInterface {
 		d3.select("#numSelected").text(modelCount);
 	}
 
-	static setLevel3Headers(model, chosenSolution) {
-		d3.select("h3#modelName").html(model);
+	static setLevel2Headers(chosenSolution) {
 		if (chosenSolution != null)
 		{
     		let technique;
@@ -37,6 +36,11 @@ class UserInterface {
 
     		d3.select("h4#solutionName").text("Technique: " + technique);
   		}
+	}
+
+	static setLevel3Headers(model, chosenSolution) {
+		d3.select("h3#modelName").html(model);
+		UserInterface.setLevel2Headers(chosenSolution);
 	}
 
 	static setButton(targetElementName, onclickEvent, additionalD3=null) {

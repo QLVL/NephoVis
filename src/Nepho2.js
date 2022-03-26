@@ -57,6 +57,8 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 
 		this.buildSolutionSwitchDropdown();
 
+		UserInterface.prepareUI(this.level, this.type);
+
 		this.buildInterface();
 		this.drawPlot();
 	}
@@ -71,6 +73,8 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 
 	buildInterface() {
 		super.buildInterface();
+
+		UserInterface.setLevel2Headers(this.chosenSolution);
 
 		UserInterface.setButton("clearSelect", () => 
 			{
