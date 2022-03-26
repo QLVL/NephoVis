@@ -222,19 +222,27 @@ class NephoVis {
 			return null;
 		}
 
-		if (!this.popoutWindow) {
-			this.variableSelection = decodedExport["variableSelection"];
+		// Popout windows do not have data point styles
+		if (this.popoutWindow) {
+			return decodedExport;
+		}
+		
+		// Data point styles are not compatible across model level and other levels
+		if (decodedExport["type"] == "model" && this.level != "model") {
+			return decodedExport;
+		}
 
-			for (let dataPointStyleName in decodedExport["dataPointStyles"]) {
-				let dataPointStyle = decodedExport["dataPointStyles"][dataPointStyleName];
+		this.variableSelection = decodedExport["variableSelection"];
+
+		for (let dataPointStyleName in decodedExport["dataPointStyles"]) {
+			let dataPointStyle = decodedExport["dataPointStyles"][dataPointStyleName];
 	
-				if (dataPointStyle["variable"] == null) {
-					continue;
-				}
-
-				this.dataPointStyles[dataPointStyleName].assign(dataPointStyle["variable"],
-																dataPointStyle["values"]);		
+			if (dataPointStyle["variable"] == null) {
+				continue;
 			}
+
+			this.dataPointStyles[dataPointStyleName].assign(dataPointStyle["variable"],
+															dataPointStyle["values"]);		
 		}
 
 		return decodedExport;
