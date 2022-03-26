@@ -168,6 +168,7 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 										model,
 										this.dimensions,
 										lostTokenObject["nonLostTokens"],
+										lostTokenObject["lostTokens"],
 										this.dataProcessor.datasets["models"],
 										this.chosenSolution,
 										this.contextVar,

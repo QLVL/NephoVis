@@ -4,6 +4,7 @@ class MiniPlot extends CommonTokenPlot {
 				model,
 				dimensions,
 				dataset,
+				lostDataset,
 				modelDataset,
 				chosenSolution,
 				contextVar,
@@ -38,6 +39,7 @@ class MiniPlot extends CommonTokenPlot {
 
 		this.viewBoxPadding = this.dimensions["padding"];
 		this.model = model;
+		this.lostDataset = lostDataset;
 		this.modelDataset = modelDataset;
 
 		// We need a separate onBrush callback for the miniplots, since token selection needs to update immediately
@@ -108,6 +110,7 @@ class MiniPlot extends CommonTokenPlot {
 
 	restyle(dataPointStyles) {
 		super.restyle(dataPointStyles);
+		this.stylePoints(this.lostPointCloud);
 		this.colourEmblem();
 	}
 
@@ -116,6 +119,28 @@ class MiniPlot extends CommonTokenPlot {
 		let row = this.modelDataset.filter(row => row["_model"] == this.model)[0];
 		// Code the element using the emblem datapoint style
 		this.emblem.style("fill", this.codePoint(row, this.dataPointStyles["emblem"]));
+	}
+
+	generatePointCloud() {
+		super.generatePointCloud();
+
+		this.lostPointCloud = this.svg.append("g")
+				.attr("transform", `translate(${this.dimensions["width"] + this.dimensions["padding"] / 4}, 
+											  ${this.dimensions["padding"] / 2})`)
+				.attr("class", "dot")
+      			.selectAll("path")
+      			.data(this.lostDataset)
+      			.enter()
+      			.append("path")
+      			.attr("class", "graph")
+      			.attr("transform", (row, index) => {
+        			let j = index;
+        			var i = Math.floor((j * 10) / this.dimensions["width"]);
+        			j = j - (i * (this.dimensions["width"] / 10));
+        			return (`translate(${i * 10}, ${j * 10})`);
+      			});
+
+      	this.stylePoints(this.lostPointCloud);
 	}
 
 	setPointerEvents() {
