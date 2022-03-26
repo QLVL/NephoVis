@@ -110,7 +110,9 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 						params);
 		});
 
-		// TODO: build model switcher
+		UserInterface.buildDropdown("models",
+									this.modelSelection.models,
+									model => this.onModelClick(model));
 	}
 
 	handleModelColourChange() {
