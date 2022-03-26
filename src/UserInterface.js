@@ -192,4 +192,8 @@ class UserInterface {
 					 .replace(/[\s_]+/g, '-')
 					 .toUpperCase();
 	}
+
+	static openTab(url) {
+		window.open(url, '_blank').focus();
+	}
 }
