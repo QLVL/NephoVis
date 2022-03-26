@@ -119,6 +119,7 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 
 	switchSolution() {
 		super.switchSolution();
+		UserInterface.setLevel2Headers(this.chosenSolution);
 
 		this.plots.forEach(plot => plot.switchSolution(this.chosenSolution));
 	}
