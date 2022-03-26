@@ -21,6 +21,13 @@ class NephoVisLevel1 extends NephoVis {
 			window.location.href = "./";
 		});
 
+		UserInterface.setButton("modelSelect", (event) => {
+			let url = router.router.generate("aggregate.type.selection",
+											{ type: this.type,
+											  selection: this.selection });
+			UserInterface.openTab(url);
+		});
+
 		UserInterface.setButton("clearSelect", () => 
 			{
 				this.modelSelection.clear();

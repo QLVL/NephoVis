@@ -244,7 +244,7 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 										{ type: this.type,
 											model: modelId,
 											selection: this.selection });
-		window.open(url, '_blank').focus();
+		UserInterface.openTab(url);
 	}
 
 	updateUrl() {
