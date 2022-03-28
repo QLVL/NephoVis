@@ -196,4 +196,8 @@ class UserInterface {
 	static openTab(url) {
 		window.open(url, '_blank').focus();
 	}
+
+	static openWindow(url) {
+		window.open(url, '_self').focus();
+	}
 }
