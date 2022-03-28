@@ -1,5 +1,5 @@
 class Tooltip {
-	constructor(targetElement, offset) {
+	constructor(targetElement, offset=10) {
 		this.targetElement = targetElement;
 		this.offset = offset;
 
