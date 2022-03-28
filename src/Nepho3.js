@@ -192,6 +192,8 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 				return row[this.dataProcessor.contextWordsColumn].includes(contextWord); })
 											  .flatMap(row => row["_id"]));
 
+		selectedTokens = Helpers.unique(selectedTokens);
+
 		this.tokenSelection.restore(selectedTokens);
 	}
 
