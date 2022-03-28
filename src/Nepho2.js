@@ -217,7 +217,8 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 										onBrushFunction, // todo datapointclick 
 										brushEndFunction, // todo brushEndCallback
 										selectionByLegendFunction, // todo selectionByLegend
-										onModelClickFunction); 
+										onModelClickFunction,
+										index == 0) // only first plot should invoke legend drawing call; 
 			this.plots.push(miniPlot);
 		});
 

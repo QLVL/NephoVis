@@ -21,7 +21,8 @@ class MiniPlot extends CommonTokenPlot {
 				onBrushCallback,
 				brushEndCallback,
 				selectionByLegend,
-				modelClickCallback) {
+				modelClickCallback,
+				doDrawLegend=true) {
 
 		// Unused
 		let tailoredContexts = null;
@@ -71,6 +72,11 @@ class MiniPlot extends CommonTokenPlot {
 
 		// We also have to append an extra SVG for this type of plot
 		this.appendSvg();
+
+		// Disable drawLegend method if legend shouldn't be drawn
+		if (!doDrawLegend) {
+			this.drawLegend = () => { };
+		}
 
 		// Now, we can initialise the mini plot
 		this.initPlot();
