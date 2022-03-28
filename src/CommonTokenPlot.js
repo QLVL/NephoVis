@@ -52,6 +52,7 @@ class CommonTokenPlot extends Plot {
 
 	mouseOverPoint(row, pointElement) {
 		this.highlightPoint(pointElement);
+		this.showContext(row, pointElement);
 	}
 
 	mouseOut() {
