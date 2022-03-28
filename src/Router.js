@@ -36,14 +36,14 @@ class Router
 																				   params.type,
 																				   params.selection); }
 									},
-						":level/:type": { as: "level.type",
-									uses: (params) => { nephoSession.buildNephoVis(params.level,
+						"model/:type": { as: "model.type",
+									uses: (params) => { nephoSession.buildNephoVis("model",
 																				   params.type,
 																				   null); } 
 								  },
-						":level/:type/:selection": { as: "level.type.selection",
+						"model/:type/:selection": { as: "model.type.selection",
 									uses: (params) => {
-										nephoSession.buildNephoVis(params.level,
+										nephoSession.buildNephoVis("model",
 																   params.type,
 																   params.selection);
 									} }

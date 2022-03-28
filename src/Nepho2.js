@@ -84,6 +84,13 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 				this.tokenSelection.clear();
 			});
 
+		UserInterface.setButton("toLevel1", () => 
+			{
+				window.location.href = router.router.generate("model.type.selection",
+													  { type: this.type,
+													  	selection: this.selection });
+			});
+
 		// Build the model colour dropdown
 		// This is the dropdown which gives all the emblems
 		// in the leftmost corner their colours

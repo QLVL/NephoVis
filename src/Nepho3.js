@@ -88,6 +88,14 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 				this.contextWordSelection.clear();
 			});
 
+		UserInterface.setButton("toLevel2", () => 
+			{
+				console.log("halelqse");
+				window.location.href = router.router.generate("aggregate.type.selection",
+													  { type: this.type,
+													  	selection: this.selection });
+			});
+
 		UserInterface.setButton("findTokensContextBtn", (event) => {
 			let needle = document.getElementById("findTokensByContext").value;
 			this.selectByContextSearch(needle, this.contextVar,
