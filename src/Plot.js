@@ -86,8 +86,8 @@ class Plot {
 		// todo implement zooming
 	}
 
-	setTooltip(targetElement) {
-		this.tooltip = targetElement.append("div").attr("class", "tooltip"); 	
+	setTooltip() {
+		this.tooltip = new Tooltip(this.targetElement, this.tooltipOffset);	
 	}
 
 	setPointerEvents() {
@@ -222,10 +222,10 @@ class Plot {
 					 .attr("y2", this.d3AxisScaler["y"](0));
 	}
 
-	applyEvents(points, lostToken=false) {
+	applyEvents(points) {
 		return points.on("mouseover", (row, index, points) => {
 							let pointElement = d3.select(points[index]);
-							this.mouseOverPoint(row, pointElement, lostToken);
+							this.mouseOverPoint(row, pointElement);
 						})
 					 .on("mouseout", () => { this.mouseOut(); })
 					 .on("click", (row, index, points) => { this.onDataPointClick(row, points[index]); });
@@ -329,32 +329,11 @@ class Plot {
 								svgDimensions["height"] / this.dimensions["height"] * position[1] ];
 
 		// --- TOOLTIP ---
-
-		// Clear tooltip hide timeout
-		clearTimeout(this.tooltipHideTimeout);
-
-		// Show the tooltip
-		this.tooltip//.transition()
-					//.duration(200)
-					.style("opacity", 1)
-					.style("display", "block");
-
 		let tooltipContent = this.generateTooltipContent(row);
-
-		// Create the tooltip first (we need its width to position it)
-		this.tooltip.html(tooltipContent)
-			 	    .style("top", (realCoordinates[1] + this.tooltipOffset) + "px");
-
-		// tooltip.style("left", svgWidth-xcoord > parseInt(tooltipWidth) ? xcoord + "px" : Math.max(0, (xcoord-tooltipWidth)) + "px");
-
-		// Determine the tooltip location
-		let tooltipWidth = parseInt(this.tooltip.style("width"));
-		let tooltipLeftCoordinate = svgDimensions["width"] - realCoordinates[0] > tooltipWidth ?
-									`${realCoordinates[0]}px` :
-									`${Math.max(0, (realCoordinates[0] - tooltipWidth))}px`;
-
-		// Adjust the left coordinate
-		this.tooltip.style("left", tooltipLeftCoordinate);
+		this.tooltip.show(tooltipContent,
+						  realCoordinates[1],
+						  realCoordinates[0],
+						  svgDimensions["width"]);
 	}
 
 	hideTooltip() {
@@ -364,7 +343,7 @@ class Plot {
 		//this.tooltipHideTimeout = setTimeout(
 		//	() => { this.tooltip.style("display", "none"); }, this.tooltipTimeoutDuration);
 
-		this.tooltip.style("display", "none");
+		this.tooltip.hide();
 	}
 
 	mouseOut() {

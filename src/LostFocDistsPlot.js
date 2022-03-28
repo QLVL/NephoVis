@@ -14,7 +14,7 @@ class LostFocDistsPlot extends LostTokenPlot {
 
 		this.tooltipOffset = 20;
 
-		this.setTooltip(this.targetElement);
+		this.setTooltip();
 	}
 
 	codePoint(row, dataPointStyle) {

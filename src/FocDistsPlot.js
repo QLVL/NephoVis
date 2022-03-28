@@ -26,7 +26,7 @@ class FocDistsPlot extends TokenPlot {
 
 	initPlot() {
 		super.initPlot();
-		this.setTooltip(this.targetElement);
+		this.setTooltip();
 	}
 
 	setAxes(doTraceCenter=true) {
