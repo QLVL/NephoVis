@@ -68,6 +68,8 @@ class NephoVisLevel1 extends NephoVis {
 		}
 		
 		this.drawPlot();
+
+		this.updateUrl();
 	}
 
 	mouseClickPoint(row, pointElement) {
