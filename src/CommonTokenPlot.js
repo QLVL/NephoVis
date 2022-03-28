@@ -51,10 +51,7 @@ class CommonTokenPlot extends Plot {
 	/* -- MOUSE OVER, MOUSE OUT -- */
 
 	mouseOverPoint(row, pointElement) {
-		d3.select("#concordance").html("")
 		this.highlightPoint(pointElement);
-
-		this.showContext(row, pointElement);
 	}
 
 	mouseOut() {
@@ -63,6 +60,7 @@ class CommonTokenPlot extends Plot {
 	}
 
 	showContext(row, pointElement) {
+		d3.select("#concordance").html("");
 		let tooltipColour = this.codePoint(row, this.dataPointStyles["colour"]);
 
 		// ? ? ? ?

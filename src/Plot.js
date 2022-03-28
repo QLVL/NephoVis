@@ -222,10 +222,10 @@ class Plot {
 					 .attr("y2", this.d3AxisScaler["y"](0));
 	}
 
-	applyEvents(points) {
+	applyEvents(points, lostToken=false) {
 		return points.on("mouseover", (row, index, points) => {
 							let pointElement = d3.select(points[index]);
-							this.mouseOverPoint(row, pointElement);
+							this.mouseOverPoint(row, pointElement, lostToken);
 						})
 					 .on("mouseout", () => { this.mouseOut(); })
 					 .on("click", (row, index, points) => { this.onDataPointClick(row, points[index]); });
@@ -287,9 +287,12 @@ class Plot {
 		}
 	}
 
-	highlightPoint(pointElement) {
+	highlightPoint(pointElement, lostToken=false) {
+		// We need to append to a different subplot if the token is lost
+		let classToSelect = lostToken ? ".lostdot" : ".dot";
+
 		// -- HIGHLIGHT EFFECT --
-		this.svg.select(".dot")
+		this.svg.select(classToSelect)
 				.append("path")
 				.attr("class", "selector")
 				.attr("transform", pointElement.attr("transform"))
@@ -300,8 +303,17 @@ class Plot {
 	}
 
 	highlightPointFromPointIndex(itemId) {
+		let	lostToken = true;
 		let pointElement = this.pointCloud.filter(row => row[this.idColumn] == itemId);
-		this.highlightPoint(pointElement);
+
+		// It could be that this element is lost. We look in the other dataset in that case
+		if (pointElement.empty()) {
+			pointElement = this.lostPointCloud.filter(row => row[this.idColumn] == itemId);
+		} else {
+			lostToken = false;
+		}
+
+		this.highlightPoint(pointElement, lostToken);
 	}
 
 	showTooltip(row, pointElement) {

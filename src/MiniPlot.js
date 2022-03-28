@@ -131,18 +131,18 @@ class MiniPlot extends CommonTokenPlot {
 		this.lostPointCloud = this.svg.append("g")
 				.attr("transform", `translate(${this.dimensions["width"] + this.dimensions["padding"] / 4}, 
 											  ${this.dimensions["padding"] / 2})`)
-				.attr("class", "dot")
+				.attr("class", "lostdot")
       			.selectAll("path")
       			.data(this.lostDataset)
       			.enter()
       			.append("path")
       			.attr("class", "graph")
+      			.attr("pointIndex", (row, index) => index)
       			.attr("transform", (row, index) => {
         			let j = index;
         			var i = Math.floor((j * 10) / this.dimensions["width"]);
         			j = j - (i * (this.dimensions["width"] / 10));
-        			return (`translate(${i * 10}, ${j * 10})`);
-      			});
+        			return (`translate(${i * 10}, ${j * 10})`); });
 
       	this.applyEvents(this.lostPointCloud);
 
@@ -166,7 +166,7 @@ class MiniPlot extends CommonTokenPlot {
 	}
 
 	mouseOverPoint(row, pointElement) {
-		super.mouseOverPoint(row, pointElement);
+		this.showContext(row, pointElement);
 
 		// We give the point index to the callback, so it can find the corresponding point element
 		// in the other plots
