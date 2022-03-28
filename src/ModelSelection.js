@@ -26,7 +26,16 @@ class ModelSelection extends ItemSelection {
 		this.callback();
 	}
 
+	set models(models) {
+		this.items = models;
+	}
+
 	get models() {
 		return this.items;
+	}
+
+	fromMedoids(medoids) {
+		this.models = medoids;
+		this.callback();
 	}
 }
