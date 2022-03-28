@@ -15,6 +15,8 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 
 		// Tooltip for the miniplots
 		this.tooltip = new Tooltip(d3.select("body"), 20);
+
+		this.currentBrushPlot = null;
 	}
 
 	execute() {
@@ -186,6 +188,7 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 			let showTooltipFunction = this.showTooltip.bind(this);
 			let hideTooltipFunction = this.hideTooltip.bind(this);
 
+			let brushStartFunction = this.brushStart.bind(this);
 			let onBrushFunction = this.onBrush.bind(this);
 			let brushEndFunction = this.brushEnd.bind(this);
 
@@ -210,6 +213,7 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 										mouseOutFunction,
 										showTooltipFunction,
 										hideTooltipFunction,
+										brushStartFunction, // todo datapointclick 
 										onBrushFunction, // todo datapointclick 
 										brushEndFunction, // todo brushEndCallback
 										selectionByLegendFunction, // todo selectionByLegend
@@ -219,6 +223,22 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 
 		// todo: miniSvg remove (is this necessary?)
 		// todo: brush and brush toggle
+	}
+
+	brushStart(model) {
+		// If we're still brushing the same plot, no action is needed
+		if (this.currentBrushPlot != model) {
+			// If this is the first brush, no action is needed
+			if (this.currentBrushPlot != null) {
+				// If this is a second+ brush, get the index of the previous plot
+				let plotIndex = this.modelSelection.models.indexOf(this.currentBrushPlot);
+				// Then, destroy its brush
+				this.plots[plotIndex].destroyBrush();
+			}
+
+			// Update the currently brushing plot
+			this.currentBrushPlot = model;
+		}
 	}
 
 	onBrush(tokens) {

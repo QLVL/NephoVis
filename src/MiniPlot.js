@@ -17,6 +17,7 @@ class MiniPlot extends CommonTokenPlot {
 				onDataPointMouseOut,
 				showTooltipCallback,
 				hideTooltipCallback,
+				brushStartCallback,
 				onBrushCallback,
 				brushEndCallback,
 				selectionByLegend,
@@ -48,6 +49,9 @@ class MiniPlot extends CommonTokenPlot {
 		// We need a separate onBrush callback for the miniplots, since token selection needs to update immediately
 		// in the other plots as well
 		this.onBrushCallback = onBrushCallback;
+
+		// We need to know when a brush starts, so we can potentially remove the brush active in another plot
+		this.onBrushStartCallback = brushStartCallback;
 
 		// When we hover over a data point, we want to also highlight that same point in all other plots
 		// For this, we need more callbacks
@@ -164,6 +168,11 @@ class MiniPlot extends CommonTokenPlot {
       										 .attr("height", this.dimensions["height"] - this.dimensions["padding"])
 											 .style("stroke", "gray")
 											 .style("stroke-width", 0.6);
+	}
+
+	onBrushStart() {
+		// Inform the parent NephoVis class that brushing for this plot has started
+		this.onBrushStartCallback(this.model);
 	}
 
 	onBrush() {

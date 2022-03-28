@@ -84,6 +84,10 @@ class CommonTokenPlot extends Plot {
 
 	/* -- BRUSH -- */
 
+	onBrushStart() {
+
+	}
+
 	onBrush() {
 		let event = d3.event.selection;
 
@@ -118,8 +122,12 @@ class CommonTokenPlot extends Plot {
 		this.brushEndCallback(this.tokenSelection.tokens);
 	}
 
+	destroyBrush() {
+		this.svg.select(".brush").remove();
+	}
+
 	applyBrush(brush) {
-		brush = brush.on("start", () => { console.log("Brush start") })
+		brush = brush.on("start", () => { this.onBrushStart(); })
 					 .on("brush", () => this.onBrush())
 					 .on("end", () => this.onBrushEnd());
 
