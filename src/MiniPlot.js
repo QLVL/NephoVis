@@ -78,6 +78,9 @@ class MiniPlot extends CommonTokenPlot {
 			this.drawLegend = () => { };
 		}
 
+		// Miniplot legend padding should be 10px more
+		this.legendPadding += 10;
+
 		// Now, we can initialise the mini plot
 		this.initPlot();
 	}

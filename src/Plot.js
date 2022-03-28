@@ -44,6 +44,7 @@ class Plot {
 		this.animationDuration = 1000;
 		this.tooltipOffset = 10;
 
+		this.legendPadding = this.dimensions["padding"];
 		this.viewBoxPadding = 0;
 	}
 
@@ -79,7 +80,7 @@ class Plot {
 
 	drawLegend() {
 		this.legend = new Legend(this.dataset, this.level, this.type, this.selection, this.idColumn,
-								 this.dataPointStyles, this.dimensions["padding"], this.selectionByLegend);
+								 this.dataPointStyles, this.legendPadding, this.selectionByLegend);
 	}
 
 	onZoom(idk) {
