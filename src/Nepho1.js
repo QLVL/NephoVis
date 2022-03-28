@@ -117,9 +117,8 @@ class NephoVisLevel1 extends NephoVis {
 
 	updateUrl() {
 		super.updateUrl();
-		window.location.href = router.router.generate("level.type.selection",
-													  { level: this.level,
-													  	type: this.type,
+		window.location.href = router.router.generate("model.type.selection",
+													  { type: this.type,
 													  	selection: this.selection });
 	}
 }
