@@ -15,6 +15,8 @@ class MiniPlot extends CommonTokenPlot {
 				onDataPointClick,
 				onDataPointMouseOver,
 				onDataPointMouseOut,
+				showTooltipCallback,
+				hideTooltipCallback,
 				onBrushCallback,
 				brushEndCallback,
 				selectionByLegend,
@@ -51,6 +53,10 @@ class MiniPlot extends CommonTokenPlot {
 		// For this, we need more callbacks
 		this.onDataPointMouseOverCallback = onDataPointMouseOver;
 		this.onDataPointMouseOutCallback = onDataPointMouseOut;
+
+		// We need to be able to spawn tooltips outside the plot, so we also have callbacks for this
+		this.showTooltipCallback = showTooltipCallback;
+		this.hideTooltipCallback = hideTooltipCallback;
 
 		// The URL is generated at the application level
 		this.modelClickCallback = modelClickCallback;
@@ -109,7 +115,8 @@ class MiniPlot extends CommonTokenPlot {
     	  		.text(this.modelSelection.models.indexOf(this.model) + 1)
     	  		.style("fill", "white")
     	  		.style("font-weight", "bold")
-    	  		.style("font-size", "0.8em");
+    	  		.style("font-size", "0.8em")
+    	  		.style("pointer-events", "none");
 	}
 
 	restyle(dataPointStyles) {
@@ -182,10 +189,10 @@ class MiniPlot extends CommonTokenPlot {
 	}
 
 	mouseOverEmblem() {
-
+		this.showTooltipCallback(this.model);
 	}
 
 	mouseOutEmblem() {
-		
+		this.hideTooltipCallback();	
 	}
 }

@@ -12,6 +12,9 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 
 		// Plot specifications
 		this.columnsCount = 3; // TODO: should this be responsive?
+
+		// Tooltip for the miniplots
+		this.tooltip = new Tooltip(d3.select("body"), 20);
 	}
 
 	execute() {
@@ -115,6 +118,17 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 									model => this.onModelClick(model));
 	}
 
+	showTooltip(model) {
+		this.tooltip.show(model,
+						  d3.event.pageY,
+						  d3.event.pageX,
+						  parseFloat(d3.select("body").style("width")));
+	}
+
+	hideTooltip() {
+		this.tooltip.hide();
+	}
+
 	handleModelColourChange() {
 		// todo: "colour circles"
 	}
@@ -161,8 +175,13 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 			let mouseClickFunction = this.mouseClickPoint.bind(this);
 			let mouseOverFunction = this.mouseOver.bind(this);
 			let mouseOutFunction = this.mouseOut.bind(this);
+
+			let showTooltipFunction = this.showTooltip.bind(this);
+			let hideTooltipFunction = this.hideTooltip.bind(this);
+
 			let onBrushFunction = this.onBrush.bind(this);
 			let brushEndFunction = this.brushEnd.bind(this);
+
 			let selectionByLegendFunction = this.selectionByLegend.bind(this);
 			let onModelClickFunction = this.onModelClick.bind(this);
 
@@ -182,6 +201,8 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 										mouseClickFunction, // todo datapointclick 
 										mouseOverFunction, 
 										mouseOutFunction,
+										showTooltipFunction,
+										hideTooltipFunction,
 										onBrushFunction, // todo datapointclick 
 										brushEndFunction, // todo brushEndCallback
 										selectionByLegendFunction, // todo selectionByLegend
