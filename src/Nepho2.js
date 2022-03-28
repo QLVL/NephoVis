@@ -66,6 +66,8 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 
 		this.buildInterface();
 		this.drawPlot();
+
+		this.updateUrl();
 	}
 
 	initVarsContinued() {
