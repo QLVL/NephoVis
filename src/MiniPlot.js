@@ -144,6 +144,8 @@ class MiniPlot extends CommonTokenPlot {
         			return (`translate(${i * 10}, ${j * 10})`);
       			});
 
+      	this.applyEvents(this.lostPointCloud);
+
       	this.stylePoints(this.lostPointCloud);
 	}
 
