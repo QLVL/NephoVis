@@ -22,6 +22,11 @@ class NephoVisLevel1 extends NephoVis {
 		});
 
 		UserInterface.setButton("modelSelect", (event) => {
+			if (this.modelSelection.count == 0) {
+				alert("No models are selected.")
+				return;
+			}
+
 			let url = router.router.generate("aggregate.type.selection",
 											{ type: this.type,
 											  selection: this.selection });
