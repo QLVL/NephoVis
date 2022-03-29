@@ -37,6 +37,8 @@ class CommonTokenPlot extends Plot {
 
 		this.idColumn = "_id";
 		this.selection = this.tokenSelection;
+
+		this.brush = null;
 	}
 
 	/* -- GETTERS AND SETTERSE -- */
