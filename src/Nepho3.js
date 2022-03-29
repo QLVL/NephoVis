@@ -232,6 +232,7 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 		UserInterface.setLevel3Headers(this.model, this.chosenSolution);
 
 		let mouseClickFunction = this.mouseClickPoint.bind(this);
+		let brushStartFunction = this.brushStart.bind(this);
 		let brushEndFunction = this.brushEnd.bind(this);
 		let selectionByLegendFunction = this.selectionByLegend.bind(this);
 
@@ -247,6 +248,7 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 							 	  this.tokenSelection,
 							 	  this.variableSelection,
 							 	  mouseClickFunction,
+							 	  brushStartFunction,
 							 	  brushEndFunction,
 							 	  selectionByLegendFunction);
 	
@@ -283,7 +285,8 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 											this.modelSelection,
 											this.contextWordSelection,
 											this.variableSelection,
-											mouseClickFunctionContextWord,
+											mouseClickFunctionContextWord,	
+							 	  			brushStartFunction,
 											brushEndFunctionContextWord,
 											() => {});
 
@@ -329,6 +332,29 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 			this.focPlot.applyBrush(focDistsBrush);
 		} else {
 			d3.selectAll(".brush").remove();
+		}
+	}
+
+	brushStart(plot) {
+		console.log("new:", plot);
+		console.log("current:", this.currentBrushPlot);
+
+		// If we're still brushing the same plot, no action is needed
+		if (this.currentBrushPlot != plot) {
+			// If this is the first brush, no action is needed
+			if (this.currentBrushPlot != null) {
+				switch (this.currentBrushPlot) {
+					case "token":
+						this.plot.destroyBrush();
+						break;
+					case "focdists":
+						this.focPlot.destroyBrush();
+						break;
+				}
+			}
+
+			// Update the currently brushing plot
+			this.currentBrushPlot = plot;
 		}
 	}
 

@@ -11,6 +11,7 @@ class CommonTokenPlot extends Plot {
 				tokenSelection,
 				variableSelection,
 				onDataPointClick,
+				brushStartCallback,
 				brushEndCallback,
 				selectionByLegend) {
 
@@ -25,6 +26,8 @@ class CommonTokenPlot extends Plot {
 			  onDataPointClick,
 			  selectionByLegend);
 
+		// We need to know when a brush starts, so we can potentially remove the brush active in another plot
+		this.onBrushStartCallback = brushStartCallback;
 		this.brushEndCallback = brushEndCallback;
 		this.chosenSolution = chosenSolution; // TODO: this will still cause issues with getter/setter
 		this.originalDataset = this.dataset;

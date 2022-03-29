@@ -11,6 +11,8 @@ class NephoVisLevel23Common extends NephoVis {
 		this.contextVar = "_ctxt.raw";
 
 		this.buildTokenDataset();
+
+		this.currentBrushPlot = null;
 	}
 
 	buildTokenDataset() {

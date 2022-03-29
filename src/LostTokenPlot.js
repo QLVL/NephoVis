@@ -14,6 +14,7 @@ class LostTokenPlot extends CommonTokenPlot {
 		// Would be quite a hassle to rework everything. OOP is fun.
 		// TODO: figure out a way to streamline this, should it be necessary
 		let modelSelection = null;
+		let brushStartCallback = null;
 		let brushEndCallback = null;
 		let selectionByLegend = null;
 		let chosenSolution = null;
@@ -31,6 +32,7 @@ class LostTokenPlot extends CommonTokenPlot {
 			  tokenSelection,
 			  variableSelection,
 			  onDataPointClick,
+			  brushStartCallback,
 			  brushEndCallback,
 			  selectionByLegend);
 

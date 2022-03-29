@@ -22,6 +22,9 @@ class FocDistsPlot extends TokenPlot {
 
 		this.tooltipGenerator = new FocDistsTooltipGenerator(this.tokenDataset,
 															 this.contextWordsColumn);
+
+		// Set the plot identity so brushes can toggle
+		this.plotType = "focdists";
 	}
 
 	initPlot() {

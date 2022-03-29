@@ -15,8 +15,6 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 
 		// Tooltip for the miniplots
 		this.tooltip = new Tooltip(d3.select("body"), 20);
-
-		this.currentBrushPlot = null;
 	}
 
 	execute() {
