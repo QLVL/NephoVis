@@ -319,26 +319,14 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 	brushToggle() {
 		if (this.brushActive)
 		{
-			let tokenBrush = d3.brush()
-						   	   .extent([ [0, 0],
-						   		   	[ this.dimensions["width"],
-						   		   	  this.dimensions["height"] ] ]);
-			this.plot.applyBrush(tokenBrush);
-
-			let focDistsBrush = d3.brush()
-						   	      .extent([ [0, 0],
-						   		   	  [ this.dimensions["width"],
-						   		   	  	this.dimensions["height"] ] ]);
-			this.focPlot.applyBrush(focDistsBrush);
+			this.plot.applyBrush();
+			this.focPlot.applyBrush();
 		} else {
 			d3.selectAll(".brush").remove();
 		}
 	}
 
 	brushStart(plot) {
-		console.log("new:", plot);
-		console.log("current:", this.currentBrushPlot);
-
 		// If we're still brushing the same plot, no action is needed
 		if (this.currentBrushPlot != plot) {
 			// If this is the first brush, no action is needed

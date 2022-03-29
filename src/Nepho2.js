@@ -266,12 +266,7 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 		if (this.brushActive)
 		{
 			this.plots.forEach(plot => {
-				let tokenBrush = d3.brush()
-							   	   .extent([ [0, 0],
-							  	   		   	 [ this.dimensions["width"],
-						   		   	           this.dimensions["height"] ] ]);
-
-				plot.applyBrush(tokenBrush);
+				plot.applyBrush();
 			});
 
 			

@@ -130,15 +130,23 @@ class CommonTokenPlot extends Plot {
 		this.svg.select(".brush").remove();
 	}
 
-	applyBrush(brush) {
-		brush = brush.on("start", () => { this.onBrushStart(); })
-					 .on("brush", () => this.onBrush())
-					 .on("end", () => this.onBrushEnd());
+	applyBrush() {
+		/* Create the brush */
+		this.brush = d3.brush()
+						.extent([ [0, 0],
+								  [ this.dimensions["width"],
+						   		   	this.dimensions["height"] ] ]);
+		
+		/* Set brush events */
+		this.brush = this.brush.on("start", () => { this.onBrushStart(); })
+					 		   .on("brush", () => this.onBrush())
+					 		   .on("end", () => this.onBrushEnd());
 
+		/* Add the brush to the plot */
 		this.svg.append("g")
         		.attr("transform", `translate(${this.dimensions["padding"]}, ${this.dimensions["padding"]})`)
         		.attr("class", "brush")
-        		.call(brush);
+        		.call(this.brush);
 	}
 
 	/* -- OTHER -- */
