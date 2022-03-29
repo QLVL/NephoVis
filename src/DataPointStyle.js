@@ -22,7 +22,6 @@ class DataPointStyle {
 				break;
 			case "size":
 				// remember to set the domain (current variable) before assigning a value
-				// todo: find out what this means
 				this.schema = d3.scaleLinear().range([40, 200]);
 				this.default_value = 64;
 				this.format = input => d3.format(".3r")(+input);
@@ -78,15 +77,11 @@ class DataPointStyle {
 	updateLegendScales() {
 		switch (this.style) {
 			case "colour":
-				// TODO: won't this cause a desync between the point styles and the legend?
-				// update: YES!!!
-				// update: I fixed it
 				this.scale = d3.scaleOrdinal()
 							   .domain(this.values)
 							   .range(this.colourRange);
 				break;
 			case "shape":
-				// TODO: again, what is this?
 				let shapeRange = this.values.map(value => d3.symbol().type(this.schema(value))())
 
 				this.scale = d3.scaleOrdinal()
@@ -94,7 +89,6 @@ class DataPointStyle {
 							   .range(shapeRange);
 				break;
 			case "size":
-				// TODO: the same
 				this.scale = d3.scaleLinear()
 							   .domain(d3.extent(this.values))
 							   .range([5, 8])

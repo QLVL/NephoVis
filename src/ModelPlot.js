@@ -29,7 +29,6 @@ class ModelPlot extends Plot {
 
 	initPlot() {
 		// set tooltip and pointer events
-		// todo: this is different for level 2
 		this.setTooltip(this.targetElement);
 
 		super.initPlot();

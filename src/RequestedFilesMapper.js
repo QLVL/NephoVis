@@ -6,5 +6,4 @@ const RequestedFilesMapper = {
 	frequency: ['variables', 'ppmi'],
 	cws: ['variables'],
 	distance: ["modelsdist"]
-	// TODO add other levels files and other things
 };

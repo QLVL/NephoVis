@@ -138,10 +138,6 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 		this.tooltip.hide();
 	}
 
-	handleModelColourChange() {
-		// todo: "colour circles"
-	}
-
 	switchSolution() {
 		UserInterface.setLevel2Headers(this.chosenSolution);
 
@@ -155,25 +151,6 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 
 	drawPlot() {
 		this.plots = [];
-
-		/*this.modelSelection.models.forEach((model, index) => {
-			// TODO: I have NO clue what we're doing with lost tokens here
-			let lostTokenCount = this.getLostNonLostTokens(`${m}-${chosenSolution}`)["lostTokens"].length;
-			let lostColumns = lostTokenCount / 25 < 1 ?
-							  2 :
-							  Math.ceil(lostTokenCount / 25);
-
-			// todo: find more descriptive name
-			// also: WHAT ARE THESE MAGIC NUMBERS
-			// I think this is all unnecessary since layouting is done with FLEX now
-			let j = Math.floor(index / this.columnsCount);
-			let i = index - this.columnsCount * Math.floor(index / this.columnsCount);
-			let columnsCount = lostColumns / 2;
-
-			let solutionScales = {};
-
-			this.alternatives.forEach(solution => solutionScales[solution] = )
-		});*/
 
 		let miniPlotContainer = d3.select("#miniPlots");
 
@@ -212,22 +189,19 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 										this.modelSelection,
 										this.tokenSelection,
 										this.variableSelection,
-										mouseClickFunction, // todo datapointclick 
+										mouseClickFunction, 
 										mouseOverFunction, 
 										mouseOutFunction,
 										showTooltipFunction,
 										hideTooltipFunction,
-										brushStartFunction, // todo datapointclick 
-										onBrushFunction, // todo datapointclick 
-										brushEndFunction, // todo brushEndCallback
-										selectionByLegendFunction, // todo selectionByLegend
+										brushStartFunction,
+										onBrushFunction, 
+										brushEndFunction,
+										selectionByLegendFunction,
 										onModelClickFunction,
 										index == 0) // only first plot should invoke legend drawing call; 
 			this.plots.push(miniPlot);
 		});
-
-		// todo: miniSvg remove (is this necessary?)
-		// todo: brush and brush toggle
 	}
 
 	brushStart(model) {

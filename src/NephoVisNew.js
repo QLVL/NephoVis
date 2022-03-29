@@ -33,7 +33,6 @@ class NephoVis {
 			modelSelectionDataset = [];
 		}
 
-		// TODO: re-introduce LocalStorage if deemed necessary
 		this.modelSelection = new ModelSelection(modelSelectionDataset,
 												 () => { this.updateSelection(); });
 	}
@@ -72,7 +71,6 @@ class NephoVis {
 		this.dataPointStyles = {};
 		for (var i = 0; i < Constants.dataPointStyles.length; i++)
 		{
-			// todo: embed this in "Constants" somehow
 			let dataPointStyleName = Constants.dataPointStyles[i];
 			this.dataPointStyles[dataPointStyleName] = new DataPointStyle(this.level,
 														dataPointStyleName,
@@ -105,8 +103,6 @@ class NephoVis {
 
 		this.modelSelection.select(this.variableSelection);
 		// update plot callback is not necessary here because .select has it as a callback
-
-		// todo: re-implement local storage if deemed necessary
 	}
 
 	handleDropdownChange(dataPointStyleName, variable) {
@@ -127,11 +123,7 @@ class NephoVis {
 			console.log(this.dataPointStyles[dataPointStyleName].variable,
 						this.dataPointStyles[dataPointStyleName].values);
 		}
-
-		// todo: re-implement local storage if deemed necessary
-
-		// TODO: I don't really understand how the data structure works
-
+		
 		if (this.level != "aggregate") {
 			this.plot.restyle(this.dataPointStyles);
 		} else {

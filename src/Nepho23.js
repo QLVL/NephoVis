@@ -81,7 +81,6 @@ class NephoVisLevel23Common extends NephoVis {
 		// Pick the data specific to this solution
 		let data = this.dataLoader.datasets[solution];
 
-		// todo: "actual alt" implementation
 		let actualSolution = solution;
 
 		let subset = data.map((row) => {

@@ -29,7 +29,7 @@ class CommonTokenPlot extends Plot {
 		// We need to know when a brush starts, so we can potentially remove the brush active in another plot
 		this.onBrushStartCallback = brushStartCallback;
 		this.brushEndCallback = brushEndCallback;
-		this.chosenSolution = chosenSolution; // TODO: this will still cause issues with getter/setter
+		this.chosenSolution = chosenSolution;
 		this.originalDataset = this.dataset;
 		this.contextVar = contextVar;
 		this.tailoredContexts = tailoredContexts;

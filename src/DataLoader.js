@@ -36,9 +36,6 @@ class DataLoader {
 		// If the response is defined, parse and save it
 		// Else, set it to "null"
 		this.paths = this.checkResponse(response, "Please add a 'paths.json' file listing your available files!") ? await response.json() : null;
-
-		// TODO: use the data
-		// I don't understand this yet, maybe this should go elsewhere
 	}
 
 	async loadSolutions()

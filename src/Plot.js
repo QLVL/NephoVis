@@ -20,7 +20,6 @@ class Plot {
 		this.selectionByLegend = selectionByLegend;
 
 		// Set plot-wide scale
-		// TODO: this should probably be variable
 		this.scale = 1.05;
 
 		// Time-out for the tooltip
@@ -260,7 +259,6 @@ class Plot {
 
 	scaleDataPoint(row) {
 		// We get the x and y coordinates for this data point, and scale them
-		// todo: make this variable for other levels
 
 		// We return the transformed coordinates as some sort of tuple
 		// Why? Because we can them encode them separately
@@ -270,7 +268,6 @@ class Plot {
 
 	translateDataPoint(row) {
 		// We get the x and y coordinates for this data point, and scale them
-		// todo: make this variable for other levels
 		return `translate(${this.d3AxisScaler["x"](row[this.coordinateColumns["x"]])}, ${this.d3AxisScaler["y"](row[this.coordinateColumns["y"]])})`
 	}
 
