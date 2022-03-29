@@ -9940,3 +9940,7 @@ g  text.selected {
   flex : 1 1 40vh;
   resize: horizontal;
 }
+
+.largeSvg.hidden {
+  display: none;
+}

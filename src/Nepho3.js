@@ -9,6 +9,9 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 		this.dimensions = { "width": 600,
 							"height": 600,
 							"padding": 40 };
+
+		this.noFocDraw = true;
+		this.focPlotActive = true;
 	}
 
 	execute() {
@@ -88,6 +91,12 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 			{
 				this.tokenSelection.clear();
 				this.contextWordSelection.clear();
+			});
+
+		// TODO: should be hidden when focdists are not available
+		UserInterface.setButton("focDistToggle", () => 
+			{
+				this.toggleFocPlot();
 			});
 
 		UserInterface.setButton("toLevel2", () => 
@@ -268,49 +277,56 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 												   mouseClickFunction);
 		}
 
-		if (this.dataLoader.includesFOC) {
-			let mouseClickFunctionContextWord = this.mouseClickPointContextWord.bind(this);
-			let brushEndFunctionContextWord = this.brushEndContextWord.bind(this);
-
-			this.focPlot = new FocDistsPlot(this.level,
-											"svgContainer2",
-											this.dimensions,
-											this.dataLoader.datasets["nonLostFocdists"],
-											this.dataLoader.datasets["nonLostTokens"],
-											this.chosenSolution,
-											this.contextVar,
-											this.dataProcessor.contextWordsColumn,
-											this.dataProcessor.tailoredContexts,
-											this.dataPointStyles,
-											this.modelSelection,
-											this.contextWordSelection,
-											this.variableSelection,
-											mouseClickFunctionContextWord,	
-							 	  			brushStartFunction,
-											brushEndFunctionContextWord,
-											() => {});
-
-			if (this.dataLoader.datasets["lostFocdists"].length > 0) {
-				this.lostFocdistsPlot = new LostFocDistsPlot(this.level,
-										   					 "lostfocdists",
-										   					 "FOCs",
-										   					 this.dataLoader.datasets["lostFocdists"],
-										   					 this.dataLoader.datasets["nonLostTokens"],
-					 	  									 this.dataProcessor.contextWordsColumn,
-										   					 this.dataProcessor.tailoredContexts,
-										   					 this.dataPointStyles,
-										   					 this.contextWordSelection,
-										   					 this.variableSelection,
-										   					 mouseClickFunctionContextWord);
-			}
+		if (this.doDrawFocPlot) {
+			this.drawFocPlot();
 		}
+	}
+
+	drawFocPlot() {
+		let brushStartFunction = this.brushStart.bind(this);
+		let mouseClickFunctionContextWord = this.mouseClickPointContextWord.bind(this);
+		let brushEndFunctionContextWord = this.brushEndContextWord.bind(this);
+
+		this.focPlot = new FocDistsPlot(this.level,
+										"svgContainer2",
+										this.dimensions,
+										this.dataLoader.datasets["nonLostFocdists"],
+										this.dataLoader.datasets["nonLostTokens"],
+										this.chosenSolution,
+										this.contextVar,
+										this.dataProcessor.contextWordsColumn,
+										this.dataProcessor.tailoredContexts,
+										this.dataPointStyles,
+										this.modelSelection,
+										this.contextWordSelection,
+										this.variableSelection,
+										mouseClickFunctionContextWord,	
+						 	  			brushStartFunction,
+										brushEndFunctionContextWord,
+										() => {});
+
+		if (this.dataLoader.datasets["lostFocdists"].length > 0) {
+			this.lostFocdistsPlot = new LostFocDistsPlot(this.level,
+									   					 "lostfocdists",
+									   					 "FOCs",
+									   					 this.dataLoader.datasets["lostFocdists"],
+									   					 this.dataLoader.datasets["nonLostTokens"],
+				 	  									 this.dataProcessor.contextWordsColumn,
+									   					 this.dataProcessor.tailoredContexts,
+									   					 this.dataPointStyles,
+									   					 this.contextWordSelection,
+									   					 this.variableSelection,
+									   					 mouseClickFunctionContextWord);
+		}
+
+		this.noFocDraw = false;
 	}
 
 	switchSolution() {
 		this.plot.destroyBrush();
 		this.plot.switchSolution(this.chosenSolution);
 		
-		if (this.dataLoader.includesFOC) {
+		if (this.doDrawFocPlot) {
 			this.focPlot.destroyBrush();
 			this.focPlot.switchSolution(this.chosenSolution);
 		}
@@ -323,7 +339,7 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 		{
 			this.plot.applyBrush();
 
-			if (this.dataLoader.includesFOC) {
+			if (this.doDrawFocPlot) {
 				this.focPlot.applyBrush();
 			}
 		} else {
@@ -353,7 +369,11 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 
 	brushEnd(tokens) {
 		this.tokenSelection.restore(tokens);
-		this.selectFromTokens();
+
+		if (this.doDrawFocPlot) {
+			this.selectFromTokens();
+		}
+
 		this.afterTokenRestore();
 	}
 
@@ -366,7 +386,10 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 	afterTokenRestore() {
 		this.updateUrl();
 		this.plot.updateSelection(this.tokenSelection);
-		this.focPlot.updateSelection(this.contextWordSelection);
+
+		if (this.doDrawFocPlot) {
+			this.focPlot.updateSelection(this.contextWordSelection);
+		}
 
 		this.buildInterface();
 		this.buildTokenOverview();
@@ -378,5 +401,53 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 													  { model: this.model,
 													  	type: this.type,
 													  	selection: this.selection });
+	}
+
+	/* FOC plot switching */
+	toggleFocPlot() {
+		this.focPlotActive = !this.focPlotActive;
+	}
+
+	set focPlotActive(focPlotActive) {
+		this._focPlotActive = focPlotActive;
+
+		if (this._focPlotActive) {
+			UserInterface.setToggle("focDistToggle",
+									'<i class="fas fa-star"></i> FOC plot ON',
+									"btn-marigreen");
+
+			// There shouldn't be any drawing onload
+			if (!this.noFocDraw) {
+				// Then, we do another round of selectFromTokens
+				// It is possible that the tokens have changed,
+				// which will lead to different foc dists!
+				this.selectFromTokens();
+				this.afterTokenRestore();
+			}
+		} else {
+			UserInterface.setToggle("focDistToggle",
+									'<i class="far fa-star"></i> FOC plot OFF',
+									"btn-danger");
+		}
+
+		// Hide FOC plot if necessary
+		d3.select("#svgContainer2")
+		  .classed("hidden", !this.focPlotActive);
+	}
+
+	get focPlotActive() {
+		return this._focPlotActive;
+	}
+
+	// Should the FOC plot be drawn?
+	get doDrawFocPlot() {
+		// If there is no FOC data, it should not be drawn
+		if (!this.dataLoader.includesFOC) {
+			return false;
+		}
+
+		// If there is, return whether FOC plot is active
+
+		return this.focPlotActive;
 	}
 }

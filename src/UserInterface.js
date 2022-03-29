@@ -52,6 +52,12 @@ class UserInterface {
 		}
 	}
 
+	static setToggle(targetElementName, content, className) {
+		d3.select(`#${targetElementName}`)
+		  .html(content)
+		  .attr("class", `btn py-0 m-0 ${className}`)
+	}
+
 	static createButtons(targetElement, buttons, dataset, variableSelection, changeCallback) {
 		d3.select("#" + targetElement).selectAll("div")
 		  .data(buttons)
