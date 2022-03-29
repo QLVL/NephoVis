@@ -185,7 +185,9 @@ class NephoVisLevel23Common extends NephoVis {
 
 	/* -- OTHER -- */
 	switchSolution() {
-		this.brushActive = false;
+		//this.brushActive = false;
+
+		this.brushToggle();
 	}
 
 	importSelection(simple=false) {

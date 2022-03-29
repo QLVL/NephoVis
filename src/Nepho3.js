@@ -307,13 +307,15 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 	}
 
 	switchSolution() {
-		super.switchSolution();
-
+		this.plot.destroyBrush();
 		this.plot.switchSolution(this.chosenSolution);
 		
 		if (this.dataLoader.includesFOC) {
+			this.focPlot.destroyBrush();
 			this.focPlot.switchSolution(this.chosenSolution);
 		}
+
+		super.switchSolution();
 	}
 
 	brushToggle() {
