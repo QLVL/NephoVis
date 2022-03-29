@@ -234,7 +234,7 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 				// If this is a second+ brush, get the index of the previous plot
 				let plotIndex = this.modelSelection.models.indexOf(this.currentBrushPlot);
 				// Then, destroy its brush
-				this.plots[plotIndex].destroyBrush();
+				this.plots[plotIndex].hideBrush();
 			}
 
 			// Update the currently brushing plot

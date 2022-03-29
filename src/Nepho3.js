@@ -333,10 +333,10 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 			if (this.currentBrushPlot != null) {
 				switch (this.currentBrushPlot) {
 					case "token":
-						this.plot.destroyBrush();
+						this.plot.hideBrush();
 						break;
 					case "focdists":
-						this.focPlot.destroyBrush();
+						this.focPlot.hideBrush();
 						break;
 				}
 			}
