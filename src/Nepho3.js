@@ -423,6 +423,8 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 				// which will lead to different foc dists!
 				this.selectFromTokens();
 				this.afterTokenRestore();
+				// ...maybe the solution changed in the meantime?
+				this.focPlot.switchSolution(this.chosenSolution);
 			}
 		} else {
 			UserInterface.setToggle("focDistToggle",
