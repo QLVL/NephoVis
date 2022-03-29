@@ -2,15 +2,14 @@ class NephoVisLevel1 extends NephoVis {
 	constructor(level, type, selection=null) {
 		super(level, type, selection);
 		this.centralDataset = "models";
+
+		this.dimensions = { "width": 600,
+							"height": 600,
+							"padding": 40 };
 	}
 
 	// This method really deserves a rename, but I'm leaving it in for now for transparency
 	execute() { 
-		// TODO: should this be responsive?
-		this.canvasWidth = 600;
-		this.canvasHeight = 600;
-		this.canvasPadding = 40;
-
 		this.initVars();
 
 		this.itemSelection = this.modelSelection;
@@ -88,7 +87,7 @@ class NephoVisLevel1 extends NephoVis {
 
 		this.plot = new ModelPlot(this.level,
 							 "svgContainer",
-							 { "width": 600, "height": 600, "padding": 40 },
+							 this.dimensions,
 							 this.dataLoader.datasets["models"],
 							 this.dataPointStyles,
 							 this.modelSelection,
