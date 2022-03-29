@@ -320,7 +320,10 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 		if (this.brushActive)
 		{
 			this.plot.applyBrush();
-			this.focPlot.applyBrush();
+
+			if (this.dataLoader.includesFOC) {
+				this.focPlot.applyBrush();
+			}
 		} else {
 			d3.selectAll(".brush").remove();
 		}
