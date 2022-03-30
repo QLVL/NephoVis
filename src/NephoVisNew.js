@@ -220,8 +220,8 @@ class NephoVis {
 		}
 		
 		// Data point styles are not compatible across model level and other levels
-		if ((decodedExport["type"] == "model" && this.level != "model") ||
-			(decodedExport["type"] != "model" && this.level == "model")) {
+		if ((decodedExport["level"] == "model" && this.level != "model") ||
+			(decodedExport["level"] != "model" && this.level == "model")) {
 			return decodedExport;
 		}
 
