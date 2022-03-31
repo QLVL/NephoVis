@@ -93,14 +93,18 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 													  	selection: this.selection });
 			});
 
+		console.log(this.dataProcessorModels.nominalNames.length);
+
 		// Build the model colour dropdown
 		// This is the dropdown which gives all the emblems
 		// in the leftmost corner their colours
-		UserInterface.buildDropdown("modelColour",
+		UserInterface.buildDropdown("emblem",
 									this.dataProcessorModels.nominalNames,
 									variable => 
 										{ this.handleDropdownChange("emblem", variable); },
-									UserInterface.formatVariableName);
+									UserInterface.formatVariableName,
+									d => d,
+									this.dataProcessorModels.nominalNames.length <= 1);
 
 		UserInterface.setButton("showTable", (event) => {
 			let windowWidth = this.modelSelection.models.count * 100 + 400;
