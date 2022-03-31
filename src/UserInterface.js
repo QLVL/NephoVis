@@ -43,12 +43,21 @@ class UserInterface {
 		UserInterface.setLevel2Headers(chosenSolution);
 	}
 
-	static setButton(targetElementName, onclickEvent, additionalD3=null) {
+	static setButton(targetElementName, onclickEvent, additionalD3=null, shouldHide=null) {
 		let button = d3.select(`#${targetElementName}`)
 		  			   .on("click", () => { onclickEvent(); });
 
 		if (additionalD3 != null) {
 			additionalD3(button);
+		}
+
+		if (shouldHide != null) {
+			// Boolean which can be passed and then checked
+			// If it evaluates to true, it means this button should not be visible
+			// Probably because some property is not available in the dataset
+			if (shouldHide) {
+				button.style("display", "none");
+			}
 		}
 	}
 
