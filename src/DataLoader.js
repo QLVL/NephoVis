@@ -120,6 +120,11 @@ class DataLoader {
 				if (contextWordsFilename in this.paths) {
 					this.requestedFiles.push(contextWordsFilename);
 				}
+				// If not, quit and set includesFOC to false
+				else {
+					this.includesFOC = false;
+					break;
+				}
 			}
 
 			// Remove "focdists" itself from the requested files list
