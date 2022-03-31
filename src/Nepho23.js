@@ -130,7 +130,8 @@ class NephoVisLevel23Common extends NephoVis {
 										(variable) => 
 										{ this.handleDropdownChange(dataPointStyleName, variable); },
 										dataPointStyle.textFunction,
-										dataPointStyle.valueFunction);
+										dataPointStyle.valueFunction,
+										dataPointStyle.candidates.length <= 1);
 		}
 	}
 
