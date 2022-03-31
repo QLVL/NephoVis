@@ -134,7 +134,7 @@ class DataLoader {
 		// If so, build its full filename
 		let filenamesToLoad = this.requestedFiles.map((file) => {
 			// If the file we need isn't in the paths object, return undefined
-			if (!file in this.paths) {
+			if (!(file in this.paths)) {
 				return undefined;
 			}
 			// Else, build the full filename
