@@ -10,6 +10,9 @@ class DataLoader {
 
 		this.includesFOC = false;
 		this.alternatives = null;
+
+		// This list holds all files which aren't available
+		this.unavailableFiles = [];
 	}
 
 	checkResponse(response, message)
@@ -154,7 +157,14 @@ class DataLoader {
 		for (let i = 0; i < this.requestedFiles.length; i++)
 		{
 			let key = this.requestedFiles[i];
-			loadedDatasets[key] = await d3.tsv(filenamesToLoad[i]);
+
+			try {
+				loadedDatasets[key] = await d3.tsv(filenamesToLoad[i]);
+			} catch (error) {
+				if (error.message.includes("404")) {
+					this.unavailableFiles.push(key);
+				}
+			}
 		}
 
 		// Save the datasets in this object
