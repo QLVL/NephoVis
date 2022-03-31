@@ -111,7 +111,9 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 												  selection: this.selection }),
 						"cws",
 						params);
-		});
+		},
+		null,
+		this.dataLoader.unavailableFiles.includes("variables"));
 
 		UserInterface.setButton("showMatrix", (event) => {
 			let params = "width=650,height=650,menubar=no,toolbar=no,location=no,status=no";
