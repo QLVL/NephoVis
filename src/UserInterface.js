@@ -107,12 +107,15 @@ class UserInterface {
         		   		// Why is Javascript like this...
 	}
 
-	static buildDropdown(targetElementName, dataset, clickCallback, textFunction = d => d, valueFunction = d => d) {
+	static buildDropdown(targetElementName, dataset, clickCallback, textFunction = d => d, valueFunction = d => d, shouldHide=null) {
+		console.log(targetElementName, dataset, shouldHide);
+
 		let className = targetElementName.slice(0, 3)
 
-		d3.select("#" + targetElementName)
+		let dropdownElement = d3.select("#" + targetElementName)
 		  .html("") // Necessary to "reset" in case this dropdown was built before
-          .selectAll("button")
+          
+        dropdownElement.selectAll("button")
           .data(dataset)
           .enter()
           .append("button")
@@ -123,6 +126,20 @@ class UserInterface {
 		  .each( (propertyValue, dropdownIndex, dropdownDivs) => 
         		   		{ dropdownDivs[dropdownIndex].onclick = () => 
         		   			{ clickCallback(propertyValue); }; } );
+
+		
+		  if (shouldHide != null) {
+			// Boolean which can be passed and then checked
+			// If it evaluates to true, it means the sibling button should be disabled
+			// Probably because some property is not available in the dataset
+			if (shouldHide) {
+				// I know this is hacky, but so it this dropdown layout
+				// I can't do better than this
+				d3.select(dropdownElement.node().parentElement)
+				  .select("button")
+				  .attr("disabled", "true");
+			}
+		}
         return;
 	}
 
