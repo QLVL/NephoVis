@@ -66,7 +66,9 @@ class NephoVisLevel1 extends NephoVis {
 			UserInterface.buildDropdown(dataPointStyleName, dataPointStyle.candidates,
 										(variable) => 
 										{ this.handleDropdownChange(dataPointStyleName, variable); },
-										UserInterface.formatVariableName);
+										UserInterface.formatVariableName,
+										d => d,
+										dataPointStyle.candidates.length <= 1);
 		}
 		
 		this.drawPlot();
