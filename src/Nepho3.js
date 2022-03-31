@@ -142,7 +142,8 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 									pair => this.contextVar == pair["value"] ?
 											`<b>${pair["key"]}</b>` :
 											pair["key"],
-									d => d.value);
+									d => d.value,
+									this.dataProcessor.tailoredContexts.length <= 1);
 
 		// We build the model switcher as well
 		UserInterface.buildDropdown("models",
