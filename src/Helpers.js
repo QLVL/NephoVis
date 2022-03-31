@@ -66,9 +66,13 @@ class Helpers {
 	}
 
 	static findContextWordsColumn(dataset, model) {
-		return dataset.filter(columnName => {
+		let contextWordsColumns = dataset.filter(columnName => {
 			// TODO: WHAT is this magic number???
 			return (columnName.startsWith("_cws") && model.includes(columnName.slice(5)));
-		})[0];
+		});
+
+		return contextWordsColumns.length > 0 ?
+			   contextWordsColumns[0] :
+			   null;
 	}
 }
