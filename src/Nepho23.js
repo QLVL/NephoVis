@@ -34,8 +34,12 @@ class NephoVisLevel23Common extends NephoVis {
 		this.dataLoader.datasets["tokens"] = this.mergeSolutions();
 
 		// Infuse the tokens dataset with variables information
-		this.dataLoader.datasets["tokens"] = Helpers.mergeVariables(this.dataLoader.datasets["tokens"],
-																	this.dataLoader.datasets["variables"]);
+		// This is only possible if "variables" is available
+
+		if (!this.dataLoader.unavailableFiles.includes("variables")) {
+			this.dataLoader.datasets["tokens"] = Helpers.mergeVariables(this.dataLoader.datasets["tokens"],
+																		this.dataLoader.datasets["variables"]);
+		}
 
 		if (this.level == "token") {
 			let lostTokenObject = this.getLostNonLostTokens(this.chosenSolution);
