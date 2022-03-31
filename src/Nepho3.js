@@ -97,7 +97,9 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 		UserInterface.setButton("focDistToggle", () => 
 			{
 				this.toggleFocPlot();
-			});
+			},
+		null,
+		!this.dataLoader.includesFOC);
 
 		UserInterface.setButton("toLevel2", () => 
 			{
