@@ -137,7 +137,9 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 												  selection: this.selection }),
 						"freqtable",
 						params);
-		});
+		},
+		null,
+		this.dataProcessor.contextWordsColumn == null);
 
 		// We have to build the dropdown for the context words manually
 		UserInterface.buildDropdown("ctxt",
