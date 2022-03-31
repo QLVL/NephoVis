@@ -14,7 +14,7 @@ class LocalStorageInteractor {
 		return localStorage.getItem(key);
 	}
 
-	static setValue(key) {
-		return localStorage.setItem(key);
+	static setValue(key, value) {
+		return localStorage.setItem(key, value);
 	}
 }
