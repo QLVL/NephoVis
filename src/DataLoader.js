@@ -163,16 +163,25 @@ class DataLoader {
 		{
 			let key = this.requestedFiles[i];
 
+			if (filenamesToLoad[i] == undefined) {
+				this.setUnavailable(key);
+				continue;
+			}
+
 			try {
 				loadedDatasets[key] = await d3.tsv(filenamesToLoad[i]);
 			} catch (error) {
 				if (error.message.includes("404")) {
-					this.unavailableFiles.push(key);
+					this.setUnavailable(key);
 				}
 			}
 		}
 
 		// Save the datasets in this object
 		this.datasets = loadedDatasets;
+	}
+
+	setUnavailable(filename) {
+		this.unavailableFiles.push(filename);
 	}
 }
