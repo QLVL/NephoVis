@@ -61,6 +61,11 @@ class UserInterface {
 		}
 	}
 
+	static hideElementIfNecessary(targetElementName, shouldHide) {
+		d3.select(`#${targetElementName}`)
+		  .classed("disabled", shouldHide);
+	}
+
 	static setToggle(targetElementName, content, className) {
 		d3.select(`#${targetElementName}`)
 		  .html(content)

@@ -9948,3 +9948,8 @@ g  text.selected {
 .plotArea.only {
   width: 38vw;
 }
+
+div.disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
