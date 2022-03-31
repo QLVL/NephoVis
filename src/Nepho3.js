@@ -123,6 +123,12 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 				(needle) => `Sorry, "${needle}" is not present as a feature in this model.`);
 		});
 
+		// Disable search if context is not available
+		UserInterface.hideElementIfNecessary("findTokensByContextContainer",
+											 !(this.contextVar in this.dataLoader.datasets["tokens"][0]));
+		UserInterface.hideElementIfNecessary("findTokensByFeatureContainer",
+											 this.dataProcessor.contextWordsColumn == null);
+
 		UserInterface.setButton("showTable", (event) => { 
 			let params = "width=700,height=700,menubar=no,toolbar=no,location=no,status=no";
 			window.open(router.router.generate("frequency.type.contextwordscolumn.selection", 
