@@ -4,6 +4,10 @@ class DataLoader {
 		this.requestedFiles = requestedFiles;
 		this.typeDir = `${Constants.sourceDir}${this.type}/`;
 
+		if (LocalStorageInteractor.getValue("bert") != null) {
+			this.typeDir = `${Constants.sourceDirBert}${this.type}/`;
+		}
+
 		this.includesFOC = false;
 		this.alternatives = null;
 	}
