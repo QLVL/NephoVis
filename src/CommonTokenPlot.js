@@ -66,6 +66,12 @@ class CommonTokenPlot extends Plot {
 	}
 
 	showContext(row, pointElement) {
+		// If there is no context variable, or for some other reason, the code will crash
+		// We don't show anything if there is nothing to be shown
+		if (!(this.contextVar in row)) {
+			return;
+		}
+
 		d3.select("#concordance").html("");
 		let tooltipColour = this.codePoint(row, this.dataPointStyles["colour"]);
 
