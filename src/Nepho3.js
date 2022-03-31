@@ -209,6 +209,11 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 	}
 
 	selectFromTokens() {
+		// Do not select from tokens if no context words are available
+		if (!this.dataLoader.includesFOC) {
+			return;
+		}
+
 		let selectedTokens = this.dataLoader.datasets["tokens"]
 								 .filter(row => this.tokenSelection.tokens.includes(row["_id"]))
 								 .flatMap(row => row[this.dataProcessor.contextWordsColumn].split(";"));
@@ -279,6 +284,9 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 
 		if (this.doDrawFocPlot) {
 			this.drawFocPlot();
+		// Hide reserved space for FOC plot
+		} else {
+			this.focPlotActive = false;
 		}
 	}
 
