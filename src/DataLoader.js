@@ -163,11 +163,16 @@ class DataLoader {
 		{
 			let key = this.requestedFiles[i];
 
+			// If the filename is not in this.paths, it means that the file is unavailable
+			// If then has the value "undefined"
+			// We cannot load this file, so we set it as unavailable and move on
 			if (filenamesToLoad[i] == undefined) {
 				this.setUnavailable(key);
 				continue;
 			}
 
+			// In theory, if paths is set up correctly, this will never cause any errors
+			// However, to account for user error, we can also detect if files are not there
 			try {
 				loadedDatasets[key] = await d3.tsv(filenamesToLoad[i]);
 			} catch (error) {
