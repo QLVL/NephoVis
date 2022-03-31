@@ -9944,3 +9944,7 @@ g  text.selected {
 .largeSvg.hidden {
   display: none;
 }
+
+.plotArea.only {
+  width: 38vw;
+}

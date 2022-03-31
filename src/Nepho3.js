@@ -435,6 +435,10 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 		// Hide FOC plot if necessary
 		d3.select("#svgContainer2")
 		  .classed("hidden", !this.focPlotActive);
+
+		// Adjust margins on token plot when FOC dist is hidden
+		d3.select(".plotArea")
+		  .classed("only", !this.focPlotActive);
 	}
 
 	get focPlotActive() {
