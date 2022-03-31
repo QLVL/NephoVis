@@ -120,7 +120,9 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 												  selection: this.selection }),
 						"distance",
 						params);
-		});
+		},
+		null,
+		this.dataLoader.unavailableFiles.includes("modelsdist"));
 
 		UserInterface.buildDropdown("models",
 									this.modelSelection.models,
