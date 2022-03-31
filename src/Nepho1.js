@@ -45,7 +45,10 @@ class NephoVisLevel1 extends NephoVis {
 				this.initVariableSelection();
 				this.modelSelection.fromMedoids(selectedModels);
 				UserInterface.resetSelectionButtons();
-			});
+			},
+			null,
+			this.dataLoader.unavailableFiles.includes("medoids") // do not show if medoids are not available
+			);
 
 		UserInterface.createButtons("focrow", this.dataProcessor.foc, 
 									this.dataLoader.datasets["models"], this.variableSelection, 
