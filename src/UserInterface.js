@@ -53,10 +53,10 @@ class UserInterface {
 
 		if (shouldHide != null) {
 			// Boolean which can be passed and then checked
-			// If it evaluates to true, it means this button should not be visible
+			// If it evaluates to true, it means this button should be disabled
 			// Probably because some property is not available in the dataset
 			if (shouldHide) {
-				button.style("display", "none");
+				button.attr("disabled", "true");
 			}
 		}
 	}
