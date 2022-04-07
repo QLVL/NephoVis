@@ -209,6 +209,11 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 	}
 
 	selectFromContextWords() {
+		// If there is no context words column to be found, don't do anything
+		if (!(this.dataProcessor.contextWordsColumn in this.dataLoader.datasets["tokens"][0])) {
+			return;
+		}
+
 		let selectedTokens = this.contextWordSelection.tokens.flatMap(contextWord =>
 			this.dataLoader.datasets["tokens"].filter(row => {
 				return row[this.dataProcessor.contextWordsColumn].includes(contextWord); })
@@ -222,6 +227,11 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 	selectFromTokens() {
 		// Do not select from tokens if no context words are available
 		if (!this.dataLoader.includesFOC) {
+			return;
+		}
+
+		// If there is no context words column to be found, don't do anything
+		if (!(this.dataProcessor.contextWordsColumn in this.dataLoader.datasets["tokens"][0])) {
 			return;
 		}
 
