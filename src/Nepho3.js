@@ -210,7 +210,7 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 
 	selectFromContextWords() {
 		// If there is no context words column to be found, don't do anything
-		if (!(this.dataProcessor.contextWordsColumn in this.dataLoader.datasets["tokens"][0])) {
+		if (this.dataProcessor.contextWordsColumn == null) {
 			return;
 		}
 
@@ -231,7 +231,7 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 		}
 
 		// If there is no context words column to be found, don't do anything
-		if (!(this.dataProcessor.contextWordsColumn in this.dataLoader.datasets["tokens"][0])) {
+		if (this.dataProcessor.contextWordsColumn == null) {
 			return;
 		}
 

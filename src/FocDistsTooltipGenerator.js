@@ -13,7 +13,7 @@ class FocDistsTooltipGenerator {
 	generate(row) {
 		let tooltipContent = `<strong>${row["_id"]}</strong>`;
 
-		if (this.contextWordsColumn in this.dataset[0]) {
+		if (this.contextWordsColumn == null) {
 			let tokenCount = this.countTokens(row["_id"]);
 			tooltipContent = tooltipContent + `<br>(${tokenCount} tokens)`;
 		}
