@@ -15,14 +15,12 @@ class DataPointStyle {
 		// Attach d3 styles
 		switch (this.style) {
 			case "shape":
-				this.schema = d3.scaleOrdinal(d3.symbols);
 				this.default_value = (this.level == "model" ? d3.symbolWye : d3.symbolCircle);
 				this.baseLegend = d3.legendSymbol();
 				this.legendContainer = "#shapeLegendContainer";
 				break;
 			case "size":
 				// remember to set the domain (current variable) before assigning a value
-				this.schema = d3.scaleLinear().range([40, 200]);
 				this.default_value = 64;
 				this.format = input => d3.format(".3r")(+input);
 				this.baseLegend = d3.legendSize()
@@ -83,6 +81,7 @@ class DataPointStyle {
 							   .range(this.colourRange);
 				break;
 			case "shape":
+				this.schema = d3.scaleOrdinal(d3.symbols);
 				let shapeRange = this.values.map(value => d3.symbol().type(this.schema(value))())
 
 				this.scale = d3.scaleOrdinal()
@@ -90,6 +89,7 @@ class DataPointStyle {
 							   .range(shapeRange);
 				break;
 			case "size":
+				this.schema = d3.scaleLinear().range([40, 200]);
 				this.scale = d3.scaleLinear()
 							   .domain(d3.extent(this.values))
 							   .range([5, 8])
