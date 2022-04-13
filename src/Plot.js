@@ -368,7 +368,7 @@ class Plot {
 		  .selectAll("path.graph")
 		  // If no models are selected, everything is translucent
 		  // Else, only selected models are fully opaque
-		  .style("opacity", this.getOpacity())
+		  .attr("fill-opacity", this.getOpacity())
 		  .classed("lighter", (row) => 
 		  	{ if (this.selection.count > 0) {
 		  	  	return !this.selection.items.includes(row[this.idColumn]);
@@ -383,11 +383,7 @@ class Plot {
 	// If we have a bunch of miniplots with opacity, there will be MASSIVE LAG !!!
 	// So, for the aggregate level, the opacity is always simply 1
 	getOpacity() {
-		if (this.level == "aggregate") {
-			return 1;
-		} else {
-			return this.selection.count > 0 ? 1 : 0.7;
-		}
+		return this.selection.count > 0 ? 1 : 0.7;
 	}
 
 	generateComplementaryColour(colour) {
