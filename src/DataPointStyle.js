@@ -38,20 +38,6 @@ class DataPointStyle {
 				break;
 			case "colour":
 			case "emblem": // for the emblems
-				this.colourRange = d3.schemeSet3;
-				if (this.values != null) {
-					if (this.values.length > 8) {
-						this.colourRange = Constants.colourPalette;
-					}
-				}
-
-            	if (this.style == "emblem")
-            	{
-            		this.noLegend = true; // don't draw a legend for "emblem" type
-            		this.colourRange = Constants.colourPalette; // special colour palette
-            	}
-
-				this.schema = d3.scaleOrdinal(this.colourRange);
 				this.default_value = "#1f77b4"; // original colour
 				this.baseLegend = d3.legendColor()
             						.shape("path", d3.symbol()
@@ -77,6 +63,21 @@ class DataPointStyle {
 	updateLegendScales() {
 		switch (this.style) {
 			case "colour":
+				this.colourRange = Constants.colourPalette;
+				if (this.values != null) {
+					if (this.values.length > 8) {
+						this.colourRange = d3.schemeSet3;
+					}
+				}
+
+            	if (this.style == "emblem")
+            	{
+            		this.noLegend = true; // don't draw a legend for "emblem" type
+            		this.colourRange = Constants.colourPalette; // special colour palette
+            	}
+
+				this.schema = d3.scaleOrdinal(this.colourRange);
+
 				this.scale = d3.scaleOrdinal()
 							   .domain(this.values)
 							   .range(this.colourRange);
