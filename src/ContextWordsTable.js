@@ -11,6 +11,9 @@ class ContextWordsTable extends NephoVisLevel3 {
 		this.initVars();
 		this.importSelection();
 
+		// Set token count information
+		UserInterface.setTokenCount(this.tokenSelection.count);
+
 		this.buildCwsTokenDataset();
 		this.buildFrequencyData();
 

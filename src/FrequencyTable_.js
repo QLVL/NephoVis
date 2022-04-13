@@ -11,6 +11,9 @@ class FrequencyTable extends NephoVisLevel3 {
 	execute() {
 		this.initVars();
 		this.importSelection();
+		
+		// Set token count information
+		UserInterface.setTokenCount(this.tokenSelection.count);
 
 		this.buildFrequencyData();
 	}

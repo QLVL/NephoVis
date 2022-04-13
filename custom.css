@@ -9953,3 +9953,19 @@ div.disabled {
   pointer-events: none;
   opacity: 0.4;
 }
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1em 0 1em 0;
+}
+
+.topbar.simple {
+  justify-content: flex-end;
+}
+
+#tokenCount {
+  text-align: right;
+}

@@ -43,6 +43,11 @@ class UserInterface {
 		UserInterface.setLevel2Headers(chosenSolution);
 	}
 
+	static setTokenCount(count) {
+		let tokenText = count == 1 ? "token" : "tokens";
+		d3.select("#tokenCount").text(`${count} ${tokenText} selected`);
+	}
+
 	static setButton(targetElementName, onclickEvent, additionalD3=null, shouldHide=null) {
 		let button = d3.select(`#${targetElementName}`)
 		  			   .on("click", () => { onclickEvent(); });
