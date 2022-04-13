@@ -149,7 +149,7 @@ class MiniPlot extends CommonTokenPlot {
 		this.lostPointCloud = this.svg.append("g")
 				.attr("transform", `translate(${this.dimensions["width"] + this.dimensions["padding"] / 4}, 
 											  ${this.dimensions["padding"] / 2})`)
-				.attr("class", "lostdot")
+				.attr("class", "dot lostdot")
       			.selectAll("path")
       			.data(this.lostDataset)
       			.enter()
