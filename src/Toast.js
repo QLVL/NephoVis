@@ -55,11 +55,12 @@ class Toast {
 		this.toastElement.style("opacity", 1);
 
 		// If there are multiple toasts to read, we multiply the timeout by that number of toasts + 1
+		// We also add some decay, else it takes too long
 		// This way there is enough time to read all toasts
-		let toastCount = this.toastElement.selectAll(".toast")
+		let toastCount = this.parentElement.selectAll(".toast")
 										  .size();
 
-		setTimeout(() => { this.destroy(); }, (toastCount + 1) * baseTimeout );
+		setTimeout(() => { this.destroy(); }, (toastCount * 0.3 + 1) * baseTimeout );
 	}
 
 	destroy() {
