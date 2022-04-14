@@ -46,7 +46,7 @@ class ContextWordsTable extends NephoVisLevel3 {
 		let contextWords = this.contextWordColumns.flatMap(contextWordColumn => 
 			this.dataLoader.datasets["selectedTokens"].flatMap(tokenRow => 
 				tokenRow[contextWordColumn].split(";")))
-					.filter(contextWord => contextWord != "NA");
+					.filter(contextWord => contextWord != Constants.naString);
 
 		this.frequencyColumns = this.modelSelection.models.map((model, index) => index + 1);
 		//this.frequencyColumns = this.modelSelection.models.map((model, index) => index + 1);

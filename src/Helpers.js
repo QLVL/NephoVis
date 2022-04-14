@@ -32,7 +32,7 @@ class Helpers {
 			for (let key in variables[0]) {
 				// Don't overwrite the _id
 				if (key == "_id") continue;
-				coordRow[key] = "NA"; // ?
+				coordRow[key] = Constants.naString; // set "NA" as default value
 			}
 			m.set(coordRow["_id"], coordRow);
 		});
