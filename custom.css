@@ -9890,7 +9890,9 @@ main {
   display: flex;
   flex-flow: column wrap;
   align-items: flex-start;
-  align-content: flex-start;  
+  align-content: flex-start;
+
+  z-index: 10;
 }
 
 g.legend {
@@ -9977,4 +9979,6 @@ div.disabled {
   bottom: 0;
 
   width: 370px;
+
+  z-index: 20;
 }
