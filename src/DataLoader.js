@@ -20,7 +20,7 @@ class DataLoader {
 		// Is the response defined?
 		if (!response.ok)
 		{
-			window.alert(message);
+			new NephoToast("warn", "Fatal data load error", message);
 			return false;
 		}
 
@@ -42,7 +42,8 @@ class DataLoader {
 
 		// If the response is defined, parse and save it
 		// Else, set it to "null"
-		this.paths = this.checkResponse(response, "Please add a 'paths.json' file listing your available files!") ? await response.json() : null;
+		this.paths = this.checkResponse(response,
+			`<code>${this.type}/paths.json</code> not found. NephoVis will terminate.`) ? await response.json() : null;
 	}
 
 	async loadSolutions()
@@ -84,7 +85,9 @@ class DataLoader {
 
 			// If the response is defined, parse and save it
 			// Else, set it to "null"
-			this.solutions = this.checkResponse(response, "Something went wrong while fetching 'solutions.tsv'!") ? await response.json() : null;
+			this.solutions = this.checkResponse(response,
+				`Something went wrong while fetching <code>${this.type}/solutions.tsv</code>.`) ? 
+					await response.json() : null;
 		
 			this.associateSolutionFiles();
 		}
