@@ -37,7 +37,7 @@ class Toast {
 
 		toastHeader.append("strong")
 				   .style("margin-right", "auto")
-				   .text(headerText);
+				   .html(headerText);
 
 		toastHeader.append("button")
 				   .attr("type", "button")
@@ -50,7 +50,7 @@ class Toast {
 
 		let toastBody = this.toastElement.append("div")
 									 .attr("class", "toast-body")
-									 .text(bodyText);
+									 .html(bodyText);
 
 		this.toastElement.style("opacity", 1);
 
