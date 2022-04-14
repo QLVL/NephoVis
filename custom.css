@@ -9969,3 +9969,12 @@ div.disabled {
 #tokenCount {
   text-align: right;
 }
+
+#toastBar {
+  position: fixed;
+  top: 20px;
+  right: 0;
+  bottom: 0;
+
+  width: 370px;
+}
