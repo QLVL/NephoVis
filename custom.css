@@ -9976,8 +9976,8 @@ div.disabled {
   position: fixed;
   top: 20px;
   right: 0;
-  bottom: 0;
 
+  height: auto;
   width: 370px;
 
   z-index: 20;
