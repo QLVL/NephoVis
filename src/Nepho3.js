@@ -87,6 +87,11 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 	buildInterface() {
 		super.buildInterface();
 
+		if (!this.dataLoader.includesFOC) {
+			new NephoToast("info", "FOC plot disabled",
+			`<code>${this.type}.focdists.tsv</code> not found. FOC plot will be disabled.`);
+		}
+
 		UserInterface.setButton("clearSelect", () => 
 			{
 				this.tokenSelection.clear();
@@ -129,6 +134,22 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 		UserInterface.hideElementIfNecessary("findTokensByFeatureContainer",
 											 this.dataProcessor.contextWordsColumn == null);
 
+		if (!(this.contextVar in this.dataLoader.datasets["tokens"][0])) {
+			new NephoToast("info", "Context search disabled",
+			`No <code>_ctxt</code> column was defined in <code>${this.type}.variables.tsv</code> for this model.
+			 Context search will be disabled.`);
+		}
+
+		if (this.dataProcessor.contextWordsColumn == null) {
+			new NephoToast("info", "Frequency table disabled",
+			`No <code>_cws</code> column was defined in <code>${this.type}.variables.tsv</code> for this model.
+			 Frequency table will be disabled.`);
+			new NephoToast("info", "Feature search disabled",
+			`No <code>_cws</code> column was defined in <code>${this.type}.variables.tsv</code> for this model.
+			 Feature search will be disabled.`);
+		}
+
+
 		UserInterface.setButton("showTable", (event) => { 
 			let params = "width=700,height=700,menubar=no,toolbar=no,location=no,status=no";
 			window.open(router.router.generate("frequency.type.contextwordscolumn.selection", 
@@ -140,7 +161,6 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 		},
 		null,
 		this.dataProcessor.contextWordsColumn == null);
-
 		// We have to build the dropdown for the context words manually
 		UserInterface.buildDropdown("ctxt",
 									this.dataProcessor.tailoredContexts,
@@ -152,6 +172,12 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 											pair["key"],
 									d => d.value,
 									this.dataProcessor.tailoredContexts.length <= 1);
+
+		if (this.dataProcessor.tailoredContexts.length <= 1) {
+			new NephoToast("info", "Tailored contexts disabled",
+			`Fewer than 2 <code>_ctxt</code> columns were defined in <code>${this.type}.variables.tsv</code> for this model.
+			 Tailored contexts will be disabled.`);
+		}
 
 		// We build the model switcher as well
 		UserInterface.buildDropdown("models",
