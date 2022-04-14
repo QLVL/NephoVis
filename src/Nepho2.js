@@ -119,6 +119,11 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 		null,
 		this.dataLoader.unavailableFiles.includes("variables"));
 
+		if (this.dataLoader.unavailableFiles.includes("variables")) {
+			new NephoToast("info", "Frequency table disabled",
+			`<code>${this.type}.variables.tsv</code> not found. Frequency table will be disabled.`);
+		}
+
 		UserInterface.setButton("showMatrix", (event) => {
 			let params = "width=650,height=650,menubar=no,toolbar=no,location=no,status=no";
 			window.open(router.router.generate("distance.type.selection", 
@@ -129,6 +134,11 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 		},
 		null,
 		this.dataLoader.unavailableFiles.includes("modelsdist"));
+
+		if (this.dataLoader.unavailableFiles.includes("modelsdist")) {
+			new NephoToast("info", "Distance matrix disabled",
+			`<code>${this.type}.modelsdist.tsv</code> not found. Distance matrix will be disabled.`);
+		}
 
 		UserInterface.buildDropdown("models",
 									this.modelSelection.models,
