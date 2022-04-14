@@ -47,24 +47,22 @@ class NephoVis {
 			return;
 		}
 
-		let dataOptionsTable;
+		let dataOptionsTable = { "shape": this.dataProcessor.nominalNames.filter((nominal) => {
+										return (nominal == "Reset" || 
+							Helpers.getValues(this.dataLoader.datasets[this.centralDataset], nominal).length <= 7);
+										}) };
 		switch (this.level) {
 			case "model":
 			case "aggregate":
-				dataOptionsTable = { "colour": this.dataProcessor.nominalNames,
-							 	 	 "shape": this.dataProcessor.nominalNames,
-							 	 	 "size": this.dataProcessor.numeralNames };
+				dataOptionsTable["colour"] = this.dataProcessor.nominalNames;
+				dataOptionsTable["size"] = this.dataProcessor.numeralNames;
 				break;
 			case "token":
 				this.initTailoredVars();
 				this.initContextWordsColumn();
 
-				dataOptionsTable = { "colour": this.dataProcessor.nominalNames,
-							 	 	 "shape": this.dataProcessor.nominalNames.filter((nominal) => {
-										return (nominal == "Reset" || 
-							Helpers.getValues(this.dataLoader.datasets[this.centralDataset], nominal).length <= 7);
-										}),
-							 	 	 "size": this.dataProcessor.tailoredNumerals };
+				dataOptionsTable["colour"] = this.dataProcessor.nominalNames;
+				dataOptionsTable["size"] = this.dataProcessor.tailoredNumerals;
 				break;
 		}
 
