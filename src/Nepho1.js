@@ -2,6 +2,7 @@ class NephoVisLevel1 extends NephoVis {
 	constructor(level, type, selection=null) {
 		super(level, type, selection);
 		this.centralDataset = "models";
+		this.dataPointStyleIndex = 0;
 
 		this.dimensions = { "width": 600,
 							"height": 600,

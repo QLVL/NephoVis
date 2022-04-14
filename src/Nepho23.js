@@ -1,6 +1,7 @@
 class NephoVisLevel23Common extends NephoVis {
 	constructor(level, type, selection=null) {
 		super(level, type, selection);
+		this.dataPointStyleIndex = 1;
 	}
 
 	execute() {

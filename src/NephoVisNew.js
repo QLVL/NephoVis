@@ -76,6 +76,9 @@ class NephoVis {
 														dataPointStyleName,
 													    dataOptionsTable[dataPointStyleName]);
 		}
+
+		// This will hold the (serialised) data point styles of the other levels
+		this.dataPointStylesParked = {};
 	}
 
 	initVars() {
@@ -157,11 +160,20 @@ class NephoVis {
 				  "values": dataPointStyle.values };
 		}
 
+		// This is a hacky solution but honestly at this point, I can't make variableSelection indexed
+		// It would also just complicate things too much, so this'll have to do
+		let dataPointStyles = [ null, null ]
+
+		dataPointStyles[this.dataPointStyleIndex] = dataPointStylesSerialised;
+		dataPointStyles[1 - this.dataPointStyleIndex] = this.dataPointStylesParked;
+
 		let toExport = { "level": this.level,
 						 "type": this.type,
 						 "modelSelection": this.modelSelection.models,
 						 "variableSelection": this.variableSelection,
-						 "dataPointStyles": dataPointStylesSerialised };
+						 "dataPointStyles": dataPointStyles };
+
+		console.log(toExport);
 
 		// Token selection and chosen solution are only relevant for the
 		// aggregate and token levels
@@ -218,17 +230,13 @@ class NephoVis {
 		if (this.popoutWindow) {
 			return decodedExport;
 		}
-		
-		// Data point styles are not compatible across model level and other levels
-		if ((decodedExport["level"] == "model" && this.level != "model") ||
-			(decodedExport["level"] != "model" && this.level == "model")) {
-			return decodedExport;
-		}
 
 		this.variableSelection = decodedExport["variableSelection"];
 
-		for (let dataPointStyleName in decodedExport["dataPointStyles"]) {
-			let dataPointStyle = decodedExport["dataPointStyles"][dataPointStyleName];
+		console.log("Import:", decodedExport);
+
+		for (let dataPointStyleName in decodedExport["dataPointStyles"][this.dataPointStyleIndex]) {
+			let dataPointStyle = decodedExport["dataPointStyles"][this.dataPointStyleIndex][dataPointStyleName];
 	
 			if (dataPointStyle["variable"] == null) {
 				continue;
@@ -237,6 +245,8 @@ class NephoVis {
 			this.dataPointStyles[dataPointStyleName].assign(dataPointStyle["variable"],
 															dataPointStyle["values"]);		
 		}
+
+		this.dataPointStylesParked = decodedExport["dataPointStyles"][1 - this.dataPointStyleIndex];
 
 		return decodedExport;
 	}
