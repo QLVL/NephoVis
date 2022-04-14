@@ -279,7 +279,7 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 			this.afterTokenRestore();
 		}
 		else {
-			window.alert(generateError(needle));
+			new NephoToast("info", "No results found", generateError(needle));
 		}
 	}
 
