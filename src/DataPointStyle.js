@@ -74,7 +74,7 @@ class DataPointStyle {
 	updateLegendScales() {
 		switch (this.style) {
 			case "colour":
-				this.encodingRange = Constants.colourPalette;
+				this.encodingRange = Array.from(Constants.colourPalette);
 				if (this.values != null) {
 					if (this.values.length > 8) {
 						this.encodingRange = d3.schemeSet3;
@@ -96,7 +96,7 @@ class DataPointStyle {
 							   .range(this.encodingRange);
 				break;
 			case "shape":
-				this.encodingRange = d3.symbols;
+				this.encodingRange = Array.from(d3.symbols);
 
 				this.doNaReplacement(d3.symbolX);
 
