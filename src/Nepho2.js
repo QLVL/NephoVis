@@ -70,13 +70,31 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 		if (this.dataLoader.unavailableFiles.includes("variables")) {
 			new NephoToast("info", "Frequency table disabled",
 			`<code>${this.type}.variables.tsv</code> not found. Frequency table will be disabled.`);
+		} else {
+			// Other possibility
+			if (this.frequencyTableDisabled) {
+				new NephoToast("info", "Frequency table disabled",
+				`No <code>_cws</code> columns were defined in <code>${this.type}.variables.tsv</code>.
+			 	 Frequency table will be disabled.`);
+			}
 		}
-
 
 		if (this.dataLoader.unavailableFiles.includes("modelsdist")) {
 			new NephoToast("info", "Distance matrix disabled",
 			`<code>${this.type}.modelsdist.tsv</code> not found. Distance matrix will be disabled.`);
 		}
+	}
+
+	get frequencyTableDisabled() {
+		// If variables are unavailable, the frequency table is always disabled
+		if (this.dataLoader.unavailableFiles.includes("variables")) {
+			return true;
+		}
+
+		// Else, it depends on whether context words column is defined
+		return this.modelSelection.models.map(model =>
+			Helpers.findContextWordsColumn(this.dataProcessor.datasets["variables"].columns,
+										   model)).every(contextWordColumn => contextWordColumn == null);
 	}
 
 	initVarsContinued() {
@@ -128,7 +146,7 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 						params);
 		},
 		null,
-		this.dataLoader.unavailableFiles.includes("variables"));
+		this.frequencyTableDisabled);
 
 		UserInterface.setButton("showMatrix", (event) => {
 			let params = "width=650,height=650,menubar=no,toolbar=no,location=no,status=no";
