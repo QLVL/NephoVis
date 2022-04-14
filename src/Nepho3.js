@@ -47,6 +47,9 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 			new NephoToast("info", "Context search disabled",
 			`No <code>_ctxt</code> column was defined in <code>${this.type}.variables.tsv</code> for this model.
 			 Context search will be disabled.`);
+			new NephoToast("info", "Concordance viewer disabled",
+			`No <code>_ctxt</code> column was defined in <code>${this.type}.variables.tsv</code> for this model.
+			 Concordance viewer will be disabled.`);
 		}
 
 		if (this.dataProcessor.contextWordsColumn == null) {
