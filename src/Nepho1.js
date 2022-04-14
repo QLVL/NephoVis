@@ -22,7 +22,8 @@ class NephoVisLevel1 extends NephoVis {
 
 		UserInterface.setButton("modelSelect", (event) => {
 			if (this.modelSelection.count == 0) {
-				alert("No models are selected.")
+				new NephoToast("warn", "Cannot open level 2",
+					`No models are selected. Please select at least one model and try again.`);
 				return;
 			}
 
