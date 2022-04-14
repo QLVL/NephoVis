@@ -37,6 +37,12 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 			`<code>${this.type}.focdists.tsv</code> not found. FOC plot will be disabled.`);
 		}
 
+		if (this.dataProcessor.tailoredContexts.length <= 1) {
+			new NephoToast("info", "Tailored contexts disabled",
+			`Fewer than 2 <code>_ctxt</code> columns were defined in <code>${this.type}.variables.tsv</code> for this model.
+			 Tailored contexts will be disabled.`);
+		}
+
 		if (!(this.contextVar in this.dataLoader.datasets["tokens"][0])) {
 			new NephoToast("info", "Context search disabled",
 			`No <code>_ctxt</code> column was defined in <code>${this.type}.variables.tsv</code> for this model.
@@ -172,12 +178,6 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 											pair["key"],
 									d => d.value,
 									this.dataProcessor.tailoredContexts.length <= 1);
-
-		if (this.dataProcessor.tailoredContexts.length <= 1) {
-			new NephoToast("info", "Tailored contexts disabled",
-			`Fewer than 2 <code>_ctxt</code> columns were defined in <code>${this.type}.variables.tsv</code> for this model.
-			 Tailored contexts will be disabled.`);
-		}
 
 		// We build the model switcher as well
 		UserInterface.buildDropdown("models",
