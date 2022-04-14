@@ -31,6 +31,26 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 		this.drawPlot();
 
 		this.updateUrl();
+
+		if (!this.dataLoader.includesFOC) {
+			new NephoToast("info", "FOC plot disabled",
+			`<code>${this.type}.focdists.tsv</code> not found. FOC plot will be disabled.`);
+		}
+
+		if (!(this.contextVar in this.dataLoader.datasets["tokens"][0])) {
+			new NephoToast("info", "Context search disabled",
+			`No <code>_ctxt</code> column was defined in <code>${this.type}.variables.tsv</code> for this model.
+			 Context search will be disabled.`);
+		}
+
+		if (this.dataProcessor.contextWordsColumn == null) {
+			new NephoToast("info", "Frequency table disabled",
+			`No <code>_cws</code> column was defined in <code>${this.type}.variables.tsv</code> for this model.
+			 Frequency table will be disabled.`);
+			new NephoToast("info", "Feature search disabled",
+			`No <code>_cws</code> column was defined in <code>${this.type}.variables.tsv</code> for this model.
+			 Feature search will be disabled.`);
+		}
 	}
 
 	initVars() {
@@ -87,11 +107,6 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 	buildInterface() {
 		super.buildInterface();
 
-		if (!this.dataLoader.includesFOC) {
-			new NephoToast("info", "FOC plot disabled",
-			`<code>${this.type}.focdists.tsv</code> not found. FOC plot will be disabled.`);
-		}
-
 		UserInterface.setButton("clearSelect", () => 
 			{
 				this.tokenSelection.clear();
@@ -133,21 +148,6 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 											 !(this.contextVar in this.dataLoader.datasets["tokens"][0]));
 		UserInterface.hideElementIfNecessary("findTokensByFeatureContainer",
 											 this.dataProcessor.contextWordsColumn == null);
-
-		if (!(this.contextVar in this.dataLoader.datasets["tokens"][0])) {
-			new NephoToast("info", "Context search disabled",
-			`No <code>_ctxt</code> column was defined in <code>${this.type}.variables.tsv</code> for this model.
-			 Context search will be disabled.`);
-		}
-
-		if (this.dataProcessor.contextWordsColumn == null) {
-			new NephoToast("info", "Frequency table disabled",
-			`No <code>_cws</code> column was defined in <code>${this.type}.variables.tsv</code> for this model.
-			 Frequency table will be disabled.`);
-			new NephoToast("info", "Feature search disabled",
-			`No <code>_cws</code> column was defined in <code>${this.type}.variables.tsv</code> for this model.
-			 Feature search will be disabled.`);
-		}
 
 
 		UserInterface.setButton("showTable", (event) => { 
