@@ -50,9 +50,9 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 		}
 		else if (this.modelSelection.models.length > this.truncateUpperBound) {
 			console.log("Truncating models");
-			// TODO: alerts are really bad UI
-			// find some toast library and use that
-			//window.alert("You have selected too many models, only the first 9 will be used.");
+			let toast = new NephoToast("warn", "Too many models selected",
+				"You have selected too many models. Only the first 9 will be used.");
+
 			this.modelSelection.truncate(this.truncateUpperBound);
 		}
 
