@@ -1,6 +1,6 @@
 class Toast {
 	constructor(parentElement, icon, headerText, bodyText, timeout=true) {
-		let baseTimeout = 7000;
+		let baseTimeout = 15000;
 
 		this.parentElement = d3.select(parentElement);
 
