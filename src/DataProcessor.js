@@ -39,7 +39,8 @@ class DataProcessor {
 		this.nominalNames.push("Reset"); // I don't know why this needs to be in
 
 		this.numeralNames = this.variableNames.filter((columnName) => {
-			return Helpers.uniqueValues(this.datasets[this.centralDataset], columnName).every(value => !isNaN(value));
+			return Helpers.uniqueValues(this.datasets[this.centralDataset], columnName).filter(value => value != Constants.naString)
+																					   .every(value => !isNaN(value));
 		});
 		this.numeralNames.push("Reset") // I don't know why this needs to be in
 

@@ -11,6 +11,8 @@ class Constants {
     									   "#D55E00",
     									   "#CC79A7",
     									   "#999999"] }
+    static get naColour() { return "#EEE9E9"; }
+    static get naString() { return "NA"; }
     static get cwsInfoOptions() {
     	return [ { "name" : "Selected and non selected",
         	  	   "value" : "both", 

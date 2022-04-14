@@ -279,6 +279,11 @@ class Plot {
 			if (isNaN(dataPointStyle.default_value)) {
 				return dataPointStyle.schema.domain(dataPointStyle.values)(row[dataPointStyle.variable]);
 			}
+
+			if (row[dataPointStyle.variable] == "NA" && dataPointStyle.style == "size") {
+				return 0;
+			}
+
 			// todo: check what the if NAN does here because I don't know
 			// also I don't know what any of this means 🤷‍
 			return dataPointStyle.schema.domain(d3.extent(dataPointStyle.values))(+row[dataPointStyle.variable]);

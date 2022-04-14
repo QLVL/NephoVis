@@ -50,6 +50,10 @@ class DataPointStyle {
 		this.variable = variable;
 		this.values = values;
 
+		if (this.style == "size") {
+			this.values = this.values.filter(value => value != Constants.naString);
+		}
+
 		this.updateLegendScales();
 	}
 
@@ -58,30 +62,45 @@ class DataPointStyle {
 		this.values = null;
 	}
 
+	doNaReplacement(replacement) {
+		// "NA" handling
+		// if "NA" is in the values, we put the NA colour at the point 
+		if (this.values.includes(Constants.naString)) {
+			let naIndex = this.values.indexOf(Constants.naString);
+			this.encodingRange.splice(naIndex, 0, replacement);
+		}
+	}
+
 	updateLegendScales() {
 		switch (this.style) {
 			case "colour":
-				this.colourRange = Constants.colourPalette;
+				this.encodingRange = Constants.colourPalette;
 				if (this.values != null) {
 					if (this.values.length > 8) {
-						this.colourRange = d3.schemeSet3;
+						this.encodingRange = d3.schemeSet3;
 					}
 				}
+
+				this.doNaReplacement(Constants.naColour);
 
             	if (this.style == "emblem")
             	{
             		this.noLegend = true; // don't draw a legend for "emblem" type
-            		this.colourRange = Constants.colourPalette; // special colour palette
+            		this.encodingRange = Constants.colourPalette; // special colour palette
             	}
 
-				this.schema = d3.scaleOrdinal(this.colourRange);
+				this.schema = d3.scaleOrdinal(this.encodingRange);
 
 				this.scale = d3.scaleOrdinal()
 							   .domain(this.values)
-							   .range(this.colourRange);
+							   .range(this.encodingRange);
 				break;
 			case "shape":
-				this.schema = d3.scaleOrdinal(d3.symbols);
+				this.encodingRange = d3.symbols;
+
+				this.doNaReplacement(d3.symbolX);
+
+				this.schema = d3.scaleOrdinal(this.encodingRange);
 				let shapeRange = this.values.map(value => d3.symbol().type(this.schema(value))())
 
 				this.scale = d3.scaleOrdinal()
