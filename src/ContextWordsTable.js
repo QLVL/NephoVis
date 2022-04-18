@@ -31,9 +31,18 @@ class ContextWordsTable extends NephoVisLevel3 {
 	}
 
 	buildFrequencyData() {
+		// First, check whether there is a lemma-specific context word column available
 		this.contextWordColumns = this.modelSelection.models.map(model =>
 			Helpers.findContextWordsColumn(this.dataProcessor.datasets["variables"].columns,
-										   model));
+										   model,
+										   "_cwsl"));
+
+		// If there is not, just use the word pieces (or lemmas, for count-based models)
+		if (this.contextWordColumns.every(contextWordColumn => contextWordColumn == null)) {
+			this.contextWordColumns = this.modelSelection.models.map(model =>
+				Helpers.findContextWordsColumn(this.dataProcessor.datasets["variables"].columns,
+											   model));
+		}
 
 		UserInterface.buildDropdown("info",
 									Constants.cwsInfoOptions,

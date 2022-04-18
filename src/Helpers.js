@@ -65,10 +65,9 @@ class Helpers {
 		return Helpers.exists(row, coordinateColumns);
 	}
 
-	static findContextWordsColumn(dataset, model) {
+	static findContextWordsColumn(dataset, model, prefix="_cws") {
 		let contextWordsColumns = dataset.filter(columnName => {
-			// TODO: WHAT is this magic number???
-			return (columnName.startsWith("_cws") && model.includes(columnName.slice(5)));
+			return (columnName.startsWith(prefix) && model.includes(columnName.slice(prefix.length + 1)));
 		});
 
 		return contextWordsColumns.length > 0 ?
