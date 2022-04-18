@@ -40,6 +40,12 @@ class FrequencyTable extends NephoVisLevel3 {
 			let frequencyRowMatch = this.dataLoader.datasets["ppmi"].filter(frequencyRow => 
 				frequencyRow["cw"] == uniqueId)[0];
 
+			// If the dataset has missing data, the tool will crash
+			// We return null and filter this later
+			if (frequencyRowMatch == undefined) {
+				return null;
+			}
+
 			// I think all ids will already have been split at this point? I'll just copy this.
 			let tokenCount = contextWords.filter(id => id.split(";").includes(uniqueId)).length;
 
@@ -50,6 +56,8 @@ class FrequencyTable extends NephoVisLevel3 {
 
 			return tableRow;
 		});
+
+		dataTableRows = dataTableRows.filter(dataTableRow => dataTableRow != null);
 
 		let dataTableColumns = ["Feature", "Tokens"].concat(frequencyColumns);
 
