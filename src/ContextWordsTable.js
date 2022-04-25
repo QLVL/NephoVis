@@ -136,5 +136,10 @@ class ContextWordsTable extends NephoVisLevel3 {
             "order": [[1, "desc"]]
             // "columnDefs": [{ "visible": false, "targets": 1 }]
         });
+
+        UserInterface.setButton("downloadCwsTable", () => { 
+        	let tsvWriter = new TsvWriter(this.tableData);
+        	Helpers.download(`NephoVis CWS - ${infoOptions["name"]}.tsv`, tsvWriter.serialise());
+        });
 	}
 }

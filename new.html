@@ -295,9 +295,14 @@
     <div class="shared cws">
       <h2 id="report"></h2>
       <div class="topbar">
-        <div class='btn-group'>
-          <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select information</button>
-          <div class="dropdown-menu" id="info"></div>
+        <div>
+          <div class='btn-group'>
+            <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select information</button>
+            <div class="dropdown-menu" id="info"></div>
+          </div>
+          <div class='btn-group'>
+            <button type="button" class="btn shadow-sm btn-kulright" id="downloadCwsTable">Download table as tsv</button>
+          </div>
         </div>
         <div id="tokenCount"></div>
       </div>
@@ -356,6 +361,7 @@
   <script src="src/Tooltip.js"></script>
   <script src="src/Toast.js"></script>
   <script src="src/NephoToast.js"></script>
+  <script src="src/TsvWriter.js"></script>
   <script src="src/FocDistsTooltipGenerator.js"></script>
   <script src="src/Legend.js"></script>
   <script src="src/Plot.js"></script>
