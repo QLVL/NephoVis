@@ -47,8 +47,7 @@ class ContextWordsTable extends NephoVisLevel3 {
 		UserInterface.buildDropdown("info",
 									Constants.cwsInfoOptions,
 									(value) => { this.drawTable(value); },
-									option => option.name,
-									option => option.value);
+									option => option.name);
 
 		// For each model, find context words
 		// The context words are returned in one FLAT list
