@@ -52,10 +52,13 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 			 Concordance viewer will be disabled.`);
 		}
 
-		if (this.dataProcessor.contextWordsColumn == null) {
+		if (!("ppmi" in this.dataLoader.paths)) {
 			new NephoToast("info", "Frequency table disabled",
-			`No <code>_cws</code> column was defined in <code>${this.type}.variables.tsv</code> for this model.
+			`No <code>${this.type}.ppmi.tsv</code> file defined in <code>${this.type}/paths.json</code>.
 			 Frequency table will be disabled.`);
+		}
+
+		if (this.dataProcessor.contextWordsColumn == null) {
 			new NephoToast("info", "Feature search disabled",
 			`No <code>_cws</code> column was defined in <code>${this.type}.variables.tsv</code> for this model.
 			 Feature search will be disabled.`);
@@ -169,7 +172,7 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 						params);
 		},
 		null,
-		this.dataProcessor.contextWordsColumn == null);
+		!("ppmi" in this.dataLoader.paths));
 		// We have to build the dropdown for the context words manually
 		UserInterface.buildDropdown("ctxt",
 									this.dataProcessor.tailoredContexts,
