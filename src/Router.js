@@ -49,6 +49,9 @@ class Router
 									} }
 					  }
 		this.router.on(this.routes);
+		this.router.notFound(function () {
+			UserInterface.setLevelUI("noroute");
+		});
 	}
 }
 
