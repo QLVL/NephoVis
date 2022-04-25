@@ -1,7 +1,7 @@
 class Constants {
 	static get sourceDir () { return "tokenclouds/data/"; }
 	static get sourceDirBert () { return "tokenclouds_nn/data/"; }
-	static get lemmasRegister () { return Constants.sourceDir + "euclidean_register"; }
+	static get lemmasRegister () { return Constants.sourceDir + "euclidean_register.tsv"; }
 	static get dataPointStyles () { return [ "colour", "shape", "size" ] }
 	static get colourPalette () { return [ "#E69F00",
     									   "#56B4E9",

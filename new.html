@@ -49,13 +49,43 @@
     } */ /* do we need this? */
 
 
-    .plus {
-      background-color: #c2e7ad;
+    .plus, .even {
+      background-color: #c2e7ad !important;
     }
   </style>
 </head>
 
 <body>
+  <div id="index" class="container main shared index">
+    <div class="row homelead">
+        <div class="col-sm-9">
+          <h1 style="font-size:4em;">Nephological semantics</h1>
+        </div>
+        <div class="col-sm-3">
+          <a href="https://www.arts.kuleuven.be/ling/qlvl/projects/current/nephological-semantics"><img src="QLVLcloud.png" alt="QLVL logo" style="width:100%; max-width:150px;"></a>
+        </div>
+    </div>
+    <div class="row">
+      <div class="topbar">
+        <p>Welcome to the visualization tool of the Nephological Semantics projects.</p>
+      <p><a href="https://zenodo.org/badge/latestdoi/224012839"><img src="https://zenodo.org/badge/224012839.svg" alt="DOI"></a></p>
+      </div>
+    </div>
+    <!--<div class="row">
+      <div class="topbar">
+        <div>
+          <div class='btn-group'>
+            <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select POS</button>
+            <div class="dropdown-menu" id="indexPosSelect"></div>
+          </div>
+        </div>
+        <div id="indexInfo">
+        </div>
+      </div>
+    </div> -->
+    <div class="row" id="indexContent" style="flex: 1;">
+    </div>
+  </div>
   <div id="splash" class="shared">
     <img class="branding" src="./QLVLcloud.png">
   </div>
@@ -362,6 +392,7 @@
   <script src="src/Toast.js"></script>
   <script src="src/NephoToast.js"></script>
   <script src="src/TsvWriter.js"></script>
+  <script src="src/Index.js"></script>
   <script src="src/FocDistsTooltipGenerator.js"></script>
   <script src="src/Legend.js"></script>
   <script src="src/Plot.js"></script>

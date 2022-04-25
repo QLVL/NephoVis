@@ -9964,6 +9964,17 @@ div.disabled {
   padding: 1em 0 1em 0;
 }
 
+.index .topbar {
+  width: 100%;
+  padding: 1em;
+  background-color: #ffffff;
+}
+
+.index .topbar p {
+  margin: 0;
+  padding: 0;
+}
+
 .topbar.simple {
   justify-content: flex-end;
 }
@@ -9990,4 +10001,47 @@ div.disabled {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.index {
+  display: flex;
+  flex-flow: column;
+
+  height: 100%;
+}
+
+.index .row.homelead {
+}
+
+.index h1 {
+  color: #ffffff;
+}
+
+#indexInfo {
+  text-align: right;
+}
+
+#indexContent {
+}
+
+.index .dataTables_wrapper {
+  border-top: 2px solid #154360;
+
+  background-color: #ffffff;
+  width: 100%;
+
+  padding: 1em;
+}
+
+.index .dataTables_wrapper table {
+  overflow-y: scroll;
+}
+
+.index .dataTables_wrapper table a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.index .dataTables_wrapper table a:hover { 
+  color: #111;
 }

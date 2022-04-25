@@ -37,6 +37,9 @@ class NephoSession {
 			case "token":
 				this.nephoVis = new NephoVisLevel3(level, type, model, selection);
 				break;
+			case "index":
+				this.nephoVis = new Index();
+				break;
 		}
 		
 	}
