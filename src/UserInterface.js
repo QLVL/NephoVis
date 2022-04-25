@@ -135,7 +135,7 @@ class UserInterface {
           .html(textFunction)
 		  .each( (propertyValue, dropdownIndex, dropdownDivs) => 
         		   		{ dropdownDivs[dropdownIndex].onclick = () => 
-        		   			{ clickCallback(propertyValue); }; } );
+        		   			{ clickCallback(valueFunction(propertyValue)); }; } );
 
 		
 		  if (shouldHide != null) {
