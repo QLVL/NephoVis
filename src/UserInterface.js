@@ -15,6 +15,7 @@ class UserInterface {
 		// Update the page title
 		// Template: Level X (type)
 		d3.select("#nephoVisTitle").html(`${level} level (<em>${type}</em>)`);
+		d3.select("title").text(`${type}: ${level}`);
 		
 	}
 
