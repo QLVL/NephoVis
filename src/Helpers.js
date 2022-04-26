@@ -87,4 +87,9 @@ class Helpers {
 
   		document.body.removeChild(element);
 	}
+
+	// https://www.w3resource.com/javascript-exercises/fundamental/javascript-fundamental-exercise-70.php
+	static countOccurrences(arr, val) {
+		return arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
+	} 
 }
