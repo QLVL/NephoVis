@@ -3,7 +3,7 @@ class Index {
 		UserInterface.setLevelUI("index");
 		d3.select("body").style("background-color", "#fef9d9");
 
-		d3.tsv(Constants.lemmasRegister).then(lemmas => this.buildIndex(lemmas, "all"));
+		d3.tsv(Constants.lemmasRegister).then(lemmas => { this.buildIndex(lemmas, "all"); Splash.hide(); });
 	}
 
 	buildIndex(lemmas, pos=null) {

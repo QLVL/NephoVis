@@ -83,6 +83,8 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 			new NephoToast("info", "Distance matrix disabled",
 			`<code>${this.type}.modelsdist.tsv</code> not found. Distance matrix will be disabled.`);
 		}
+
+		Splash.hide();
 	}
 
 	get frequencyTableDisabled() {

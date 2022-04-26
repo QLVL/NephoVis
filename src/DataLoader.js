@@ -21,6 +21,7 @@ class DataLoader {
 		if (!response.ok)
 		{
 			new NephoToast("warn", "Fatal data load error", message);
+			Splash.updateInfo("Loading failed");
 			return false;
 		}
 

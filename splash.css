@@ -35,5 +35,11 @@ html, body {
 }
 
 #splash {
-	display: none;
+}
+
+#splash * {
+	margin-top: 2em;
+	color: #ffffff;
+
+	text-align: center;
 }

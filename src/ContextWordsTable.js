@@ -18,6 +18,8 @@ class ContextWordsTable extends NephoVisLevel3 {
 		this.buildFrequencyData();
 
 		this.drawTable(Constants.cwsInfoOptions[0]);
+
+		Splash.hide();
 	}
 
 	buildCwsTokenDataset() {

@@ -63,6 +63,8 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 			`No <code>_cws</code> column was defined in <code>${this.type}.variables.tsv</code> for this model.
 			 Feature search will be disabled.`);
 		}
+
+		Splash.hide();
 	}
 
 	initVars() {

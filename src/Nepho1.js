@@ -76,6 +76,8 @@ class NephoVisLevel1 extends NephoVis {
 		this.drawPlot();
 
 		this.updateUrl();
+
+		Splash.hide();
 	}
 
 	mouseClickPoint(row, pointElement) {

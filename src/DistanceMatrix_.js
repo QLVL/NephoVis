@@ -13,6 +13,8 @@ class DistanceMatrix extends NephoVisLevel1 {
 		this.importSelection();
 
 		this.buildDistanceMatrix();
+
+		Splash.hide();
 	}
 
 	buildDistanceMatrix() {

@@ -16,6 +16,8 @@ class FrequencyTable extends NephoVisLevel3 {
 		UserInterface.setTokenCount(this.tokenSelection.count);
 
 		this.buildFrequencyData();
+
+		Splash.hide();
 	}
 
 	buildFrequencyData() {

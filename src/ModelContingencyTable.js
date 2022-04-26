@@ -33,6 +33,8 @@ class ModelContingencyTable {
 								 this.outModelContextWordCount +
 								 this.inModelContextWordCountDifference +
 								 this.outModelContextWordCountDifference;
+
+		Splash.hide();
 	}
 
 	countContextWords(needle, haystack) {
