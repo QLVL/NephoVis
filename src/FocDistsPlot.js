@@ -1,4 +1,4 @@
-class FocDistsPlot extends TokenPlot {
+class FocDistsPlot extends BaseTokenPlot {
 	constructor(level, targetElementName, dimensions, dataset, tokenDataset, chosenSolution, contextVar,
 				contextWordsColumn, tailoredContexts, dataPointStyles, modelSelection, tokenSelection,
 				variableSelection, onDataPointClick, brushEndCallback, selectionByLegend) {
@@ -25,6 +25,11 @@ class FocDistsPlot extends TokenPlot {
 
 		// Set the plot identity so brushes can toggle
 		this.plotType = "focdists";
+
+		this.sizeDataStyle = new DataPointStyle(this.level, "size", null);
+		this.sizeDataStyle.assign("waaa", []); // generate schema (bit of a hack)
+
+		this.initPlot();
 	}
 
 	initPlot() {
@@ -39,11 +44,21 @@ class FocDistsPlot extends TokenPlot {
 	}
 
 	codePoint(row, dataPointStyle) {
-		if (dataPointStyle.style == "shape") {
-			// Symbol exclusive to the focdists plot
-			return d3.symbolStar;
-		} else {
-			return super.codePoint(row, dataPointStyle);
+		switch (dataPointStyle.style) {
+			case "shape":
+				return d3.symbolStar;
+				break;
+			case "size":
+				if (this.selection.items.includes(row[this.idColumn])) {
+					return this.sizeDataStyle.schema.domain([1, this.selection.count])(
+						this.tooltipGenerator.countTokens(row[this.idColumn]));
+				}
+				else {
+					return this.sizeDataStyle.default_value;
+				}
+			default:
+				return super.codePoint(row, dataPointStyle);
+				break;
 		}
 	}
 
