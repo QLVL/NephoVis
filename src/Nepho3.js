@@ -450,6 +450,7 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 
 		if (this.doDrawFocPlot) {
 			this.focPlot.updateSelection(this.contextWordSelection);
+			this.focPlot.restyle(this.dataPointStyles);
 		}
 
 		this.buildInterface();
