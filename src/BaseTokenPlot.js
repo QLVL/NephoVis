@@ -1,4 +1,4 @@
-class TokenPlot extends BaseTokenPlot {
+class BaseTokenPlot extends CommonTokenPlot {
 	constructor(level,
 				targetElementName,
 				dimensions,
@@ -31,6 +31,14 @@ class TokenPlot extends BaseTokenPlot {
 			brushEndCallback,
 			selectionByLegend);
 
-		this.initPlot();
+		this.appendSvg();
+
+		// Set the plot identity so brushes can toggle
+		this.plotType = "token";
+	}
+
+	onBrushStart() {
+		// Inform the parent NephoVis class that brushing for this plot has started
+		this.onBrushStartCallback(this.plotType);
 	}
 }
