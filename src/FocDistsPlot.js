@@ -73,7 +73,12 @@ class FocDistsPlot extends BaseTokenPlot {
 	}
 
 	generateTooltipContent(row) {
-		return this.tooltipGenerator.generate(row);
+		if (this.selection.count == 0) { 
+			return this.tooltipGenerator.generate(row);
+		} else {
+			return `<strong>${row["_id"]}</strong><br>` +
+				   `${Helpers.countOccurrences(this.selection.items, row[this.idColumn])} tokens`;
+		}
 	}
 
 	drawLegend() {
