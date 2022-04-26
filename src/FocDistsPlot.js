@@ -51,7 +51,7 @@ class FocDistsPlot extends BaseTokenPlot {
 			case "size":
 				if (this.selection.items.includes(row[this.idColumn])) {
 					return this.sizeDataStyle.schema.domain([1, this.selection.count])(
-						this.tooltipGenerator.countTokens(row[this.idColumn]));
+						Helpers.countOccurrences(this.selection.items, row[this.idColumn]));
 				}
 				else {
 					return this.sizeDataStyle.default_value;
