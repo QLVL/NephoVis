@@ -65,18 +65,27 @@ class Index {
 		`<a href="${router.router.generate("model.type", { "type": row.value })}">${row.value}</a>` :
 				 row.value);
 
-		let maxTableHeight = d3.select("#indexContent")
-							   .style("height");
-		maxTableHeight = parseInt(maxTableHeight);
-
-		console.log(`${maxTableHeight - 200}px`);
-
 		$("table").DataTable({
 			// 'destroy' : true,
-			'order': [[1, 'desc']],
-			"scrollY": `${maxTableHeight - 150}px`,
+			'order': [[0, 'asc']],
+			"scrollY": `${this.getMaxTableHeight()}px`,
         	"scrollCollapse": true,
         	"pageLength": 50
 		});
+
+		window.onresize = () => { this.adjustDataTableHeight(); };
+	}
+
+	getMaxTableHeight() {
+		let headerHeight = d3.select("#header")
+							   .style("height");
+
+		let maxTableHeight = parseInt(d3.select("body").style("height")) - parseInt(headerHeight);
+
+		return maxTableHeight - 200;		
+	}
+
+	adjustDataTableHeight() {
+		d3.select(".dataTables_scrollBody").style("max-height", `${this.getMaxTableHeight()}px`);
 	}
 }
