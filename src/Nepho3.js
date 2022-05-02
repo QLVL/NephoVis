@@ -285,6 +285,9 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 
 		if (tokenSelection.length > 0) {
 			this.tokenSelection.restore(tokenSelection);
+			if (this.doDrawFocPlot) {
+				this.selectFromTokens();
+			}
 			this.afterTokenRestore();
 		}
 		else {
