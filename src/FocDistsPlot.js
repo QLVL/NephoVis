@@ -1,7 +1,21 @@
 class FocDistsPlot extends BaseTokenPlot {
-	constructor(level, targetElementName, dimensions, dataset, tokenDataset, chosenSolution, contextVar,
-				contextWordsColumn, tailoredContexts, dataPointStyles, modelSelection, tokenSelection,
-				variableSelection, onDataPointClick, brushEndCallback, selectionByLegend) {
+	constructor(level,
+				targetElementName,
+				dimensions,
+				dataset,
+				tokenDataset,
+				chosenSolution,
+				contextVar,
+				contextWordsColumn,
+				tailoredContexts,
+				dataPointStyles,
+				modelSelection,
+				contextWordSelection,
+				tokenSelection,
+				variableSelection,
+				onDataPointClick,
+				brushEndCallback,
+				selectionByLegend) {
 		super(level,
 			  targetElementName,
 			  dimensions,
@@ -11,7 +25,7 @@ class FocDistsPlot extends BaseTokenPlot {
 			  tailoredContexts,
 			  dataPointStyles,
 			  modelSelection,
-			  tokenSelection,
+			  contextWordSelection,
 			  variableSelection,
 			  onDataPointClick,
 			  brushEndCallback,
@@ -19,6 +33,7 @@ class FocDistsPlot extends BaseTokenPlot {
 
 		this.contextWordsColumn = contextWordsColumn;
 		this.tokenDataset = tokenDataset;
+		this.tokenSelection = tokenSelection;
 
 		this.tooltipGenerator = new FocDistsTooltipGenerator(this.tokenDataset,
 															 this.contextWordsColumn);
@@ -50,7 +65,7 @@ class FocDistsPlot extends BaseTokenPlot {
 				break;
 			case "size":
 				if (this.selection.items.includes(row[this.idColumn])) {
-					return this.sizeDataStyle.schema.domain([1, this.selection.count])(
+					return this.sizeDataStyle.schema.domain([1, this.tokenSelection.count])(
 						Helpers.countOccurrences(this.selection.items, row[this.idColumn]));
 				}
 				else {
@@ -83,5 +98,10 @@ class FocDistsPlot extends BaseTokenPlot {
 
 	drawLegend() {
 		return;
+	}
+
+	// For tokens (not context words)
+	updateTokenSelection(tokenSelection) {
+		this.tokenSelection = tokenSelection;
 	}
 }

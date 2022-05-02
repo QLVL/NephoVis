@@ -366,6 +366,7 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 										this.dataPointStyles,
 										this.modelSelection,
 										this.contextWordSelection,
+										this.tokenSelection,
 										this.variableSelection,
 										mouseClickFunctionContextWord,	
 						 	  			brushStartFunction,
@@ -456,6 +457,7 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 
 		if (this.doDrawFocPlot) {
 			this.focPlot.updateSelection(this.contextWordSelection);
+			this.focPlot.updateTokenSelection(this.tokenSelection);
 			this.focPlot.restyle(this.dataPointStyles);
 		}
 
