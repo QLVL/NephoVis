@@ -37,6 +37,8 @@ class DataLoader {
 
 	async loadPaths()
 	{
+		Splash.updateInfo("Loading file paths...");
+
 		// Load the paths.json file
 		// We use "await" to avoid the hell of promises
 		let response = await fetch(`${this.typeDir}paths.json`);
@@ -96,6 +98,8 @@ class DataLoader {
 
 	associateSolutionFiles()
 	{
+		Splash.updateInfo("Associating datasets with files...");
+
 		// If tokens are requested, we need to add all available dimension reduction techniques
 		// to the list of files we want to load in
 		if (this.requestedFiles.includes("tokens"))
@@ -139,6 +143,8 @@ class DataLoader {
 
 	async retrieveFiles()
 	{
+		Splash.updateInfo("Retrieving datasets...");
+
 		// For each requested file, check if it's actually present
 		// If so, build its full filename
 		let filenamesToLoad = this.requestedFiles.map((file) => {

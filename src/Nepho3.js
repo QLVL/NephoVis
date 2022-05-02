@@ -15,6 +15,7 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 	}
 
 	execute() {
+		Splash.updateInfo("Setting up interface...");
 		super.execute();
 
 		// Initialise all variables

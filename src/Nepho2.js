@@ -18,6 +18,7 @@ class NephoVisLevel2 extends NephoVisLevel23Common {
 	}
 
 	execute() {
+		Splash.updateInfo("Setting up interface...");
 		// First, initialise the variables just enough so we can import only the model selection
 		this.initVarsSimple();
 		this.importSelection(true);

@@ -11,6 +11,7 @@ class NephoVisLevel1 extends NephoVis {
 
 	// This method really deserves a rename, but I'm leaving it in for now for transparency
 	execute() { 
+		Splash.updateInfo("Setting up interface...");
 		this.initVars();
 
 		this.itemSelection = this.modelSelection;
