@@ -162,7 +162,12 @@ class DataLoader {
 		// file -> content
 		let loadedDatasets = {};
 
-		// Retrieve file contents for each requested file
+		// This object will hold all promises which we'll be using to load files
+		// This will happen in parallel, which should greatly speed things up
+		let promiseArray = [];
+		let promiseFiles = [];
+
+		// Create promise for each array
 		for (let i = 0; i < this.requestedFiles.length; i++)
 		{
 			let key = this.requestedFiles[i];
@@ -175,16 +180,24 @@ class DataLoader {
 				continue;
 			}
 
+			// Now, we add the promise to our promise array
+			promiseArray.push(d3.tsv(filenamesToLoad[i]));
+			promiseFiles.push(key);
+		}
+
+		let promiseOutput = await Promise.allSettled(promiseArray);
+		promiseOutput.forEach((output, index) => {
+			// Name of the dataset associated with this output
+			let key = promiseFiles[index];
+
 			// In theory, if paths is set up correctly, this will never cause any errors
 			// However, to account for user error, we can also detect if files are not there
-			try {
-				loadedDatasets[key] = await d3.tsv(filenamesToLoad[i]);
-			} catch (error) {
-				if (error.message.includes("404")) {
-					this.setUnavailable(key);
-				}
+			if (output.status == "rejected") {
+				this.setUnavailable(key)
+			} else {
+				loadedDatasets[key] = output.value;
 			}
-		}
+		});
 
 		// Save the datasets in this object
 		this.datasets = loadedDatasets;
