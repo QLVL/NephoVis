@@ -179,7 +179,7 @@ class NephoVisLevel3 extends NephoVisLevel23Common {
 		// We have to build the dropdown for the context words manually
 		UserInterface.buildDropdown("ctxt",
 									this.dataProcessor.tailoredContexts,
-									(pair) => { this.contextVar = pair["value"];
+									(pair) => { this.contextVar = pair;
 												this.plot.updateContextVar(this.contextVar);
 												this.buildInterface(); },
 									pair => this.contextVar == pair["value"] ?
