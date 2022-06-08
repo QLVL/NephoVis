@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/github/license/qlvl/nephovis)](https://www.gnu.org/licenses/gpl-3.0)
 
 This is a visualization tool written in [D3.js](https://d3js.org/) by
-[Mariana Montes](https://www.marianamontes.me) ([@montesmariana](https://github.com/montesmariana)) and
+[Mariana Montes](https://www.marianamontes.me) ([@montesmariana](https://github.com/montesmariana)), [Anthe Sevenants](http://anthe.sevenants.net/) ([@AntheSevenants](https://github.com/AntheSevenants)) and
 Thomas Wielfaert ([@twielfaert](https://github.com/twielfaert))
 as part of the [Nephological Semantics project](https://www.arts.kuleuven.be/ling/qlvl/projects/current/nephological-semantics).
 
