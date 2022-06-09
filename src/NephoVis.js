@@ -105,6 +105,7 @@ function traceCenter(p, x1, x2, y1, y2) {
 }
 
 function setTooltip(where) {
+    console.log(d3.select(where));
     return (d3.select(where).append("div").attr("class", "tooltip"));
 }
 
@@ -302,6 +303,7 @@ function subsetCoords(datasets, alt, model, actualAlt = null) {
 }
 
 function offerAlternatives(datasets, alternatives, model, type) {
+    console.log(datasets, alternatives, model, type);
     if (d3.keys(datasets).indexOf("tokens") === -1 && !_.isNull(alternatives)) {
         console.log(alternatives)
         const storageSolution = JSON.parse(localStorage.getItem("solution-" + type));
@@ -324,9 +326,11 @@ function offerAlternatives(datasets, alternatives, model, type) {
 
         localStorage.setItem("solution-" + type, JSON.stringify(chosenSolution));
         const coords = subsetCoords(datasets, alternatives[0], model);
+        console.log(JSON.parse(JSON.stringify(coords)));
         for (let i = 1; i < alternatives.length; i++) {
             mergeVariables(coords, subsetCoords(datasets, alternatives[i], model))
         }
+        console.log(coords);
         return (coords)
 
     } else { // if "tokens remains"
@@ -448,6 +452,7 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
             .title(formatVariableName(shapevar["variable"]))
             .on("cellclick", function (d) {
                 shapeSelection = listFromLS(_.join(["shapesel", level, type], "-"));
+                console.log(shapeSelection);
                 shapeSelection.indexOf(d) === -1 ? shapeSelection.push(d) : _.pull(shapeSelection, d);
                 localStorage.setItem(_.join(["shapesel", level, type], "-"), JSON.stringify(shapeSelection));
                 selectionByLegend(colorvar, shapevar, sizevar, level, type, dataset);

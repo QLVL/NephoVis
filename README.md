@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/github/license/qlvl/nephovis)](https://www.gnu.org/licenses/gpl-3.0)
 
 This is a visualization tool written in [D3.js](https://d3js.org/) by
-[Mariana Montes](https://www.marianamontes.me) ([@montesmariana](https://github.com/montesmariana)) and
+[Mariana Montes](https://www.marianamontes.me) ([@montesmariana](https://github.com/montesmariana)), [Anthe Sevenants](http://anthe.sevenants.net/) ([@AntheSevenants](https://github.com/AntheSevenants)) and
 Thomas Wielfaert ([@twielfaert](https://github.com/twielfaert))
 as part of the [Nephological Semantics project](https://www.arts.kuleuven.be/ling/qlvl/projects/current/nephological-semantics).
 
@@ -34,30 +34,30 @@ git clone https://github.com/username/NephoVis.git
 In this example, `username` refers to your Github account.
 Now you have a copy of the code on your computer, under a folder called NephoVis! The most important aspects you might want to know about are:
 
-- At the top level of the repository there are a number of html files, with the scaffolding of the different pages in the visualization.
+- At the top level of the repository there is one html which contains the different aspects of the visualization.
 - The `js/` subfolder includes various Javascript libraries --- not really the code you would want to play around with.
 - The `src/` subfolder includes the Javascript scripts written by us, and underlying everything that happens in the visualization.
 
-In its current implementation, our dataset is included as a submodule: an independent GitHub repository (`tokenclouds`) that is called as a subdirectory of the NephoVis repository. It will not be automatically included with the forked NephoVis, so if you want to use our data you will need to clone/fork it independently. But if you forked the repository in the first place that is probably not your goal; instead, you want to use your own dataset.
+### Using the built-in dataset
 
-If you go to `src/utils/url.js`, lines 42-52 read:
+In its current implementation, our dataset is included as a submodule: an independent GitHub repository (`tokenclouds`) that is called as a subdirectory of the NephoVis repository. It will not be automatically included with the forked NephoVis, so if you want to use our data you will need to clone/fork it independently. You can do this automatically by running the following command:
+
+```bash
+git submodules foreach git pull origin master
+```
+
+### Using your own dataset
+
+If you want to use your own dataset, you can put it in `tokenclouds/data` and be done with it. If you wish to use a custom directory, you need to change the values in `src/Constants.js`:
 
 ```js
-function hcpaths(args = 'dir'){
-    const sourcedir = "tokenclouds/data/";
-    const lemmas_register = 'euclidean_register.tsv'; // For posIndex.html line 83
-    if (args === 'dir') {
-        return(sourcedir);
-    } else if (args == 'register') {
-        return(sourcedir + lemmas_register);
-    } else {
-        return;
-    }
+class Constants {
+    static get sourceDir () { return "tokenclouds/data/"; }
+    static get lemmasRegister () { return Constants.sourceDir + "euclidean_register.tsv"; }
 }
 ```
 
-This function sets up hard coded values to be used by `posIndex.html` (which gives you a list of lemmas based on a part-of-speech) and `loadData.js`, which opens your dataset.
-In this case, it goes to the subdirectory `tokenclouds` (the submodule with our datasets) and, within it, the `data` subdirectory, which has one subfolder per lemma and a tab-separated file with information on the lemmas themselves (which helps automatically generate the index pages). The `eucidean_register.tsv` file has a tab-separated table with lemmas in a `type` column and their part-of-speech in the `part-of-speech` column. All you need to do to plug your own data to the visualization is then to modify the value of `sourcedir` to the path to your own dataset. That is the path that the Python workflow cited below calls `github_dir` and that the R workflow may call `output_dir`. the `euclidean_register.tsv` file is ony necessary for the index pages; you can still access your data by opening `level1.html?type={type}` (and replacing `{type}` with the name in your filenames).
+This class sets up hard coded values to be used throughout the application. In this case, it goes to the subdirectory `tokenclouds` (the submodule with our datasets) and, within it, the `data` subdirectory, which has one subfolder per lemma and a tab-separated file with information on the lemmas themselves. The `eucidean_register.tsv` file has a tab-separated table with lemmas in a `type` column and their part-of-speech in the `part-of-speech` column. All you need to do to plug your own data to the visualization is then to modify the value returned by `sourceDir` to the path to your own dataset. That is the path that the Python workflow cited below calls `github_dir` and that the R workflow may call `output_dir`. The `euclidean_register.tsv` file is ony necessary for the index pages; you can still access your data by opening `#model/{type}` (and replacing `{type}` with the name in your filenames).
 
 Before we dive into the specifications of the files this visualization can read, we'll explain how you can actually access the visualization. One of the options is to turn your forked NephoVis repository into a [GitHub Page](https://pages.github.com/), so that you can access it with your data at `https://username.github.io/NephoVis/`. That requires you to include your dataset in the (public) repository and publish it (unless you have a paid account). A local alternative is to run a server on your own computer, which is extremely easy with Python 3. From a command prompt in which you can run Python 3, go to the folder of the forked repository and run:
 
@@ -86,14 +86,21 @@ The rest of the files are tab-separated dataframes.
 - Independently from the number of solutions, the "variables" file (`blik.variables.tsv`) stores the information for colour, size and shape coding. With one row per token, the `_id` column includes the same token IDs used in the files with coordinates, and each of the other columns codes some variable, such as sense annotation, register, etc. Among these, some special codes are recommended (and reserved by the use of an initial underscore):
     
     + Columns starting with `_ctxt.` will be interpreted as concordance lines. `_ctxt.raw` will be read as raw text to be shown, for example, when hovering over a token in Level 2. It is also used for the Search-by-context field in Level 3. For other `_ctxt.` columns, Level 3 will search for a partial match between the rest of the name of the column and the name of a model in order to offer a tailored context. For example, the values in the `_ctxt.blik.bound5all` column will be shown in Level 3 of any model starting with `blik.bound5all` once "Tailored contexts" is set to "model".
-    + Columns starting with `_cws.` will be interpreted as semicolon-separated lists of context words. For example, a cell in `_cws.blik.bound5all` that reads "werp/verb;op/prep" indicates that the models starting with `blik.bound5all` select *werp* 'to throw' and *op* 'on' for that token. This information is used for the frequency tables in Levels 2 and 3 as well as the Search-by-feature field in Level 3.
+    + Columns starting with `_cws.` will be interpreted as semicolon-separated lists of context words. For example, a cell in `_cws.blik.bound5all` that reads "werp/verb;op/prep" indicates that the models starting with `blik.bound5all` select *werp* 'to throw' and *op* 'on' for that token. This information is used for the frequency tables in Levels 2 and 3 as well as the Search-by-feature field in Level 3. If the `_cwsl.` column is defined for a model, the that data will instead be used for the frequency tables (see below).
+    + Columns starting with `_cwsl.` will be interpreted as semicolon-separated lists of context word **lemmas**. For example, a cell in `_cwsl.blik.bound5all` that reads "werpen/verb;op/prep" indicates that the models starting with `blik.bound5all` select words with lemmas *werpen* 'to throw' and *op* 'on' for that token. This information is used for the frequency tables in Levels 2 and 3 and will override the regular `_cws.` column.
     + Columns starting with `_count.` may be used for tailored quantiative values (e.g. number of context words) based on the same rules.
     
 In short, the most important files are the `paths.json` file, the "models" file for the Level 1 coordinates, at least one file with token-level coordinates and the "variables" files for the additional information. The rest of the files activate additional features.
 
 ### How to create the data
 
+#### Count-based models
+
 There are several steps to creating the data necessary for the visualization. The first set of steps uses Python3, in particular the [`nephosem` module](https://github.com/QLVL/nephosem/) and the [`semasioFlow` module](https://github.com/montesmariana/semasioFlow). The second set of steps uses R and a number of functions from the *ad hoc* [`semcloud`](https://github.com/montesmariana/semcloud) package; the corresponding workflow will be linked soon. This code covers how to create the kind of clouds that I worked with, *except* for the addition of **categorical variables**. Project-specific information such as register, manual sense annotation, etc., is not included and must be added by the user based on the desired information and resorces available.
+
+#### BERT-based models
+
+To create BERT-based models, refer to the documentation of [NephoNeural](https://github.com/AntheSevenants/NephoNeural), a library targeted at making datasets for NephoVis from BERT models.
 
 Of course, you don't *need* to use this specific code to create this data. Any other code that generates comparable dataframes will work.
 

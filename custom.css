@@ -9866,7 +9866,8 @@ main {
 
 .plotArea {
   width : 80vh;
-  overflow : auto;
+  /*overflow : auto; will cause Darude Sandstorm if removed*/ 
+  overflow-y: scroll;
 }
 
 #svgContainer {
@@ -9889,7 +9890,18 @@ main {
   display: flex;
   flex-flow: column wrap;
   align-items: flex-start;
-  align-content: flex-start;  
+  align-content: flex-start;
+
+  z-index: 10;
+}
+
+g.legend {
+  cursor: pointer;
+  user-select: none;
+}
+
+g  text.selected {
+  font-weight: bold;
 }
 
 .tooltip {
@@ -9929,4 +9941,107 @@ main {
 .largeSvg {
   flex : 1 1 40vh;
   resize: horizontal;
+}
+
+.largeSvg.hidden {
+  display: none;
+}
+
+.plotArea.only {
+  width: 38vw;
+}
+
+div.disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1em 0 1em 0;
+}
+
+.index .topbar {
+  width: 100%;
+  padding: 1em;
+  background-color: #ffffff;
+}
+
+.index .topbar p {
+  margin: 0;
+  padding: 0;
+}
+
+.topbar.simple {
+  justify-content: flex-end;
+}
+
+#tokenCount {
+  text-align: right;
+}
+
+#toastBar {
+  position: fixed;
+  top: 20px;
+  right: 0;
+
+  height: auto;
+  width: 370px;
+
+  z-index: 20;
+}
+
+.shared.noroute {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.index {
+  display: flex;
+  flex-flow: column;
+
+  height: 100%;
+}
+
+.index .row.homelead {
+}
+
+.index h1 {
+  color: #ffffff;
+}
+
+#indexInfo {
+  text-align: right;
+}
+
+#indexContent {
+}
+
+.index .dataTables_wrapper {
+  border-top: 2px solid #154360;
+
+  background-color: #ffffff;
+  width: 100%;
+
+  padding: 1em;
+}
+
+.index .dataTables_wrapper table {
+  overflow-y: scroll;
+}
+
+.index .dataTables_wrapper table a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.index .dataTables_wrapper table a:hover { 
+  color: #111;
 }

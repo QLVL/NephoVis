@@ -1,93 +1,437 @@
-<!doctype html>
+<!DOCTYPE HTML>
 <html lang="en">
-	<head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
 
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="custom.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="custom.css">
+  <link rel="stylesheet" href="distance.css">
+  <link rel="stylesheet" href="splash.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+  <title>NephoVis</title>
+
+  <!-- TODO remove inline styling -->
+  <style>
+    body {
+      background-color: #154360;
+    }
+
+    h1 {
+      color: #154360;
+    }
+
+    path.lighter {
+      fill-opacity: .25;
+      stroke-opacity: .1;
+    }
+
+    /*div.tooltip {
+      position: absolute;
+      text-align: center;
+      width: 80px;
+      height: 38px;
+      padding: 3px;
+      font: 12px sans-serif;
+      background: lightsteelblue;
+      border: 0px;
+      border-radius: 8px;
+      pointer-events: none;
+    }*/
+
+    /*.axis line {
+      stroke: "none";
+    } */ /* do we need this? */
 
 
-	<title>Nephological semantics</title>
+    .plus {
+      background-color: #c2e7ad !important;
+    }
 
-	<style>
-	
-	h1 {
-		color: var(--pal1);
-	}
+    #index .even {
+      background-color: #9fc5d0 !important; 
+    }
+  </style>
+</head>
 
-	h2 {
-		color: var(--pal1);
-	}
-
-	p {
-		color: var(--pal1);
-	}
-
-	a.btn {
-		background-image: radial-gradient(var(--white), var(--pal1), var(--pal4), var(--pal3));
-		/* background-color: var(--pal1); */
-		color: var(--pal3);
-	}
-
-	
-	a.btn:hover {
-		/* background-color: var(--pal2); */
-		background-image: radial-gradient(var(--pal3), var(--pal8));
-		color: var(--pal1);
-	}
-
-	</style>
-
-	</head>
-	<body>
-	<div class="container main">
+<body>
+  <div id="splash">
+    <div>
+      <img class="branding" src="./QLVLcloud.png">
+      <h1>NephoVis</h1>
+      <p id="splashInfo">Initialising page...</p>
+    </div>
+  </div>
+  <div id="index" class="container main shared index">
+    <div id="header">
       <div class="row homelead">
-        <div class="col-sm-9">
-		  <h1 style="font-size:4em;">Nephological semantics</h1>
-        </div>
-        <div class="col-sm-3">
-		  <a href="https://www.arts.kuleuven.be/ling/qlvl/projects/current/nephological-semantics"><img src="QLVLcloud.png" alt="QLVL logo" style="width:100%; max-width:150px;"></a>
+          <div class="col-sm-9">
+            <h1 style="font-size:4em;">Nephological semantics</h1>
+          </div>
+          <div class="col-sm-3">
+            <a href="https://www.arts.kuleuven.be/ling/qlvl/projects/current/nephological-semantics"><img src="QLVLcloud.png" alt="QLVL logo" style="width:100%; max-width:150px;"></a>
+          </div>
+      </div>
+      <div class="row">
+        <div class="topbar">
+          <p>Welcome to the visualization tool of the Nephological Semantics projects.</p>
+        <p><a href="https://zenodo.org/badge/latestdoi/224012839"><img src="https://zenodo.org/badge/224012839.svg" alt="DOI"></a></p>
         </div>
       </div>
-      <div class="row flex-grow-1">
-        <div class="col-8">
-          <div class="block">
-            <h2>Pilot cases</h2>
-			<p>Models of "church/n" in GloWbE (English) and of "zwart/adj" in the QLVLNews corpus (Dutch).</p>
-			<p>Distance matrices of tokens are mapped to 2D with non-metric MDS.</p>
-			<a role="button" class="btn rounded-pill" href="posIndex.html?pos=pilot"><i class="fas fa-cloud"></i> Go to page </a>
-          </div>
-		  <div class="block">
-            <h2>32 Dutch types</h2>
-			<p>Models of 32 Dutch nouns, adjectives and verbs.</p>
-			<p>Distance matrices of tokens are mapped to 2D with non-metric MDS and with t-SNE with different perplexities;
-				it is possible to swith between solutions.
-			</p>
-			<div class="btn-group">
-				<a role="button" class="btn rounded-pill" href="posIndex.html?pos=noun"><i class="fas fa-cloud"></i> Go to nouns </a>
-				<a role="button" class="btn rounded-pill" href="posIndex.html?pos=adj"><i class="fas fa-cloud"></i> Go to adjectives </a>
-				<a role="button" class="btn rounded-pill" href="posIndex.html?pos=verb"><i class="fas fa-cloud"></i> Go to verbs </a>
-			</div>
+    </div>
+    <!--<div class="row">
+      <div class="topbar">
+        <div>
+          <div class='btn-group'>
+            <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select POS</button>
+            <div class="dropdown-menu" id="indexPosSelect"></div>
           </div>
         </div>
-        <div class="col-4">
-          <div class="news">
-            <p>Welcome to the visualization tool of the Nephological Semantics projects.</p>
-			<p><a href="https://zenodo.org/badge/latestdoi/224012839"><img src="https://zenodo.org/badge/224012839.svg" alt="DOI"></a></p>
-          </div>
+        <div id="indexInfo">
         </div>
       </div>
-	</div>
+    </div> -->
+    <div class="row" id="indexContent" style="flex: 1;">
+    </div>
+  </div>
+  <div class="container-fluid" style="background-color:white;">
+    <div id="toastBar">
+    </div>
+    <div class="shared noroute">
+      Your URL is malformed. Please check your URL and try again.
+    </div>
+    <div class="vizPage shared model token aggregate">
+      <header>
+        <h1 id="nephoVisTitle"></h1>
+        <h3 id="modelName"></h3>
+        <h4 id="solutionName"></h4>
+      </header>
+      <main>
+        <div class="sidebar shared model" id="sidebar">
+          <div class="btn-group-vertical">
+            <div class='btn-group'>
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select
+                colour</button>
+              <div class="dropdown-menu" id="colour"></div>
+            </div>
+            <div class='btn-group'>
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select
+                shape</button>
+              <div class="dropdown-menu" id="shape"></div>
+            </div>
+            <div class='btn-group'>
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select
+                size</button>
+              <div class="dropdown-menu" id="size"></div>
+            </div>
+          </div>
+          <hr>
+          <p><b>Selected models: </b><span id="numSelected"></span></p>
+          <button type="button" class="btn shadow-sm btn-secondary" id="clearSelect"><i class="fas fa-eraser"></i> Clear
+            model selection</button>
+          <button type="button" class="btn shadow-sm btn-secondary" id="medoidsSelect"><i class="fas fa-filter"></i>
+            Select
+            medoids </button>
+          <hr>
+          <div class="btn-group">
+            <button type="button" class="btn shadow-sm btn-marigreen" id="go2index"><i class="fas fa-home"></i></button>
+            <button type="button" class="btn shadow-sm btn-marigreen" id="modelSelect"><i
+                class="fas fa-arrow-alt-circle-down"></i> LEVEL 2</button>
+            <!-- <button type="button" class="btn shadow-sm btn-marigreen" id="modelGroup"><i class="fas fa-plus-circle"></i> GROUP </button> -->
+          </div>
+          <div class="btn-group" id="model2buttons"></div>
+          <hr>
+          <div style="height:50vh;overflow: auto;border:solid;border-color:gray;padding-left:3px;">
+            <div id="focrow">
+              <h5>First order</h5>
+            </div>
+            <hr>
+            <div id="socrow">
+              <h5>Second order</h5>
+            </div>
+            <!-- <hr>
+                <div id="finalrow">
+                  <h5>Final tokens</h5>
+                </div> -->
+          </div> 
+        </div>
+        <div class="sidebar shared token">
+          <div class="btn-group-vertical">
+            <div class="btn-group">
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select
+                colour</button>
+              <div class="dropdown-menu" id="colour"></div>
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select
+                shape</button>
+              <div class="dropdown-menu" id="shape"></div>
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select
+                size</button>
+              <div class="dropdown-menu" id="size"></div>
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Tailored
+                contexts</button>
+              <div class="dropdown-menu" id="ctxt"></div>
+            </div>
+          </div>
+          <hr>
+          <div class="btn-group-vertical btn-group-toggle" id="selection" data-toggle="buttons">
+            <label class="btn btn-danger active">
+              <input type="radio" name="selection" value="click" autocomplete="off" checked> <i
+                class="fas fa-mouse-pointer"></i> Click
+            </label>
+            <label class="btn btn-danger">
+              <input type="radio" name="selection" value="brush" autocomplete="off"> <i class="fas fa-crop-alt"></i>
+              Select area
+            </label>
+          </div>
+          <hr>
+          <div class="btn-group-toggle">
+            <button class="" name="focDistToggle" id="focDistToggle"></button>
+          </div>
+          <hr>
+          <div class="btn-group-vertical">
+            <button type="button" class="btn shadow-sm btn-secondary" id="clearSelect"><i class="fas fa-eraser"></i> Clear
+              token selection</button>
+            <button type="button" class="btn shadow-sm btn-secondary" id="showTable"><i class="fas fa-sticky-note"></i>
+              Open frequency table</button>
+          </div>
+          <div class="input-group mb-3" id="findTokensByFeatureContainer">
+            <input type="text" class="form-control" style="width:100px" id="findTokensByFeature"
+              placeholder="Features in model" aria-label="Features in model"
+              aria-describedby="search tokens with this feature">
+            <div class="input-group-append">
+              <button class="btn btn-secondary" type="button" id="findTokensFeatureBtn">Search</button>
+            </div>
+          </div>
+          <div class="input-group mb-3" id="findTokensByContextContainer">
+            <input type="text" class="form-control" style="width:100px" id="findTokensByContext"
+              placeholder="Context word" aria-label="Context word"
+              aria-describedby="search tokens with this context word">
+            <div class="input-group-append">
+              <button class="btn btn-secondary" type="button" id="findTokensContextBtn">Search</button>
+            </div>
+          </div>
+          <div class="input-group mb-3" id="tokenTextInput">
+            <label for="tokenChoice"></label>
+            <input type="text" class="form-control" style="width:100px" list="tokenIDs" id="tokenChoice"
+              name="tokenChoice" placeholder="Token ID" value="" />
+            <datalist id="tokenIDs"></datalist>
+          </div>
+          <hr>
+          <div class="btn-group-vertical" id="moveAround">
+            <button type="button" class="btn shadow-sm btn-marigreen" id="toLevel2"><i
+                class="fas fa-arrow-alt-circle-up"></i> UP </button>
+            <div class="btn-group">
+              <button type="button" class="btn shadow-sm btn-marigreen dropdown-toggle" data-toggle="dropdown"><i
+                  class="fas fa-random"></i> Switch to model</button>
+              <div class="dropdown-menu" id="models"></div>
+            </div>
+          </div>
+          <div id="losttokens">
+          </div>
+          <div id="lostfocdists">
 
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+          </div>
+        </div>
+        <div class="sidebar shared aggregate" id="sidebar">
+          <div class="btn-group">
+            <button type="button" class="btn shadow-sm btn-marigreen dropdown-toggle" data-toggle="dropdown">Colour
+              models</button>
+            <div class="dropdown-menu" id="emblem"></div>
+          </div>
+          <hr>
+          <div class="btn-group-vertical">
+            <div class="btn-group">
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select
+                colour</button>
+              <div class="dropdown-menu" id="colour"></div>
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select
+                shape</button>
+              <div class="dropdown-menu" id="shape"></div>
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select
+                size</button>
+              <div class="dropdown-menu" id="size"></div>
+            </div>
+          </div>
+          <hr>
+          <div class="btn-group-vertical btn-group-toggle" id="selection" data-toggle="buttons">
+            <label class="btn btn-danger active">
+              <input type="radio" name="selection" value="click" autocomplete="off" checked> <i
+                class="fas fa-mouse-pointer"></i> Click
+            </label>
+            <label class="btn btn-danger">
+              <input type="radio" name="selection" value="brush" autocomplete="off"> <i class="fas fa-crop-alt"></i>
+              Select area
+            </label>
+          </div>
+          <hr>
+          <div class="btn-group-vertical">
+            <button type="button" class="btn shadow-sm btn-secondary" id="clearSelect"><i class="fas fa-eraser"></i> Clear
+              selection</button>
+            <button type="button" class="btn shadow-sm btn-secondary" id="showMatrix"><i class="fas fa-sticky-note"></i>
+              Distance matrix </button>
+            <button type="button" class="btn shadow-sm btn-secondary" id="showTable"><i class="fas fa-sticky-note"></i>
+              Frequency table</button>
+          </div>
+          <hr>
+          <div class="btn-group-vertical" id="moveAround">
+            <button type="button" class="btn shadow-sm btn-marigreen" id="toLevel1"><i
+                class="fas fa-arrow-alt-circle-up"></i> LEVEL 1</button>
+            <div class="btn-group">
+              <button type="button" class="btn shadow-sm btn-marigreen dropdown-toggle" data-toggle="dropdown"><i
+                  class="fas fa-arrow-alt-circle-down"></i> Go to model</button>
+              <div class="dropdown-menu" id="models"></div>
+            </div>
+          </div>
+        </div>
+        <div class="plotArea centered shared model">
+          <div id="svgContainer"></div>
+        </div>
+        <div class="plotArea resizable withConc shared token">
+          <div id="concordance"></div>
+          <div id="miniPlots">
+            <div class="largeSvg" id="svgContainer1"></div>
+            <div class="largeSvg" id="svgContainer2"></div>
+          </div>
+        </div>
+        <div class="plotArea withConc resizable shared aggregate">
+          <div id="concordance"></div>
+          <div id="miniPlots"></div>
+        </div>
+        <div class="legendBar shared model aggregate">
+          <div id="colorLegendContainer"></div>
+          <div id="shapeLegendContainer"></div>
+          <div id="sizeLegendContainer"></div>
+        </div>
+        <div class="legendBar andTokens shared token">
+          <div id="colorLegendContainer"></div>
+          <div id="shapeLegendContainer"></div>
+          <div id="sizeLegendContainer"></div>
+          <div id="tokenCheckboxes"></div>
+        </div>
+      </main>
+     
+      <footer><p style="text-align:center;">Like this page? Send me <s>chocolate</s> your bank account details on this sketchy site!</p></footer>
+    </div>
+    <div id='cwsFreq' class="shared frequency">
+      <div class="topbar simple">
+        <div id="tokenCount"></div>
+      </div>
+    </div>
+    <div class="shared cws">
+      <h2 id="report"></h2>
+      <div class="topbar">
+        <div>
+          <div class='btn-group'>
+            <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select information</button>
+            <div class="dropdown-menu" id="info"></div>
+          </div>
+          <div class='btn-group'>
+            <button type="button" class="btn shadow-sm btn-kulright" id="downloadCwsTable">Download table as tsv</button>
+          </div>
+        </div>
+        <div id="tokenCount"></div>
+      </div>
+      <div id='cwsFreq'></div>
+    </div>
+    <div id="distMatrix" class="shared distance"></div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="js/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <!-- General d3 (version 4) release -->
+  <script src="js/d3.min.js"></script>
+  <!-- d3 component to deal with arrays (in particular, for 'extent'/'min'/'max'...) -->
+  <script src="js/d3-array.v2.min.js"></script>
+  <!-- d3 component to generate axes -->
+  <script src="js/d3-axis.min.js"></script>
+  <!-- d3 component to generate legends -->
+  <script src="js/d3-legend.min.js"></script>
+  <!-- d3 component for brush -->
+  <script src="js/d3-brush.min.js"></script>
+  <!-- d3 component for zoom -->
+  <script src="js/d3-zoom.min.js"></script>
+  <!-- d3 component for sequential color palettes -->
+  <script src="js/d3-scale-chromatic.v1.min.js"></script>
+  <!-- d3 component for animations -->
+  <script src="js/d3-transition.min.js"></script>
+  <!-- d3 component for file handling -->
+  <script src="js/d3-fetch.min.js"></script>
+  <!-- d3 component for custom symbols -->
+  <script src="js/d3-symbol-extra.min.js"></script>
+  <!-- Fisher exact test -->
+  <script src="js/fisher.js"></script>
+  <!-- lodash -->
+  <script src="js/lodash.min.js"></script>
+  <!-- Navigo router -->
+  <script src="//unpkg.com/navigo@7.1.2/lib/navigo.min.js"></script>
+  <!-- for pretty tables -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+  <script type="text/javascript" charset="utf8"
+    src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+  <!-- My own set of functions! -->
+  <script src="src/Splash.js"></script>
+  <script src="src/Constants.js"></script>
+  <script src="src/Helpers.js"></script>
+  <script src="src/ItemSelection.js"></script>
+  <script src="src/ModelSelection.js"></script>
+  <script src="src/TokenSelection.js"></script>
+  <script src="src/UserInterface.js"></script>
+  <script src="src/DataPointStyle.js"></script>
+  <script src="src/Tooltip.js"></script>
+  <script src="src/Toast.js"></script>
+  <script src="src/NephoToast.js"></script>
+  <script src="src/TsvWriter.js"></script>
+  <script src="src/Index.js"></script>
+  <script src="src/FocDistsTooltipGenerator.js"></script>
+  <script src="src/Legend.js"></script>
+  <script src="src/Plot.js"></script>
+  <script src="src/ModelPlot.js"></script>
+  <script src="src/CommonTokenPlot.js"></script>
+  <script src="src/BaseTokenPlot.js"></script>
+  <script src="src/TokenPlot.js"></script>
+  <script src="src/MiniPlot.js"></script>
+  <script src="src/LostTokenPlot.js"></script>
+  <script src="src/LostFocDistsPlot.js"></script>
+  <script src="src/FocDistsPlot.js"></script>
+  <script src="src/LocalStorageInteractor.js"></script>
+  <script src="src/RequestedFilesMapper.js"></script>
+  <script src="src/DataLoader.js"></script>
+  <script src="src/DataProcessor.js"></script>
+  <script src="src/NephoVisNew.js"></script>
+  <script src="src/Nepho23.js"></script>
+  <script src="src/Nepho1.js"></script>
+  <script src="src/Nepho2.js"></script>
+  <script src="src/Nepho3.js"></script>
+  <script src="src/ContingencyTable.js"></script>
+  <script src="src/ModelContingencyTable.js"></script>
+  <script src="src/FrequencyFunctions.js"></script>
+  <script src="src/FrequencyTable_.js"></script>
+  <script src="src/DistanceMatrix_.js"></script>
+  <script src="src/ContextWordsTable.js"></script>
+  <script src="src/NephoSession.js"></script>
+  <script src="src/Router.js"></script>
 </body>
+
 </html>
