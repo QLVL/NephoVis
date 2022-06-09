@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Sevenants"
+  given-names: "Ante"
+- family-names: "Montes"
+  given-names: "Mariana"
+  orcid: "https://orcid.org/0000-0002-3869-3207"
+  email: "mariana.montes@kuleuven.be"
+- family-names: "Wielfaert"
+  given-names: "Thomas"
+title: "NephoVis"
+version: 1.1.0
+doi: 10.5281/zenodo.1234
+date-released: 2022-06-09
+url: "https://github.com/QLVL/NephoVis"
