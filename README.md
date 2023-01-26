@@ -28,7 +28,7 @@ If you want to use it for your own data, follow the instructions below.
 The visualization is written in Javascript and is protected with a GPL 3 license. You can take the code, modify it and integrate it with other code, as long as the final product keeps the same license of open access. In order to use your own version of the repository, you should fork it, which requires a Github account. You can do it by clicking on the "fork" button on the top right corner of the GitHub site. This way, you may make any modifications to the code without impacting the original repository; eventually, you could suggest their implementation with a pull request. Once you have forked the repository, i.e. made a copy in your own GitHub account, you can clone it to work locally on it, for example by typing, on the command prompt and from a folder named "NephoVis":
 
 ```bash
-git clone https://github.com/username/NephoVis.git
+git clone --recurse-submodules https://github.com/username/NephoVis.git
 ```
 
 In this example, `username` refers to your Github account.
@@ -40,11 +40,7 @@ Now you have a copy of the code on your computer, under a folder called NephoVis
 
 ### Using the built-in dataset
 
-In its current implementation, our dataset is included as a submodule: an independent GitHub repository (`tokenclouds`) that is called as a subdirectory of the NephoVis repository. It will not be automatically included with the forked NephoVis, so if you want to use our data you will need to clone/fork it independently. You can do this automatically by running the following command:
-
-```bash
-git submodules foreach git pull origin master
-```
+In its current implementation, our dataset is included as a submodule: an independent GitHub repository (`tokenclouds`) that is called as a subdirectory of the NephoVis repository. If you use the `clone` command stated above, it will be downloaded automatically.
 
 ### Using your own dataset
 
