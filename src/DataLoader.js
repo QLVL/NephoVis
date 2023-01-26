@@ -89,7 +89,7 @@ class DataLoader {
 			// If the response is defined, parse and save it
 			// Else, set it to "null"
 			this.solutions = this.checkResponse(response,
-				`Something went wrong while fetching <code>${this.type}/solutions.tsv</code>.`) ? 
+				`Something went wrong while fetching <code>${this.type}/solutions.json</code>.`) ? 
 					await response.json() : null;
 		
 			this.associateSolutionFiles();
