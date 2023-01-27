@@ -58,20 +58,11 @@ class DataLoader {
 		}
 
 		// Are we missing solutions in the path?
-		if (!"solutions" in this.paths)
+		if (!("solutions" in this.paths))
 		{
-			// "Unique" case
-			if ("tokens" in this.requestedFiles)
-			{
-				this.paths["unique"] = `${typeDir}/${type}.tsv`;
-				// set as "unique" TODO what does this mean?
-				// other_args = [ "unique" ]
-			}
-
-			if ("focdists" in this.requestedFiles)
-			{
-				this.paths["unique"] = `${typeDir}/${type}.cws.tsv`;
-			}
+			this.solutions = { "tokens": "" };
+			this.legacyDataset = true;
+			new NephoToast("warn", "Legacy dataset detected", "No solutions are defined - guessing filenames");
 		}
 		// If solutions is defined
 		else
@@ -91,9 +82,9 @@ class DataLoader {
 			this.solutions = this.checkResponse(response,
 				`Something went wrong while fetching <code>${this.type}/solutions.json</code>.`) ? 
 					await response.json() : null;
-		
-			this.associateSolutionFiles();
 		}
+
+		this.associateSolutionFiles();
 	}
 
 	associateSolutionFiles()
@@ -110,9 +101,13 @@ class DataLoader {
 				this.requestedFiles.push(dimensionReductionSolution);
 			}
 
-			// Remove "tokens" itself from the requested files list
-			let toDeleteIndex = this.requestedFiles.indexOf("tokens");
-			this.requestedFiles.splice(toDeleteIndex, 1); 
+			if (this.legacyDataset) {
+			}
+			else {
+				// Remove "tokens" itself from the requested files list
+				let toDeleteIndex = this.requestedFiles.indexOf("tokens");
+				this.requestedFiles.splice(toDeleteIndex, 1); 
+			}
 		}
 		
 		// If foc distances are requested, we need to add all context word files 
@@ -135,6 +130,10 @@ class DataLoader {
 				}
 			}
 
+			if (this.legacyDataset) {
+				this.requestedFiles.push("cws");
+			}
+
 			// Remove "focdists" itself from the requested files list
 			let toDeleteIndex = this.requestedFiles.indexOf("focdists");
 			this.requestedFiles.splice(toDeleteIndex, 1); 
@@ -148,9 +147,9 @@ class DataLoader {
 		// For each requested file, check if it's actually present
 		// If so, build its full filename
 		let filenamesToLoad = this.requestedFiles.map((file) => {
-			// If the file we need isn't in the paths object, return undefined
+			// If the file we need isn't in the paths object, return the type tsv
 			if (!(file in this.paths)) {
-				return undefined;
+				return `${this.typeDir}${this.type}.tsv`;
 			}
 			// Else, build the full filename
 			else {
